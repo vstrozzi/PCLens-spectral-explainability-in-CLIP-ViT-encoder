@@ -240,35 +240,44 @@ def main(args):
     # Split the string into a list of numeric and non-numeric parts.
         return [int(text) if text.isdigit() else text.lower() for text in re.split('(\d+)', s)]
 
-    def load_all_chunks(template):
-        # Use the custom key for natural sorting.
+    def merge_chunks(template, final_file):
+        # Merge chunk files into final_file without loading them all into RAM at once.
         chunk_files = sorted(glob.glob(template.format(idx='*')), key=natural_sort_key)
         print(chunk_files)
-        arrays = []
+
+        shapes = []
+        dtype = None
         for cf in chunk_files:
-            arr = np.load(cf, allow_pickle=False)
-            arrays.append(arr)
-        return np.concatenate(arrays, axis=0), chunk_files
+            arr = np.load(cf, mmap_mode="r")
+            shapes.append(arr.shape)
+            if dtype is None:
+                dtype = arr.dtype
+
+        total_rows = sum(s[0] for s in shapes)
+        final_shape = (total_rows,) + shapes[0][1:]
+
+        out = np.lib.format.open_memmap(final_file, mode="w+", dtype=dtype, shape=final_shape)
+        offset = 0
+        for cf, shape in zip(chunk_files, shapes):
+            arr = np.load(cf, mmap_mode="r")
+            out[offset:offset + shape[0]] = arr
+            offset += shape[0]
+        out.flush()
+        del out
+
+        return chunk_files
 
     # 1) Attn
-    final_attn, attn_chunk_files = load_all_chunks(chunk_attn_template)
-    with open(final_attn_file, 'wb') as f:
-        np.save(f, final_attn)
+    attn_chunk_files = merge_chunks(chunk_attn_template, final_attn_file)
 
     # 2) MLP
-    final_mlp, mlp_chunk_files = load_all_chunks(chunk_mlp_template)
-    with open(final_mlp_file, 'wb') as f:
-        np.save(f, final_mlp)
+    mlp_chunk_files = merge_chunks(chunk_mlp_template, final_mlp_file)
 
     # 3) CLS->CLS attn
-    final_cls, cls_chunk_files = load_all_chunks(chunk_cls_template)
-    with open(final_cls_attn_file, 'wb') as f:
-        np.save(f, final_cls)
+    cls_chunk_files = merge_chunks(chunk_cls_template, final_cls_attn_file)
 
     # 4) Labels
-    final_labels, label_chunk_files = load_all_chunks(chunk_labels_template)
-    with open(final_labels_file, 'wb') as f:
-        np.save(f, final_labels)
+    label_chunk_files = merge_chunks(chunk_labels_template, final_labels_file)
 
     print("Final single-file arrays created:\n"
           f"  {final_attn_file}\n"

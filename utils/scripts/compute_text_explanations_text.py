@@ -48,7 +48,7 @@ def get_args_parser():
     parser.add_argument("--algorithm", default="svd_data_approx")
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--probe_modality", default="text", choices=["text", "image"],
-                        help="Approximate/label the text-encoder components with a TEXT bank "
+                        help="Approximate/label the text-encoder components with a TEXT dataset "
                              "(default) or with IMAGE embeddings (same shared-space "
                              "dimensionality). 'image' loads {probe_name}_embeddings/_labels.")
     parser.add_argument("--probe_name", default="imagenet", type=str,
@@ -61,6 +61,8 @@ def main(args):
         attns = np.load(f)  # [N, l, h, d]
     with open(os.path.join(args.input_dir, f"{args.dataset}_mlp_text_{args.model}_seed_{args.seed}.npy"), "rb") as f:
         mlps = np.load(f)  # [N, l + 1, d]
+    text_labels = np.load(
+        os.path.join(args.input_dir, f"{args.dataset}_labels_text_{args.model}_seed_{args.seed}.npy"))
 
     assert attns.ndim == 4, (
         f"Expected summed per-head activations [N, l, h, d], got {attns.shape}. "
@@ -76,10 +78,15 @@ def main(args):
     # Load the probe set (CLIP embeddings + labels) used to approximate/label the components.
     # Both modalities live in the same shared CLIP space, so svd_data_approx / text_span are
     # unchanged -- only the probe matrix and its labels differ.
-    if args.probe_modality == "image":
-        with open(os.path.join(args.input_dir, f"{args.probe_name}_embeddings_{args.model}_seed_{args.seed}.npy"), "rb") as f:
-            text_features = np.load(f)  # [M, d] image embeddings
+
+    # open imagenet to test accuracy
+    with open(os.path.join(args.input_dir, f"{args.probe_name}_embeddings_{args.model}_seed_{args.seed}.npy"), "rb") as f:
+        text_features_imagenet = np.load(f) # [M, d] imagenet embeddings
         labs = np.load(os.path.join(args.input_dir, f"{args.probe_name}_labels_{args.model}_seed_{args.seed}.npy"))
+
+
+    if args.probe_modality == "image":
+        text_features = text_features_imagenet # [M, d] image embeddings
         lines = [imagenet_classes[int(l)] if int(l) < len(imagenet_classes) else f"{args.probe_name}_{i}"
                  for i, l in enumerate(labs)]
         probe_tag = f"_imgprobe_{args.probe_name}"
@@ -111,7 +118,20 @@ def main(args):
         _, json_info = select_algo(
             final_embedding, text_features, lines, -1, -1, args.text_per_princ_comp, args.device,
         )
-        jsonl_file.write(json.dumps({"layer": -1, "head": -1, **json_info}))
+        final_object = {"layer": -1, "head": -1, **json_info}
+
+        # Zero-shot accuracy: for each imagenet image, take the argmax over the reconstructed
+        # per-class label prototypes (mean of final_embedding over each class's text samples).
+        num_classes = int(text_labels.max()) + 1
+        classifier = np.stack([final_embedding[text_labels == c].mean(axis=0) for c in range(num_classes)])  # [C, d]
+        sims = text_features_imagenet @ classifier.T  # [M, C]
+        predicted_labels = sims.argmax(axis=1)  # [M]
+        current_accuracy = float((predicted_labels == labs).mean() * 100.0)
+        print("Current accuracy (image -> argmax reconstructed-class prototype):", current_accuracy)
+        final_object["accuracy"] = current_accuracy
+
+
+        jsonl_file.write(json.dumps(final_object))
 
     print(f"Wrote {out_path}")
 

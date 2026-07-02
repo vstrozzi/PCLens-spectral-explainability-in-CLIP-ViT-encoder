@@ -191,25 +191,39 @@ def main(args):
     def natural_sort_key(s):
         return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
 
-    def load_all_chunks(template):
+    def merge_chunks(template, final_file):
+        # Merge chunk files into final_file without loading them all into RAM at once.
         chunk_files = sorted(glob.glob(template.format(idx='*')), key=natural_sort_key)
-        arrays = [np.load(cf, allow_pickle=False) for cf in chunk_files]
-        return np.concatenate(arrays, axis=0), chunk_files
 
-    final_attn, attn_chunk_files = load_all_chunks(chunk_attn_template)
-    with open(final_attn_file, 'wb') as f:
-        np.save(f, final_attn)
-    final_mlp, mlp_chunk_files = load_all_chunks(chunk_mlp_template)
-    with open(final_mlp_file, 'wb') as f:
-        np.save(f, final_mlp)
-    final_labels, label_chunk_files = load_all_chunks(chunk_labels_template)
-    with open(final_labels_file, 'wb') as f:
-        np.save(f, final_labels)
+        shapes = []
+        dtype = None
+        for cf in chunk_files:
+            arr = np.load(cf, mmap_mode="r")
+            shapes.append(arr.shape)
+            if dtype is None:
+                dtype = arr.dtype
+
+        total_rows = sum(s[0] for s in shapes)
+        final_shape = (total_rows,) + shapes[0][1:]
+
+        out = np.lib.format.open_memmap(final_file, mode="w+", dtype=dtype, shape=final_shape)
+        offset = 0
+        for cf, shape in zip(chunk_files, shapes):
+            arr = np.load(cf, mmap_mode="r")
+            out[offset:offset + shape[0]] = arr
+            offset += shape[0]
+        out.flush()
+
+        return out.shape, chunk_files
+
+    attn_shape, attn_chunk_files = merge_chunks(chunk_attn_template, final_attn_file)
+    mlp_shape, mlp_chunk_files = merge_chunks(chunk_mlp_template, final_mlp_file)
+    labels_shape, label_chunk_files = merge_chunks(chunk_labels_template, final_labels_file)
 
     print("Final single-file arrays created:\n"
-          f"  {final_attn_file}  shape {final_attn.shape}\n"
-          f"  {final_mlp_file}  shape {final_mlp.shape}\n"
-          f"  {final_labels_file}  shape {final_labels.shape}")
+          f"  {final_attn_file}  shape {attn_shape}\n"
+          f"  {final_mlp_file}  shape {mlp_shape}\n"
+          f"  {final_labels_file}  shape {labels_shape}")
 
     for cf in attn_chunk_files + mlp_chunk_files + label_chunk_files:
         os.remove(cf)

@@ -9,7 +9,7 @@ dependencies:
   # LLaVA-pinned PyTorch versions (switch to pip if conda doesn't have them):
   - pytorch=2.1.2
   - torchvision=0.16.2
-  - pytorch-cuda=11.7
+  - pytorch-cuda=12.1
   - bitsandbytes
   - scikit-learn=1.2.2
   - ninja                # unpinned, latest from conda
