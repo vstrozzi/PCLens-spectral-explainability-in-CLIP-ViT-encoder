@@ -1,7 +1,7 @@
 """
 Text-encoder counterpart of utils/scripts/compute_activation_values.py.
 
-Runs the CLIP *text* encoder over a bank of text descriptions and saves the
+Runs the CLIP *text* encoder over a dataset of text descriptions and saves the
 per-head attention and per-layer MLP contributions to the EOS ("eot") token,
 each projected into the shared CLIP space, implementing
 
@@ -9,15 +9,15 @@ each projected into the shared CLIP space, implementing
               + sum_l P~_txt [MLP_l(LN_l(Z_l))]^eot .
 
 Saves (same shapes/conventions as the vision pipeline, with a `_text` tag):
-    {bank}_attn_text_{model}_seed_{seed}.npy    [N, l, h, d]   (or [N, l, m, h, d] if --spatial)
-    {bank}_mlp_text_{model}_seed_{seed}.npy      [N, l + 1, d]
-    {bank}_labels_text_{model}_seed_{seed}.npy   [N]            (line index in the bank)
+    {dataset}_attn_text_{model}_seed_{seed}.npy    [N, l, h, d]   (or [N, l, m, h, d] if --spatial)
+    {dataset}_mlp_text_{model}_seed_{seed}.npy      [N, l + 1, d]
+    {dataset}_labels_text_{model}_seed_{seed}.npy   [N]            (line index in the dataset)
 
 The summed-per-head form ([N, l, h, d]) satisfies the exact identity
     M_text = attn.sum(axis=(1, 2)) + mlp.sum(axis=1)
 so the downstream svd_data_approx / mean-ablation reconstruction code is reused
 unchanged. --spatial keeps the per-source-token axis (large; intended for small
-banks / debugging only).
+datasets / debugging only).
 
 Adapted from https://github.com/yossigandelsman/clip_text_span. MIT License
 Copyright (c) 2024 Yossi Gandelsman.
@@ -52,9 +52,9 @@ def get_args_parser():
                         help="Name of model to use")
     parser.add_argument("--pretrained", default="laion2b_s34b_b79k", type=str)
     parser.add_argument("--text_dir", default="./utils/text_descriptions", type=str,
-                        help="Folder holding the text bank .txt files")
+                        help="Folder holding the text dataset .txt files")
     parser.add_argument("--text_descriptions", default="top_1500_nouns_5_sentences_imagenet_clean",
-                        type=str, help="Name (without .txt) of the text bank to decompose")
+                        type=str, help="Name (without .txt) of the text dataset to decompose")
     parser.add_argument("--output_dir", default="./output_dir", help="path where to save")
     parser.add_argument("--seed", default=0, type=int)
     parser.add_argument("--device", default="cuda:0", help="device to use")
@@ -63,9 +63,9 @@ def get_args_parser():
     parser.add_argument("--max_nr_samples_before_writing", default=2000, type=int,
                         help="How many samples to keep in RAM before flushing to chunk files")
     parser.add_argument("--native_per_class", default=1, type=int,
-                        help="Number of consecutive sentences per class present in the bank "
+                        help="Number of consecutive sentences per class present in the dataset "
                              "(imagenet_descriptions_personal has 10, in class order). "
-                             "Default 1 -> the bank has no class structure (every row a class).")
+                             "Default 1 -> the dataset has no class structure (every row a class).")
     parser.add_argument("--sentences_per_class", default=1, type=int,
                         help="How many sentences to keep per class: the LAST k of each native "
                              "block (the last one is the concise class-name-like summary). "
@@ -95,7 +95,7 @@ def main(args):
     attn_method = "head" if args.spatial else "head_no_spatial"
     prs = hook_prs_logger_text(model, args.device, spatial=args.spatial, text_projection=args.text_proj)
 
-    # Load the text bank:
+    # Load the text dataset:
     with open(os.path.join(args.text_dir, f"{args.text_descriptions}.txt"), "r") as f:
         lines = [i.replace("\n", "") for i in f.readlines()]
 

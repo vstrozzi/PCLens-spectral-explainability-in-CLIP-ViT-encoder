@@ -54,9 +54,7 @@ def get_args_parser():
         default=4,
         help="How many attention layers to replace.",
     )
-    parser.add_argument(
-        "--w_ov_rank", type=int, default=80, help="The rank of the OV matrix"
-    )
+
     parser.add_argument(
         "--text_per_princ_comp",
         type=int,

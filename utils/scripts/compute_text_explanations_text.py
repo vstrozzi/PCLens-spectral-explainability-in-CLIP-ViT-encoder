@@ -4,14 +4,14 @@ Text-encoder counterpart of utils/scripts/compute_text_explanations.py.
 Decomposes each multi-head-attention head of the CLIP *text* encoder (over the
 EOS-token contributions produced by compute_activation_values_text.py) into
 principal components and labels each PC with the closest text descriptions from
-a probe bank, via the shared `svd_data_approx` algorithm.
+a probe dataset, via the shared `svd_data_approx` algorithm.
 
 The PC directions (vh) live in the shared CLIP space, so the notebook also
 characterizes each component "from the image side" by scoring vh against image
 embeddings -- giving the bidirectional (image <-> text) interpretation.
 
 Writes:
-  {bank}_completeness_text_{textprobe}_{model}_algo_{algorithm}_seed_{seed}.jsonl
+  {dataset}_completeness_text_{textprobe}_{model}_algo_{algorithm}_seed_{seed}.jsonl
 
 Adapted from https://github.com/yossigandelsman/clip_text_span. MIT License
 Copyright (c) 2024 Yossi Gandelsman.
@@ -36,7 +36,7 @@ def get_args_parser():
     parser.add_argument("--dataset", default="imagenet_descriptions_personal", type=str,
                         help="Name of the decomposed text dataset (matches compute_activation_values_text).")
     parser.add_argument("--text_descriptions", default="top_1500_nouns_5_sentences_imagenet_clean", type=str,
-                        help="Name of the text probe bank used to label the components.")
+                        help="Name of the text probe dataset used to label the components.")
     parser.add_argument("--text_dir", default="./utils/text_descriptions", type=str)
     parser.add_argument("--num_of_last_layers", type=int, default=4,
                         help="How many of the last text-encoder layers to decompose.")

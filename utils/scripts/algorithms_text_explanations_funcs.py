@@ -1229,7 +1229,11 @@ def visualize_principal_component(
 
     # Normalize embeddings to unit norm
 
-    # Compute cosine similarity scores with the specified principal component
+    # Compute cosine similarity scores with the specified principal component.
+    # Images are scored the SAME way texts are (and the same way the PC's text labels were
+    # assigned in svd_data_approx): project the full, unit-normalized shared-space embedding
+    # onto the PC direction. Scoring the head's own contribution instead breaks this symmetry
+    # and misaligns the top images from the text poles.
     vh = torch.tensor(data[0]["vh"])
     images_centered /= images_centered.norm(dim=-1, keepdim=True)
 

@@ -33,7 +33,7 @@ On top of this decomposition PCLens adds its own contribution:
    mean-center them, and run an **SVD**. The top singular directions (principal
    components) are the recurring "concepts" that head writes into the residual
    stream. Each principal direction is then *labeled* with natural language by
-   finding the text descriptions (from a large text bank) whose CLIP embeddings
+   finding the text descriptions (from a large text dataset) whose CLIP embeddings
    align most/least with it. This yields a **human-readable, per-head, per-PC
    text explanation** of what each attention head represents.
 
@@ -65,7 +65,7 @@ The intended usage path (see `README.md`):
    - per-head/per-MLP activations for a dataset (`compute_activation_values`),
    - final image embeddings (`compute_images_embedding`),
    - class-label text embeddings for zero-shot (`compute_classes_embeddings`),
-   - text-bank embeddings (`compute_text_embeddings`),
+   - text-dataset embeddings (`compute_text_embeddings`),
    - text explanations per head (`compute_text_explanations`).
 2. **`playground.ipynb`** — interactively explore head/PC text explanations,
    reconstruct embeddings, run ablations, NN search, completeness curves.
@@ -147,9 +147,9 @@ by `factory.py`.
 | `compute_mlps_attns_hidden_mean.py` | Variant that computes the **mean** activation per head/MLP on the fly (used for mean-ablation baselines). |
 | `compute_images_embedding.py` | Reassemble the saved activations into final image embeddings. |
 | `compute_classes_embeddings.py` | `zero_shot_classifier`: build the `(N, C)` class-projection matrix from class names + templates for zero-shot classification. |
-| `compute_text_embeddings.py` | Embed an arbitrary text bank (`text_descriptions/*.txt`) into CLIP space — the candidate "concept labels". |
+| `compute_text_embeddings.py` | Embed an arbitrary text dataset (`text_descriptions/*.txt`) into CLIP space — the candidate "concept labels". |
 | `compute_text_explanations.py` | **Main PCLens driver.** Mean-ablates early layers, then for each head in the last `num_of_last_layers` runs the chosen `algorithm` (default `svd_data_approx`) to decompose the head and label its PCs with text; writes a `.jsonl`. Reports recovered zero-shot accuracy. |
-| `algorithms_text_explanations.py` | **`svd_data_approx`** — the PCLens algorithm: mean-center a head's activations, SVD, keep PCs up to 99% variance (capped), project the text bank into PC space, pick top/bottom texts per PC (positive/negative poles), and least-squares reconstruct the head from the selected text span. Returns reconstruction + JSON metadata (`vh`, `project_matrix`, strengths, texts). |
+| `algorithms_text_explanations.py` | **`svd_data_approx`** — the PCLens algorithm: mean-center a head's activations, SVD, keep PCs up to 99% variance (capped), project the text dataset into PC space, pick top/bottom texts per PC (positive/negative poles), and least-squares reconstruct the head from the selected text span. Returns reconstruction + JSON metadata (`vh`, `project_matrix`, strengths, texts). |
 | `algorithms_text_explanations_prev.py` | Earlier/alternative algorithms (incl. the baseline **TextSpan** greedy span), imported via `*` so they're selectable by `--algorithm`. |
 | `algorithms_text_explanations_funcs.py` | **Large analysis/visualization toolkit (~2200 lines).** Loads `.jsonl` explanations (`get_data*`), prints PC text tables, plots singular-value curves, and—critically—**reconstructs embeddings under interventions**: `reconstruct_all_embeddings_mean_ablation_pcs/heads` (keep/ablate/amplify chosen heads & PCs), `reconstruct_embeddings`, NN-search dataset builders (`create_dbs`, `visualize_dbs`), and per-PC visualization. Backs the notebooks. |
 | `compute_components_per_image.py` | Per-image (rather than dataset-aggregate) component decomposition. |
@@ -170,13 +170,13 @@ Class-name lists and dataset stats: `imagenet_classes.py`, `cifar_10_classes.py`
 (`OPENAI_DATASET_MEAN/STD` normalization constants).
 
 ### 4.6 `utils/text_descriptions/`
-The **text banks** used as candidate concept labels, plus their cleaned variants:
+The **text datasets** used as candidate concept labels, plus their cleaned variants:
 `top_1500_nouns_5_sentences_imagenet*.txt`, `google_3498_english.txt`,
 `laion.txt`, `mscoco.txt`, `visual_descriptions.txt`, `bias_words.txt`,
 `topics.txt`, etc. Embedded by `compute_text_embeddings.py`.
 
 ### 4.7 `utils/generate_text_dataset/`
-Tooling that *built* the text banks above:
+Tooling that *built* the text datasets above:
 - `scrape_dictionary.py` — scrape a top-1500-nouns list from the web.
 - `generate_text_dataset.py` — call the OpenAI API to expand each noun into 5
   simple CLIP-friendly descriptions.
