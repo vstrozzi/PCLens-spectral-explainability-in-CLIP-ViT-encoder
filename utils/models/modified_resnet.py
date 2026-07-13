@@ -103,10 +103,14 @@ class ModifiedResNet(nn.Module):
     - The final pooling layer is a QKV attention instead of an average pool
     """
 
-    def __init__(self, layers, output_dim, heads, image_size=224, width=64):
+    def __init__(self, layers, output_dim, heads, image_size=224, width=64, hook=None):
         super().__init__()
         self.output_dim = output_dim
         self.image_size = image_size
+        # `hook` is passed by the factory (a HookManager fork). ModifiedResNet does not
+        # emit PRS activations from its forward; the ResNet decomposition is computed
+        # externally in utils.models.resnet_prs. We keep the handle for API parity.
+        self.hook_manager = hook
 
         # the 3-layer stem
         self.conv1 = nn.Conv2d(3, width // 2, kernel_size=3, stride=2, padding=1, bias=False)

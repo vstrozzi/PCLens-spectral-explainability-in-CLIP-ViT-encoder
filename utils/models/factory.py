@@ -77,8 +77,12 @@ def get_tokenizer(model_name):
         tokenizer = HFTokenizer(model_name[len(HF_HUB_PREFIX):])
     else:
         config = get_model_config(model_name)
-        tokenizer = HFTokenizer(
-            config['text_cfg']['hf_tokenizer_name']) if 'hf_tokenizer_name' in config['text_cfg'] else NotHFTokenizer()
+        # OpenAI models (e.g. RN50/RN101) are built from a state dict and have no JSON
+        # config; they use the standard CLIP BPE tokenizer.
+        if config is None or 'hf_tokenizer_name' not in config['text_cfg']:
+            tokenizer = NotHFTokenizer()
+        else:
+            tokenizer = HFTokenizer(config['text_cfg']['hf_tokenizer_name'])
     return tokenizer
 
 def convert_clip_state_dict(old_state: dict) -> dict:

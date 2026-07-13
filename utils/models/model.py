@@ -263,14 +263,14 @@ class CLIP(nn.Module):
         features = self.visual(image, attn_method=attn_method)
         return F.normalize(features, dim=-1) if normalize else features
 
-    def encode_text(self, text, normalize: bool = False):
+    def encode_text(self, text, normalize: bool = False, attn_method: Text = 'direct'):
         cast_dtype = self.transformer.get_cast_dtype()
 
         x = self.token_embedding(text).to(cast_dtype)  # [batch_size, n_ctx, d_model]
 
         x = x + self.positional_embedding.to(cast_dtype)
         # x = x.permute(1, 0, 2)  # NLD -> LND
-        x = self.transformer(x, attn_mask=self.attn_mask)
+        x = self.transformer(x, attn_mask=self.attn_mask, attn_method=attn_method)
         # x = x.permute(1, 0, 2)  # LND -> NLD
         x = self.ln_final(x)  # [batch_size, n_ctx, transformer.width]
         # take features from the eot embedding (eot_token is the highest number in each sequence)

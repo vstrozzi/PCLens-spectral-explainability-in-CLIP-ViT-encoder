@@ -32,7 +32,7 @@ def svd_data_approx(data, text_features, texts, layer, head, text_per_princ_comp
     mean_values_att = np.mean(data, axis=0)
     mean_values_text = np.mean(text_features, axis=0)
     data = torch.from_numpy(data - mean_values_att).float().to(device)
-    text_features = torch.from_numpy(text_features).float().to(device)
+    text_features = torch.from_numpy(text_features - mean_values_text).float().to(device)
    
     # Perform SVD of data matrix
     u, s, vh = torch.linalg.svd(data, full_matrices=False)

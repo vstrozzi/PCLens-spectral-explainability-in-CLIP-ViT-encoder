@@ -102,7 +102,7 @@ def get_data_component(data, layer, head, princ_comp):
             return [entry]
 
 
-def plot_pc_sv_across_heads_and_layers(data, base_layer):
+def plot_pc_sv_across_heads_and_layers(data, base_layer, nr_layer=4):
     """
     Plot the cumulative singular values (using cumulative sum of 'strength_rel') for multiple layers 
     (the base layer and the three previous layers). For each layer, we aggregate over all heads in the 
@@ -119,7 +119,7 @@ def plot_pc_sv_across_heads_and_layers(data, base_layer):
     Returns:
         None
     """
-    layers = [base_layer, base_layer - 1, base_layer - 2, base_layer - 3]
+    layers = [base_layer - x for x in range(nr_layer)]  #rs)
 
     plt.figure(figsize=(10, 6))
     
@@ -1201,6 +1201,11 @@ def visualize_principal_component(
         seed=seed,
     )
 
+    # final_embeddings_images covers the full dataset ds was computed on; if ds_vis is a subset,
+    # restrict the embeddings to the same indices so img_index (below) stays aligned with ds_vis.
+    if isinstance(ds_vis, torch.utils.data.Subset):
+        final_embeddings_images = final_embeddings_images[ds_vis.indices]
+
     # Initialize arrays to store similarity scores for images and texts
     scores_array_images = np.empty(
         final_embeddings_images.shape[0], 
@@ -1224,7 +1229,11 @@ def visualize_principal_component(
 
     # Normalize embeddings to unit norm
 
-    # Compute cosine similarity scores with the specified principal component
+    # Compute cosine similarity scores with the specified principal component.
+    # Images are scored the SAME way texts are (and the same way the PC's text labels were
+    # assigned in svd_data_approx): project the full, unit-normalized shared-space embedding
+    # onto the PC direction. Scoring the head's own contribution instead breaks this symmetry
+    # and misaligns the top images from the text poles.
     vh = torch.tensor(data[0]["vh"])
     images_centered /= images_centered.norm(dim=-1, keepdim=True)
 
