@@ -1,0 +1,19 @@
+{
+    "models_config": [
+        {"name": "ViT-B/32", "slug": "ViT-B-32", "pretrained": "laion2b_s34b_b79k", "type": "vit"},
+        {"name": "ViT-B/16", "slug": "ViT-B-16", "pretrained": "laion2b_s34b_b88k", "type": "vit"},
+        {"name": "ViT-L/14", "slug": "ViT-L-14", "pretrained": "laion2b_s32b_b82k", "type": "vit"},
+        {"name": "ViT-H/14", "slug": "ViT-H-14", "pretrained": "laion2b_s32b_b79k", "type": "vit"},
+        {"name": "RN50",  "slug": "RN50",  "pretrained": "openai", "type": "resnet"},
+        {"name": "RN101", "slug": "RN101", "pretrained": "openai", "type": "resnet"}
+    ],
+    "datsets_config": [
+        {"name": "CIFAR-10",    "element_per_class": 100, "num_classes": 10,   "dataset_arg": "CIFAR10",           "data_path": "./datasets/",                                 "folder": "cifar-10-batches-py",                "size": "~170 MB"},
+        {"name": "CIFAR-100",   "element_per_class": 100, "num_classes": 100,  "dataset_arg": "CIFAR100",          "data_path": "./datasets/",                                 "folder": "cifar-100-python",                   "size": "~169 MB"},
+        {"name": "ImageNet",    "element_per_class": 10,  "num_classes": 1000, "dataset_arg": "imagenet",          "data_path": "./datasets/",                                 "folder": "imagenet/val",                       "size": "~6.3 GB"},
+        {"name": "Caltech-101", "element_per_class": 10,  "num_classes": 101,  "dataset_arg": "caltech",           "data_path": "./datasets/caltech101/101_ObjectCategories",  "folder": "caltech101/101_ObjectCategories",    "size": "~130 MB"},
+        {"name": "waterbird",   "element_per_class": 10,  "num_classes": 2,    "dataset_arg": "binary_waterbirds", "data_path": "./datasets/",                                 "folder": "waterbird_complete95_forest2water2", "size": "~490 MB"},
+        {"name": "fairface",    "element_per_class": 10,  "num_classes": 7,    "dataset_arg": "fairface",          "data_path": "./datasets/",                                 "folder": "fairface/fairface_label_val.csv",    "size": "~550 MB"}
+    ],
+    "seed": 69
+}

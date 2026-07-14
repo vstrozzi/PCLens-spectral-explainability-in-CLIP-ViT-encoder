@@ -26,6 +26,7 @@ from torchvision.datasets import CIFAR10, CIFAR100, ImageNet, ImageFolder
 
 from utils.models.factory import create_model_and_transforms, get_tokenizer
 from utils.datasets.binary_waterbirds import BinaryWaterbirds
+from utils.datasets.fairface import FairFace
 from utils.datasets.dataset_helpers import dataset_to_dataloader
 
 
@@ -62,10 +63,12 @@ def _report(name, metrics, tol):
 
 def verify_image_encoder(model, preprocess, attns, mlps, dataset, data_path, device,
                          n_samples, seed, samples_per_class, tot_samples_per_class,
-                         batch_size=8, tol=1e-3):
+                         batch_size=8, tol=1e-3, image_normalize=True, fairface_label="gender"):
     """
-    Compare sum(saved attn/mlp)[:n] against the fresh normalized vision output on the
-    same first-n images. `attns`,`mlps` are the saved arrays ([N,l,h,d], [N,l+1,d]).
+    Compare sum(saved attn/mlp)[:n] against the fresh vision output on the same first-n
+    images. `attns`,`mlps` are the saved arrays ([N,l,h,d], [N,l+1,d]). ViT components
+    sum to the L2-normalized output (image_normalize=True); the exact ResNet
+    decomposition sums to the raw visual() output (image_normalize=False).
     """
     n = min(n_samples, attns.shape[0])
     recon = (np.asarray(attns[:n]).sum(axis=(1, 2)) + np.asarray(mlps[:n]).sum(axis=1))
@@ -75,6 +78,8 @@ def verify_image_encoder(model, preprocess, attns, mlps, dataset, data_path, dev
         ds = ImageNet(root=data_path + "imagenet/", split="val", transform=preprocess)
     elif dataset == "binary_waterbirds":
         ds = BinaryWaterbirds(root=data_path + "waterbird_complete95_forest2water2/", split="test", transform=preprocess)
+    elif dataset == "fairface":
+        ds = FairFace(root=data_path + "fairface/", split="val", label=fairface_label, transform=preprocess)
     elif dataset == "CIFAR100":
         ds = CIFAR100(root=data_path, download=True, train=False, transform=preprocess)
     elif dataset == "CIFAR10":
@@ -93,7 +98,7 @@ def verify_image_encoder(model, preprocess, attns, mlps, dataset, data_path, dev
     with torch.no_grad():
         for image, _ in dataloader:
             image = image.to(device)
-            truth.append(model.encode_image(image, normalize=True).float().cpu())
+            truth.append(model.encode_image(image, normalize=image_normalize).float().cpu())
             seen += image.shape[0]
             if seen >= n:
                 break
@@ -134,6 +139,8 @@ def _model_pretrained(model_name):
         "ViT-L-14": "laion2b_s32b_b82k",
         "ViT-B-16": "laion2b_s34b_b88k",
         "ViT-B-32": "laion2b_s34b_b79k",
+        "RN50": "openai",
+        "RN101": "openai",
     }.get(model_name, "laion2b_s34b_b79k")
 
 
@@ -151,6 +158,14 @@ def get_args_parser():
     # image side
     parser.add_argument("--image_dataset", default="imagenet", type=str)
     parser.add_argument("--data_path", default="./datasets/", type=str)
+    parser.add_argument("--fairface_label", choices=["gender", "race", "age"], default="gender",
+                        help="which FairFace attribute is the label (only used for --image_dataset fairface).")
+    parser.add_argument("--image_normalize", default=True,
+                        type=lambda v: v.lower() in ("1", "true", "yes", "t", "y"),
+                        help="Compare the saved image components against encode_image(normalize=THIS). "
+                             "Must match how the activations were saved: True for ViT and for "
+                             "ResNet run with --normalize True (the defaults); False only for the "
+                             "raw ResNet decomposition (--normalize False).")
     parser.add_argument("--samples_per_class", default=None, type=lambda v: None if v in ("None", "none", "") else int(v))
     parser.add_argument("--tot_samples_per_class", default=None, type=lambda v: None if v in ("None", "none", "") else int(v))
     # text side
@@ -163,6 +178,13 @@ def get_args_parser():
 
 def main(args):
     pretrained = args.pretrained or _model_pretrained(args.model)
+    # The exact CLIP-ResNet decomposition needs TF32 off for its conv-linearity to hold.
+    # Whether the components sum to the normalized or raw output is set by --image_normalize
+    # (True by default, matching both the ViT pipeline and ResNet run with --normalize True).
+    is_resnet = args.model.startswith("RN")
+    if is_resnet:
+        torch.backends.cudnn.allow_tf32 = False
+        torch.backends.cuda.matmul.allow_tf32 = False
     img_attn = os.path.join(args.output_dir, f"{args.image_dataset}_attn_{args.model}_seed_{args.seed}.npy")
     img_mlp = os.path.join(args.output_dir, f"{args.image_dataset}_mlp_{args.model}_seed_{args.seed}.npy")
     txt_attn = os.path.join(args.output_dir, f"{args.text_descriptions}_attn_text_{args.model}_seed_{args.seed}.npy")
@@ -193,7 +215,8 @@ def main(args):
         mlps = np.load(img_mlp, mmap_mode="r")
         metrics, tol = verify_image_encoder(
             model, preprocess, attns, mlps, args.image_dataset, args.data_path, args.device,
-            args.n_samples, args.seed, args.samples_per_class, args.tot_samples_per_class, tol=args.tol)
+            args.n_samples, args.seed, args.samples_per_class, args.tot_samples_per_class, tol=args.tol,
+            image_normalize=args.image_normalize, fairface_label=args.fairface_label)
         all_ok &= _report("VISION", metrics, tol)
     if have_txt:
         tokenizer = get_tokenizer(args.model)

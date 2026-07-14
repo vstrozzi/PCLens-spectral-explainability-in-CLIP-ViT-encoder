@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 from utils.datasets_constants.imagenet_classes import imagenet_classes
+from utils.datasets_constants.fairface_classes import FAIRFACE_CLASSES
 from utils.scripts.algorithms_text_explanations_funcs import *
 from utils.misc.misc import accuracy
 from utils.models.factory import create_model_and_transforms, get_tokenizer
@@ -33,6 +34,9 @@ def get_args_parser():
     parser.add_argument("--subset_dim", default=10, type=int)
 
     parser.add_argument("--num_real_layer", default=4, type=int)
+    parser.add_argument("--backbone", default="vit", choices=["vit", "resnet"],
+                        help="resnet activation files share the ViT naming; this only rescales "
+                             "the PC-count scan to the (much smaller) ResNet PC pool.")
     parser.add_argument("--cache_dir", default=None)
     parser.add_argument("--device", default="cpu")
     parser.add_argument(
@@ -49,6 +53,8 @@ def get_args_parser():
         help="text dataset used for the explanations",
     )
 
+    parser.add_argument("--fairface_label", choices=["gender", "race", "age"], default="gender",
+                        help="which FairFace attribute (only used for --dataset fairface).")
     parser.add_argument("--top_k", type=int, default=10, help="Nr of PCs of the query system")
     parser.add_argument("--max_approx", type=float, default=1, help="Max approx for the reconstruction")
 
@@ -93,6 +99,7 @@ def main(args):
         mlps = torch.tensor(np.load(f))  # [b, l+1, d]
 
     num_last_layers_ = args.num_real_layer
+    class_names = FAIRFACE_CLASSES[args.fairface_label] if args.dataset == "fairface" else imagenet_classes
 
     # Save important stuff
     nr_layers_ = attns.shape[1]
@@ -114,9 +121,14 @@ def main(args):
     mean_final_texts = torch.mean(final_embeddings_texts, axis=0)
     labels_embeddings = classifier_.T
 
-    pcs_per_class_start = 3500
     pcs_per_class_end = int(nr_heads_*num_last_layers_*mean_rank_)
-    pcs_per_class_step = 500
+    if args.backbone == "resnet":
+        # ResNet has far fewer components/PCs than a ViT; scan the whole valid range.
+        pcs_per_class_start = max(1, pcs_per_class_end // 10)
+        pcs_per_class_step = max(1, (pcs_per_class_end - pcs_per_class_start) // 10)
+    else:
+        pcs_per_class_start = 3500
+        pcs_per_class_step = 500
 
     # Center class embedding
     sorted_data = []
@@ -141,7 +153,7 @@ def main(args):
         # Derive nr_pcs_per_class
         sorted_data.append(data_pcs)
         # Log
-        print(f"Class nr {text_idx} ({imagenet_classes[text_idx]}) is done")
+        print(f"Class nr {text_idx} ({class_names[text_idx]}) is done")
     
     def range_with_last_clamped(start, stop, step):
         current = start
@@ -166,7 +178,7 @@ def main(args):
         count_rec_list = []
         acc_bias_rem_list = []
         count_bias_rem_list = []
-        for c, label in enumerate(imagenet_classes):
+        for c, label in enumerate(class_names):
             
             # Retrieve topic embedding
             data_act = sorted_data[c]

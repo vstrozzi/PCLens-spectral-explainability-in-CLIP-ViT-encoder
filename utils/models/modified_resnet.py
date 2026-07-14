@@ -177,7 +177,10 @@ class ModifiedResNet(nn.Module):
         x = self.avgpool(x)
         return x
 
-    def forward(self, x):
+    def forward(self, x, attn_method: str = "direct"):
+        # attn_method is accepted (and ignored) only for signature parity with
+        # VisionTransformer.forward, so CLIP.encode_image(..., attn_method=...) works for
+        # ResNet backbones too. The exact per-head decomposition lives in resnet_prs.py.
         x = self.stem(x)
         x = self.layer1(x)
         x = self.layer2(x)
@@ -186,3 +189,18 @@ class ModifiedResNet(nn.Module):
         x = self.attnpool(x)
 
         return x
+
+    def get_output_projection(self):
+        """Weight and bias of the attention-pool output projection (``attnpool.c_proj``).
+
+        This single linear is the ResNet's only map into the shared CLIP space -- the
+        analogue of a ViT's ``visual.proj`` -- so it factors out of the residual-stream
+        decomposition (see ``utils.models.resnet_prs``):
+            visual(I) = weight @ (pooled pre-projection value) + bias.
+
+        Returns (weight, bias): weight [output_dim, embed_dim] (e.g. [1024, 2048] for RN50,
+        [512, 2048] for RN101), bias [output_dim]. State-dict keys are
+        ``visual.attnpool.c_proj.weight`` / ``visual.attnpool.c_proj.bias``. Reshape the
+        weight to [output_dim, num_heads, embed_dim // num_heads] for the per-head slabs.
+        """
+        return self.attnpool.c_proj.weight, self.attnpool.c_proj.bias

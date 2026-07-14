@@ -12,7 +12,9 @@ from utils.models.factory import create_model_and_transforms, get_tokenizer
 from utils.models.openai_templates import OPENAI_IMAGENET_TEMPLATES
 from utils.datasets_constants.imagenet_classes import imagenet_classes
 from utils.datasets_constants.cifar_10_classes import cifar_10_classes
-from utils.datasets_constants.cub_classes import cub_classes, waterbird_classes
+from utils.datasets_constants.cifar_100_classes import cifar_100_classes
+from utils.datasets_constants.waterbird_classes import cub_classes, waterbird_classes
+from utils.datasets_constants.fairface_classes import FAIRFACE_CLASSES
 
 
 def get_args_parser():
@@ -28,6 +30,8 @@ def get_args_parser():
     parser.add_argument('--device', default='cuda:0',
                         help='device to use for testing')
     parser.add_argument("--cache_dir", default=None, help="cache directory for models weight", type=str)
+    parser.add_argument("--fairface_label", choices=["gender", "race", "age"], default="gender",
+                        help="which FairFace attribute to build the classifier for (--dataset fairface).")
 
     return parser
 
@@ -90,12 +94,16 @@ def main(args):
     print("Model parameters:", f"{np.sum([int(np.prod(p.shape)) for p in model.parameters()]):,}")
     print("Context length:", context_length)
     print("Vocab size:", vocab_size)
-    classes = {
-        'imagenet': imagenet_classes, 
-        'CIFAR10': cifar_10_classes,
-        'waterbirds': cub_classes, 
-        'binary_waterbirds': waterbird_classes, 
-        'cub': cub_classes}[args.dataset]
+    if args.dataset == 'fairface':
+        classes = FAIRFACE_CLASSES[args.fairface_label]
+    else:
+        classes = {
+            'imagenet': imagenet_classes,
+            'CIFAR10': cifar_10_classes,
+            'CIFAR100': cifar_100_classes,
+            'waterbirds': cub_classes,
+            'binary_waterbirds': waterbird_classes,
+            'cub': cub_classes}[args.dataset]
     classifier = zero_shot_classifier(model, tokenizer, classes, OPENAI_IMAGENET_TEMPLATES, args.device)
     with open(os.path.join(args.output_dir, f'{args.dataset}_classifier_{args.model}.npy'), 'wb') as f:
         np.save(f, classifier.detach().cpu().numpy())

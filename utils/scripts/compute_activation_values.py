@@ -12,6 +12,7 @@ import re
 import tqdm
 from utils.models.factory import create_model_and_transforms
 from utils.datasets.binary_waterbirds import BinaryWaterbirds
+from utils.datasets.fairface import FairFace
 from utils.datasets.dataset_helpers import dataset_to_dataloader
 from utils.models.prs_hook import hook_prs_logger
 from torchvision.datasets import CIFAR100, CIFAR10, ImageNet, ImageFolder
@@ -61,6 +62,14 @@ def get_args_parser():
     parser.add_argument("--vision_proj", help="Project output down to text-img CLIP embedding space", default=True, type=str2bool)
     parser.add_argument("--full_output", help="Whether to output all the patch tokens and not only the CLS", default=False, type=str2bool)
 
+    parser.add_argument("--last_layers_only", default=None, type=parse_int_or_none,
+                        help="Save only the last k layers of attn/mlp (memory fix for L-14/H-14). "
+                             "Set --num_of_last_layers=k downstream. None saves all layers.")
+    parser.add_argument("--save_dtype", choices=["fp16", "fp32"], default="fp32",
+                        help="dtype of the SAVED attn/mlp arrays (independent of model --quantization).")
+    parser.add_argument("--fairface_label", choices=["gender", "race", "age"], default="gender",
+                        help="which FairFace attribute is the label (only used for --dataset fairface).")
+
     return parser
 
 
@@ -95,6 +104,8 @@ def main(args):
         ds = ImageNet(root=args.data_path + "imagenet/", split="val", transform=preprocess)
     elif args.dataset == "binary_waterbirds":
         ds = BinaryWaterbirds(root=args.data_path+"waterbird_complete95_forest2water2/", split="test", transform=preprocess)
+    elif args.dataset == "fairface":
+        ds = FairFace(root=args.data_path+"fairface/", split="val", label=args.fairface_label, transform=preprocess)
     elif args.dataset == "CIFAR100":
         ds = CIFAR100(
             root=args.data_path, download=True, train=False, transform=preprocess
@@ -216,6 +227,16 @@ def main(args):
             attentions = attentions.detach().cpu().numpy()  # [b, l, n, h, d]
             mlps = mlps.detach().cpu().numpy()              # [b, l+1, d]
 
+        # Keep only the last k layers (memory fix); slice the layer axis (axis=1)
+        if args.last_layers_only is not None:
+            attentions = attentions[:, -args.last_layers_only:]
+            mlps = mlps[:, -args.last_layers_only:]
+
+        # Cast the saved arrays to the requested dtype (independent of model precision)
+        save_np_dtype = np.float16 if args.save_dtype == "fp16" else np.float32
+        attentions = attentions.astype(save_np_dtype)
+        mlps = mlps.astype(save_np_dtype)
+
         # Accumulate in memory
         attention_results.append(attentions)  # reduce the spatial dimension
         mlp_results.append(mlps)
@@ -285,7 +306,22 @@ def main(args):
           f"  {final_cls_attn_file}\n"
           f"  {final_labels_file}")
 
-    
+    # Also reassemble and save the final image embedding (sum of all components), matching the
+    # ResNet extractor (compute_activation_values_resnet), so downstream image-completeness /
+    # text-tower-probe steps read {dataset}_embeddings_... directly instead of re-summing on disk.
+    # Skipped for partial (last_layers_only) / patch-level (full_output) saves, where the sum is
+    # not the full CLS embedding.
+    if args.last_layers_only is None and not args.full_output:
+        final_emb_file = os.path.join(
+            args.output_dir, f"{args.dataset}_embeddings_{args.model}_seed_{args.seed}.npy")
+        attn_arr = np.load(final_attn_file, mmap_mode="r")
+        mlp_arr = np.load(final_mlp_file, mmap_mode="r")
+        save_np_dtype = np.float16 if args.save_dtype == "fp16" else np.float32
+        embeddings = (attn_arr.sum(axis=(1, 2)) + mlp_arr.sum(axis=1)).astype(save_np_dtype)
+        with open(final_emb_file, "wb") as f:
+            np.save(f, embeddings)
+        print(f"Saved image embeddings: {final_emb_file}")
+
     # DELETE CHUNK FILES
     print("Deleting chunk files...")
     all_chunks = (

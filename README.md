@@ -4,6 +4,7 @@
 
 ## General
 Information on how to run and play with our approach.
+
 ### Setup dependencies
 Use the provided [`environment.yml`](environment.yml) file to create a Conda environment with all the dependenctios:
 
@@ -12,31 +13,35 @@ conda env create -f environment.yml
 conda activate MT
 pip install -e llava-fork
 ```
-#### Download Dataset(s)
-Please download the Imagenet dataset from [here](http://calvin-vision.net/bigstuff/proj-imagenet/data/gtsegs_ijcv.mat):
+### Download Dataset(s)
+Download all datasets listed in `experiments_info.json` into `./datasets/`.
 
 ```bash
-cd datasets
-mkdir imagenet
-cd imagenet
-wget http://calvin-vision.net/bigstuff/proj-imagenet/data/gtsegs_ijcv.mat
-wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_devkit_t12.tar.gz --no-check-certificate
-wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar --no-check-certificate
+python -m utils.datasets.download_datasets
 ```
 
-To download the Waterbirds datasets, run:
+### Derive activation(s)
+Derive activations for all the models listed in `experiments_info.json` over the datasets previously downloaded,
+using a subset of data if required.
+
 ```bash
-cd datasets
-wget https://nlp.stanford.edu/data/dro/waterbird_complete95_forest2water2.tar.gz
-tar -xf  waterbird_complete95_forest2water2.tar.gz
+python -m utils.scripts.extract_activations
 ```
+
+
+### Derive Explanations:
+Run PCLens (`svd_data_approx`) or another algorithm over the gathered activations and get per model-dataset pair `.jsonl` explanations (each PC labelled by top texts **and** images) plus a `zero_shot_accuracy.txt` table of the reconstructions.
+```bash
+python -m utils.scripts.run_explanations
+```
+
+### Run PCLens
+
 
 ### Test
 First run the Notebook prepare_data.ipynb to setup all the necessary data for the experiments.
 Then use the Notebook playground.ipynb to play around with the different approaches.
 
-## Specific
-Explanations on the individual functions used on the Notebooks under General.
 
 ### Preprocessing
 To obtain the projected residual stream components for the ImageNet validation set, including the contributions from multi-head attentions and MLPs, please run one of the following instructions:

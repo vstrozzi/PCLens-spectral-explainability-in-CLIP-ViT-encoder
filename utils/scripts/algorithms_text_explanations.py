@@ -58,9 +58,11 @@ def svd_data_approx(data, text_features, texts, layer, head, text_per_princ_comp
     text_features = text_features / text_features_norm @ vh.T
     
     # Return the closest text_features in singular space of data matrix of top iters princ_comp
-    simil_matrix = text_features.T  # Get the strongest contribution of each text feature to the princ_comps
-    indexes_max = torch.squeeze(torch.argsort(simil_matrix, dim=-1, descending=True))[:rank, :text_per_princ_comp]
-    indexes_min = torch.squeeze(torch.argsort(simil_matrix, dim=-1))[:rank, :text_per_princ_comp]
+    simil_matrix = text_features.T  # [rank, M] strongest contribution of each text feature to the princ_comps
+    # NB: no torch.squeeze -- with rank == 1 (e.g. a 2-row class-name text set) it would collapse the
+    # [rank, M] sort to 1-D and break the 2-D slice below.
+    indexes_max = torch.argsort(simil_matrix, dim=-1, descending=True)[:rank, :text_per_princ_comp]
+    indexes_min = torch.argsort(simil_matrix, dim=-1)[:rank, :text_per_princ_comp]
 
     # Total strength princ_comps
     s = s**2

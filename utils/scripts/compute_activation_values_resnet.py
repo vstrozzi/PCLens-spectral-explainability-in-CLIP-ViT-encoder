@@ -9,11 +9,15 @@ Saved arrays ({dataset}_{type}_{model}_seed_{seed}.npy):
     attn        [N, L+1, H, d]   c_{l,h}(I)   (l=0 stem .. L blocks; maps onto ViT [N,l,h,d])
     mlp         [N,   1,   d]     sum_h c_{P,h}(I) + out-proj bias (content-free positional term)
     labels      [N]
-    embeddings  [N, d]            = attn.sum((1,2)) + mlp.sum(1) = visual(I)  (exact)
+    embeddings  [N, d]            = attn.sum((1,2)) + mlp.sum(1)
     poolattn    [N, H, K+1]       frozen class-token pooling weights a^h(I)
 
-The identity  attn.sum((1,2)) + mlp.sum(1) == visual(I)  holds to numerical precision
-(the runner asserts it on the first batch).
+By default (--normalize True, matching the ViT/text pipeline) every component is divided
+by ||visual(I)||, so the identity is
+    attn.sum((1,2)) + mlp.sum(1) == visual(I)/||visual(I)|| == encode_image(I, normalize=True).
+With --normalize False the components keep their raw scale and sum to the un-normalized
+visual(I) exactly. Either way the runner asserts the raw decomposition is exact on the
+first batch (verify_decomposition, before the optional normalization).
 
 Adapted from utils/scripts/compute_activation_values.py (Gandelsman et al., MIT).
 """
@@ -41,6 +45,16 @@ def parse_int_or_none(value):
         return None
 
 
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ("yes", "true", "t", "y", "1"):
+        return True
+    if v.lower() in ("no", "false", "f", "n", "0"):
+        return False
+    raise argparse.ArgumentTypeError("Boolean value expected.")
+
+
 def get_args_parser():
     parser = argparse.ArgumentParser("ResNet PRS - exact layer x head decomposition", add_help=False)
     parser.add_argument("--batch_size", default=8, type=int)
@@ -58,6 +72,17 @@ def get_args_parser():
     parser.add_argument("--max_nr_samples_before_writing", default=500, type=int)
     parser.add_argument("--dtype", default="float32", choices=["float32", "float16"],
                         help="storage dtype for the component arrays")
+    parser.add_argument("--normalize", default=True, type=str2bool,
+                        help="Divide every component by ||visual(image)|| so they sum to the "
+                             "L2-normalized embedding, matching the ViT/text pipeline "
+                             "(encode_image(normalize=True)). False keeps the exact raw decomposition "
+                             "that sums to the un-normalized visual(image). Ignored when --vision_proj False.")
+    parser.add_argument("--vision_proj", default=True, type=str2bool,
+                        help="Apply the attnpool output projection W_o so components live in the "
+                             "CLIP space (out_dim). False saves the pre-projection per-head value "
+                             "stream (dim C//H, e.g. 64) with W_o factored out; the projection "
+                             "(W_o, b_o) is written to {dataset}_out_proj_{model}_seed_{seed}.npz so "
+                             "the embedding is recoverable. --normalize is ignored in this mode.")
     return parser
 
 
@@ -73,8 +98,20 @@ def main(args):
     visual = model.visual
     assert hasattr(visual, "attnpool"), f"{args.model} is not a ModifiedResNet CLIP model"
     n_blocks = 1 + sum(len(getattr(visual, f"layer{i}")) for i in range(1, 5))
-    print(f"{args.model}: L+1={n_blocks} block components, H={visual.attnpool.num_heads} heads, "
-          f"d={visual.attnpool.c_proj.out_features}")
+    n_heads = visual.attnpool.num_heads
+    out_dim = visual.attnpool.c_proj.out_features
+    C = visual.attnpool.v_proj.in_features
+    Wo, bo = visual.get_output_projection()  # attnpool output projection W_o [out_dim, C], b_o
+    print(f"{args.model}: L+1={n_blocks} block components, H={n_heads} heads, "
+          f"d={out_dim if args.vision_proj else C // n_heads}"
+          f"{'' if args.vision_proj else ' (pre-projection; W_o factored out)'}")
+    if not args.vision_proj:
+        # Persist the factored-out projection so the embedding is recoverable without the model.
+        np.savez(os.path.join(args.output_dir,
+                              f"{args.dataset}_out_proj_{args.model}_seed_{args.seed}.npz"),
+                 weight=Wo.detach().cpu().numpy(), bias=bo.detach().cpu().numpy())
+        if args.normalize:
+            print("  (--normalize ignored: no CLIP-space norm in pre-projection mode)")
 
     if args.dataset == "imagenet":
         ds = ImageNet(root=args.data_path + "imagenet/", split="val", transform=preprocess)
@@ -121,16 +158,30 @@ def main(args):
         total_seen += image.shape[0]
         buffered += image.shape[0]
         image = image.to(args.device, non_blocking=True)
-        out = decompose_resnet_image(visual, image, check=(i == 0))  # assert exactness on 1st batch
-        c_lh = out["c_lh"]                       # [B, L+1, H, d]
-        c_pos = out["c_pos"]                     # [B, d]
-        emb = c_lh.sum(dim=(1, 2)) + c_pos       # [B, d] == visual(image)
+        out = decompose_resnet_image(visual, image, check=(i == 0),  # assert exactness on 1st batch
+                                     vision_proj=args.vision_proj)
+        c_lh = out["c_lh"]                        # [B, L+1, H, d]  (d=out_dim proj, else dh)
+        c_pos = out["c_pos"]                      # [B, d] (proj) or [B, H, dh] (pre-projection)
+        if args.vision_proj:
+            emb = c_lh.sum(dim=(1, 2)) + c_pos    # [B, out_dim] == visual(image)
+        else:
+            # Re-apply the factored-out projection to recover the embedding for saving.
+            Wo_r = Wo.reshape(out_dim, n_heads, C // n_heads)      # [out_dim, H, dh]
+            pooled = c_lh.sum(dim=1) + c_pos                       # [B, H, dh]
+            emb = torch.einsum("bhd,ohd->bo", pooled, Wo_r) + bo[None, :]
         if i == 0:
-            e = verify_decomposition(visual, image, verbose=True)
+            e = verify_decomposition(visual, image, verbose=True, vision_proj=args.vision_proj)
             print(f"  first-batch sum-recovery max abs err = {e:.2e}")
+        if args.normalize and args.vision_proj:
+            # Per-sample scalar: sum(components)=emb, so dividing each by ||emb|| makes them
+            # sum to emb/||emb|| == encode_image(image, normalize=True).
+            norm = emb.norm(dim=-1, keepdim=True).clamp_min(1e-12)  # [B, 1]
+            c_lh = c_lh / norm[:, :, None, None]
+            c_pos = c_pos / norm
+            emb = emb / norm
 
         buffers["attn"].append(c_lh.cpu().numpy().astype(store_dtype))
-        buffers["mlp"].append(c_pos[:, None, :].cpu().numpy().astype(store_dtype))
+        buffers["mlp"].append(c_pos[:, None].cpu().numpy().astype(store_dtype))
         buffers["labels"].append(labels.cpu().numpy())
         buffers["embeddings"].append(emb.cpu().numpy().astype(store_dtype))
         buffers["poolattn"].append(out["attn"].cpu().numpy().astype(store_dtype))
