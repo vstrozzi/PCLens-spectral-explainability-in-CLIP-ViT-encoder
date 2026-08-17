@@ -1,0 +1,35 @@
+######## component level, both towers
+Using local files
+[ViT-B-32/comp] 266 units (157 vision, 109 text); full model total=59.50 worst-group=28.50
+  top 5 by KEEP strength (carries the class axis):
+    text   L11H5     PC-1  keep=0.1319 remove=0.0550
+    text   L11H0     PC-1  keep=0.0836 remove=0.0198
+    text   MLP 12    PC-1  keep=0.0367 remove=0.0242
+    text   L11H7     PC-1  keep=0.0355 remove=0.0043
+    text   L8H0      PC-1  keep=0.0233 remove=0.0037
+  top 5 by REMOVE strength (the spurious background directions):
+    text   L11H5     PC-1  remove=0.0550 keep=0.1319
+    text   L6H1      PC-1  remove=0.0281 keep=0.0152
+    text   L11H2     PC-1  remove=0.0260 keep=0.0198
+    text   MLP 12    PC-1  remove=0.0242 keep=0.0367
+    text   L8H1      PC-1  remove=0.0239 keep=0.0123
+  [greedy all units          forward ] kept=  164/266 total=55.95 worst-group=30.33
+  [greedy all units          backward] kept=  164/266 total=55.95 worst-group=30.33
+  [greedy query pool M=60    forward ] kept=   47/266 total=67.35 worst-group=53.86
+  [greedy query pool M=60    backward] kept=  243/266 total=53.35 worst-group=30.85
+[ViT-B-32/comp] wrote concept_{rank,eval,trace}
+######## PC level, both towers
+Using local files
+[ViT-B-32/pc] 2112 units (1241 vision, 871 text); full model total=59.50 worst-group=28.50
+  top 5 by KEEP strength (carries the class axis):
+    vision L11H7     PC0   keep=0.0168 remove=0.0030
+    text   L11H5     PC3   keep=0.0111 remove=0.0027
+    vision L11H9     PC0   keep=0.0088 remove=0.0129
+    text   L6H1      PC3   keep=0.0081 remove=0.0125
+    vision L11H7     PC1   keep=0.0078 remove=0.0000
+  top 5 by REMOVE strength (the spurious background directions):
+    vision L11H9     PC0   remove=0.0129 keep=0.0088
+    text   L6H1      PC3   remove=0.0125 keep=0.0081
+    vision L10H1     PC0   remove=0.0085 keep=0.0058
+    text   L6H1      PC1   remove=0.0068 keep=0.0038
+    text   L8H1      PC2   remove=0.0066 keep=0.0038

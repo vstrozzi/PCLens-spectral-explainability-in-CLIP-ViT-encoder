@@ -1,0 +1,951 @@
+######## Q3b selectivity ViT-B-32
+Using local files
+Using local files
+[ViT-B-32] full model: task(bird)=60.15%  shortcut(background)=79.30%  - both read out zero-shot with fixed prompts
+[ViT-B-32] most selective single components (shortcut falls, task held):
+    L10H1      dtask= +0.15  dshortcut= -2.45
+    L10H3      dtask= +0.40  dshortcut= -1.60
+    L9H1       dtask= +0.55  dshortcut= -1.25
+    MLP 12     dtask= +1.10  dshortcut= -0.65
+    L1H6       dtask= +0.40  dshortcut= -0.75
+    MLP 6      dtask= +0.35  dshortcut= -0.75
+    L11H9      dtask= -0.35  dshortcut= -1.30
+    L11H10     dtask= +0.25  dshortcut= -0.55
+  [rep0 forward       ] kept= 129  task 60.1->61.2  shortcut 79.3->71.1  worst-group=50.0
+  [rep0 forward+swap  ] kept= 130  task 60.1->59.9  shortcut 79.3->67.0  worst-group=50.1
+  [rep0 backward      ] kept= 156  task 60.1->59.9  shortcut 79.3->71.3  worst-group=54.1
+  [rep0 backward+swap ] kept= 156  task 60.1->59.9  shortcut 79.3->71.3  worst-group=54.1
+  [rep1 forward       ] kept= 140  task 60.1->61.3  shortcut 79.3->70.6  worst-group=49.3
+  [rep1 forward+swap  ] kept= 140  task 60.1->61.3  shortcut 79.3->70.6  worst-group=49.3
+  [rep1 backward      ] kept= 153  task 60.1->60.7  shortcut 79.3->71.5  worst-group=59.7
+  [rep1 backward+swap ] kept= 149  task 60.1->61.2  shortcut 79.3->71.3  worst-group=59.7
+  [rep2 forward       ] kept= 142  task 60.1->61.9  shortcut 79.3->73.1  worst-group=24.1
+  [rep2 forward+swap  ] kept= 142  task 60.1->62.2  shortcut 79.3->72.6  worst-group=25.4
+  [rep2 backward      ] kept= 152  task 60.1->59.5  shortcut 79.3->70.3  worst-group=20.3
+  [rep2 backward+swap ] kept= 152  task 60.1->59.7  shortcut 79.3->69.8  worst-group=19.2
+[ViT-B-32] wrote selectivity_{comp,pool}
+######## Q1 n-pairs ViT-B-32
+[ViT-B-32] 2000 images, 266 components; full model total=59.50 worst-group=28.50
+  [informative n=  1] worst-group for=6.1  for=10.0  bac=37.0  bac=37.0
+  [informative n=  1] worst-group for=20.3  for=14.9  bac=43.8  bac=36.4
+  [informative n=  1] worst-group for=33.6  for=29.8  bac=51.3  bac=46.8
+  [informative n=  1] worst-group for=36.7  for=34.3  bac=48.4  bac=48.8
+  [informative n=  1] worst-group for=34.9  for=32.3  bac=45.4  bac=45.7
+  [informative n=  2] worst-group for=58.6  for=54.9  bac=41.7  bac=41.7
+  [informative n=  2] worst-group for=48.1  for=45.2  bac=38.1  bac=38.5
+  [informative n=  2] worst-group for=45.3  for=43.4  bac=35.0  bac=41.0
+  [informative n=  2] worst-group for=45.3  for=43.8  bac=44.4  bac=48.9
+  [informative n=  2] worst-group for=49.3  for=48.2  bac=40.4  bac=44.2
+  [informative n=  5] worst-group for=62.3  for=61.5  bac=54.6  bac=55.4
+  [informative n=  5] worst-group for=43.9  for=43.3  bac=41.4  bac=41.8
+  [informative n=  5] worst-group for=49.2  for=48.7  bac=47.2  bac=47.4
+  [informative n=  5] worst-group for=54.6  for=51.4  bac=47.8  bac=47.9
+  [informative n=  5] worst-group for=52.0  for=49.9  bac=43.8  bac=43.9
+  [informative n= 10] worst-group for=47.9  for=45.5  bac=44.5  bac=43.9
+  [informative n= 10] worst-group for=51.4  for=50.8  bac=37.9  bac=37.6
+  [informative n= 10] worst-group for=44.3  for=42.2  bac=30.9  bac=29.4
+  [informative n= 10] worst-group for=48.6  for=47.1  bac=37.2  bac=36.6
+  [informative n= 10] worst-group for=50.2  for=48.9  bac=38.3  bac=37.6
+  [informative n= 25] worst-group for=54.1  for=53.6  bac=20.9  bac=20.9
+  [informative n= 25] worst-group for=49.5  for=50.1  bac=23.9  bac=25.8
+  [informative n= 25] worst-group for=50.3  for=50.9  bac=32.4  bac=33.7
+  [informative n= 25] worst-group for=54.5  for=54.9  bac=31.8  bac=32.5
+  [informative n= 25] worst-group for=54.5  for=55.0  bac=32.0  bac=34.4
+  [informative n=100] worst-group for=49.4  for=50.3  bac=44.4  bac=44.4
+  [informative n=100] worst-group for=46.7  for=47.4  bac=41.4  bac=41.4
+  [informative n=100] worst-group for=47.0  for=47.4  bac=40.4  bac=40.3
+  [informative n=100] worst-group for=44.9  for=45.1  bac=39.2  bac=39.2
+  [informative n=100] worst-group for=46.2  for=46.0  bac=36.7  bac=36.9
+  [random      n=  1] worst-group for=53.7  for=53.7  bac=38.5  bac=38.5
+  [random      n=  1] worst-group for=48.6  for=48.6  bac=36.7  bac=36.7
+  [random      n=  1] worst-group for=52.2  for=52.2  bac=41.4  bac=41.9
+  [random      n=  1] worst-group for=43.7  for=41.1  bac=34.0  bac=34.4
+  [random      n=  1] worst-group for=37.4  for=34.3  bac=29.6  bac=29.9
+  [random      n=  2] worst-group for=32.1  for=53.8  bac=40.3  bac=40.3
+  [random      n=  2] worst-group for=30.3  for=41.0  bac=42.3  bac=42.4
+  [random      n=  2] worst-group for=40.6  for=47.7  bac=44.4  bac=44.5
+  [random      n=  2] worst-group for=41.2  for=46.9  bac=41.9  bac=42.2
+  [random      n=  2] worst-group for=42.0  for=46.6  bac=40.4  bac=40.7
+  [random      n=  5] worst-group for=40.3  for=40.3  bac=38.7  bac=35.4
+  [random      n=  5] worst-group for=32.2  for=31.6  bac=49.1  bac=47.4
+  [random      n=  5] worst-group for=34.1  for=35.6  bac=44.4  bac=43.3
+  [random      n=  5] worst-group for=37.3  for=38.4  bac=45.2  bac=44.4
+  [random      n=  5] worst-group for=40.4  for=41.9  bac=47.9  bac=47.3
+  [random      n= 10] worst-group for=75.6  for=75.6  bac=72.7  bac=70.6
+  [random      n= 10] worst-group for=70.4  for=70.4  bac=68.5  bac=67.4
+  [random      n= 10] worst-group for=65.4  for=67.0  bac=63.7  bac=63.2
+  [random      n= 10] worst-group for=67.3  for=68.4  bac=65.6  bac=65.2
+  [random      n= 10] worst-group for=65.6  for=67.0  bac=63.6  bac=63.4
+  [random      n= 25] worst-group for=65.6  for=65.3  bac=67.6  bac=66.5
+  [random      n= 25] worst-group for=66.8  for=66.8  bac=70.2  bac=69.6
+  [random      n= 25] worst-group for=67.6  for=66.7  bac=69.3  bac=68.9
+  [random      n= 25] worst-group for=67.8  for=66.9  bac=68.5  bac=68.2
+  [random      n= 25] worst-group for=67.5  for=66.2  bac=69.3  bac=68.5
+  [random      n=100] worst-group for=73.1  for=73.2  bac=71.8  bac=72.3
+  [random      n=100] worst-group for=75.1  for=75.1  bac=73.2  bac=73.5
+  [random      n=100] worst-group for=74.2  for=74.2  bac=74.6  bac=74.8
+  [random      n=100] worst-group for=73.8  for=73.8  bac=73.9  bac=73.9
+  [random      n=100] worst-group for=74.3  for=74.7  bac=74.3  bac=74.4
+[ViT-B-32] wrote npairs_{eval,trace}
+######## Q2 stability ViT-B-32 (informative arm)
+[ViT-B-32] 266 components; 20 independent informative draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.143 chance=0.011  EXCESS=+0.132
+  [forward        prefix k=10 ] Jaccard=0.164 chance=0.020  EXCESS=+0.144
+  [forward        prefix k=15 ] Jaccard=0.176 chance=0.030  EXCESS=+0.147
+  [forward        prefix k=25 ] Jaccard=0.212 chance=0.050  EXCESS=+0.162
+  [forward        prefix k=50 ] Jaccard=0.240 chance=0.104  EXCESS=+0.136
+  [forward        plateau     ] Jaccard=0.143 chance=0.040  EXCESS=+0.103
+  [forward        full        ] Jaccard=0.351 chance=0.321  EXCESS=+0.030
+  [forward+swap   prefix k=5  ] Jaccard=0.143 chance=0.011  EXCESS=+0.132
+  [forward+swap   prefix k=10 ] Jaccard=0.164 chance=0.020  EXCESS=+0.144
+  [forward+swap   prefix k=15 ] Jaccard=0.176 chance=0.030  EXCESS=+0.146
+  [forward+swap   prefix k=25 ] Jaccard=0.212 chance=0.050  EXCESS=+0.162
+  [forward+swap   prefix k=50 ] Jaccard=0.241 chance=0.105  EXCESS=+0.135
+  [forward+swap   plateau     ] Jaccard=0.143 chance=0.041  EXCESS=+0.103
+  [forward+swap   full        ] Jaccard=0.350 chance=0.319  EXCESS=+0.031
+  [backward       prefix k=5  ] Jaccard=0.103 chance=0.011  EXCESS=+0.092
+  [backward       prefix k=10 ] Jaccard=0.142 chance=0.020  EXCESS=+0.122
+  [backward       prefix k=15 ] Jaccard=0.156 chance=0.030  EXCESS=+0.126
+  [backward       prefix k=25 ] Jaccard=0.160 chance=0.050  EXCESS=+0.110
+  [backward       prefix k=50 ] Jaccard=0.194 chance=0.105  EXCESS=+0.090
+  [backward       plateau     ] Jaccard=0.108 chance=0.039  EXCESS=+0.069
+  [backward       full        ] Jaccard=0.386 chance=0.361  EXCESS=+0.026
+  [backward+swap  prefix k=5  ] Jaccard=0.103 chance=0.011  EXCESS=+0.092
+  [backward+swap  prefix k=10 ] Jaccard=0.142 chance=0.019  EXCESS=+0.123
+  [backward+swap  prefix k=15 ] Jaccard=0.156 chance=0.030  EXCESS=+0.126
+  [backward+swap  prefix k=25 ] Jaccard=0.160 chance=0.051  EXCESS=+0.109
+  [backward+swap  prefix k=50 ] Jaccard=0.195 chance=0.103  EXCESS=+0.091
+  [backward+swap  plateau     ] Jaccard=0.108 chance=0.039  EXCESS=+0.069
+  [backward+swap  full        ] Jaccard=0.388 chance=0.360  EXCESS=+0.027
+[ViT-B-32] wrote stability_{pairs,summary}
+######## Q2 stability ViT-B-32 (random arm)
+[ViT-B-32] 266 components; 20 independent random draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.185 chance=0.011  EXCESS=+0.175
+  [forward        prefix k=10 ] Jaccard=0.152 chance=0.020  EXCESS=+0.132
+  [forward        prefix k=15 ] Jaccard=0.163 chance=0.030  EXCESS=+0.134
+  [forward        prefix k=25 ] Jaccard=0.184 chance=0.050  EXCESS=+0.133
+  [forward        prefix k=50 ] Jaccard=0.253 chance=0.104  EXCESS=+0.149
+  [forward        plateau     ] Jaccard=0.145 chance=0.025  EXCESS=+0.120
+  [forward        full        ] Jaccard=0.371 chance=0.352  EXCESS=+0.020
+  [forward+swap   prefix k=5  ] Jaccard=0.185 chance=0.011  EXCESS=+0.175
+  [forward+swap   prefix k=10 ] Jaccard=0.152 chance=0.020  EXCESS=+0.131
+  [forward+swap   prefix k=15 ] Jaccard=0.163 chance=0.030  EXCESS=+0.133
+  [forward+swap   prefix k=25 ] Jaccard=0.184 chance=0.050  EXCESS=+0.133
+  [forward+swap   prefix k=50 ] Jaccard=0.256 chance=0.105  EXCESS=+0.151
+  [forward+swap   plateau     ] Jaccard=0.145 chance=0.024  EXCESS=+0.121
+  [forward+swap   full        ] Jaccard=0.368 chance=0.345  EXCESS=+0.022
+  [backward       prefix k=5  ] Jaccard=0.071 chance=0.011  EXCESS=+0.060
+  [backward       prefix k=10 ] Jaccard=0.086 chance=0.021  EXCESS=+0.065
+  [backward       prefix k=15 ] Jaccard=0.100 chance=0.030  EXCESS=+0.070
+  [backward       prefix k=25 ] Jaccard=0.128 chance=0.049  EXCESS=+0.079
+  [backward       prefix k=50 ] Jaccard=0.179 chance=0.105  EXCESS=+0.074
+  [backward       plateau     ] Jaccard=0.088 chance=0.034  EXCESS=+0.054
+  [backward       full        ] Jaccard=0.411 chance=0.392  EXCESS=+0.019
+  [backward+swap  prefix k=5  ] Jaccard=0.071 chance=0.011  EXCESS=+0.059
+  [backward+swap  prefix k=10 ] Jaccard=0.086 chance=0.020  EXCESS=+0.066
+  [backward+swap  prefix k=15 ] Jaccard=0.100 chance=0.029  EXCESS=+0.070
+  [backward+swap  prefix k=25 ] Jaccard=0.128 chance=0.051  EXCESS=+0.077
+  [backward+swap  prefix k=50 ] Jaccard=0.180 chance=0.105  EXCESS=+0.074
+  [backward+swap  plateau     ] Jaccard=0.088 chance=0.034  EXCESS=+0.053
+  [backward+swap  full        ] Jaccard=0.414 chance=0.395  EXCESS=+0.019
+[ViT-B-32] wrote stability_{pairs,summary}
+######## Q3b selectivity ViT-B-16
+Using local files
+Using local files
+[ViT-B-16] full model: task(bird)=76.05%  shortcut(background)=71.35%  - both read out zero-shot with fixed prompts
+[ViT-B-16] most selective single components (shortcut falls, task held):
+    L10H10     dtask= +2.70  dshortcut= -5.45
+    L11H3      dtask= +0.95  dshortcut= -3.85
+    L11H6      dtask= +1.80  dshortcut= -1.65
+    L11H7      dtask= +0.10  dshortcut= -1.30
+    L11H10     dtask= -0.20  dshortcut= -1.20
+    L11H2      dtask= +0.80  dshortcut= +0.05
+    L11H1      dtask= +0.20  dshortcut= -0.50
+    L9H2       dtask= +0.25  dshortcut= -0.30
+  [rep0 forward       ] kept= 141  task 76.1->81.7  shortcut 71.4->53.5  worst-group=31.9
+  [rep0 forward+swap  ] kept= 134  task 76.1->83.1  shortcut 71.4->54.0  worst-group=48.4
+  [rep0 backward      ] kept= 163  task 76.1->82.6  shortcut 71.4->55.7  worst-group=68.6
+  [rep0 backward+swap ] kept= 163  task 76.1->82.6  shortcut 71.4->55.7  worst-group=68.6
+  [rep1 forward       ] kept= 151  task 76.1->79.1  shortcut 71.4->63.8  worst-group=50.1
+  [rep1 forward+swap  ] kept= 127  task 76.1->79.4  shortcut 71.4->63.9  worst-group=47.4
+  [rep1 backward      ] kept= 142  task 76.1->82.4  shortcut 71.4->56.2  worst-group=70.4
+  [rep1 backward+swap ] kept= 146  task 76.1->82.5  shortcut 71.4->55.1  worst-group=63.0
+  [rep2 forward       ] kept= 129  task 76.1->80.1  shortcut 71.4->57.9  worst-group=56.7
+  [rep2 forward+swap  ] kept= 129  task 76.1->80.1  shortcut 71.4->57.9  worst-group=56.7
+  [rep2 backward      ] kept= 130  task 76.1->79.4  shortcut 71.4->61.2  worst-group=57.6
+  [rep2 backward+swap ] kept= 130  task 76.1->79.4  shortcut 71.4->61.2  worst-group=57.6
+[ViT-B-16] wrote selectivity_{comp,pool}
+######## Q1 n-pairs ViT-B-16
+[ViT-B-16] 2000 images, 266 components; full model total=69.35 worst-group=38.52
+  [informative n=  1] worst-group for=7.8  for=13.2  bac=47.0  bac=47.0
+  [informative n=  1] worst-group for=7.3  for=9.8  bac=29.6  bac=29.6
+  [informative n=  1] worst-group for=25.2  for=28.1  bac=37.6  bac=37.6
+  [informative n=  1] worst-group for=34.9  for=37.1  bac=42.6  bac=42.6
+  [informative n=  1] worst-group for=33.4  for=35.6  bac=35.6  bac=35.6
+  [informative n=  2] worst-group for=43.8  for=50.5  bac=30.5  bac=30.5
+  [informative n=  2] worst-group for=36.8  for=40.2  bac=44.3  bac=44.5
+  [informative n=  2] worst-group for=40.9  for=46.5  bac=52.6  bac=51.2
+  [informative n=  2] worst-group for=48.3  for=52.5  bac=56.9  bac=55.9
+  [informative n=  2] worst-group for=50.5  for=55.5  bac=59.4  bac=58.5
+  [informative n=  5] worst-group for=47.5  for=54.4  bac=70.6  bac=70.7
+  [informative n=  5] worst-group for=55.8  for=59.2  bac=66.3  bac=66.3
+  [informative n=  5] worst-group for=55.8  for=58.9  bac=68.0  bac=68.0
+  [informative n=  5] worst-group for=53.9  for=56.2  bac=67.3  bac=67.4
+  [informative n=  5] worst-group for=48.2  for=50.7  bac=66.1  bac=66.5
+  [informative n= 10] worst-group for=54.0  for=49.5  bac=69.2  bac=69.2
+  [informative n= 10] worst-group for=46.3  for=44.0  bac=67.4  bac=66.2
+  [informative n= 10] worst-group for=41.2  for=39.4  bac=54.4  bac=54.7
+  [informative n= 10] worst-group for=47.0  for=45.7  bac=56.1  bac=56.3
+  [informative n= 10] worst-group for=47.2  for=46.7  bac=54.7  bac=54.3
+  [informative n= 25] worst-group for=55.4  for=55.4  bac=60.2  bac=57.3
+  [informative n= 25] worst-group for=52.8  for=55.7  bac=53.7  bac=52.3
+  [informative n= 25] worst-group for=50.1  for=52.1  bac=54.8  bac=53.1
+  [informative n= 25] worst-group for=56.6  for=57.2  bac=56.3  bac=54.8
+  [informative n= 25] worst-group for=51.4  for=50.7  bac=55.8  bac=54.2
+  [informative n=100] worst-group for=38.1  for=38.8  bac=46.3  bac=46.5
+  [informative n=100] worst-group for=47.3  for=47.7  bac=48.4  bac=49.1
+  [informative n=100] worst-group for=50.7  for=51.1  bac=49.9  bac=50.4
+  [informative n=100] worst-group for=52.3  for=52.6  bac=48.7  bac=47.4
+  [informative n=100] worst-group for=53.9  for=54.1  bac=49.5  bac=48.2
+  [random      n=  1] worst-group for=27.5  for=23.0  bac=7.4  bac=7.4
+  [random      n=  1] worst-group for=30.8  for=28.6  bac=25.3  bac=24.2
+  [random      n=  1] worst-group for=43.9  for=42.4  bac=29.5  bac=28.8
+  [random      n=  1] worst-group for=38.2  for=37.4  bac=30.8  bac=32.3
+  [random      n=  1] worst-group for=37.2  for=36.9  bac=27.5  bac=28.7
+  [random      n=  2] worst-group for=37.0  for=37.6  bac=57.4  bac=55.8
+  [random      n=  2] worst-group for=21.5  for=23.4  bac=43.8  bac=43.1
+  [random      n=  2] worst-group for=36.0  for=37.3  bac=40.9  bac=40.4
+  [random      n=  2] worst-group for=33.2  for=33.5  bac=38.7  bac=38.3
+  [random      n=  2] worst-group for=37.9  for=39.1  bac=44.5  bac=44.5
+  [random      n=  5] worst-group for=18.5  for=18.9  bac=35.8  bac=35.8
+  [random      n=  5] worst-group for=40.7  for=41.1  bac=52.2  bac=50.3
+  [random      n=  5] worst-group for=45.5  for=45.5  bac=53.5  bac=51.3
+  [random      n=  5] worst-group for=39.4  for=39.2  bac=55.4  bac=53.4
+  [random      n=  5] worst-group for=43.9  for=43.7  bac=55.8  bac=54.8
+  [random      n= 10] worst-group for=67.5  for=67.5  bac=71.7  bac=71.1
+  [random      n= 10] worst-group for=70.4  for=70.4  bac=68.8  bac=67.4
+  [random      n= 10] worst-group for=68.0  for=68.4  bac=66.6  bac=65.7
+  [random      n= 10] worst-group for=69.1  for=69.7  bac=68.4  bac=67.7
+  [random      n= 10] worst-group for=68.3  for=68.5  bac=66.4  bac=65.8
+  [random      n= 25] worst-group for=68.4  for=68.4  bac=64.2  bac=64.4
+  [random      n= 25] worst-group for=72.0  for=72.0  bac=64.6  bac=64.7
+  [random      n= 25] worst-group for=72.9  for=72.9  bac=67.4  bac=67.7
+  [random      n= 25] worst-group for=74.5  for=74.3  bac=67.0  bac=67.3
+  [random      n= 25] worst-group for=74.7  for=74.5  bac=68.9  bac=69.1
+  [random      n=100] worst-group for=85.2  for=85.2  bac=75.0  bac=75.1
+  [random      n=100] worst-group for=82.5  for=82.3  bac=72.2  bac=72.3
+  [random      n=100] worst-group for=82.3  for=82.2  bac=74.2  bac=73.9
+  [random      n=100] worst-group for=82.3  for=82.1  bac=75.4  bac=74.9
+  [random      n=100] worst-group for=81.2  for=81.1  bac=75.7  bac=74.7
+[ViT-B-16] wrote npairs_{eval,trace}
+######## Q2 stability ViT-B-16 (informative arm)
+[ViT-B-16] 266 components; 20 independent informative draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.166 chance=0.011  EXCESS=+0.155
+  [forward        prefix k=10 ] Jaccard=0.196 chance=0.020  EXCESS=+0.176
+  [forward        prefix k=15 ] Jaccard=0.192 chance=0.030  EXCESS=+0.163
+  [forward        prefix k=25 ] Jaccard=0.199 chance=0.050  EXCESS=+0.149
+  [forward        prefix k=50 ] Jaccard=0.239 chance=0.104  EXCESS=+0.135
+  [forward        plateau     ] Jaccard=0.168 chance=0.022  EXCESS=+0.147
+  [forward        full        ] Jaccard=0.361 chance=0.322  EXCESS=+0.039
+  [forward+swap   prefix k=5  ] Jaccard=0.166 chance=0.011  EXCESS=+0.155
+  [forward+swap   prefix k=10 ] Jaccard=0.196 chance=0.019  EXCESS=+0.177
+  [forward+swap   prefix k=15 ] Jaccard=0.192 chance=0.030  EXCESS=+0.162
+  [forward+swap   prefix k=25 ] Jaccard=0.199 chance=0.050  EXCESS=+0.149
+  [forward+swap   prefix k=50 ] Jaccard=0.241 chance=0.105  EXCESS=+0.136
+  [forward+swap   plateau     ] Jaccard=0.168 chance=0.021  EXCESS=+0.147
+  [forward+swap   full        ] Jaccard=0.358 chance=0.314  EXCESS=+0.044
+  [backward       prefix k=5  ] Jaccard=0.115 chance=0.010  EXCESS=+0.105
+  [backward       prefix k=10 ] Jaccard=0.157 chance=0.020  EXCESS=+0.137
+  [backward       prefix k=15 ] Jaccard=0.153 chance=0.030  EXCESS=+0.124
+  [backward       prefix k=25 ] Jaccard=0.171 chance=0.050  EXCESS=+0.121
+  [backward       prefix k=50 ] Jaccard=0.204 chance=0.105  EXCESS=+0.099
+  [backward       plateau     ] Jaccard=0.111 chance=0.040  EXCESS=+0.071
+  [backward       full        ] Jaccard=0.400 chance=0.351  EXCESS=+0.049
+  [backward+swap  prefix k=5  ] Jaccard=0.115 chance=0.011  EXCESS=+0.105
+  [backward+swap  prefix k=10 ] Jaccard=0.160 chance=0.020  EXCESS=+0.140
+  [backward+swap  prefix k=15 ] Jaccard=0.157 chance=0.029  EXCESS=+0.127
+  [backward+swap  prefix k=25 ] Jaccard=0.170 chance=0.050  EXCESS=+0.120
+  [backward+swap  prefix k=50 ] Jaccard=0.204 chance=0.104  EXCESS=+0.100
+  [backward+swap  plateau     ] Jaccard=0.114 chance=0.044  EXCESS=+0.070
+  [backward+swap  full        ] Jaccard=0.403 chance=0.354  EXCESS=+0.049
+[ViT-B-16] wrote stability_{pairs,summary}
+######## Q2 stability ViT-B-16 (random arm)
+[ViT-B-16] 266 components; 20 independent random draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.203 chance=0.011  EXCESS=+0.192
+  [forward        prefix k=10 ] Jaccard=0.190 chance=0.020  EXCESS=+0.170
+  [forward        prefix k=15 ] Jaccard=0.195 chance=0.030  EXCESS=+0.165
+  [forward        prefix k=25 ] Jaccard=0.236 chance=0.050  EXCESS=+0.186
+  [forward        prefix k=50 ] Jaccard=0.234 chance=0.104  EXCESS=+0.130
+  [forward        plateau     ] Jaccard=0.159 chance=0.022  EXCESS=+0.137
+  [forward        full        ] Jaccard=0.358 chance=0.338  EXCESS=+0.021
+  [forward+swap   prefix k=5  ] Jaccard=0.203 chance=0.010  EXCESS=+0.193
+  [forward+swap   prefix k=10 ] Jaccard=0.190 chance=0.020  EXCESS=+0.170
+  [forward+swap   prefix k=15 ] Jaccard=0.195 chance=0.030  EXCESS=+0.165
+  [forward+swap   prefix k=25 ] Jaccard=0.236 chance=0.050  EXCESS=+0.186
+  [forward+swap   prefix k=50 ] Jaccard=0.234 chance=0.105  EXCESS=+0.130
+  [forward+swap   plateau     ] Jaccard=0.159 chance=0.022  EXCESS=+0.137
+  [forward+swap   full        ] Jaccard=0.353 chance=0.330  EXCESS=+0.023
+  [backward       prefix k=5  ] Jaccard=0.070 chance=0.011  EXCESS=+0.059
+  [backward       prefix k=10 ] Jaccard=0.099 chance=0.020  EXCESS=+0.079
+  [backward       prefix k=15 ] Jaccard=0.124 chance=0.030  EXCESS=+0.094
+  [backward       prefix k=25 ] Jaccard=0.132 chance=0.049  EXCESS=+0.083
+  [backward       prefix k=50 ] Jaccard=0.162 chance=0.104  EXCESS=+0.058
+  [backward       plateau     ] Jaccard=0.072 chance=0.024  EXCESS=+0.048
+  [backward       full        ] Jaccard=0.401 chance=0.381  EXCESS=+0.020
+  [backward+swap  prefix k=5  ] Jaccard=0.070 chance=0.011  EXCESS=+0.059
+  [backward+swap  prefix k=10 ] Jaccard=0.099 chance=0.020  EXCESS=+0.079
+  [backward+swap  prefix k=15 ] Jaccard=0.124 chance=0.030  EXCESS=+0.094
+  [backward+swap  prefix k=25 ] Jaccard=0.132 chance=0.050  EXCESS=+0.082
+  [backward+swap  prefix k=50 ] Jaccard=0.163 chance=0.105  EXCESS=+0.058
+  [backward+swap  plateau     ] Jaccard=0.072 chance=0.024  EXCESS=+0.048
+  [backward+swap  full        ] Jaccard=0.401 chance=0.380  EXCESS=+0.021
+[ViT-B-16] wrote stability_{pairs,summary}
+######## Q3b selectivity ViT-L-14
+Using local files
+Using local files
+[ViT-L-14] full model: task(bird)=74.75%  shortcut(background)=66.55%  - both read out zero-shot with fixed prompts
+[ViT-L-14] most selective single components (shortcut falls, task held):
+    L23H5      dtask= +3.20  dshortcut= -2.95
+    L22H12     dtask= +1.15  dshortcut= -2.00
+    L22H2      dtask= +1.20  dshortcut= -1.50
+    L23H3      dtask= +1.20  dshortcut= -0.85
+    L22H4      dtask= +0.55  dshortcut= -1.00
+    L21H15     dtask= +0.30  dshortcut= -1.20
+    L23H7      dtask= +0.30  dshortcut= -0.55
+    L18H7      dtask= +0.40  dshortcut= -0.40
+  [rep0 forward       ] kept= 287  task 74.8->83.7  shortcut 66.5->55.8  worst-group=37.7
+  [rep0 forward+swap  ] kept= 287  task 74.8->83.7  shortcut 66.5->55.8  worst-group=37.7
+  [rep0 backward      ] kept= 309  task 74.8->82.9  shortcut 66.5->59.4  worst-group=72.6
+  [rep0 backward+swap ] kept= 309  task 74.8->82.9  shortcut 66.5->59.4  worst-group=72.6
+  [rep1 forward       ] kept= 278  task 74.8->85.3  shortcut 66.5->52.2  worst-group=64.8
+  [rep1 forward+swap  ] kept= 278  task 74.8->85.3  shortcut 66.5->52.2  worst-group=64.8
+  [rep1 backward      ] kept= 329  task 74.8->84.2  shortcut 66.5->53.0  worst-group=61.6
+  [rep1 backward+swap ] kept= 333  task 74.8->84.1  shortcut 66.5->52.9  worst-group=61.1
+  [rep2 forward       ] kept= 275  task 74.8->83.8  shortcut 66.5->55.7  worst-group=36.8
+  [rep2 forward+swap  ] kept= 268  task 74.8->83.3  shortcut 66.5->55.2  worst-group=34.8
+  [rep2 backward      ] kept= 316  task 74.8->85.1  shortcut 66.5->51.9  worst-group=68.3
+  [rep2 backward+swap ] kept= 321  task 74.8->84.8  shortcut 66.5->51.9  worst-group=76.1
+[ViT-L-14] wrote selectivity_{comp,pool}
+######## Q1 n-pairs ViT-L-14
+[ViT-L-14] 2000 images, 566 components; full model total=72.20 worst-group=49.41
+  [informative n=  1] worst-group for=20.4  for=20.3  bac=53.5  bac=54.6
+  [informative n=  1] worst-group for=15.1  for=15.0  bac=53.7  bac=54.3
+  [informative n=  1] worst-group for=20.8  for=19.9  bac=39.4  bac=39.7
+  [informative n=  1] worst-group for=33.3  for=32.6  bac=41.1  bac=41.4
+  [informative n=  1] worst-group for=27.5  for=27.0  bac=35.9  bac=35.5
+  [informative n=  2] worst-group for=61.3  for=60.9  bac=61.9  bac=49.9
+  [informative n=  2] worst-group for=43.8  for=41.6  bac=52.3  bac=44.2
+  [informative n=  2] worst-group for=38.3  for=36.8  bac=57.8  bac=52.4
+  [informative n=  2] worst-group for=44.5  for=42.3  bac=59.8  bac=56.3
+  [informative n=  2] worst-group for=42.9  for=42.7  bac=62.8  bac=60.2
+  [informative n=  5] worst-group for=71.0  for=71.8  bac=68.7  bac=68.7
+  [informative n=  5] worst-group for=59.5  for=65.4  bac=69.7  bac=69.1
+  [informative n=  5] worst-group for=67.4  for=71.2  bac=69.2  bac=69.3
+  [informative n=  5] worst-group for=67.5  for=71.0  bac=70.7  bac=70.8
+  [informative n=  5] worst-group for=68.0  for=70.4  bac=67.6  bac=70.9
+  [informative n= 10] worst-group for=75.8  for=82.1  bac=57.6  bac=58.6
+  [informative n= 10] worst-group for=75.3  for=78.1  bac=60.6  bac=60.4
+  [informative n= 10] worst-group for=73.6  for=75.4  bac=66.0  bac=65.8
+  [informative n= 10] worst-group for=75.8  for=76.8  bac=68.7  bac=68.4
+  [informative n= 10] worst-group for=71.0  for=70.4  bac=63.7  bac=63.4
+  [informative n= 25] worst-group for=58.9  for=50.2  bac=43.4  bac=44.4
+  [informative n= 25] worst-group for=56.7  for=53.4  bac=47.7  bac=52.8
+  [informative n= 25] worst-group for=60.8  for=59.2  bac=50.5  bac=52.9
+  [informative n= 25] worst-group for=64.6  for=62.2  bac=53.7  bac=55.6
+  [informative n= 25] worst-group for=61.4  for=58.6  bac=52.6  bac=54.4
+  [informative n=100] worst-group for=65.6  for=66.5  bac=59.6  bac=57.6
+  [informative n=100] worst-group for=63.5  for=63.6  bac=60.4  bac=60.9
+  [informative n=100] worst-group for=61.3  for=61.0  bac=55.9  bac=55.9
+  [informative n=100] worst-group for=58.7  for=59.4  bac=55.2  bac=55.6
+  [informative n=100] worst-group for=57.7  for=57.1  bac=54.7  bac=55.1
+  [random      n=  1] worst-group for=39.4  for=39.4  bac=26.2  bac=26.2
+  [random      n=  1] worst-group for=33.8  for=33.8  bac=38.6  bac=37.5
+  [random      n=  1] worst-group for=29.3  for=29.4  bac=44.4  bac=43.6
+  [random      n=  1] worst-group for=28.3  for=26.6  bac=35.0  bac=33.2
+  [random      n=  1] worst-group for=27.4  for=26.1  bac=36.4  bac=35.0
+  [random      n=  2] worst-group for=58.9  for=59.6  bac=70.9  bac=70.9
+  [random      n=  2] worst-group for=41.6  for=40.2  bac=63.1  bac=59.4
+  [random      n=  2] worst-group for=45.2  for=43.4  bac=50.7  bac=48.1
+  [random      n=  2] worst-group for=48.2  for=47.0  bac=48.1  bac=46.5
+  [random      n=  2] worst-group for=45.2  for=46.9  bac=46.3  bac=45.4
+  [random      n=  5] worst-group for=39.5  for=48.6  bac=37.9  bac=37.9
+  [random      n=  5] worst-group for=48.2  for=52.7  bac=56.3  bac=55.7
+  [random      n=  5] worst-group for=46.4  for=49.2  bac=57.4  bac=55.0
+  [random      n=  5] worst-group for=50.6  for=52.3  bac=61.1  bac=60.2
+  [random      n=  5] worst-group for=51.6  for=54.3  bac=61.1  bac=59.9
+  [random      n= 10] worst-group for=76.5  for=76.6  bac=76.9  bac=76.9
+  [random      n= 10] worst-group for=70.1  for=70.4  bac=73.6  bac=73.1
+  [random      n= 10] worst-group for=63.0  for=62.0  bac=63.8  bac=63.5
+  [random      n= 10] worst-group for=65.0  for=63.9  bac=66.8  bac=66.0
+  [random      n= 10] worst-group for=61.4  for=61.6  bac=66.9  bac=66.3
+  [random      n= 25] worst-group for=44.8  for=57.3  bac=64.7  bac=59.7
+  [random      n= 25] worst-group for=59.2  for=65.4  bac=70.7  bac=68.1
+  [random      n= 25] worst-group for=64.1  for=67.8  bac=70.9  bac=69.1
+  [random      n= 25] worst-group for=67.2  for=70.1  bac=71.6  bac=69.5
+  [random      n= 25] worst-group for=68.2  for=70.5  bac=71.6  bac=69.9
+  [random      n=100] worst-group for=81.9  for=81.7  bac=84.5  bac=84.1
+  [random      n=100] worst-group for=80.9  for=81.1  bac=82.1  bac=83.0
+  [random      n=100] worst-group for=80.2  for=80.5  bac=82.0  bac=82.4
+  [random      n=100] worst-group for=80.9  for=81.4  bac=81.7  bac=82.2
+  [random      n=100] worst-group for=81.0  for=81.6  bac=81.9  bac=82.1
+[ViT-L-14] wrote npairs_{eval,trace}
+######## Q2 stability ViT-L-14 (informative arm)
+[ViT-L-14] 566 components; 20 independent informative draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.211 chance=0.005  EXCESS=+0.206
+  [forward        prefix k=10 ] Jaccard=0.203 chance=0.009  EXCESS=+0.193
+  [forward        prefix k=15 ] Jaccard=0.191 chance=0.014  EXCESS=+0.177
+  [forward        prefix k=25 ] Jaccard=0.188 chance=0.023  EXCESS=+0.165
+  [forward        prefix k=50 ] Jaccard=0.210 chance=0.047  EXCESS=+0.163
+  [forward        plateau     ] Jaccard=0.173 chance=0.014  EXCESS=+0.158
+  [forward        full        ] Jaccard=0.371 chance=0.328  EXCESS=+0.043
+  [forward+swap   prefix k=5  ] Jaccard=0.211 chance=0.005  EXCESS=+0.205
+  [forward+swap   prefix k=10 ] Jaccard=0.203 chance=0.009  EXCESS=+0.193
+  [forward+swap   prefix k=15 ] Jaccard=0.191 chance=0.014  EXCESS=+0.177
+  [forward+swap   prefix k=25 ] Jaccard=0.188 chance=0.023  EXCESS=+0.165
+  [forward+swap   prefix k=50 ] Jaccard=0.210 chance=0.047  EXCESS=+0.163
+  [forward+swap   plateau     ] Jaccard=0.172 chance=0.015  EXCESS=+0.157
+  [forward+swap   full        ] Jaccard=0.363 chance=0.320  EXCESS=+0.043
+  [backward       prefix k=5  ] Jaccard=0.115 chance=0.006  EXCESS=+0.109
+  [backward       prefix k=10 ] Jaccard=0.146 chance=0.010  EXCESS=+0.136
+  [backward       prefix k=15 ] Jaccard=0.152 chance=0.013  EXCESS=+0.138
+  [backward       prefix k=25 ] Jaccard=0.159 chance=0.023  EXCESS=+0.136
+  [backward       prefix k=50 ] Jaccard=0.163 chance=0.047  EXCESS=+0.116
+  [backward       plateau     ] Jaccard=0.113 chance=0.023  EXCESS=+0.090
+  [backward       full        ] Jaccard=0.415 chance=0.369  EXCESS=+0.046
+  [backward+swap  prefix k=5  ] Jaccard=0.115 chance=0.005  EXCESS=+0.110
+  [backward+swap  prefix k=10 ] Jaccard=0.146 chance=0.009  EXCESS=+0.136
+  [backward+swap  prefix k=15 ] Jaccard=0.152 chance=0.014  EXCESS=+0.138
+  [backward+swap  prefix k=25 ] Jaccard=0.159 chance=0.024  EXCESS=+0.135
+  [backward+swap  prefix k=50 ] Jaccard=0.163 chance=0.046  EXCESS=+0.116
+  [backward+swap  plateau     ] Jaccard=0.112 chance=0.023  EXCESS=+0.089
+  [backward+swap  full        ] Jaccard=0.416 chance=0.369  EXCESS=+0.047
+[ViT-L-14] wrote stability_{pairs,summary}
+######## Q2 stability ViT-L-14 (random arm)
+[ViT-L-14] 566 components; 20 independent random draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.173 chance=0.005  EXCESS=+0.168
+  [forward        prefix k=10 ] Jaccard=0.162 chance=0.009  EXCESS=+0.153
+  [forward        prefix k=15 ] Jaccard=0.180 chance=0.014  EXCESS=+0.166
+  [forward        prefix k=25 ] Jaccard=0.202 chance=0.023  EXCESS=+0.179
+  [forward        prefix k=50 ] Jaccard=0.233 chance=0.047  EXCESS=+0.186
+  [forward        plateau     ] Jaccard=0.148 chance=0.013  EXCESS=+0.135
+  [forward        full        ] Jaccard=0.364 chance=0.336  EXCESS=+0.028
+  [forward+swap   prefix k=5  ] Jaccard=0.173 chance=0.005  EXCESS=+0.168
+  [forward+swap   prefix k=10 ] Jaccard=0.162 chance=0.009  EXCESS=+0.153
+  [forward+swap   prefix k=15 ] Jaccard=0.180 chance=0.013  EXCESS=+0.167
+  [forward+swap   prefix k=25 ] Jaccard=0.202 chance=0.023  EXCESS=+0.179
+  [forward+swap   prefix k=50 ] Jaccard=0.233 chance=0.047  EXCESS=+0.187
+  [forward+swap   plateau     ] Jaccard=0.148 chance=0.013  EXCESS=+0.135
+  [forward+swap   full        ] Jaccard=0.353 chance=0.325  EXCESS=+0.028
+  [backward       prefix k=5  ] Jaccard=0.070 chance=0.005  EXCESS=+0.066
+  [backward       prefix k=10 ] Jaccard=0.077 chance=0.010  EXCESS=+0.067
+  [backward       prefix k=15 ] Jaccard=0.087 chance=0.014  EXCESS=+0.074
+  [backward       prefix k=25 ] Jaccard=0.106 chance=0.023  EXCESS=+0.083
+  [backward       prefix k=50 ] Jaccard=0.128 chance=0.046  EXCESS=+0.082
+  [backward       plateau     ] Jaccard=0.064 chance=0.010  EXCESS=+0.054
+  [backward       full        ] Jaccard=0.430 chance=0.412  EXCESS=+0.018
+  [backward+swap  prefix k=5  ] Jaccard=0.070 chance=0.005  EXCESS=+0.065
+  [backward+swap  prefix k=10 ] Jaccard=0.077 chance=0.010  EXCESS=+0.068
+  [backward+swap  prefix k=15 ] Jaccard=0.087 chance=0.014  EXCESS=+0.073
+  [backward+swap  prefix k=25 ] Jaccard=0.106 chance=0.023  EXCESS=+0.084
+  [backward+swap  prefix k=50 ] Jaccard=0.127 chance=0.046  EXCESS=+0.081
+  [backward+swap  plateau     ] Jaccard=0.066 chance=0.009  EXCESS=+0.057
+  [backward+swap  full        ] Jaccard=0.432 chance=0.413  EXCESS=+0.019
+[ViT-L-14] wrote stability_{pairs,summary}
+######## Q3b selectivity ViT-H-14
+Using local files
+Using local files
+[ViT-H-14] full model: task(bird)=74.20%  shortcut(background)=73.40%  - both read out zero-shot with fixed prompts
+[ViT-H-14] most selective single components (shortcut falls, task held):
+    L30H11     dtask= +1.65  dshortcut= -4.80
+    L31H6      dtask= +0.55  dshortcut= -2.20
+    L30H7      dtask= +0.55  dshortcut= -0.65
+    L26H4      dtask= +0.40  dshortcut= -0.55
+    L29H9      dtask= -0.15  dshortcut= -0.95
+    L31H12     dtask= +0.25  dshortcut= -0.55
+    L29H4      dtask= +0.30  dshortcut= -0.40
+    L31H4      dtask= +0.25  dshortcut= -0.45
+  [rep0 forward       ] kept= 327  task 74.2->82.1  shortcut 73.4->58.9  worst-group=40.3
+  [rep0 forward+swap  ] kept= 324  task 74.2->81.6  shortcut 73.4->58.4  worst-group=35.5
+  [rep0 backward      ] kept= 787  task 74.2->80.3  shortcut 73.4->64.1  worst-group=66.7
+  [rep0 backward+swap ] kept= 787  task 74.2->80.3  shortcut 73.4->64.1  worst-group=66.7
+  [rep1 forward       ] kept= 434  task 74.2->80.8  shortcut 73.4->56.9  worst-group=63.5
+  [rep1 forward+swap  ] kept= 426  task 74.2->81.9  shortcut 73.4->57.4  worst-group=63.5
+  [rep1 backward      ] kept= 576  task 74.2->82.4  shortcut 73.4->57.6  worst-group=54.0
+  [rep1 backward+swap ] kept= 602  task 74.2->81.7  shortcut 73.4->57.1  worst-group=59.1
+  [rep2 forward       ] kept= 382  task 74.2->81.9  shortcut 73.4->56.0  worst-group=47.1
+  [rep2 forward+swap  ] kept= 382  task 74.2->81.9  shortcut 73.4->56.0  worst-group=47.1
+  [rep2 backward      ] kept= 605  task 74.2->80.4  shortcut 73.4->58.7  worst-group=54.7
+  [rep2 backward+swap ] kept= 626  task 74.2->81.3  shortcut 73.4->57.4  worst-group=60.1
+[ViT-H-14] wrote selectivity_{comp,pool}
+######## Q1 n-pairs ViT-H-14
+[ViT-H-14] 2000 images, 954 components; full model total=66.55 worst-group=40.52
+  [informative n=  1] worst-group for=5.3  for=1.6  bac=33.8  bac=35.3
+  [informative n=  1] worst-group for=21.3  for=19.5  bac=44.9  bac=45.7
+  [informative n=  1] worst-group for=24.5  for=23.2  bac=33.1  bac=35.5
+  [informative n=  1] worst-group for=36.3  for=35.3  bac=38.3  bac=40.1
+  [informative n=  1] worst-group for=35.0  for=34.9  bac=33.5  bac=34.7
+  [informative n=  2] worst-group for=53.5  for=63.2  bac=52.6  bac=49.3
+  [informative n=  2] worst-group for=51.3  for=56.1  bac=63.9  bac=61.1
+  [informative n=  2] worst-group for=46.1  for=49.2  bac=57.7  bac=60.3
+  [informative n=  2] worst-group for=47.7  for=50.6  bac=57.8  bac=62.1
+  [informative n=  2] worst-group for=53.6  for=55.3  bac=58.3  bac=61.7
+  [informative n=  5] worst-group for=82.9  for=83.7  bac=68.7  bac=75.3
+  [informative n=  5] worst-group for=74.0  for=74.5  bac=68.2  bac=74.6
+  [informative n=  5] worst-group for=74.8  for=75.1  bac=69.7  bac=74.0
+  [informative n=  5] worst-group for=71.6  for=71.5  bac=67.2  bac=73.8
+  [informative n=  5] worst-group for=68.0  for=67.7  bac=64.9  bac=68.9
+  [informative n= 10] worst-group for=85.0  for=84.8  bac=74.2  bac=76.8
+  [informative n= 10] worst-group for=77.4  for=76.9  bac=69.4  bac=72.5
+  [informative n= 10] worst-group for=67.4  for=68.3  bac=68.3  bac=70.4
+  [informative n= 10] worst-group for=70.8  for=71.5  bac=69.0  bac=71.1
+  [informative n= 10] worst-group for=67.4  for=67.1  bac=67.7  bac=68.1
+  [informative n= 25] worst-group for=52.0  for=53.8  bac=51.1  bac=51.3
+  [informative n= 25] worst-group for=52.1  for=53.2  bac=55.6  bac=55.1
+  [informative n= 25] worst-group for=57.3  for=56.8  bac=55.4  bac=55.9
+  [informative n= 25] worst-group for=61.3  for=60.6  bac=58.2  bac=59.2
+  [informative n= 25] worst-group for=60.3  for=57.7  bac=56.9  bac=58.5
+  [informative n=100] worst-group for=68.3  for=67.8  bac=53.5  bac=55.6
+  [informative n=100] worst-group for=63.3  for=63.1  bac=57.6  bac=57.8
+  [informative n=100] worst-group for=65.6  for=65.2  bac=57.1  bac=57.6
+  [informative n=100] worst-group for=61.9  for=60.8  bac=56.4  bac=56.2
+  [informative n=100] worst-group for=62.3  for=61.0  bac=56.2  bac=55.4
+  [random      n=  1] worst-group for=61.5  for=54.7  bac=38.1  bac=38.1
+  [random      n=  1] worst-group for=45.0  for=41.1  bac=48.8  bac=48.8
+  [random      n=  1] worst-group for=51.7  for=49.1  bac=51.6  bac=51.6
+  [random      n=  1] worst-group for=40.0  for=39.2  bac=40.6  bac=40.6
+  [random      n=  1] worst-group for=34.8  for=34.2  bac=37.2  bac=37.2
+  [random      n=  2] worst-group for=56.7  for=55.9  bac=70.2  bac=70.2
+  [random      n=  2] worst-group for=36.5  for=33.9  bac=54.6  bac=53.5
+  [random      n=  2] worst-group for=43.8  for=40.9  bac=43.8  bac=42.2
+  [random      n=  2] worst-group for=41.8  for=38.8  bac=42.2  bac=40.0
+  [random      n=  2] worst-group for=41.1  for=37.4  bac=42.7  bac=41.7
+  [random      n=  5] worst-group for=58.8  for=56.4  bac=24.7  bac=21.0
+  [random      n=  5] worst-group for=65.2  for=64.7  bac=42.3  bac=39.2
+  [random      n=  5] worst-group for=51.9  for=51.0  bac=37.8  bac=34.5
+  [random      n=  5] worst-group for=51.9  for=52.0  bac=45.8  bac=42.8
+  [random      n=  5] worst-group for=53.8  for=53.8  bac=50.7  bac=47.8
+  [random      n= 10] worst-group for=80.6  for=81.8  bac=80.7  bac=82.8
+  [random      n= 10] worst-group for=79.5  for=79.0  bac=78.1  bac=78.6
+  [random      n= 10] worst-group for=73.6  for=73.6  bac=74.0  bac=75.9
+  [random      n= 10] worst-group for=73.5  for=73.7  bac=73.8  bac=76.3
+  [random      n= 10] worst-group for=71.1  for=71.4  bac=71.4  bac=73.4
+  [random      n= 25] worst-group for=72.1  for=73.1  bac=78.4  bac=75.9
+  [random      n= 25] worst-group for=76.3  for=77.0  bac=80.5  bac=79.7
+  [random      n= 25] worst-group for=73.7  for=74.0  bac=78.5  bac=77.9
+  [random      n= 25] worst-group for=75.2  for=75.4  bac=78.5  bac=78.1
+  [random      n= 25] worst-group for=76.0  for=76.2  bac=79.2  bac=78.9
+  [random      n=100] worst-group for=86.9  for=86.6  bac=82.6  bac=83.5
+  [random      n=100] worst-group for=83.9  for=84.1  bac=83.8  bac=83.6
+  [random      n=100] worst-group for=84.3  for=84.4  bac=84.2  bac=83.5
+  [random      n=100] worst-group for=85.0  for=85.0  bac=84.3  bac=83.7
+  [random      n=100] worst-group for=84.9  for=84.9  bac=84.1  bac=83.5
+[ViT-H-14] wrote npairs_{eval,trace}
+######## Q2 stability ViT-H-14 (informative arm)
+[ViT-H-14] 954 components; 20 independent informative draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.141 chance=0.003  EXCESS=+0.138
+  [forward        prefix k=10 ] Jaccard=0.144 chance=0.005  EXCESS=+0.139
+  [forward        prefix k=15 ] Jaccard=0.153 chance=0.009  EXCESS=+0.145
+  [forward        prefix k=25 ] Jaccard=0.171 chance=0.013  EXCESS=+0.158
+  [forward        prefix k=50 ] Jaccard=0.199 chance=0.027  EXCESS=+0.173
+  [forward        plateau     ] Jaccard=0.143 chance=0.010  EXCESS=+0.134
+  [forward        full        ] Jaccard=0.330 chance=0.261  EXCESS=+0.069
+  [forward+swap   prefix k=5  ] Jaccard=0.141 chance=0.003  EXCESS=+0.138
+  [forward+swap   prefix k=10 ] Jaccard=0.144 chance=0.005  EXCESS=+0.139
+  [forward+swap   prefix k=15 ] Jaccard=0.153 chance=0.008  EXCESS=+0.145
+  [forward+swap   prefix k=25 ] Jaccard=0.171 chance=0.013  EXCESS=+0.157
+  [forward+swap   prefix k=50 ] Jaccard=0.201 chance=0.027  EXCESS=+0.174
+  [forward+swap   plateau     ] Jaccard=0.143 chance=0.010  EXCESS=+0.134
+  [forward+swap   full        ] Jaccard=0.327 chance=0.248  EXCESS=+0.079
+  [backward       prefix k=5  ] Jaccard=0.096 chance=0.003  EXCESS=+0.093
+  [backward       prefix k=10 ] Jaccard=0.113 chance=0.006  EXCESS=+0.107
+  [backward       prefix k=15 ] Jaccard=0.119 chance=0.008  EXCESS=+0.111
+  [backward       prefix k=25 ] Jaccard=0.126 chance=0.014  EXCESS=+0.112
+  [backward       prefix k=50 ] Jaccard=0.137 chance=0.027  EXCESS=+0.110
+  [backward       plateau     ] Jaccard=0.087 chance=0.009  EXCESS=+0.078
+  [backward       full        ] Jaccard=0.562 chance=0.515  EXCESS=+0.047
+  [backward+swap  prefix k=5  ] Jaccard=0.096 chance=0.003  EXCESS=+0.093
+  [backward+swap  prefix k=10 ] Jaccard=0.113 chance=0.005  EXCESS=+0.107
+  [backward+swap  prefix k=15 ] Jaccard=0.119 chance=0.008  EXCESS=+0.111
+  [backward+swap  prefix k=25 ] Jaccard=0.126 chance=0.013  EXCESS=+0.113
+  [backward+swap  prefix k=50 ] Jaccard=0.137 chance=0.027  EXCESS=+0.110
+  [backward+swap  plateau     ] Jaccard=0.087 chance=0.009  EXCESS=+0.078
+  [backward+swap  full        ] Jaccard=0.571 chance=0.522  EXCESS=+0.049
+[ViT-H-14] wrote stability_{pairs,summary}
+######## Q2 stability ViT-H-14 (random arm)
+[ViT-H-14] 954 components; 20 independent random draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.202 chance=0.003  EXCESS=+0.198
+  [forward        prefix k=10 ] Jaccard=0.206 chance=0.005  EXCESS=+0.201
+  [forward        prefix k=15 ] Jaccard=0.221 chance=0.009  EXCESS=+0.212
+  [forward        prefix k=25 ] Jaccard=0.226 chance=0.013  EXCESS=+0.213
+  [forward        prefix k=50 ] Jaccard=0.230 chance=0.027  EXCESS=+0.203
+  [forward        plateau     ] Jaccard=0.145 chance=0.008  EXCESS=+0.137
+  [forward        full        ] Jaccard=0.281 chance=0.212  EXCESS=+0.069
+  [forward+swap   prefix k=5  ] Jaccard=0.202 chance=0.003  EXCESS=+0.199
+  [forward+swap   prefix k=10 ] Jaccard=0.206 chance=0.006  EXCESS=+0.200
+  [forward+swap   prefix k=15 ] Jaccard=0.221 chance=0.009  EXCESS=+0.212
+  [forward+swap   prefix k=25 ] Jaccard=0.226 chance=0.013  EXCESS=+0.213
+  [forward+swap   prefix k=50 ] Jaccard=0.230 chance=0.027  EXCESS=+0.204
+  [forward+swap   plateau     ] Jaccard=0.145 chance=0.008  EXCESS=+0.136
+  [forward+swap   full        ] Jaccard=0.279 chance=0.208  EXCESS=+0.071
+  [backward       prefix k=5  ] Jaccard=0.062 chance=0.003  EXCESS=+0.059
+  [backward       prefix k=10 ] Jaccard=0.083 chance=0.005  EXCESS=+0.077
+  [backward       prefix k=15 ] Jaccard=0.103 chance=0.008  EXCESS=+0.095
+  [backward       prefix k=25 ] Jaccard=0.117 chance=0.014  EXCESS=+0.103
+  [backward       prefix k=50 ] Jaccard=0.131 chance=0.027  EXCESS=+0.104
+  [backward       plateau     ] Jaccard=0.061 chance=0.007  EXCESS=+0.054
+  [backward       full        ] Jaccard=0.609 chance=0.582  EXCESS=+0.028
+  [backward+swap  prefix k=5  ] Jaccard=0.062 chance=0.003  EXCESS=+0.059
+  [backward+swap  prefix k=10 ] Jaccard=0.083 chance=0.006  EXCESS=+0.077
+  [backward+swap  prefix k=15 ] Jaccard=0.103 chance=0.008  EXCESS=+0.095
+  [backward+swap  prefix k=25 ] Jaccard=0.117 chance=0.013  EXCESS=+0.103
+  [backward+swap  prefix k=50 ] Jaccard=0.131 chance=0.027  EXCESS=+0.104
+  [backward+swap  plateau     ] Jaccard=0.061 chance=0.007  EXCESS=+0.054
+  [backward+swap  full        ] Jaccard=0.611 chance=0.583  EXCESS=+0.028
+[ViT-H-14] wrote stability_{pairs,summary}
+######## Q3b selectivity RN50
+[RN50] full model: task(bird)=79.70%  shortcut(background)=68.05%  - both read out zero-shot with fixed prompts
+[RN50] most selective single components (shortcut falls, task held):
+    L14H8      dtask= +3.50  dshortcut=-20.90
+    L1H8       dtask= +1.70  dshortcut= -6.45
+    L14H16     dtask= +2.15  dshortcut= -3.85
+    L14H13     dtask= +2.10  dshortcut= -2.40
+    L4H25      dtask= +0.95  dshortcut= -2.50
+    L4H16      dtask= +1.35  dshortcut= -2.00
+    L8H8       dtask= +0.30  dshortcut= -2.30
+    L16H16     dtask= +0.85  dshortcut= -1.45
+  [rep0 forward       ] kept= 220  task 79.7->78.3  shortcut 68.0->39.4  worst-group=15.5
+  [rep0 forward+swap  ] kept= 220  task 79.7->78.3  shortcut 68.0->39.4  worst-group=15.5
+  [rep0 backward      ] kept= 415  task 79.7->79.1  shortcut 68.0->43.9  worst-group=57.6
+  [rep0 backward+swap ] kept= 421  task 79.7->78.7  shortcut 68.0->44.2  worst-group=56.6
+  [rep1 forward       ] kept= 309  task 79.7->74.3  shortcut 68.0->23.2  worst-group=3.0
+  [rep1 forward+swap  ] kept= 294  task 79.7->76.5  shortcut 68.0->25.0  worst-group=3.0
+  [rep1 backward      ] kept= 430  task 79.7->75.7  shortcut 68.0->32.3  worst-group=17.2
+  [rep1 backward+swap ] kept= 427  task 79.7->75.8  shortcut 68.0->33.3  worst-group=20.2
+  [rep2 forward       ] kept= 227  task 79.7->75.6  shortcut 68.0->79.4  worst-group=6.4
+  [rep2 forward+swap  ] kept= 227  task 79.7->75.6  shortcut 68.0->79.4  worst-group=6.4
+  [rep2 backward      ] kept= 414  task 79.7->79.4  shortcut 68.0->63.3  worst-group=61.3
+  [rep2 backward+swap ] kept= 413  task 79.7->79.6  shortcut 68.0->63.2  worst-group=64.6
+[RN50] wrote selectivity_{comp,pool}
+######## Q1 n-pairs RN50
+[RN50] 2000 images, 654 components; full model total=67.85 worst-group=40.65
+  [informative n=  1] worst-group for=15.0  for=7.7  bac=6.3  bac=11.7
+  [informative n=  1] worst-group for=15.5  for=11.8  bac=11.8  bac=14.5
+  [informative n=  1] worst-group for=12.5  for=10.2  bac=25.9  bac=27.9
+  [informative n=  1] worst-group for=13.4  for=11.1  bac=25.3  bac=26.6
+  [informative n=  1] worst-group for=13.3  for=11.3  bac=33.0  bac=34.9
+  [informative n=  2] worst-group for=6.2  for=8.3  bac=46.0  bac=44.9
+  [informative n=  2] worst-group for=4.6  for=5.4  bac=40.3  bac=33.1
+  [informative n=  2] worst-group for=3.9  for=4.4  bac=34.5  bac=30.6
+  [informative n=  2] worst-group for=5.5  for=5.8  bac=34.2  bac=31.1
+  [informative n=  2] worst-group for=5.1  for=5.3  bac=39.6  bac=37.0
+  [informative n=  5] worst-group for=14.4  for=7.7  bac=32.3  bac=30.0
+  [informative n=  5] worst-group for=9.7  for=6.3  bac=28.3  bac=27.1
+  [informative n=  5] worst-group for=9.1  for=6.8  bac=28.9  bac=28.1
+  [informative n=  5] worst-group for=8.1  for=6.4  bac=24.9  bac=24.4
+  [informative n=  5] worst-group for=7.1  for=5.6  bac=26.5  bac=26.7
+  [informative n= 10] worst-group for=3.9  for=3.2  bac=23.7  bac=28.3
+  [informative n= 10] worst-group for=3.8  for=3.9  bac=23.7  bac=26.0
+  [informative n= 10] worst-group for=6.4  for=3.4  bac=28.3  bac=30.5
+  [informative n= 10] worst-group for=6.1  for=3.8  bac=29.3  bac=30.8
+  [informative n= 10] worst-group for=5.2  for=3.4  bac=26.0  bac=27.1
+  [informative n= 25] worst-group for=3.0  for=3.5  bac=21.1  bac=19.2
+  [informative n= 25] worst-group for=3.2  for=3.7  bac=19.1  bac=18.2
+  [informative n= 25] worst-group for=3.9  for=4.2  bac=17.5  bac=16.5
+  [informative n= 25] worst-group for=4.6  for=4.9  bac=20.0  bac=19.3
+  [informative n= 25] worst-group for=5.1  for=5.4  bac=20.4  bac=19.8
+  [informative n=100] worst-group for=4.4  for=4.2  bac=16.7  bac=16.7
+  [informative n=100] worst-group for=4.9  for=4.7  bac=16.9  bac=16.4
+  [informative n=100] worst-group for=4.7  for=4.6  bac=16.0  bac=15.2
+  [informative n=100] worst-group for=4.4  for=4.4  bac=15.7  bac=15.0
+  [informative n=100] worst-group for=4.2  for=4.2  bac=15.4  bac=14.8
+  [random      n=  1] worst-group for=15.1  for=13.4  bac=45.2  bac=45.2
+  [random      n=  1] worst-group for=18.7  for=15.4  bac=36.7  bac=36.7
+  [random      n=  1] worst-group for=18.3  for=16.2  bac=39.8  bac=39.8
+  [random      n=  1] worst-group for=14.4  for=14.5  bac=32.8  bac=32.8
+  [random      n=  1] worst-group for=12.1  for=12.1  bac=31.5  bac=31.5
+  [random      n=  2] worst-group for=13.2  for=16.0  bac=35.5  bac=35.5
+  [random      n=  2] worst-group for=13.1  for=13.8  bac=47.2  bac=49.3
+  [random      n=  2] worst-group for=17.2  for=18.1  bac=51.1  bac=52.5
+  [random      n=  2] worst-group for=17.9  for=19.6  bac=52.1  bac=52.7
+  [random      n=  2] worst-group for=19.1  for=19.8  bac=52.9  bac=53.3
+  [random      n=  5] worst-group for=36.5  for=30.9  bac=47.4  bac=51.5
+  [random      n=  5] worst-group for=26.9  for=25.5  bac=53.9  bac=55.8
+  [random      n=  5] worst-group for=23.1  for=22.0  bac=51.2  bac=49.5
+  [random      n=  5] worst-group for=21.9  for=18.3  bac=47.6  bac=47.6
+  [random      n=  5] worst-group for=22.6  for=19.5  bac=49.7  bac=49.7
+  [random      n= 10] worst-group for=50.1  for=47.7  bac=68.9  bac=68.2
+  [random      n= 10] worst-group for=50.7  for=48.0  bac=66.3  bac=66.4
+  [random      n= 10] worst-group for=38.1  for=36.1  bac=57.5  bac=57.6
+  [random      n= 10] worst-group for=36.4  for=34.6  bac=60.4  bac=60.6
+  [random      n= 10] worst-group for=36.2  for=34.5  bac=61.1  bac=61.4
+  [random      n= 25] worst-group for=41.0  for=41.9  bac=60.2  bac=60.3
+  [random      n= 25] worst-group for=45.5  for=45.9  bac=65.2  bac=65.8
+  [random      n= 25] worst-group for=47.3  for=47.1  bac=66.2  bac=65.9
+  [random      n= 25] worst-group for=49.4  for=48.3  bac=68.7  bac=68.0
+  [random      n= 25] worst-group for=51.4  for=51.0  bac=69.6  bac=69.0
+  [random      n=100] worst-group for=70.5  for=70.7  bac=76.2  bac=76.3
+  [random      n=100] worst-group for=68.8  for=68.4  bac=75.2  bac=75.1
+  [random      n=100] worst-group for=68.5  for=68.1  bac=75.0  bac=75.3
+  [random      n=100] worst-group for=69.9  for=69.1  bac=75.6  bac=75.8
+  [random      n=100] worst-group for=71.5  for=70.9  bac=76.3  bac=76.6
+[RN50] wrote npairs_{eval,trace}
+######## Q2 stability RN50 (informative arm)
+[RN50] 654 components; 20 independent informative draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.069 chance=0.004  EXCESS=+0.065
+  [forward        prefix k=10 ] Jaccard=0.076 chance=0.008  EXCESS=+0.068
+  [forward        prefix k=15 ] Jaccard=0.097 chance=0.012  EXCESS=+0.085
+  [forward        prefix k=25 ] Jaccard=0.119 chance=0.019  EXCESS=+0.100
+  [forward        prefix k=50 ] Jaccard=0.163 chance=0.041  EXCESS=+0.123
+  [forward        plateau     ] Jaccard=0.070 chance=0.011  EXCESS=+0.059
+  [forward        full        ] Jaccard=0.317 chance=0.252  EXCESS=+0.065
+  [forward+swap   prefix k=5  ] Jaccard=0.069 chance=0.004  EXCESS=+0.066
+  [forward+swap   prefix k=10 ] Jaccard=0.076 chance=0.008  EXCESS=+0.067
+  [forward+swap   prefix k=15 ] Jaccard=0.097 chance=0.012  EXCESS=+0.084
+  [forward+swap   prefix k=25 ] Jaccard=0.119 chance=0.020  EXCESS=+0.099
+  [forward+swap   prefix k=50 ] Jaccard=0.169 chance=0.040  EXCESS=+0.129
+  [forward+swap   plateau     ] Jaccard=0.070 chance=0.011  EXCESS=+0.059
+  [forward+swap   full        ] Jaccard=0.310 chance=0.239  EXCESS=+0.072
+  [backward       prefix k=5  ] Jaccard=0.086 chance=0.004  EXCESS=+0.081
+  [backward       prefix k=10 ] Jaccard=0.088 chance=0.008  EXCESS=+0.080
+  [backward       prefix k=15 ] Jaccard=0.089 chance=0.012  EXCESS=+0.078
+  [backward       prefix k=25 ] Jaccard=0.095 chance=0.020  EXCESS=+0.075
+  [backward       prefix k=50 ] Jaccard=0.119 chance=0.040  EXCESS=+0.079
+  [backward       plateau     ] Jaccard=0.074 chance=0.015  EXCESS=+0.059
+  [backward       full        ] Jaccard=0.534 chance=0.490  EXCESS=+0.044
+  [backward+swap  prefix k=5  ] Jaccard=0.086 chance=0.005  EXCESS=+0.081
+  [backward+swap  prefix k=10 ] Jaccard=0.088 chance=0.008  EXCESS=+0.080
+  [backward+swap  prefix k=15 ] Jaccard=0.089 chance=0.012  EXCESS=+0.078
+  [backward+swap  prefix k=25 ] Jaccard=0.095 chance=0.020  EXCESS=+0.075
+  [backward+swap  prefix k=50 ] Jaccard=0.119 chance=0.040  EXCESS=+0.079
+  [backward+swap  plateau     ] Jaccard=0.075 chance=0.016  EXCESS=+0.059
+  [backward+swap  full        ] Jaccard=0.539 chance=0.493  EXCESS=+0.046
+[RN50] wrote stability_{pairs,summary}
+######## Q2 stability RN50 (random arm)
+[RN50] 654 components; 20 independent random draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.159 chance=0.004  EXCESS=+0.154
+  [forward        prefix k=10 ] Jaccard=0.200 chance=0.008  EXCESS=+0.192
+  [forward        prefix k=15 ] Jaccard=0.199 chance=0.012  EXCESS=+0.187
+  [forward        prefix k=25 ] Jaccard=0.200 chance=0.019  EXCESS=+0.181
+  [forward        prefix k=50 ] Jaccard=0.202 chance=0.041  EXCESS=+0.161
+  [forward        plateau     ] Jaccard=0.145 chance=0.008  EXCESS=+0.137
+  [forward        full        ] Jaccard=0.301 chance=0.249  EXCESS=+0.052
+  [forward+swap   prefix k=5  ] Jaccard=0.159 chance=0.004  EXCESS=+0.154
+  [forward+swap   prefix k=10 ] Jaccard=0.200 chance=0.008  EXCESS=+0.192
+  [forward+swap   prefix k=15 ] Jaccard=0.199 chance=0.012  EXCESS=+0.188
+  [forward+swap   prefix k=25 ] Jaccard=0.200 chance=0.020  EXCESS=+0.180
+  [forward+swap   prefix k=50 ] Jaccard=0.201 chance=0.040  EXCESS=+0.161
+  [forward+swap   plateau     ] Jaccard=0.145 chance=0.008  EXCESS=+0.137
+  [forward+swap   full        ] Jaccard=0.294 chance=0.238  EXCESS=+0.055
+  [backward       prefix k=5  ] Jaccard=0.044 chance=0.005  EXCESS=+0.040
+  [backward       prefix k=10 ] Jaccard=0.063 chance=0.008  EXCESS=+0.055
+  [backward       prefix k=15 ] Jaccard=0.070 chance=0.012  EXCESS=+0.058
+  [backward       prefix k=25 ] Jaccard=0.087 chance=0.020  EXCESS=+0.067
+  [backward       prefix k=50 ] Jaccard=0.113 chance=0.040  EXCESS=+0.073
+  [backward       plateau     ] Jaccard=0.074 chance=0.022  EXCESS=+0.052
+  [backward       full        ] Jaccard=0.541 chance=0.506  EXCESS=+0.034
+  [backward+swap  prefix k=5  ] Jaccard=0.044 chance=0.005  EXCESS=+0.040
+  [backward+swap  prefix k=10 ] Jaccard=0.063 chance=0.008  EXCESS=+0.055
+  [backward+swap  prefix k=15 ] Jaccard=0.070 chance=0.012  EXCESS=+0.058
+  [backward+swap  prefix k=25 ] Jaccard=0.087 chance=0.020  EXCESS=+0.067
+  [backward+swap  prefix k=50 ] Jaccard=0.113 chance=0.040  EXCESS=+0.073
+  [backward+swap  plateau     ] Jaccard=0.074 chance=0.022  EXCESS=+0.052
+  [backward+swap  full        ] Jaccard=0.538 chance=0.502  EXCESS=+0.035
+[RN50] wrote stability_{pairs,summary}
+######## Q3b selectivity RN101
+[RN101] full model: task(bird)=70.00%  shortcut(background)=67.10%  - both read out zero-shot with fixed prompts
+[RN101] most selective single components (shortcut falls, task held):
+    L31H30     dtask= +0.35  dshortcut= -1.70
+    L31H22     dtask= -0.30  dshortcut= -2.25
+    L8H9       dtask= +0.90  dshortcut= -1.00
+    L31H25     dtask= +0.15  dshortcut= -1.65
+    L0H7       dtask= +0.55  dshortcut= -1.20
+    L31H5      dtask= +0.15  dshortcut= -1.50
+    L31H24     dtask= +0.30  dshortcut= -1.30
+    L31H23     dtask= +0.65  dshortcut= -0.85
+  [rep0 forward       ] kept= 363  task 70.0->65.8  shortcut 67.1->52.7  worst-group=15.1
+  [rep0 forward+swap  ] kept= 355  task 70.0->62.6  shortcut 67.1->54.1  worst-group=12.9
+  [rep0 backward      ] kept= 852  task 70.0->70.3  shortcut 67.1->54.3  worst-group=36.7
+  [rep0 backward+swap ] kept= 871  task 70.0->70.5  shortcut 67.1->52.0  worst-group=39.7
+  [rep1 forward       ] kept= 320  task 70.0->71.4  shortcut 67.1->53.7  worst-group=36.2
+  [rep1 forward+swap  ] kept= 295  task 70.0->74.8  shortcut 67.1->53.6  worst-group=35.4
+  [rep1 backward      ] kept= 799  task 70.0->64.8  shortcut 67.1->54.9  worst-group=22.7
+  [rep1 backward+swap ] kept= 859  task 70.0->63.8  shortcut 67.1->50.0  worst-group=26.8
+  [rep2 forward       ] kept= 262  task 70.0->75.1  shortcut 67.1->55.1  worst-group=42.1
+  [rep2 forward+swap  ] kept= 240  task 70.0->76.8  shortcut 67.1->58.0  worst-group=37.3
+  [rep2 backward      ] kept= 900  task 70.0->74.7  shortcut 67.1->59.3  worst-group=61.3
+  [rep2 backward+swap ] kept= 947  task 70.0->75.4  shortcut 67.1->57.6  worst-group=62.6
+[RN101] wrote selectivity_{comp,pool}
+######## Q1 n-pairs RN101
+[RN101] 2000 images, 1198 components; full model total=61.45 worst-group=25.10
+  [informative n=  1] worst-group for=6.6  for=6.6  bac=32.1  bac=32.1
+  [informative n=  1] worst-group for=26.9  for=26.9  bac=33.7  bac=33.7
+  [informative n=  1] worst-group for=24.3  for=22.4  bac=29.2  bac=29.1
+  [informative n=  1] worst-group for=25.9  for=24.5  bac=36.8  bac=36.7
+  [informative n=  1] worst-group for=29.6  for=28.4  bac=38.7  bac=39.2
+  [informative n=  2] worst-group for=66.5  for=61.3  bac=52.2  bac=49.3
+  [informative n=  2] worst-group for=44.3  for=41.7  bac=37.4  bac=34.5
+  [informative n=  2] worst-group for=38.6  for=36.4  bac=33.9  bac=30.4
+  [informative n=  2] worst-group for=37.3  for=35.8  bac=41.0  bac=37.1
+  [informative n=  2] worst-group for=34.9  for=32.4  bac=41.0  bac=37.3
+  [informative n=  5] worst-group for=11.0  for=11.9  bac=31.9  bac=33.8
+  [informative n=  5] worst-group for=17.2  for=17.2  bac=31.3  bac=33.9
+  [informative n=  5] worst-group for=17.9  for=17.7  bac=32.6  bac=34.2
+  [informative n=  5] worst-group for=19.0  for=17.2  bac=31.3  bac=32.1
+  [informative n=  5] worst-group for=18.1  for=15.4  bac=32.0  bac=33.0
+  [informative n= 10] worst-group for=17.8  for=24.3  bac=49.7  bac=49.9
+  [informative n= 10] worst-group for=14.1  for=17.0  bac=44.9  bac=44.9
+  [informative n= 10] worst-group for=14.1  for=17.1  bac=34.3  bac=34.8
+  [informative n= 10] worst-group for=16.8  for=17.1  bac=37.0  bac=39.2
+  [informative n= 10] worst-group for=19.1  for=18.8  bac=34.3  bac=37.3
+  [informative n= 25] worst-group for=13.6  for=13.2  bac=22.1  bac=28.5
+  [informative n= 25] worst-group for=18.9  for=16.6  bac=25.1  bac=28.8
+  [informative n= 25] worst-group for=20.0  for=16.9  bac=27.2  bac=28.6
+  [informative n= 25] worst-group for=23.6  for=20.2  bac=28.7  bac=32.6
+  [informative n= 25] worst-group for=20.8  for=17.7  bac=27.4  bac=30.8
+  [informative n=100] worst-group for=18.7  for=22.7  bac=22.2  bac=23.2
+  [informative n=100] worst-group for=18.1  for=19.9  bac=21.9  bac=22.1
+  [informative n=100] worst-group for=20.5  for=22.0  bac=24.9  bac=25.5
+  [informative n=100] worst-group for=20.2  for=20.6  bac=24.9  bac=24.8
+  [informative n=100] worst-group for=19.7  for=19.8  bac=24.4  bac=24.4
+  [random      n=  1] worst-group for=52.7  for=47.3  bac=25.0  bac=25.0
+  [random      n=  1] worst-group for=45.4  for=43.5  bac=34.6  bac=34.6
+  [random      n=  1] worst-group for=34.9  for=35.2  bac=33.3  bac=33.7
+  [random      n=  1] worst-group for=32.4  for=32.7  bac=32.3  bac=32.7
+  [random      n=  1] worst-group for=27.2  for=27.8  bac=31.4  bac=31.4
+  [random      n=  2] worst-group for=52.0  for=57.5  bac=55.8  bac=55.1
+  [random      n=  2] worst-group for=42.2  for=41.0  bac=57.0  bac=58.1
+  [random      n=  2] worst-group for=46.8  for=46.0  bac=51.0  bac=50.2
+  [random      n=  2] worst-group for=48.3  for=48.5  bac=53.3  bac=52.8
+  [random      n=  2] worst-group for=48.2  for=49.1  bac=49.6  bac=49.1
+  [random      n=  5] worst-group for=58.4  for=58.8  bac=44.0  bac=48.6
+  [random      n=  5] worst-group for=57.1  for=56.9  bac=47.4  bac=50.2
+  [random      n=  5] worst-group for=53.6  for=51.2  bac=44.9  bac=48.1
+  [random      n=  5] worst-group for=53.0  for=49.2  bac=46.2  bac=48.3
+  [random      n=  5] worst-group for=52.7  for=49.2  bac=48.4  bac=50.0
+  [random      n= 10] worst-group for=58.7  for=60.2  bac=69.7  bac=68.2
+  [random      n= 10] worst-group for=63.8  for=63.8  bac=66.1  bac=65.0
+  [random      n= 10] worst-group for=54.9  for=55.4  bac=54.9  bac=54.1
+  [random      n= 10] worst-group for=57.4  for=57.4  bac=57.6  bac=57.5
+  [random      n= 10] worst-group for=56.2  for=55.7  bac=57.2  bac=56.9
+  [random      n= 25] worst-group for=63.6  for=64.2  bac=58.5  bac=59.1
+  [random      n= 25] worst-group for=63.3  for=63.3  bac=65.5  bac=61.0
+  [random      n= 25] worst-group for=66.3  for=67.3  bac=66.6  bac=63.8
+  [random      n= 25] worst-group for=69.9  for=70.5  bac=68.2  bac=66.7
+  [random      n= 25] worst-group for=69.5  for=70.0  bac=68.6  bac=66.5
+  [random      n=100] worst-group for=81.4  for=81.3  bac=81.7  bac=83.4
+  [random      n=100] worst-group for=80.9  for=80.0  bac=81.3  bac=81.6
+  [random      n=100] worst-group for=80.4  for=79.9  bac=80.6  bac=81.7
+  [random      n=100] worst-group for=79.8  for=79.7  bac=79.6  bac=81.0
+  [random      n=100] worst-group for=80.4  for=80.2  bac=79.7  bac=81.2
+[RN101] wrote npairs_{eval,trace}
+######## Q2 stability RN101 (informative arm)
+[RN101] 1198 components; 20 independent informative draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.072 chance=0.002  EXCESS=+0.070
+  [forward        prefix k=10 ] Jaccard=0.093 chance=0.004  EXCESS=+0.089
+  [forward        prefix k=15 ] Jaccard=0.116 chance=0.007  EXCESS=+0.110
+  [forward        prefix k=25 ] Jaccard=0.136 chance=0.011  EXCESS=+0.125
+  [forward        prefix k=50 ] Jaccard=0.177 chance=0.021  EXCESS=+0.156
+  [forward        plateau     ] Jaccard=0.110 chance=0.008  EXCESS=+0.102
+  [forward        full        ] Jaccard=0.247 chance=0.158  EXCESS=+0.089
+  [forward+swap   prefix k=5  ] Jaccard=0.072 chance=0.002  EXCESS=+0.070
+  [forward+swap   prefix k=10 ] Jaccard=0.093 chance=0.004  EXCESS=+0.088
+  [forward+swap   prefix k=15 ] Jaccard=0.116 chance=0.007  EXCESS=+0.110
+  [forward+swap   prefix k=25 ] Jaccard=0.136 chance=0.010  EXCESS=+0.126
+  [forward+swap   prefix k=50 ] Jaccard=0.179 chance=0.022  EXCESS=+0.158
+  [forward+swap   plateau     ] Jaccard=0.116 chance=0.009  EXCESS=+0.107
+  [forward+swap   full        ] Jaccard=0.237 chance=0.149  EXCESS=+0.089
+  [backward       prefix k=5  ] Jaccard=0.083 chance=0.002  EXCESS=+0.081
+  [backward       prefix k=10 ] Jaccard=0.099 chance=0.005  EXCESS=+0.094
+  [backward       prefix k=15 ] Jaccard=0.121 chance=0.007  EXCESS=+0.114
+  [backward       prefix k=25 ] Jaccard=0.141 chance=0.011  EXCESS=+0.130
+  [backward       prefix k=50 ] Jaccard=0.148 chance=0.022  EXCESS=+0.126
+  [backward       plateau     ] Jaccard=0.082 chance=0.006  EXCESS=+0.076
+  [backward       full        ] Jaccard=0.653 chance=0.610  EXCESS=+0.043
+  [backward+swap  prefix k=5  ] Jaccard=0.083 chance=0.003  EXCESS=+0.081
+  [backward+swap  prefix k=10 ] Jaccard=0.099 chance=0.004  EXCESS=+0.095
+  [backward+swap  prefix k=15 ] Jaccard=0.121 chance=0.006  EXCESS=+0.115
+  [backward+swap  prefix k=25 ] Jaccard=0.141 chance=0.011  EXCESS=+0.130
+  [backward+swap  prefix k=50 ] Jaccard=0.148 chance=0.022  EXCESS=+0.126
+  [backward+swap  plateau     ] Jaccard=0.082 chance=0.006  EXCESS=+0.076
+  [backward+swap  full        ] Jaccard=0.672 chance=0.626  EXCESS=+0.045
+[RN101] wrote stability_{pairs,summary}
+######## Q2 stability RN101 (random arm)
+[RN101] 1198 components; 20 independent random draws of 1 pair(s)
+  5/20 draws done
+  10/20 draws done
+  15/20 draws done
+  20/20 draws done
+  [forward        prefix k=5  ] Jaccard=0.094 chance=0.002  EXCESS=+0.091
+  [forward        prefix k=10 ] Jaccard=0.105 chance=0.004  EXCESS=+0.100
+  [forward        prefix k=15 ] Jaccard=0.116 chance=0.007  EXCESS=+0.109
+  [forward        prefix k=25 ] Jaccard=0.141 chance=0.011  EXCESS=+0.130
+  [forward        prefix k=50 ] Jaccard=0.173 chance=0.021  EXCESS=+0.152
+  [forward        plateau     ] Jaccard=0.098 chance=0.007  EXCESS=+0.091
+  [forward        full        ] Jaccard=0.227 chance=0.137  EXCESS=+0.090
+  [forward+swap   prefix k=5  ] Jaccard=0.094 chance=0.002  EXCESS=+0.091
+  [forward+swap   prefix k=10 ] Jaccard=0.105 chance=0.004  EXCESS=+0.100
+  [forward+swap   prefix k=15 ] Jaccard=0.116 chance=0.006  EXCESS=+0.110
+  [forward+swap   prefix k=25 ] Jaccard=0.141 chance=0.011  EXCESS=+0.130
+  [forward+swap   prefix k=50 ] Jaccard=0.173 chance=0.021  EXCESS=+0.152
+  [forward+swap   plateau     ] Jaccard=0.098 chance=0.007  EXCESS=+0.091
+  [forward+swap   full        ] Jaccard=0.225 chance=0.133  EXCESS=+0.092
+  [backward       prefix k=5  ] Jaccard=0.068 chance=0.002  EXCESS=+0.065
+  [backward       prefix k=10 ] Jaccard=0.096 chance=0.004  EXCESS=+0.092
+  [backward       prefix k=15 ] Jaccard=0.100 chance=0.007  EXCESS=+0.093
+  [backward       prefix k=25 ] Jaccard=0.109 chance=0.011  EXCESS=+0.098
+  [backward       prefix k=50 ] Jaccard=0.121 chance=0.021  EXCESS=+0.100
+  [backward       plateau     ] Jaccard=0.069 chance=0.008  EXCESS=+0.061
+  [backward       full        ] Jaccard=0.730 chance=0.697  EXCESS=+0.033
+  [backward+swap  prefix k=5  ] Jaccard=0.068 chance=0.003  EXCESS=+0.065
+  [backward+swap  prefix k=10 ] Jaccard=0.096 chance=0.005  EXCESS=+0.091
+  [backward+swap  prefix k=15 ] Jaccard=0.100 chance=0.006  EXCESS=+0.094
+  [backward+swap  prefix k=25 ] Jaccard=0.109 chance=0.011  EXCESS=+0.098
+  [backward+swap  prefix k=50 ] Jaccard=0.121 chance=0.022  EXCESS=+0.100
+  [backward+swap  plateau     ] Jaccard=0.069 chance=0.009  EXCESS=+0.061
+  [backward+swap  full        ] Jaccard=0.735 chance=0.701  EXCESS=+0.034
+[RN101] wrote stability_{pairs,summary}
+ALLDONE

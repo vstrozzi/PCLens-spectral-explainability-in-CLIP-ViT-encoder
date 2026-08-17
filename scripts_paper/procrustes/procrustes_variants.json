@@ -1,0 +1,182 @@
+{
+  "hard": {
+    "ViT-B-16": {
+      "stable_rank_hardneg": {
+        "imagenet": 1.0146805203855218,
+        "CIFAR100": 1.003906554943744
+      },
+      "fit": {
+        "imagenet": {
+          "imagenet": {
+            "base": 0.695,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          },
+          "CIFAR100": {
+            "base": 0.7695,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          }
+        },
+        "CIFAR100": {
+          "imagenet": {
+            "base": 0.695,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          },
+          "CIFAR100": {
+            "base": 0.7695,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          }
+        }
+      },
+      "split": {
+        "imagenet": {
+          "base_test": 0.6964,
+          "Wneg_hard_test": 0.0
+        },
+        "CIFAR100": {
+          "base_test": 0.768,
+          "Wneg_hard_test": 0.0
+        }
+      }
+    },
+    "ViT-B-32": {
+      "stable_rank_hardneg": {
+        "imagenet": 1.0150383646995011,
+        "CIFAR100": 1.0046158780795011
+      },
+      "fit": {
+        "imagenet": {
+          "imagenet": {
+            "base": 0.6644,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          },
+          "CIFAR100": {
+            "base": 0.762,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          }
+        },
+        "CIFAR100": {
+          "imagenet": {
+            "base": 0.6644,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          },
+          "CIFAR100": {
+            "base": 0.762,
+            "Wneg_hard": 0.0,
+            "Wpos@Wneg_hard": 0.0,
+            "Wneg_hard@Wpos": 0.0,
+            "Wpos@Wneg_hardT": 0.0
+          }
+        }
+      },
+      "split": {
+        "imagenet": {
+          "base_test": 0.6624,
+          "Wneg_hard_test": 0.0
+        },
+        "CIFAR100": {
+          "base_test": 0.756,
+          "Wneg_hard_test": 0.0
+        }
+      }
+    }
+  },
+  "perclass": {
+    "ViT-B-16": {
+      "imagenet": {
+        "imagenet": {
+          "base": 0.695,
+          "Wimg_perSample": 0.771,
+          "Wtxt_perClass": 0.771
+        },
+        "CIFAR100": {
+          "base": 0.7695,
+          "Wimg_perSample": 0.6925,
+          "Wtxt_perClass": 0.6925
+        }
+      },
+      "CIFAR100": {
+        "imagenet": {
+          "base": 0.695,
+          "Wimg_perSample": 0.1566,
+          "Wtxt_perClass": 0.148
+        },
+        "CIFAR100": {
+          "base": 0.7695,
+          "Wimg_perSample": 0.8745,
+          "Wtxt_perClass": 0.88
+        }
+      },
+      "split": {
+        "imagenet": {
+          "base": 0.6964,
+          "Wimg": 0.5704,
+          "Wtxt": 0.5856
+        },
+        "CIFAR100": {
+          "base": 0.768,
+          "Wimg": 0.753,
+          "Wtxt": 0.759
+        }
+      }
+    },
+    "ViT-B-32": {
+      "imagenet": {
+        "imagenet": {
+          "base": 0.6644,
+          "Wimg_perSample": 0.769,
+          "Wtxt_perClass": 0.769
+        },
+        "CIFAR100": {
+          "base": 0.762,
+          "Wimg_perSample": 0.672,
+          "Wtxt_perClass": 0.672
+        }
+      },
+      "CIFAR100": {
+        "imagenet": {
+          "base": 0.6644,
+          "Wimg_perSample": 0.1314,
+          "Wtxt_perClass": 0.131
+        },
+        "CIFAR100": {
+          "base": 0.762,
+          "Wimg_perSample": 0.875,
+          "Wtxt_perClass": 0.873
+        }
+      },
+      "split": {
+        "imagenet": {
+          "base": 0.6624,
+          "Wimg": 0.5232,
+          "Wtxt": 0.5332
+        },
+        "CIFAR100": {
+          "base": 0.756,
+          "Wimg": 0.753,
+          "Wtxt": 0.755
+        }
+      }
+    }
+  }
+}

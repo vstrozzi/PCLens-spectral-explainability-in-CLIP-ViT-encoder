@@ -1,0 +1,38 @@
+[ViT-B-32/vision] done (206 rows so far)
+[ViT-B-32/text] done (364 rows so far)
+[ViT-B-32] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-B-32.csv
+[ViT-B-16/vision] done (206 rows so far)
+[ViT-B-16/text] done (364 rows so far)
+[ViT-B-16] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-B-16.csv
+[ViT-L-14/vision] done (506 rows so far)
+[ViT-L-14/text] done (712 rows so far)
+[ViT-L-14] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-L-14.csv
+[RN50/vision] done (582 rows so far)
+[RN50/text] done (740 rows so far)
+[RN50] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_RN50.csv
+[RN101/vision] done (1160 rows so far)
+[RN101/text] done (1318 rows so far)
+[RN101] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_RN101.csv
+[ViT-H-14/vision] done (674 rows so far)
+[ViT-H-14/text] done (1180 rows so far)
+[ViT-H-14] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-H-14.csv
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_layer_own_twonn.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_layer_own_pca95.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_layer_own_ratio.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_table_vision.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_ratio_depth_vision.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_table_text.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_ratio_depth_text.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-B-32.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-B-32.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-B-16.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-B-16.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-L-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-L-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-H-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-H-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_RN50.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_RN50.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_RN101.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_RN101.pdf/.png
+ALL DONE

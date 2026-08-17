@@ -1,0 +1,317 @@
+Using local files
+Model parameters: 151,277,313
+Context length: 77
+Vocab size: 49408
+Len of res: 12
+Full dataset
+We are using a dataset containing 232 images.
+
+Concatenating chunk files into final .npy arrays...
+['output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69_chunk5.npy']
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-32_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-32_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-32_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-32_seed_69.npy
+Saved image embeddings: output_dir/activations_and_datasets_idxs_69/visogender_embeddings_ViT-B-32_seed_69.npy
+Deleting chunk files...
+Chunk files removed.
+Done.
+Using local files
+Model parameters: 151,277,313
+Context length: 77
+Number of text layers: 12
+Decomposing 23 texts from 'visogender_classnames' (23 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_attn_text_ViT-B-32_seed_69.npy  shape (23, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_mlp_text_ViT-B-32_seed_69.npy  shape (23, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_labels_text_ViT-B-32_seed_69.npy  shape (23,)
+Chunk files removed. Done.
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Vocab size: 49408
+Len of res: 12
+Full dataset
+We are using a dataset containing 232 images.
+
+Concatenating chunk files into final .npy arrays...
+['output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69_chunk5.npy']
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-B-16_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-B-16_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-B-16_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-B-16_seed_69.npy
+Saved image embeddings: output_dir/activations_and_datasets_idxs_69/visogender_embeddings_ViT-B-16_seed_69.npy
+Deleting chunk files...
+Chunk files removed.
+Done.
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 23 texts from 'visogender_classnames' (23 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_attn_text_ViT-B-16_seed_69.npy  shape (23, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_mlp_text_ViT-B-16_seed_69.npy  shape (23, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_labels_text_ViT-B-16_seed_69.npy  shape (23,)
+Chunk files removed. Done.
+RN50: L+1=17 block components, H=32 heads, d=1024
+Full dataset
+Dataset: 228 images in 29 batches.
+[resnet_prs] components: (8, 17, 32, 1024)  max|recon-real|=1.252e-06  rel=1.268e-06
+  first-batch sum-recovery max abs err = 1.25e-06
+
+Concatenating chunk files...
+Done. Saved: output_dir/activations_and_datasets_idxs_69/visogender_attn_RN50_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_mlp_RN50_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_labels_RN50_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_embeddings_RN50_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_poolattn_RN50_seed_69.npy
+Model parameters: 102,007,137
+Context length: 77
+Number of text layers: 12
+Decomposing 23 texts from 'visogender_classnames' (23 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_attn_text_RN50_seed_69.npy  shape (23, 12, 8, 1024)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_mlp_text_RN50_seed_69.npy  shape (23, 13, 1024)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_labels_text_RN50_seed_69.npy  shape (23,)
+Chunk files removed. Done.
+RN101: L+1=34 block components, H=32 heads, d=512
+Full dataset
+Dataset: 228 images in 29 batches.
+[resnet_prs] components: (8, 34, 32, 512)  max|recon-real|=1.073e-06  rel=1.112e-06
+  first-batch sum-recovery max abs err = 1.07e-06
+
+Concatenating chunk files...
+Done. Saved: output_dir/activations_and_datasets_idxs_69/visogender_attn_RN101_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_mlp_RN101_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_labels_RN101_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_embeddings_RN101_seed_69.npy, output_dir/activations_and_datasets_idxs_69/visogender_poolattn_RN101_seed_69.npy
+Model parameters: 119,688,033
+Context length: 77
+Number of text layers: 12
+Decomposing 23 texts from 'visogender_classnames' (23 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_attn_text_RN101_seed_69.npy  shape (23, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_mlp_text_RN101_seed_69.npy  shape (23, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_labels_text_RN101_seed_69.npy  shape (23,)
+Chunk files removed. Done.
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Vocab size: 49408
+Len of res: 24
+Full dataset
+We are using a dataset containing 232 images.
+
+Concatenating chunk files into final .npy arrays...
+['output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69_chunk5.npy']
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-L-14_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-L-14_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-L-14_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-L-14_seed_69.npy
+Saved image embeddings: output_dir/activations_and_datasets_idxs_69/visogender_embeddings_ViT-L-14_seed_69.npy
+Deleting chunk files...
+Chunk files removed.
+Done.
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 23 texts from 'visogender_classnames' (23 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_attn_text_ViT-L-14_seed_69.npy  shape (23, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_mlp_text_ViT-L-14_seed_69.npy  shape (23, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_labels_text_ViT-L-14_seed_69.npy  shape (23,)
+Chunk files removed. Done.
+Using local files
+Model parameters: 986,109,441
+Context length: 77
+Vocab size: 49408
+Len of res: 32
+Full dataset
+We are using a dataset containing 232 images.
+
+Concatenating chunk files into final .npy arrays...
+['output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69_chunk5.npy']
+['output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69_chunk0.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69_chunk1.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69_chunk2.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69_chunk3.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69_chunk4.npy', 'output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69_chunk5.npy']
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_attn_ViT-H-14_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_mlp_ViT-H-14_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_cls_attn_ViT-H-14_seed_69.npy
+  output_dir/activations_and_datasets_idxs_69/visogender_labels_ViT-H-14_seed_69.npy
+Saved image embeddings: output_dir/activations_and_datasets_idxs_69/visogender_embeddings_ViT-H-14_seed_69.npy
+Deleting chunk files...
+Chunk files removed.
+Done.
+Using local files
+Model parameters: 986,109,441
+Context length: 77
+Number of text layers: 24
+Decomposing 23 texts from 'visogender_classnames' (23 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_attn_text_ViT-H-14_seed_69.npy  shape (23, 24, 16, 1024)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_mlp_text_ViT-H-14_seed_69.npy  shape (23, 25, 1024)
+  output_dir/activations_and_datasets_idxs_69/visogender_classnames_labels_text_ViT-H-14_seed_69.npy  shape (23,)
+Chunk files removed. Done.
+Using local files
+[ViT-B-32] 228 images, 23 occupations, 266 components
+    FULL MODEL total=55.70%  masc=57.89 fem=53.51  GAP(per-occ)=19.57  worst-cell=0.00  gender-readout=98.68%
+  [rep0 forward       ] kept= 137 total=49.76 GAP=17.83 worst-cell=0.00 gender-readout=98.05
+  [rep0 forward+swap  ] kept= 155 total=49.27 GAP=15.65 worst-cell=0.00 gender-readout=93.66
+  [rep0 backward      ] kept= 165 total=51.71 GAP=16.30 worst-cell=0.00 gender-readout=98.54
+  [rep0 backward+swap ] kept= 167 total=51.22 GAP=16.09 worst-cell=0.00 gender-readout=98.54
+  [rep1 forward       ] kept= 137 total=47.80 GAP=15.29 worst-cell=0.00 gender-readout=96.59
+  [rep1 forward+swap  ] kept= 136 total=52.20 GAP=21.81 worst-cell=0.00 gender-readout=97.56
+  [rep1 backward      ] kept= 171 total=51.71 GAP=20.94 worst-cell=0.00 gender-readout=97.56
+  [rep1 backward+swap ] kept= 168 total=52.20 GAP=21.81 worst-cell=0.00 gender-readout=97.56
+  [rep2 forward       ] kept= 122 total=53.17 GAP=23.77 worst-cell=0.00 gender-readout=98.54
+  [rep2 forward+swap  ] kept= 126 total=52.20 GAP=25.14 worst-cell=0.00 gender-readout=98.54
+  [rep2 backward      ] kept= 149 total=44.88 GAP=26.88 worst-cell=0.00 gender-readout=98.05
+  [rep2 backward+swap ] kept= 151 total=46.83 GAP=21.88 worst-cell=0.00 gender-readout=98.05
+  [rep3 forward       ] kept= 143 total=52.68 GAP=18.91 worst-cell=0.00 gender-readout=97.56
+  [rep3 forward+swap  ] kept= 127 total=50.73 GAP=20.87 worst-cell=0.00 gender-readout=96.59
+  [rep3 backward      ] kept= 150 total=44.39 GAP=23.26 worst-cell=0.00 gender-readout=98.54
+  [rep3 backward+swap ] kept= 147 total=43.90 GAP=21.52 worst-cell=0.00 gender-readout=96.59
+  [rep4 forward       ] kept= 138 total=51.22 GAP=20.00 worst-cell=0.00 gender-readout=96.59
+  [rep4 forward+swap  ] kept= 132 total=52.20 GAP=20.22 worst-cell=0.00 gender-readout=97.07
+  [rep4 backward      ] kept= 172 total=50.73 GAP=23.70 worst-cell=0.00 gender-readout=98.05
+  [rep4 backward+swap ] kept= 164 total=54.15 GAP=24.78 worst-cell=0.00 gender-readout=98.05
+[ViT-B-32] wrote visogender_{eval,trace}
+Using local files
+[ViT-B-16] 228 images, 23 occupations, 266 components
+    FULL MODEL total=55.26%  masc=57.02 fem=53.51  GAP(per-occ)=26.74  worst-cell=0.00  gender-readout=98.68%
+  [rep0 forward       ] kept= 121 total=51.22 GAP=22.25 worst-cell=0.00 gender-readout=95.12
+  [rep0 forward+swap  ] kept= 130 total=56.10 GAP=22.61 worst-cell=0.00 gender-readout=94.63
+  [rep0 backward      ] kept= 128 total=53.66 GAP=22.83 worst-cell=0.00 gender-readout=95.61
+  [rep0 backward+swap ] kept= 132 total=54.15 GAP=22.39 worst-cell=0.00 gender-readout=95.61
+  [rep1 forward       ] kept= 135 total=55.61 GAP=11.59 worst-cell=0.00 gender-readout=98.54
+  [rep1 forward+swap  ] kept= 137 total=56.59 GAP=16.23 worst-cell=0.00 gender-readout=98.05
+  [rep1 backward      ] kept= 150 total=53.66 GAP=13.12 worst-cell=0.00 gender-readout=98.05
+  [rep1 backward+swap ] kept= 145 total=53.17 GAP=16.52 worst-cell=0.00 gender-readout=97.56
+  [rep2 forward       ] kept= 124 total=52.68 GAP=16.96 worst-cell=0.00 gender-readout=98.05
+  [rep2 forward+swap  ] kept= 124 total=52.68 GAP=16.96 worst-cell=0.00 gender-readout=98.05
+  [rep2 backward      ] kept= 135 total=52.68 GAP=24.64 worst-cell=0.00 gender-readout=98.54
+  [rep2 backward+swap ] kept= 135 total=53.17 GAP=21.81 worst-cell=0.00 gender-readout=98.54
+  [rep3 forward       ] kept= 129 total=55.61 GAP=23.26 worst-cell=0.00 gender-readout=90.24
+  [rep3 forward+swap  ] kept= 129 total=56.59 GAP=21.30 worst-cell=0.00 gender-readout=90.24
+  [rep3 backward      ] kept= 138 total=53.17 GAP=15.43 worst-cell=0.00 gender-readout=98.54
+  [rep3 backward+swap ] kept= 139 total=53.66 GAP=15.65 worst-cell=0.00 gender-readout=98.54
+  [rep4 forward       ] kept= 149 total=55.61 GAP=21.74 worst-cell=0.00 gender-readout=93.17
+  [rep4 forward+swap  ] kept= 139 total=56.10 GAP=29.57 worst-cell=0.00 gender-readout=94.15
+  [rep4 backward      ] kept= 154 total=53.17 GAP=21.09 worst-cell=0.00 gender-readout=98.05
+  [rep4 backward+swap ] kept= 154 total=53.17 GAP=21.09 worst-cell=0.00 gender-readout=98.05
+[ViT-B-16] wrote visogender_{eval,trace}
+[RN50] 228 images, 23 occupations, 654 components
+    FULL MODEL total=44.74%  masc=44.74 fem=44.74  GAP(per-occ)=15.43  worst-cell=0.00  gender-readout=99.12%
+  [rep0 forward       ] kept= 290 total=40.98 GAP=25.22 worst-cell=0.00 gender-readout=52.20
+  [rep0 forward+swap  ] kept= 285 total=41.95 GAP=23.70 worst-cell=0.00 gender-readout=54.63
+  [rep0 backward      ] kept= 398 total=43.90 GAP=24.35 worst-cell=0.00 gender-readout=63.41
+  [rep0 backward+swap ] kept= 386 total=43.41 GAP=24.57 worst-cell=0.00 gender-readout=78.05
+  [rep1 forward       ] kept= 310 total=40.98 GAP=17.75 worst-cell=0.00 gender-readout=84.88
+  [rep1 forward+swap  ] kept= 308 total=40.98 GAP=17.75 worst-cell=0.00 gender-readout=85.85
+  [rep1 backward      ] kept= 389 total=40.49 GAP=24.86 worst-cell=0.00 gender-readout=80.49
+  [rep1 backward+swap ] kept= 402 total=39.02 GAP=23.33 worst-cell=0.00 gender-readout=79.02
+  [rep2 forward       ] kept= 287 total=43.41 GAP=17.54 worst-cell=0.00 gender-readout=53.17
+  [rep2 forward+swap  ] kept= 286 total=42.44 GAP=18.84 worst-cell=0.00 gender-readout=52.68
+  [rep2 backward      ] kept= 407 total=46.34 GAP=23.12 worst-cell=0.00 gender-readout=97.07
+  [rep2 backward+swap ] kept= 415 total=46.83 GAP=24.78 worst-cell=0.00 gender-readout=97.56
+  [rep3 forward       ] kept= 279 total=44.88 GAP=19.13 worst-cell=0.00 gender-readout=35.12
+  [rep3 forward+swap  ] kept= 287 total=44.88 GAP=20.87 worst-cell=0.00 gender-readout=40.49
+  [rep3 backward      ] kept= 380 total=44.88 GAP=14.78 worst-cell=0.00 gender-readout=36.59
+  [rep3 backward+swap ] kept= 406 total=42.44 GAP=14.57 worst-cell=0.00 gender-readout=62.44
+  [rep4 forward       ] kept= 336 total=44.39 GAP=23.26 worst-cell=0.00 gender-readout=85.85
+  [rep4 forward+swap  ] kept= 307 total=40.00 GAP=17.83 worst-cell=0.00 gender-readout=87.32
+  [rep4 backward      ] kept= 404 total=47.32 GAP=25.43 worst-cell=0.00 gender-readout=90.24
+  [rep4 backward+swap ] kept= 404 total=47.32 GAP=25.43 worst-cell=0.00 gender-readout=90.24
+[RN50] wrote visogender_{eval,trace}
+[RN101] 228 images, 23 occupations, 1198 components
+    FULL MODEL total=48.25%  masc=42.98 fem=53.51  GAP(per-occ)=17.83  worst-cell=0.00  gender-readout=97.81%
+  [rep0 forward       ] kept= 631 total=44.88 GAP=25.00 worst-cell=0.00 gender-readout=81.46
+  [rep0 forward+swap  ] kept= 618 total=43.90 GAP=27.17 worst-cell=0.00 gender-readout=80.00
+  [rep0 backward      ] kept= 708 total=45.85 GAP=25.00 worst-cell=0.00 gender-readout=84.39
+  [rep0 backward+swap ] kept= 710 total=47.32 GAP=22.39 worst-cell=0.00 gender-readout=80.00
+  [rep1 forward       ] kept= 581 total=43.90 GAP=22.68 worst-cell=0.00 gender-readout=79.02
+  [rep1 forward+swap  ] kept= 596 total=46.83 GAP=23.33 worst-cell=0.00 gender-readout=80.49
+  [rep1 backward      ] kept= 679 total=45.85 GAP=23.99 worst-cell=0.00 gender-readout=80.98
+  [rep1 backward+swap ] kept= 678 total=46.34 GAP=25.22 worst-cell=0.00 gender-readout=77.56
+  [rep2 forward       ] kept= 583 total=43.90 GAP=28.99 worst-cell=0.00 gender-readout=90.24
+  [rep2 forward+swap  ] kept= 582 total=45.85 GAP=26.81 worst-cell=0.00 gender-readout=91.22
+  [rep2 backward      ] kept= 665 total=48.29 GAP=23.55 worst-cell=0.00 gender-readout=81.46
+  [rep2 backward+swap ] kept= 684 total=47.32 GAP=20.29 worst-cell=0.00 gender-readout=81.46
+  [rep3 forward       ] kept= 621 total=44.39 GAP=22.17 worst-cell=0.00 gender-readout=84.88
+  [rep3 forward+swap  ] kept= 615 total=43.41 GAP=24.78 worst-cell=0.00 gender-readout=84.39
+  [rep3 backward      ] kept= 697 total=50.73 GAP=23.26 worst-cell=0.00 gender-readout=83.90
+  [rep3 backward+swap ] kept= 678 total=44.88 GAP=28.04 worst-cell=0.00 gender-readout=83.41
+  [rep4 forward       ] kept= 619 total=48.29 GAP=27.83 worst-cell=0.00 gender-readout=89.27
+  [rep4 forward+swap  ] kept= 607 total=47.32 GAP=29.13 worst-cell=0.00 gender-readout=86.34
+  [rep4 backward      ] kept= 671 total=47.32 GAP=21.09 worst-cell=0.00 gender-readout=94.63
+  [rep4 backward+swap ] kept= 686 total=46.34 GAP=27.83 worst-cell=0.00 gender-readout=92.20
+[RN101] wrote visogender_{eval,trace}
+Using local files
+[ViT-L-14] 228 images, 23 occupations, 566 components
+    FULL MODEL total=60.96%  masc=57.89 fem=64.04  GAP(per-occ)=16.96  worst-cell=0.00  gender-readout=99.56%
+  [rep0 forward       ] kept= 293 total=57.07 GAP=23.26 worst-cell=0.00 gender-readout=95.61
+  [rep0 forward+swap  ] kept= 282 total=58.05 GAP=18.48 worst-cell=0.00 gender-readout=96.10
+  [rep0 backward      ] kept= 313 total=57.56 GAP=25.65 worst-cell=0.00 gender-readout=99.02
+  [rep0 backward+swap ] kept= 310 total=59.02 GAP=22.17 worst-cell=0.00 gender-readout=99.02
+  [rep1 forward       ] kept= 288 total=60.00 GAP=20.94 worst-cell=0.00 gender-readout=99.51
+  [rep1 forward+swap  ] kept= 281 total=60.00 GAP=20.72 worst-cell=0.00 gender-readout=99.51
+  [rep1 backward      ] kept= 317 total=55.61 GAP=20.94 worst-cell=0.00 gender-readout=99.51
+  [rep1 backward+swap ] kept= 324 total=60.98 GAP=17.90 worst-cell=0.00 gender-readout=99.51
+  [rep2 forward       ] kept= 274 total=59.02 GAP=18.48 worst-cell=0.00 gender-readout=100.00
+  [rep2 forward+swap  ] kept= 277 total=56.59 GAP=23.19 worst-cell=0.00 gender-readout=99.51
+  [rep2 backward      ] kept= 310 total=58.54 GAP=23.48 worst-cell=0.00 gender-readout=99.51
+  [rep2 backward+swap ] kept= 322 total=58.54 GAP=25.43 worst-cell=0.00 gender-readout=99.51
+  [rep3 forward       ] kept= 290 total=62.93 GAP=18.91 worst-cell=0.00 gender-readout=100.00
+  [rep3 forward+swap  ] kept= 293 total=61.46 GAP=15.87 worst-cell=0.00 gender-readout=94.15
+  [rep3 backward      ] kept= 325 total=60.98 GAP=14.78 worst-cell=0.00 gender-readout=91.71
+  [rep3 backward+swap ] kept= 326 total=63.41 GAP=15.65 worst-cell=0.00 gender-readout=88.78
+  [rep4 forward       ] kept= 280 total=59.02 GAP=29.57 worst-cell=0.00 gender-readout=85.85
+  [rep4 forward+swap  ] kept= 293 total=59.02 GAP=26.74 worst-cell=0.00 gender-readout=88.78
+  [rep4 backward      ] kept= 314 total=54.15 GAP=25.43 worst-cell=0.00 gender-readout=95.61
+  [rep4 backward+swap ] kept= 304 total=56.10 GAP=23.48 worst-cell=0.00 gender-readout=95.12
+[ViT-L-14] wrote visogender_{eval,trace}
+Using local files
+[ViT-H-14] 228 images, 23 occupations, 954 components
+    FULL MODEL total=58.33%  masc=56.14 fem=60.53  GAP(per-occ)=16.74  worst-cell=0.00  gender-readout=99.12%
+  [rep0 forward       ] kept= 436 total=59.02 GAP=19.78 worst-cell=0.00 gender-readout=98.05
+  [rep0 forward+swap  ] kept= 441 total=58.54 GAP=17.17 worst-cell=0.00 gender-readout=97.07
+  [rep0 backward      ] kept= 545 total=57.56 GAP=23.04 worst-cell=0.00 gender-readout=98.05
+  [rep0 backward+swap ] kept= 545 total=55.61 GAP=23.48 worst-cell=0.00 gender-readout=98.05
+  [rep1 forward       ] kept= 440 total=55.12 GAP=21.01 worst-cell=0.00 gender-readout=97.07
+  [rep1 forward+swap  ] kept= 439 total=55.12 GAP=20.80 worst-cell=0.00 gender-readout=97.07
+  [rep1 backward      ] kept= 524 total=53.17 GAP=21.81 worst-cell=0.00 gender-readout=98.05
+  [rep1 backward+swap ] kept= 506 total=56.10 GAP=23.48 worst-cell=0.00 gender-readout=98.05
+  [rep2 forward       ] kept= 483 total=56.59 GAP=20.80 worst-cell=0.00 gender-readout=98.54
+  [rep2 forward+swap  ] kept= 476 total=56.10 GAP=18.84 worst-cell=0.00 gender-readout=98.05
+  [rep2 backward      ] kept= 541 total=57.56 GAP=19.13 worst-cell=0.00 gender-readout=98.54
+  [rep2 backward+swap ] kept= 561 total=57.07 GAP=21.96 worst-cell=0.00 gender-readout=99.02
+  [rep3 forward       ] kept= 483 total=59.02 GAP=17.17 worst-cell=0.00 gender-readout=97.07
+  [rep3 forward+swap  ] kept= 450 total=60.00 GAP=20.87 worst-cell=0.00 gender-readout=95.61
+  [rep3 backward      ] kept= 549 total=62.93 GAP=18.70 worst-cell=0.00 gender-readout=97.07
+  [rep3 backward+swap ] kept= 546 total=58.54 GAP=18.70 worst-cell=0.00 gender-readout=96.59
+  [rep4 forward       ] kept= 444 total=60.00 GAP=23.04 worst-cell=0.00 gender-readout=80.98
+  [rep4 forward+swap  ] kept= 442 total=59.51 GAP=21.52 worst-cell=0.00 gender-readout=78.05
+  [rep4 backward      ] kept= 577 total=55.61 GAP=25.65 worst-cell=0.00 gender-readout=98.05
+  [rep4 backward+swap ] kept= 561 total=60.00 GAP=25.43 worst-cell=0.00 gender-readout=98.05
+[ViT-H-14] wrote visogender_{eval,trace}
+ALLDONE

@@ -17,7 +17,7 @@ from utils.misc.visualization import visualization_preprocess
 from utils.misc.misc import accuracy_correct
 from utils.datasets_constants.imagenet_classes import imagenet_classes
 from utils.datasets_constants.cifar_10_classes import cifar_10_classes
-from utils.datasets_constants.cub_classes import cub_classes, waterbird_classes
+from utils.datasets_constants.waterbird_classes import cub_classes, waterbird_classes
 
 
 ### Layout of data
@@ -632,6 +632,43 @@ def random_pcs(data, nr_pcs):
     """
     random_pcs = np.random.choice(data, nr_pcs, replace=False)
     return list(random_pcs.squeeze())
+
+
+def select_random_pcs(data, n, layers="late", seed=0, late_k=4):
+    """
+    Random-PC control for the QuerySystem (paper section 6.4(ii)).
+
+    Returns a selection with the same shape as the QuerySystem selection
+    (a list of `n` PrincipalComponentRecord-style dicts) so that the existing
+    reconstruction path (`reconstruct_embeddings`) can be reused unchanged.
+
+    Parameters:
+    - data (list): PC records as produced by `get_data`.
+    - n (int): number of PCs to select.
+    - layers ('late' | 'all'): restrict the candidate pool to the last `late_k`
+      layers ('late') or draw uniformly across all layers present in `data` ('all').
+      Note the explanation .jsonl already only contains the last
+      `--num_of_last_layers`; 'late' narrows this further.
+    - seed (int): RNG seed (independent of the global seed).
+    - late_k (int): number of trailing layers considered 'late'.
+
+    Returns:
+    - list of `n` PC records drawn without replacement.
+    """
+    if layers == "late":
+        max_layer = max(entry["layer"] for entry in data)
+        candidates = [e for e in data if e["layer"] >= max_layer - late_k + 1]
+    elif layers == "all":
+        candidates = list(data)
+    else:
+        raise ValueError(f"layers must be 'late' or 'all', got {layers!r}")
+
+    if n > len(candidates):
+        raise ValueError(f"Requested {n} PCs but only {len(candidates)} candidates for layers={layers!r}.")
+
+    rng = np.random.default_rng(seed)
+    idx = rng.choice(len(candidates), size=n, replace=False)
+    return [candidates[i] for i in idx]
 
 @torch.no_grad()
 def reconstruct_embeddings(data, embeddings, types, device="cpu", return_princ_comp=False, plot=False, means=[]):
@@ -2213,3 +2250,189 @@ def proof_concept_4_pcs_single(classifier_, attns_, mlps_, labels_, classes_, mo
         file_to_load = f"params_{model_name}_proof_of_concept_{concept_nr}.json"
         params = load_parameters(file_to_load)
         plot_proof_of_concept(**params)
+
+# --------------------------------------------------------------------------- #
+# Transfer / cross-dataset completeness
+# --------------------------------------------------------------------------- #
+def transfer_completeness(
+    input_dir, model, seed, tower, fit_dataset, eval_datasets,
+    components="all", textset="top_1500_nouns_5_sentences_imagenet_clean",
+    text_dir="./utils/text_descriptions", image_set="self", probe_name="imagenet",
+    num_of_last_layers=999, text_per_pc=5, max_text=999, device="cpu",
+):
+    """Fit ONE per-component basis on a general dataset (robust even when the target has few
+    samples/labels), freeze it, then project every target dataset's activations onto that basis
+    and measure zero-shot accuracy of the PC, top-text-approx and top-image-approx reconstructions
+    (both modalities), against the real-model baseline.
+
+    Centering: each target component is centered by *its own* mean, projected onto the frozen basis,
+    and the mean is added back before the (mean-restored) embedding is scored -- so a 2-row target
+    still gets a full reconstruction from the general basis.
+
+    Args mirror run_explanations. `tower` in {"image","text"}. Returns a list of row dicts with the
+    SAME fields as the self-mode zero_shot_accuracy table (so both tables share one CSV format), plus
+    the transfer source: {fit_dataset, dataset, model, tower, components, n_pcs, pc_comp_mean,
+    pc_comp_std, model_acc, pc_acc, text_self, text_ref, image_self, image_ref}. Every *acc/*self/*ref
+    value is an (image->label, label->image) pair (both %). text_ref/image_ref use the FROZEN fit-side
+    span; text_self/image_self approximate the same frozen PC basis with the TARGET's own class
+    names / images. Needs, per dataset: activations (attn/mlp[_text]) and -- for scoring -- the image
+    tower's {ds}_classifier_{model}.npy, or the text tower's paired image eval set (X_classnames -> X)
+    {X}_embeddings/_labels. Targets without a scorer are skipped.
+    """
+    import os
+    from utils.scripts.algorithms_text_explanations import svd_data_approx
+
+    tag = "_text" if tower == "text" else ""
+
+    def load(ds, kind):
+        return np.load(os.path.join(input_dir, f"{ds}_{kind}{tag}_{model}_seed_{seed}.npy")).astype(np.float32)
+
+    # --- frozen candidate pools (concept labels), fit-side ---
+    text_features = np.load(os.path.join(input_dir, f"{textset}_{model}.npy")).astype(np.float32)
+    with open(os.path.join(text_dir, f"{textset}.txt")) as f:
+        lines = [l.replace("\n", "") for l in f.readlines()]
+    img_pool = None
+    if image_set not in ("self", None, ""):
+        for nm in (sorted({p.split(f"_embeddings_{model}_seed_{seed}.npy")[0]
+                           for p in os.listdir(input_dir) if p.endswith(f"_embeddings_{model}_seed_{seed}.npy")
+                           and "_text_" not in p}) if image_set == "all" else
+                   [s.strip() for s in image_set.split(",")]):
+            ep = os.path.join(input_dir, f"{nm}_embeddings_{model}_seed_{seed}.npy")
+            if os.path.exists(ep):
+                e = np.load(ep).astype(np.float32)
+                img_pool = e if img_pool is None else np.concatenate([img_pool, e], 0)
+
+    # --- FIT: one (vh, coeff_text, coeff_image) per decomposed component on the general set ---
+    fit_attn, fit_mlp = load(fit_dataset, "attn"), load(fit_dataset, "mlp")
+    L, H = fit_attn.shape[1], fit_attn.shape[2]
+    do_attn, do_mlp = components in ("attn", "all"), components in ("mlp", "all")
+    sa, sm = max(0, L - num_of_last_layers), max(0, fit_mlp.shape[1] - num_of_last_layers)
+
+    def span_projector(vh, pool):
+        """Stable orthogonal projector [r, r] onto the top-1-per-PC pool items' span, in the (FROZEN)
+        vh PC coordinates -- the same construction as compute_text_explanations.pool_reconstruct, but
+        vh is fixed here so the pool only chooses which of its items spans each frozen direction."""
+        Cc = pool - pool.mean(0, keepdims=True)
+        coords = (Cc / (np.linalg.norm(Cc, axis=1, keepdims=True) + 1e-8)) @ vh.T
+        pm = coords[[int(np.argmax(coords[:, pc])) for pc in range(coords.shape[1])]]
+        sv_, vt_ = np.linalg.svd(pm, full_matrices=False)[1:]
+        kk_ = int((sv_ > sv_.max() * 1e-6).sum()) if sv_.size and sv_.max() > 0 else 0
+        return (vt_[:kk_].T @ vt_[:kk_]).astype(np.float32)
+
+    def fit_unit(data):
+        _, info = svd_data_approx(data, text_features, lines, 0, 0, text_per_pc, device, iters=max_text)
+        vh = np.asarray(info["vh"], np.float32)                          # [r, d]
+        coeff_text = np.asarray(info["project_matrix"], np.float32)      # [r, r] in PC space
+        src = img_pool if img_pool is not None else data                # image span basis source
+        coeff_image = span_projector(vh, src)                           # frozen fit-side image span
+        return vh, coeff_text, coeff_image
+
+    ops = []  # (kind, l, h, vh, coeff_text, coeff_image)
+    if do_attn:
+        for l in range(sa, L):
+            for h in range(H):
+                ops.append(("attn", l, h) + fit_unit(fit_attn[:, l, h]))
+    if do_mlp:
+        for l in range(sm, fit_mlp.shape[1]):
+            ops.append(("mlp", l, None) + fit_unit(fit_mlp[:, l]))
+    print(f"[transfer] fit {tower} basis on '{fit_dataset}' ({model}): {len(ops)} components frozen.")
+
+    # --- scoring per tower ---
+    # Each scorer returns (acc, text_self_pool, image_self_pool): acc(emb) -> (image->label,
+    # label->image) top-1 %, plus the TARGET's own class-name / image pools for the *_self columns
+    # (None when unavailable). Directions mirror compute_text_explanations[_text].zero_shot exactly.
+    nan = float("nan")
+    if tower == "image":
+        def scorer(ds):
+            cf = os.path.join(input_dir, f"{ds}_classifier_{model}.npy")
+            if not os.path.exists(cf):
+                return None
+            classifier = np.load(cf).astype(np.float32)                 # [d, C]
+            labels = np.load(os.path.join(input_dir, f"{ds}_labels_{model}_seed_{seed}.npy"))
+            present = np.unique(labels)
+
+            def acc(emb):
+                proj = np.ascontiguousarray(emb).astype(np.float32) @ classifier   # [N, C]
+                i2l = float((proj.argmax(1) == labels).mean() * 100.0)
+                top_img = proj.argmax(0)                                # [C] best image per class
+                l2i = float(np.mean([labels[top_img[c]] == c for c in present]) * 100.0)
+                return i2l, l2i
+            text_self = np.ascontiguousarray(classifier.T).astype(np.float32)      # class names [C, d]
+            se = os.path.join(input_dir, f"{ds}_embeddings_{model}_seed_{seed}.npy")
+            image_self = np.load(se).astype(np.float32) if os.path.exists(se) else None
+            return acc, text_self, image_self
+    else:
+        # Text tower is scored on the TARGET's OWN images (X_classnames -> X), not a fixed probe, so
+        # prototype class c lines up with image label c. Targets with no paired image set are skipped.
+        def scorer(ds):
+            eval_ds = ds[:-len("_classnames")] if ds.endswith("_classnames") else ds
+            pe = os.path.join(input_dir, f"{eval_ds}_embeddings_{model}_seed_{seed}.npy")
+            pl = os.path.join(input_dir, f"{eval_ds}_labels_{model}_seed_{seed}.npy")
+            if not (os.path.exists(pe) and os.path.exists(pl)):
+                return None
+            eimg = np.load(pe).astype(np.float32)
+            elab = np.load(pl)
+            present = np.unique(elab)
+            tl = np.load(os.path.join(input_dir, f"{ds}_labels_text_{model}_seed_{seed}.npy"))
+            C = int(tl.max()) + 1
+
+            def acc(emb):
+                proto = np.stack([emb[tl == c].mean(0) for c in range(C)])
+                sims = eimg @ proto.T                                   # [M, C]
+                i2l = float((sims.argmax(1) == elab).mean() * 100.0)
+                top_img = sims.argmax(0)                                # [C] best image per prototype
+                l2i = float(np.mean([elab[top_img[c]] == c for c in present]) * 100.0)
+                return i2l, l2i
+            cf = os.path.join(input_dir, f"{eval_ds}_classifier_{model}.npy")
+            text_self = np.ascontiguousarray(np.load(cf).T).astype(np.float32) if os.path.exists(cf) else None
+            return acc, text_self, eimg  # image_self = the target's own paired images
+
+    # Frozen fit basis is shared by all targets, so the per-unit kept-PC counts are constant across rows.
+    comp_ranks = [int(vh.shape[0]) for (_, _, _, vh, _, _) in ops]
+    pc_comp_mean = float(np.mean(comp_ranks)) if comp_ranks else nan
+    pc_comp_std = float(np.std(comp_ranks)) if comp_ranks else nan
+
+    # --- EVAL: project each target onto the frozen basis, score every reconstruction ---
+    rows = []
+    for ds in eval_datasets:
+        try:
+            ev_attn, ev_mlp = load(ds, "attn"), load(ds, "mlp")
+        except FileNotFoundError:
+            continue
+        sc = scorer(ds)
+        if sc is None:
+            # No scorer (image tower: no classifier; text tower: no paired image eval set / fit-only).
+            print(f"[transfer] skip '{ds}': no scorer (missing classifier or paired image eval set).")
+            continue
+        score, text_self_pool, image_self_pool = sc
+        base = ev_mlp.sum(1) + ev_attn.sum((1, 2))                       # [N, d] real model
+        emb_pc, emb_tx, emb_im = base.copy(), base.copy(), base.copy()
+        emb_ts, emb_is = base.copy(), base.copy()                       # target's own class names / images
+        for kind, l, h, vh, ct, ci in ops:
+            X = ev_attn[:, l, h] if kind == "attn" else ev_mlp[:, l]     # [N, d]
+            mean_e = X.mean(0, keepdims=True)
+            proj = (X - mean_e) @ vh.T                                   # [N, r]  (centered)
+            emb_pc += (proj @ vh + mean_e) - X                           # mean added back
+            emb_tx += (proj @ ct @ vh + mean_e) - X                      # frozen general text span
+            emb_im += (proj @ ci @ vh + mean_e) - X                      # frozen general image span
+            # *_self: the SAME frozen vh, but the top-1-per-PC items come from the target's own pool.
+            if text_self_pool is not None:
+                emb_ts += (proj @ span_projector(vh, text_self_pool) @ vh + mean_e) - X
+            src = image_self_pool if image_self_pool is not None else X
+            emb_is += (proj @ span_projector(vh, src) @ vh + mean_e) - X
+        # n_pcs: rank (99% variance) of the TARGET's own final-embedding decomposition, like the self table.
+        _, jinfo = svd_data_approx(base, text_features, lines, -1, -1, text_per_pc, device)
+        ts_pair = score(emb_ts) if text_self_pool is not None else (nan, nan)
+        rows.append({
+            "fit_dataset": fit_dataset, "dataset": ds, "model": model, "tower": tower,
+            "components": components, "n_pcs": len(jinfo.get("s", [])),
+            "pc_comp_mean": pc_comp_mean, "pc_comp_std": pc_comp_std,
+            "model_acc": score(base), "pc_acc": score(emb_pc),
+            "text_self": ts_pair, "text_ref": score(emb_tx),
+            "image_self": score(emb_is), "image_ref": score(emb_im),
+        })
+        r0 = rows[-1]
+        print(f"[transfer] eval '{ds}': model={r0['model_acc'][0]:.2f} pc={r0['pc_acc'][0]:.2f} "
+              f"text_self={ts_pair[0]:.2f} text_ref={r0['text_ref'][0]:.2f} "
+              f"image_self={r0['image_self'][0]:.2f} image_ref={r0['image_ref'][0]:.2f}")
+    return rows

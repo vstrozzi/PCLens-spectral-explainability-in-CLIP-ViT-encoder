@@ -1,0 +1,224 @@
+{
+  "ViT-B-16": {
+    "baseline": {
+      "imagenet": 0.695,
+      "CIFAR100": 0.7695
+    },
+    "orth_err": {
+      "imagenet": {
+        "Wpos": 2.966855584713621e-15,
+        "Wneg": 5.10702591327572e-15,
+        "cos_true_before_after": [
+          0.2725953208787344,
+          0.7210421345081446
+        ],
+        "cos_wrong_before_after": [
+          0.08066398638991865,
+          -0.5186449395246152
+        ],
+        "M_pos_spectrum": {
+          "s1": 2122.716671138083,
+          "s2": 198.96115463570052,
+          "stable_rank": 1.0149617690535564
+        },
+        "M_neg_spectrum": {
+          "s1": 2130.7256044312617,
+          "s2": 13.117067102078442,
+          "stable_rank": 1.0003197804574202
+        }
+      },
+      "CIFAR100": {
+        "Wpos": 2.220446049250313e-15,
+        "Wneg": 2.4424906541753444e-15,
+        "cos_true_before_after": [
+          0.2520010053630221,
+          0.8147003580054675
+        ],
+        "cos_wrong_before_after": [
+          0.11590868586205798,
+          -0.5984865077495789
+        ],
+        "M_pos_spectrum": {
+          "s1": 1192.7940881555428,
+          "s2": 52.10676945455097,
+          "stable_rank": 1.0046732800297098
+        },
+        "M_neg_spectrum": {
+          "s1": 1195.0449272794278,
+          "s2": 6.4328897175218716,
+          "stable_rank": 1.0002027480106663
+        }
+      }
+    },
+    "fit": {
+      "imagenet": {
+        "imagenet": {
+          "Wpos": 0.771,
+          "Wneg": 0.0012,
+          "Wpos@Wneg": 0.0008,
+          "Wneg@Wpos": 0.0012,
+          "Wpos@Wneg^T": 0.0008
+        },
+        "CIFAR100": {
+          "Wpos": 0.6925,
+          "Wneg": 0.008,
+          "Wpos@Wneg": 0.012,
+          "Wneg@Wpos": 0.0095,
+          "Wpos@Wneg^T": 0.016
+        }
+      },
+      "CIFAR100": {
+        "imagenet": {
+          "Wpos": 0.1566,
+          "Wneg": 0.0012,
+          "Wpos@Wneg": 0.0004,
+          "Wneg@Wpos": 0.0008,
+          "Wpos@Wneg^T": 0.0026
+        },
+        "CIFAR100": {
+          "Wpos": 0.8745,
+          "Wneg": 0.0045,
+          "Wpos@Wneg": 0.009,
+          "Wneg@Wpos": 0.0125,
+          "Wpos@Wneg^T": 0.01
+        }
+      }
+    },
+    "split": {
+      "imagenet": {
+        "base_test": 0.6964,
+        "Wpos_test": 0.5704,
+        "Wneg_test": 0.0,
+        "shift_test": 0.5228,
+        "base_train": 0.6936,
+        "Wpos_train": 0.8512,
+        "shift_train": 0.5116
+      },
+      "CIFAR100": {
+        "base_test": 0.768,
+        "Wpos_test": 0.753,
+        "Wneg_test": 0.011,
+        "shift_test": 0.702,
+        "base_train": 0.771,
+        "Wpos_train": 0.931,
+        "shift_train": 0.709
+      }
+    },
+    "img_eq_txt": {
+      "rotate_image": 0.771,
+      "rotate_text": 0.771,
+      "abs_diff": 0.0
+    }
+  },
+  "ViT-B-32": {
+    "baseline": {
+      "imagenet": 0.6644,
+      "CIFAR100": 0.762
+    },
+    "orth_err": {
+      "imagenet": {
+        "Wpos": 2.886579864025407e-15,
+        "Wneg": 3.1086244689504383e-15,
+        "cos_true_before_after": [
+          0.29856807113854805,
+          0.7061433357517751
+        ],
+        "cos_wrong_before_after": [
+          0.1146499124690061,
+          -0.5112119017809064
+        ],
+        "M_pos_spectrum": {
+          "s1": 2067.798184975438,
+          "s2": 195.3245475181359,
+          "stable_rank": 1.015138508533227
+        },
+        "M_neg_spectrum": {
+          "s1": 2074.5158666855077,
+          "s2": 12.517400216576162,
+          "stable_rank": 1.0003441738409247
+        }
+      },
+      "CIFAR100": {
+        "Wpos": 2.220446049250313e-15,
+        "Wneg": 2.3314683517128287e-15,
+        "cos_true_before_after": [
+          0.2806747096281928,
+          0.793140904523322
+        ],
+        "cos_wrong_before_after": [
+          0.14385690270370532,
+          -0.5674862225792399
+        ],
+        "M_pos_spectrum": {
+          "s1": 1131.9292709540614,
+          "s2": 51.52635043665057,
+          "stable_rank": 1.0054031200303415
+        },
+        "M_neg_spectrum": {
+          "s1": 1134.5975459338144,
+          "s2": 6.5566478380595035,
+          "stable_rank": 1.0002506870596508
+        }
+      }
+    },
+    "fit": {
+      "imagenet": {
+        "imagenet": {
+          "Wpos": 0.769,
+          "Wneg": 0.0008,
+          "Wpos@Wneg": 0.0006,
+          "Wneg@Wpos": 0.0006,
+          "Wpos@Wneg^T": 0.001
+        },
+        "CIFAR100": {
+          "Wpos": 0.672,
+          "Wneg": 0.007,
+          "Wpos@Wneg": 0.01,
+          "Wneg@Wpos": 0.0065,
+          "Wpos@Wneg^T": 0.0165
+        }
+      },
+      "CIFAR100": {
+        "imagenet": {
+          "Wpos": 0.1314,
+          "Wneg": 0.0014,
+          "Wpos@Wneg": 0.0018,
+          "Wneg@Wpos": 0.0016,
+          "Wpos@Wneg^T": 0.0002
+        },
+        "CIFAR100": {
+          "Wpos": 0.875,
+          "Wneg": 0.013,
+          "Wpos@Wneg": 0.008,
+          "Wneg@Wpos": 0.012,
+          "Wpos@Wneg^T": 0.01
+        }
+      }
+    },
+    "split": {
+      "imagenet": {
+        "base_test": 0.6624,
+        "Wpos_test": 0.5232,
+        "Wneg_test": 0.0,
+        "shift_test": 0.4948,
+        "base_train": 0.6664,
+        "Wpos_train": 0.8756,
+        "shift_train": 0.4944
+      },
+      "CIFAR100": {
+        "base_test": 0.756,
+        "Wpos_test": 0.753,
+        "Wneg_test": 0.015,
+        "shift_test": 0.678,
+        "base_train": 0.768,
+        "Wpos_train": 0.92,
+        "shift_train": 0.68
+      }
+    },
+    "img_eq_txt": {
+      "rotate_image": 0.769,
+      "rotate_text": 0.769,
+      "abs_diff": 0.0
+    }
+  }
+}

@@ -1,0 +1,8 @@
+######## Q1 exp_npairs
+[ViT-B-32] 2000 images, 266 components; full model total=59.50 worst-group=28.50
+  [informative n=  1] worst-group for=6.1  for=10.0  bac=37.0  bac=37.0
+  [informative n= 10] worst-group for=47.9  for=45.5  bac=44.5  bac=43.9
+  [random      n=  1] worst-group for=53.7  for=53.7  bac=38.5  bac=38.5
+  [random      n= 10] worst-group for=75.6  for=75.6  bac=72.7  bac=70.6
+[ViT-B-32] wrote npairs_{eval,trace}
+######## Q3b exp_selectivity  (the baseline readouts are the thing to check)

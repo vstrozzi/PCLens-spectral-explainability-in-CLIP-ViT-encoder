@@ -1,0 +1,11 @@
+[ViT-B-32] 2000 attacked images, 1000 classes, 266 components
+    FULL MODEL true=18.30%  ATTACK=54.90%  neither=26.80%
+  [rep0 forward       ] kept= 156/266 true=45.30%  ATTACK=3.93%
+  [rep0 forward+swap  ] kept= 156/266 true=45.30%  ATTACK=3.77%
+  [rep0 backward      ] kept= 170/266 true=47.26%  ATTACK=3.10%
+  [rep0 backward+swap ] kept= 170/266 true=47.26%  ATTACK=3.10%
+  [rep1 forward       ] kept= 144/266 true=44.99%  ATTACK=3.15%
+  [rep1 forward+swap  ] kept= 154/266 true=45.25%  ATTACK=3.87%
+  [rep1 backward      ] kept= 165/266 true=44.06%  ATTACK=2.38%
+  [rep1 backward+swap ] kept= 183/266 true=45.04%  ATTACK=2.94%
+  [rep2 forward       ] kept= 145/266 true=43.70%  ATTACK=3.05%

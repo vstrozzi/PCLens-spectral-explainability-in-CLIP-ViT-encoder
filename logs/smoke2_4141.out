@@ -1,0 +1,13 @@
+[ViT-B-32] 5000 images / 1000 classes, 266 components; full-model 1000-way top-1 = 63.68%
+[ViT-B-32] 2107 PC units (K<=8)
+  [subset 0] classes=[135, 137, 354, 438, 470, 605, 622, 650, 862, 929]  n_img=50  full-model 10-way = 94.00%
+    [rep0 comp forward       ] kept=   8/266 10-way=60.00%  1000-way=20.02%
+    [rep0 comp forward+swap  ] kept=   8/266 10-way=60.00%  1000-way=20.02%
+    [rep0 comp backward      ] kept= 260/266 10-way=90.00%  1000-way=60.24%
+    [rep0 comp backward+swap ] kept= 260/266 10-way=90.00%  1000-way=60.24%
+    [rep0 pc   forward       ] kept=    8/2107 10-way=80.00%  1000-way=31.69%
+    [rep0 pc   forward+swap  ] kept=    8/2107 10-way=80.00%  1000-way=31.69%
+    [rep0 pc   backward      ] kept= 2101/2107 10-way=93.33%  1000-way=63.76%
+    [rep0 pc   backward+swap ] kept= 2101/2107 10-way=93.33%  1000-way=63.76%
+[ViT-B-32] wrote insub_{eval,trace}
+SMOKE2_OK

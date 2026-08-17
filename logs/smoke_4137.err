@@ -1,0 +1,16 @@
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_waterbirds_table.py", line 110, in <module>
+    run_model(m, a.device, a.seed, a.n_cal, a.n_random)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_waterbirds_table.py", line 78, in run_model
+    held = _cal_mask(y, place, regime, rep, n_cal, seed, device)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_waterbirds_table.py", line 52, in _cal_mask
+    g = torch.Generator().manual_seed(seed + rep)
+TypeError: an integer is required

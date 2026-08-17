@@ -1,0 +1,2 @@
+[ViT-B-32] 2112 PC units from 266 components (K<=8); full model worst-group=28.50 total=59.50
+  [class rep0 forward ] kept= 1020/2112 total=76.26 worst-group=64.73

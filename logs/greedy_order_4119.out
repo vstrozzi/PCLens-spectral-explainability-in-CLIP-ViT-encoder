@@ -1,0 +1,355 @@
+[ViT-B-32] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/157 loss=0.9722
+    forward 100/157 loss=0.9366
+    forward 150/157 loss=0.8028
+  [ViT-B-32/vision] forward done (157 components)
+    backward 50/157 loss=17.8258
+    backward 100/157 loss=19.3874
+    backward 150/157 loss=19.3581
+  [ViT-B-32/vision] backward done (157 components)
+    forward 50/109 loss=0.7261
+    forward 100/109 loss=0.7338
+  [ViT-B-32/text] forward done (109 components)
+    backward 50/109 loss=9.2114
+    backward 100/109 loss=10.9997
+  [ViT-B-32/text] backward done (109 components)
+    seed pair ('attn', 11, 8) + ('attn', 10, 2) loss=4.7879
+    forward 50/266 loss=1.0733
+    forward 100/266 loss=0.8120
+    forward 150/266 loss=0.7803
+    forward 200/266 loss=0.8039
+    forward 250/266 loss=0.9451
+  [ViT-B-32/joint] forward done (266 components)
+    backward 50/266 loss=18.3027
+    backward 100/266 loss=21.1920
+    backward 150/266 loss=22.3801
+    backward 200/266 loss=22.5602
+    backward 250/266 loss=21.2122
+  [ViT-B-32/joint] backward done (266 components)
+[ViT-B-32] wrote greedy_order_{order,ablation} (1260 rows)
+[ViT-B-16] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/157 loss=0.7434
+    forward 100/157 loss=0.7082
+    forward 150/157 loss=0.7327
+  [ViT-B-16/vision] forward done (157 components)
+    backward 50/157 loss=20.4473
+    backward 100/157 loss=21.6949
+    backward 150/157 loss=21.5072
+  [ViT-B-16/vision] backward done (157 components)
+    forward 50/109 loss=0.6880
+    forward 100/109 loss=0.7114
+  [ViT-B-16/text] forward done (109 components)
+    backward 50/109 loss=9.3000
+    backward 100/109 loss=10.3281
+  [ViT-B-16/text] backward done (109 components)
+    seed pair ('attn', 11, 7) + ('attn', 9, 0) loss=4.4294
+    forward 50/266 loss=0.9129
+    forward 100/266 loss=0.7623
+    forward 150/266 loss=0.7358
+    forward 200/266 loss=0.7486
+    forward 250/266 loss=0.7964
+  [ViT-B-16/joint] forward done (266 components)
+    backward 50/266 loss=20.5555
+    backward 100/266 loss=22.0831
+    backward 150/266 loss=22.2431
+    backward 200/266 loss=21.8511
+    backward 250/266 loss=20.3540
+  [ViT-B-16/joint] backward done (266 components)
+[ViT-B-16] wrote greedy_order_{order,ablation} (1260 rows)
+[ViT-L-14] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/409 loss=0.5951
+    forward 100/409 loss=0.5249
+    forward 150/409 loss=0.4930
+    forward 200/409 loss=0.4840
+    forward 250/409 loss=0.4856
+    forward 300/409 loss=0.4975
+    forward 350/409 loss=0.4584
+    forward 400/409 loss=0.5337
+  [ViT-L-14/vision] forward done (409 components)
+    backward 50/409 loss=3.8438
+    backward 100/409 loss=7.3005
+    backward 150/409 loss=8.8511
+    backward 200/409 loss=9.5505
+    backward 250/409 loss=9.8699
+    backward 300/409 loss=9.9753
+    backward 350/409 loss=9.9327
+    backward 400/409 loss=9.6922
+  [ViT-L-14/vision] backward done (409 components)
+    forward 50/157 loss=0.6166
+    forward 100/157 loss=0.6081
+    forward 150/157 loss=0.5775
+  [ViT-L-14/text] forward done (157 components)
+    backward 50/157 loss=6.9058
+    backward 100/157 loss=10.3923
+    backward 150/157 loss=9.9722
+  [ViT-L-14/text] backward done (157 components)
+    seed pair ('attn', 23, 7) + ('attn', 10, 6) loss=4.5058
+    forward 50/566 loss=0.7333
+    forward 100/566 loss=0.5734
+    forward 150/566 loss=0.5236
+    forward 200/566 loss=0.4977
+    forward 250/566 loss=0.4884
+    forward 300/566 loss=0.4839
+    forward 350/566 loss=0.4936
+    forward 400/566 loss=0.5156
+    forward 450/566 loss=0.5548
+    forward 500/566 loss=0.5859
+    forward 550/566 loss=0.5115
+  [ViT-L-14/joint] forward done (566 components)
+    backward 50/566 loss=5.1415
+    backward 100/566 loss=10.0444
+    backward 150/566 loss=12.9637
+    backward 200/566 loss=14.5750
+    backward 250/566 loss=15.5074
+    backward 300/566 loss=15.9588
+    backward 350/566 loss=16.0679
+    backward 400/566 loss=15.8839
+    backward 450/566 loss=15.3218
+    backward 500/566 loss=13.9269
+    backward 550/566 loss=9.7074
+  [ViT-L-14/joint] backward done (566 components)
+[ViT-L-14] wrote greedy_order_{order,ablation} (1284 rows)
+[RN50] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/545 loss=1.2175
+    forward 100/545 loss=0.9782
+    forward 150/545 loss=0.9432
+    forward 200/545 loss=0.9282
+    forward 250/545 loss=0.9456
+    forward 300/545 loss=0.9347
+    forward 350/545 loss=1.0092
+    forward 400/545 loss=1.0266
+    forward 450/545 loss=1.0532
+    forward 500/545 loss=1.0724
+  [RN50/vision] forward done (545 components)
+    backward 50/545 loss=17.1130
+    backward 100/545 loss=20.3112
+    backward 150/545 loss=21.3167
+    backward 200/545 loss=21.6828
+    backward 250/545 loss=21.7702
+    backward 300/545 loss=21.6635
+    backward 350/545 loss=21.2638
+    backward 400/545 loss=20.8000
+    backward 450/545 loss=20.1549
+    backward 500/545 loss=18.9025
+  [RN50/vision] backward done (545 components)
+    forward 50/109 loss=0.9883
+    forward 100/109 loss=1.0362
+  [RN50/text] forward done (109 components)
+    backward 50/109 loss=16.0715
+    backward 100/109 loss=16.5465
+  [RN50/text] backward done (109 components)
+    seed pair ('attn', 14, 22) + ('attn', 10, 4) loss=4.8968
+    forward 50/654 loss=1.3755
+    forward 100/654 loss=1.0528
+    forward 150/654 loss=0.9451
+    forward 200/654 loss=0.8990
+    forward 250/654 loss=0.8954
+    forward 300/654 loss=0.9065
+    forward 350/654 loss=0.9072
+    forward 400/654 loss=0.9388
+    forward 450/654 loss=0.9318
+    forward 500/654 loss=1.0120
+    forward 550/654 loss=1.0792
+    forward 600/654 loss=1.1009
+    forward 650/654 loss=1.0577
+  [RN50/joint] forward done (654 components)
+    backward 50/654 loss=16.4670
+    backward 100/654 loss=20.5502
+    backward 150/654 loss=22.0652
+    backward 200/654 loss=22.7297
+    backward 250/654 loss=22.9157
+    backward 300/654 loss=22.9054
+    backward 350/654 loss=22.8429
+    backward 400/654 loss=22.6067
+    backward 450/654 loss=22.1553
+    backward 500/654 loss=21.5557
+    backward 550/654 loss=20.4699
+    backward 600/654 loss=18.1499
+    backward 650/654 loss=7.6987
+  [RN50/joint] backward done (654 components)
+[RN50] wrote greedy_order_{order,ablation} (1272 rows)
+[RN101] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/1089 loss=2.2739
+    forward 100/1089 loss=1.5713
+    forward 150/1089 loss=1.2877
+    forward 200/1089 loss=1.1339
+    forward 250/1089 loss=1.0471
+    forward 300/1089 loss=0.9912
+    forward 350/1089 loss=0.9664
+    forward 400/1089 loss=0.9581
+    forward 450/1089 loss=0.9471
+    forward 500/1089 loss=0.9293
+    forward 550/1089 loss=0.9151
+    forward 600/1089 loss=0.9313
+    forward 650/1089 loss=0.9012
+    forward 700/1089 loss=0.9153
+    forward 750/1089 loss=0.9101
+    forward 800/1089 loss=0.9686
+    forward 850/1089 loss=0.9744
+    forward 900/1089 loss=1.0069
+    forward 950/1089 loss=1.0154
+    forward 1000/1089 loss=1.0070
+    forward 1050/1089 loss=1.0384
+  [RN101/vision] forward done (1089 components)
+    backward 50/1089 loss=7.4755
+    backward 100/1089 loss=9.5990
+    backward 150/1089 loss=11.0945
+    backward 200/1089 loss=12.2143
+    backward 250/1089 loss=13.1925
+    backward 300/1089 loss=13.9924
+    backward 350/1089 loss=14.6454
+    backward 400/1089 loss=15.1668
+    backward 450/1089 loss=15.5888
+    backward 500/1089 loss=15.9175
+    backward 550/1089 loss=16.1513
+    backward 600/1089 loss=16.2895
+    backward 650/1089 loss=16.3454
+    backward 700/1089 loss=16.3302
+    backward 750/1089 loss=16.2111
+    backward 800/1089 loss=15.9535
+    backward 850/1089 loss=15.6258
+    backward 900/1089 loss=15.0814
+    backward 950/1089 loss=14.2439
+    backward 1000/1089 loss=12.8864
+    backward 1050/1089 loss=10.8454
+  [RN101/vision] backward done (1089 components)
+    forward 50/109 loss=0.8910
+    forward 100/109 loss=0.9311
+  [RN101/text] forward done (109 components)
+    backward 50/109 loss=16.6477
+    backward 100/109 loss=16.8735
+  [RN101/text] backward done (109 components)
+    seed pair ('attn', 32, 5) + ('attn', 8, 6) loss=5.4920
+    forward 50/1198 loss=2.7637
+    forward 100/1198 loss=1.8712
+    forward 150/1198 loss=1.4009
+    forward 200/1198 loss=1.1811
+    forward 250/1198 loss=1.0196
+    forward 300/1198 loss=0.9456
+    forward 350/1198 loss=0.8831
+    forward 400/1198 loss=0.8537
+    forward 450/1198 loss=0.8396
+    forward 500/1198 loss=0.8373
+    forward 550/1198 loss=0.8386
+    forward 600/1198 loss=0.8493
+    forward 650/1198 loss=0.8491
+    forward 700/1198 loss=0.8653
+    forward 750/1198 loss=0.8579
+    forward 800/1198 loss=0.8540
+    forward 850/1198 loss=0.8782
+    forward 900/1198 loss=0.8909
+    forward 950/1198 loss=0.8580
+    forward 1000/1198 loss=0.8506
+    forward 1050/1198 loss=0.8941
+    forward 1100/1198 loss=0.9231
+    forward 1150/1198 loss=0.9630
+  [RN101/joint] forward done (1198 components)
+    backward 50/1198 loss=17.0973
+    backward 100/1198 loss=19.1778
+    backward 150/1198 loss=20.4667
+    backward 200/1198 loss=21.3312
+    backward 250/1198 loss=21.9945
+    backward 300/1198 loss=22.5375
+    backward 350/1198 loss=22.9559
+    backward 400/1198 loss=23.2322
+    backward 450/1198 loss=23.4257
+    backward 500/1198 loss=23.5412
+    backward 550/1198 loss=23.5949
+    backward 600/1198 loss=23.6110
+    backward 650/1198 loss=23.5503
+    backward 700/1198 loss=23.4264
+    backward 750/1198 loss=23.2177
+    backward 800/1198 loss=22.9403
+    backward 850/1198 loss=22.7232
+    backward 900/1198 loss=22.2798
+    backward 950/1198 loss=21.7940
+    backward 1000/1198 loss=21.0612
+    backward 1050/1198 loss=20.0696
+    backward 1100/1198 loss=18.6786
+    backward 1150/1198 loss=16.0101
+  [RN101/joint] backward done (1198 components)
+[RN101] wrote greedy_order_{order,ablation} (1272 rows)
+[ViT-H-14] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/545 loss=0.5434
+    forward 100/545 loss=0.4289
+    forward 150/545 loss=0.3765
+    forward 200/545 loss=0.3537
+    forward 250/545 loss=0.3467
+    forward 300/545 loss=0.3470
+    forward 350/545 loss=0.3554
+    forward 400/545 loss=0.3766
+    forward 450/545 loss=0.4150
+    forward 500/545 loss=0.4226
+  [ViT-H-14/vision] forward done (545 components)
+    backward 50/545 loss=2.6090
+    backward 100/545 loss=5.5964
+    backward 150/545 loss=8.0634
+    backward 200/545 loss=9.9353
+    backward 250/545 loss=11.4435
+    backward 300/545 loss=12.1936
+    backward 350/545 loss=12.5965
+    backward 400/545 loss=12.7940
+    backward 450/545 loss=12.8569
+    backward 500/545 loss=12.7295
+  [ViT-H-14/vision] backward done (545 components)
+    forward 50/409 loss=0.5528
+    forward 100/409 loss=0.4151
+    forward 150/409 loss=0.3784
+    forward 200/409 loss=0.3678
+    forward 250/409 loss=0.3757
+    forward 300/409 loss=0.3699
+    forward 350/409 loss=0.4208
+    forward 400/409 loss=0.5264
+  [ViT-H-14/text] forward done (409 components)
+    backward 50/409 loss=1.8645
+    backward 100/409 loss=4.7427
+    backward 150/409 loss=8.8358
+    backward 200/409 loss=11.3117
+    backward 250/409 loss=12.3521
+    backward 300/409 loss=12.7627
+    backward 350/409 loss=12.7524
+    backward 400/409 loss=11.9307
+  [ViT-H-14/text] backward done (409 components)
+    seed pair ('attn', 31, 6) + ('attn', 23, 0) loss=4.8974
+    forward 50/954 loss=0.8325
+    forward 100/954 loss=0.5554
+    forward 150/954 loss=0.4254
+    forward 200/954 loss=0.3651
+    forward 250/954 loss=0.3290
+    forward 300/954 loss=0.2849
+    forward 350/954 loss=0.2646
+    forward 400/954 loss=0.2523
+    forward 450/954 loss=0.2487
+    forward 500/954 loss=0.2495
+    forward 550/954 loss=0.2542
+    forward 600/954 loss=0.2598
+    forward 650/954 loss=0.2631
+    forward 700/954 loss=0.2756
+    forward 750/954 loss=0.2977
+    forward 800/954 loss=0.3342
+    forward 850/954 loss=0.3440
+    forward 900/954 loss=0.3565
+    forward 950/954 loss=0.5449
+  [ViT-H-14/joint] forward done (954 components)
+    backward 50/954 loss=2.6798
+    backward 100/954 loss=5.4820
+    backward 150/954 loss=8.4984
+    backward 200/954 loss=11.1080
+    backward 250/954 loss=12.9301
+    backward 300/954 loss=14.4777
+    backward 350/954 loss=15.8434
+    backward 400/954 loss=17.2016
+    backward 450/954 loss=18.2163
+    backward 500/954 loss=18.8951
+    backward 550/954 loss=19.2520
+    backward 600/954 loss=19.3521
+    backward 650/954 loss=19.2603
+    backward 700/954 loss=18.9343
+    backward 750/954 loss=18.3277
+    backward 800/954 loss=17.2782
+    backward 850/954 loss=15.6136
+    backward 900/954 loss=12.9534
+    backward 950/954 loss=7.3535
+  [ViT-H-14/joint] backward done (954 components)
+[ViT-H-14] wrote greedy_order_{order,ablation} (1296 rows)
+ALL DONE

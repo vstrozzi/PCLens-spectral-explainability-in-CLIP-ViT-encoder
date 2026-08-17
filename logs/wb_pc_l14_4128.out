@@ -1,0 +1,29 @@
+[ViT-B-32] 2112 PC units from 266 components (K<=8); full model worst-group=28.50 total=59.50
+  [class rep0 forward ] kept= 1020/2112 total=76.26 worst-group=64.73
+  [class rep0 backward] kept= 1077/2112 total=76.46 worst-group=66.39
+  [class rep1 forward ] kept=  987/2112 total=79.99 worst-group=58.92
+  [class rep1 backward] kept= 1044/2112 total=79.79 worst-group=56.85
+  [class rep2 forward ] kept= 1009/2112 total=71.47 worst-group=56.09
+  [class rep2 backward] kept= 1050/2112 total=71.52 worst-group=56.23
+  [group rep0 forward ] kept= 1022/2112 total=69.11 worst-group=62.48
+  [group rep0 backward] kept= 1080/2112 total=72.00 worst-group=66.97
+  [group rep1 forward ] kept=  993/2112 total=77.69 worst-group=65.25
+  [group rep1 backward] kept= 1015/2112 total=79.47 worst-group=66.53
+  [group rep2 forward ] kept= 1025/2112 total=75.76 worst-group=64.60
+  [group rep2 backward] kept= 1062/2112 total=75.76 worst-group=65.68
+[ViT-B-32] wrote waterbirds_pc_{eval,trace}
+[ViT-L-14] 4516 PC units from 566 components (K<=8); full model worst-group=49.41 total=72.20
+  [class rep0 forward ] kept= 2228/4516 total=78.12 worst-group=64.08
+  [class rep0 backward] kept= 2326/4516 total=80.39 worst-group=70.13
+  [class rep1 forward ] kept= 2246/4516 total=86.69 worst-group=68.46
+  [class rep1 backward] kept= 2367/4516 total=87.20 worst-group=68.05
+  [class rep2 forward ] kept= 2174/4516 total=81.00 worst-group=66.06
+  [class rep2 backward] kept= 2313/4516 total=81.55 worst-group=68.02
+  [group rep0 forward ] kept= 2221/4516 total=83.84 worst-group=78.86
+  [group rep0 backward] kept= 2342/4516 total=84.45 worst-group=79.39
+  [group rep1 forward ] kept= 2272/4516 total=85.37 worst-group=76.27
+  [group rep1 backward] kept= 2318/4516 total=84.91 worst-group=76.69
+  [group rep2 forward ] kept= 2218/4516 total=79.78 worst-group=69.48
+  [group rep2 backward] kept= 2321/4516 total=82.62 worst-group=75.30
+[ViT-L-14] wrote waterbirds_pc_{eval,trace}
+ALLDONE

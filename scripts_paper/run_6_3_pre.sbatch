@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Section 6.3 on the PRE-PROJECTION activations (already extracted by extract_coco_preproj.sbatch),
+# then redraw the figures and regenerate the notebook.
+#
+#SBATCH --job-name=pclens_pre
+#SBATCH --qos=pro_qos
+#SBATCH --gpus=1
+#SBATCH --mem=64GB
+#SBATCH --cpus-per-task=8
+#SBATCH --time=6:00:00
+#SBATCH --output=logs/run_6_3_pre_%j.out
+#SBATCH --error=logs/run_6_3_pre_%j.err
+set -euo pipefail
+cd /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder
+PY=/home/virgilio/lib/minconda3/envs/MT/bin/python
+OUT=output_dir/results_paper/preproj_acts
+export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8
+mkdir -p logs
+for M in ViT-B-32 ViT-B-16 ViT-L-14 ViT-H-14; do
+  "$PY" -m scripts_paper.exp_6_3 --models "$M" --device cuda:0 --act_dir "$OUT" --space pre
+done
+"$PY" -m scripts_paper.exp_plots --sections 6.2 6.3 6.4
+"$PY" -m scripts_paper.gen_notebook_6_2_6_4
+echo "ALL DONE"

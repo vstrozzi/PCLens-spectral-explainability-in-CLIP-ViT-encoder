@@ -1,0 +1,181 @@
+[ViT-B-32] 2000 images, 20 objects x 10 counts, 266 components
+[ViT-B-32] FULL MODEL count_acc=52.30% (chance 10)  full_acc=52.30%  obj_acc=100.00%  MAE=0.67
+  [rep0 forward       ] kept= 144/266 count=57.50%  full=57.50%  MAE=0.59
+  [rep0 forward+swap  ] kept= 144/266 count=57.14%  full=57.14%  MAE=0.60
+  [rep0 backward      ] kept= 154/266 count=52.81%  full=52.81%  MAE=0.69
+  [rep0 backward+swap ] kept= 151/266 count=53.67%  full=53.67%  MAE=0.67
+  [rep1 forward       ] kept= 153/266 count=61.63%  full=61.63%  MAE=0.53
+  [rep1 forward+swap  ] kept= 153/266 count=62.14%  full=62.14%  MAE=0.52
+  [rep1 backward      ] kept= 160/266 count=62.14%  full=62.14%  MAE=0.52
+  [rep1 backward+swap ] kept= 164/266 count=61.63%  full=61.63%  MAE=0.52
+  [rep2 forward       ] kept= 161/266 count=59.85%  full=59.74%  MAE=0.57
+  [rep2 forward+swap  ] kept= 164/266 count=60.20%  full=60.10%  MAE=0.57
+  [rep2 backward      ] kept= 165/266 count=59.13%  full=59.08%  MAE=0.60
+  [rep2 backward+swap ] kept= 165/266 count=59.13%  full=59.08%  MAE=0.60
+[ViT-B-32] wrote counting_{eval,trace}
+[ViT-B-16] 2000 images, 20 objects x 10 counts, 266 components
+[ViT-B-16] FULL MODEL count_acc=47.05% (chance 10)  full_acc=47.05%  obj_acc=100.00%  MAE=0.87
+  [rep0 forward       ] kept= 150/266 count=55.05%  full=55.05%  MAE=0.61
+  [rep0 forward+swap  ] kept= 149/266 count=55.56%  full=55.56%  MAE=0.61
+  [rep0 backward      ] kept= 152/266 count=53.47%  full=53.47%  MAE=0.63
+  [rep0 backward+swap ] kept= 149/266 count=53.01%  full=53.01%  MAE=0.64
+  [rep1 forward       ] kept= 157/266 count=53.42%  full=53.37%  MAE=0.67
+  [rep1 forward+swap  ] kept= 145/266 count=51.58%  full=51.58%  MAE=0.75
+  [rep1 backward      ] kept= 150/266 count=53.72%  full=53.72%  MAE=0.66
+  [rep1 backward+swap ] kept= 153/266 count=54.03%  full=54.03%  MAE=0.65
+  [rep2 forward       ] kept= 153/266 count=52.09%  full=52.09%  MAE=0.79
+  [rep2 forward+swap  ] kept= 155/266 count=55.05%  full=55.05%  MAE=0.66
+  [rep2 backward      ] kept= 154/266 count=55.31%  full=55.31%  MAE=0.63
+  [rep2 backward+swap ] kept= 154/266 count=55.31%  full=55.31%  MAE=0.63
+[ViT-B-16] wrote counting_{eval,trace}
+[RN50] 2000 images, 20 objects x 10 counts, 654 components
+[RN50] FULL MODEL count_acc=24.50% (chance 10)  full_acc=21.90%  obj_acc=86.10%  MAE=1.90
+  [rep0 forward       ] kept= 313/654 count=28.88%  full=28.11%  MAE=1.56
+  [rep0 forward+swap  ] kept= 295/654 count=28.42%  full=27.70%  MAE=1.62
+  [rep0 backward      ] kept= 387/654 count=29.18%  full=29.18%  MAE=1.56
+  [rep0 backward+swap ] kept= 395/654 count=28.37%  full=28.37%  MAE=1.58
+  [rep1 forward       ] kept= 291/654 count=26.28%  full=25.41%  MAE=1.80
+  [rep1 forward+swap  ] kept= 287/654 count=26.22%  full=25.46%  MAE=1.84
+  [rep1 backward      ] kept= 384/654 count=28.83%  full=28.06%  MAE=1.54
+  [rep1 backward+swap ] kept= 399/654 count=28.88%  full=28.16%  MAE=1.60
+  [rep2 forward       ] kept= 276/654 count=21.48%  full=21.38%  MAE=1.73
+  [rep2 forward+swap  ] kept= 268/654 count=21.94%  full=21.84%  MAE=1.76
+  [rep2 backward      ] kept= 396/654 count=25.61%  full=25.56%  MAE=1.53
+  [rep2 backward+swap ] kept= 396/654 count=25.61%  full=25.56%  MAE=1.53
+[RN50] wrote counting_{eval,trace}
+[RN101] 2000 images, 20 objects x 10 counts, 1198 components
+[RN101] FULL MODEL count_acc=25.30% (chance 10)  full_acc=25.20%  obj_acc=99.05%  MAE=1.89
+  [rep0 forward       ] kept= 641/1198 count=20.10%  full=20.10%  MAE=1.93
+  [rep0 forward+swap  ] kept= 597/1198 count=21.73%  full=21.73%  MAE=1.91
+  [rep0 backward      ] kept= 690/1198 count=27.76%  full=27.76%  MAE=1.70
+  [rep0 backward+swap ] kept= 688/1198 count=29.49%  full=29.49%  MAE=1.63
+  [rep1 forward       ] kept= 644/1198 count=26.07%  full=25.97%  MAE=1.62
+  [rep1 forward+swap  ] kept= 629/1198 count=26.48%  full=26.38%  MAE=1.58
+  [rep1 backward      ] kept= 713/1198 count=32.14%  full=31.94%  MAE=1.36
+  [rep1 backward+swap ] kept= 721/1198 count=32.30%  full=32.14%  MAE=1.36
+  [rep2 forward       ] kept= 683/1198 count=32.14%  full=32.04%  MAE=1.44
+  [rep2 forward+swap  ] kept= 639/1198 count=31.38%  full=31.12%  MAE=1.45
+  [rep2 backward      ] kept= 676/1198 count=31.79%  full=31.58%  MAE=1.36
+  [rep2 backward+swap ] kept= 684/1198 count=32.81%  full=32.60%  MAE=1.36
+[RN101] wrote counting_{eval,trace}
+[ViT-L-14] 2000 images, 20 objects x 10 counts, 566 components
+[ViT-L-14] FULL MODEL count_acc=62.25% (chance 10)  full_acc=62.05%  obj_acc=99.80%  MAE=0.50
+  [rep0 forward       ] kept= 288/566 count=66.58%  full=66.33%  MAE=0.42
+  [rep0 forward+swap  ] kept= 274/566 count=66.73%  full=66.43%  MAE=0.42
+  [rep0 backward      ] kept= 292/566 count=66.48%  full=66.22%  MAE=0.44
+  [rep0 backward+swap ] kept= 292/566 count=66.48%  full=66.22%  MAE=0.44
+  [rep1 forward       ] kept= 310/566 count=66.28%  full=66.07%  MAE=0.47
+  [rep1 forward+swap  ] kept= 307/566 count=66.68%  full=66.43%  MAE=0.46
+  [rep1 backward      ] kept= 311/566 count=67.45%  full=67.30%  MAE=0.44
+  [rep1 backward+swap ] kept= 314/566 count=67.30%  full=67.14%  MAE=0.45
+  [rep2 forward       ] kept= 292/566 count=67.04%  full=67.04%  MAE=0.50
+  [rep2 forward+swap  ] kept= 284/566 count=66.99%  full=66.99%  MAE=0.52
+  [rep2 backward      ] kept= 302/566 count=65.87%  full=65.87%  MAE=0.49
+  [rep2 backward+swap ] kept= 302/566 count=65.87%  full=65.87%  MAE=0.49
+[ViT-L-14] wrote counting_{eval,trace}
+[ViT-H-14] 2000 images, 20 objects x 10 counts, 954 components
+[ViT-H-14] FULL MODEL count_acc=64.75% (chance 10)  full_acc=64.75%  obj_acc=100.00%  MAE=0.55
+  [rep0 forward       ] kept= 517/954 count=73.93%  full=73.93%  MAE=0.38
+  [rep0 forward+swap  ] kept= 513/954 count=73.62%  full=73.62%  MAE=0.42
+  [rep0 backward      ] kept= 565/954 count=72.35%  full=72.35%  MAE=0.39
+  [rep0 backward+swap ] kept= 539/954 count=72.35%  full=72.30%  MAE=0.39
+  [rep1 forward       ] kept= 513/954 count=68.16%  full=68.16%  MAE=0.49
+  [rep1 forward+swap  ] kept= 488/954 count=66.89%  full=66.89%  MAE=0.49
+  [rep1 backward      ] kept= 537/954 count=68.52%  full=68.52%  MAE=0.44
+  [rep1 backward+swap ] kept= 535/954 count=68.42%  full=68.42%  MAE=0.45
+  [rep2 forward       ] kept= 504/954 count=67.91%  full=67.81%  MAE=0.46
+  [rep2 forward+swap  ] kept= 499/954 count=68.32%  full=68.11%  MAE=0.44
+  [rep2 backward      ] kept= 567/954 count=68.27%  full=68.27%  MAE=0.45
+  [rep2 backward+swap ] kept= 553/954 count=69.44%  full=69.44%  MAE=0.43
+[ViT-H-14] wrote counting_{eval,trace}
+[ViT-B-32] 2000 attacked images, 1000 classes, 266 components
+    FULL MODEL true=18.30%  ATTACK=54.90%  neither=26.80%
+  [rep0 forward       ] kept= 156/266 true=45.30%  ATTACK=3.93%
+  [rep0 forward+swap  ] kept= 156/266 true=45.30%  ATTACK=3.77%
+  [rep0 backward      ] kept= 170/266 true=47.26%  ATTACK=3.10%
+  [rep0 backward+swap ] kept= 170/266 true=47.26%  ATTACK=3.10%
+  [rep1 forward       ] kept= 144/266 true=44.99%  ATTACK=3.15%
+  [rep1 forward+swap  ] kept= 154/266 true=45.25%  ATTACK=3.87%
+  [rep1 backward      ] kept= 165/266 true=44.06%  ATTACK=2.38%
+  [rep1 backward+swap ] kept= 183/266 true=45.04%  ATTACK=2.94%
+  [rep2 forward       ] kept= 145/266 true=43.70%  ATTACK=3.05%
+  [rep2 forward+swap  ] kept= 151/266 true=44.63%  ATTACK=0.98%
+  [rep2 backward      ] kept= 152/266 true=45.56%  ATTACK=0.88%
+  [rep2 backward+swap ] kept= 149/266 true=43.85%  ATTACK=0.83%
+[ViT-B-32] wrote typographic_{eval,trace}
+[ViT-B-16] 2000 attacked images, 1000 classes, 266 components
+    FULL MODEL true=17.05%  ATTACK=59.85%  neither=23.10%
+  [rep0 forward       ] kept= 144/266 true=44.37%  ATTACK=5.11%
+  [rep0 forward+swap  ] kept= 142/266 true=40.50%  ATTACK=6.82%
+  [rep0 backward      ] kept= 177/266 true=43.23%  ATTACK=8.52%
+  [rep0 backward+swap ] kept= 177/266 true=43.23%  ATTACK=8.52%
+  [rep1 forward       ] kept= 139/266 true=41.32%  ATTACK=6.71%
+  [rep1 forward+swap  ] kept= 135/266 true=40.60%  ATTACK=8.01%
+  [rep1 backward      ] kept= 170/266 true=45.04%  ATTACK=11.98%
+  [rep1 backward+swap ] kept= 170/266 true=45.04%  ATTACK=11.98%
+  [rep2 forward       ] kept= 132/266 true=42.87%  ATTACK=4.13%
+  [rep2 forward+swap  ] kept= 131/266 true=42.67%  ATTACK=4.18%
+  [rep2 backward      ] kept= 153/266 true=39.93%  ATTACK=2.12%
+  [rep2 backward+swap ] kept= 153/266 true=40.39%  ATTACK=2.53%
+[ViT-B-16] wrote typographic_{eval,trace}
+[RN50] 2000 attacked images, 1000 classes, 654 components
+    FULL MODEL true=13.75%  ATTACK=58.20%  neither=28.05%
+  [rep0 forward       ] kept= 241/654 true=27.43%  ATTACK=1.86%
+  [rep0 forward+swap  ] kept= 243/654 true=27.94%  ATTACK=1.76%
+  [rep0 backward      ] kept= 423/654 true=30.27%  ATTACK=1.91%
+  [rep0 backward+swap ] kept= 437/654 true=30.68%  ATTACK=2.07%
+  [rep1 forward       ] kept= 253/654 true=26.08%  ATTACK=4.60%
+  [rep1 forward+swap  ] kept= 243/654 true=26.39%  ATTACK=4.24%
+  [rep1 backward      ] kept= 460/654 true=32.44%  ATTACK=3.41%
+  [rep1 backward+swap ] kept= 460/654 true=32.44%  ATTACK=3.41%
+  [rep2 forward       ] kept= 255/654 true=26.76%  ATTACK=3.72%
+  [rep2 forward+swap  ] kept= 258/654 true=26.60%  ATTACK=3.46%
+  [rep2 backward      ] kept= 433/654 true=31.87%  ATTACK=2.53%
+  [rep2 backward+swap ] kept= 437/654 true=31.97%  ATTACK=2.48%
+[RN50] wrote typographic_{eval,trace}
+[RN101] 2000 attacked images, 1000 classes, 1198 components
+    FULL MODEL true=12.40%  ATTACK=62.90%  neither=24.70%
+  [rep0 forward       ] kept= 670/1198 true=30.99%  ATTACK=3.36%
+  [rep0 forward+swap  ] kept= 612/1198 true=29.70%  ATTACK=2.74%
+  [rep0 backward      ] kept= 778/1198 true=32.13%  ATTACK=3.20%
+  [rep0 backward+swap ] kept= 772/1198 true=32.90%  ATTACK=3.10%
+  [rep1 forward       ] kept= 606/1198 true=25.10%  ATTACK=5.58%
+  [rep1 forward+swap  ] kept= 605/1198 true=24.02%  ATTACK=6.35%
+  [rep1 backward      ] kept= 787/1198 true=31.25%  ATTACK=3.67%
+  [rep1 backward+swap ] kept= 792/1198 true=31.56%  ATTACK=4.29%
+  [rep2 forward       ] kept= 591/1198 true=21.07%  ATTACK=3.56%
+  [rep2 forward+swap  ] kept= 587/1198 true=19.99%  ATTACK=3.20%
+  [rep2 backward      ] kept= 742/1198 true=30.73%  ATTACK=3.10%
+  [rep2 backward+swap ] kept= 747/1198 true=30.22%  ATTACK=4.03%
+[RN101] wrote typographic_{eval,trace}
+[ViT-L-14] 2000 attacked images, 1000 classes, 566 components
+    FULL MODEL true=16.50%  ATTACK=66.00%  neither=17.50%
+  [rep0 forward       ] kept= 322/566 true=48.86%  ATTACK=10.69%
+  [rep0 forward+swap  ] kept= 307/566 true=46.07%  ATTACK=12.09%
+  [rep0 backward      ] kept= 355/566 true=44.78%  ATTACK=15.03%
+  [rep0 backward+swap ] kept= 355/566 true=44.37%  ATTACK=15.55%
+  [rep1 forward       ] kept= 296/566 true=50.83%  ATTACK=12.14%
+  [rep1 forward+swap  ] kept= 298/566 true=50.46%  ATTACK=10.23%
+  [rep1 backward      ] kept= 353/566 true=46.59%  ATTACK=14.10%
+  [rep1 backward+swap ] kept= 353/566 true=46.75%  ATTACK=14.36%
+  [rep2 forward       ] kept= 276/566 true=51.29%  ATTACK=7.59%
+  [rep2 forward+swap  ] kept= 276/566 true=49.33%  ATTACK=7.54%
+  [rep2 backward      ] kept= 301/566 true=53.62%  ATTACK=7.23%
+  [rep2 backward+swap ] kept= 300/566 true=52.48%  ATTACK=8.42%
+[ViT-L-14] wrote typographic_{eval,trace}
+[ViT-H-14] 2000 attacked images, 1000 classes, 954 components
+    FULL MODEL true=17.30%  ATTACK=66.75%  neither=15.95%
+  [rep0 forward       ] kept= 452/954 true=50.00%  ATTACK=16.12%
+  [rep0 forward+swap  ] kept= 435/954 true=48.92%  ATTACK=14.72%
+  [rep0 backward      ] kept= 552/954 true=48.35%  ATTACK=14.88%
+  [rep0 backward+swap ] kept= 572/954 true=47.47%  ATTACK=16.27%
+  [rep1 forward       ] kept= 465/954 true=50.57%  ATTACK=14.00%
+  [rep1 forward+swap  ] kept= 471/954 true=52.58%  ATTACK=13.07%
+  [rep1 backward      ] kept= 564/954 true=50.83%  ATTACK=12.09%
+  [rep1 backward+swap ] kept= 565/954 true=50.31%  ATTACK=13.89%
+  [rep2 forward       ] kept= 443/954 true=55.68%  ATTACK=7.28%
+  [rep2 forward+swap  ] kept= 480/954 true=53.51%  ATTACK=8.88%
+  [rep2 backward      ] kept= 506/954 true=53.00%  ATTACK=5.37%
+  [rep2 backward+swap ] kept= 509/954 true=52.79%  ATTACK=7.85%
+[ViT-H-14] wrote typographic_{eval,trace}
+ALLDONE

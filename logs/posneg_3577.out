@@ -1,0 +1,81 @@
+
+########## ViT-B-16   bare 66.74
+  T1 an image of {}    bare 66.74 tmpl 64.74 | pos-only 65.20 (-1.54) neg-only 65.16 (-1.58)
+  T2 an image of {}    Δs_pos=-0.0009  Δs_cstar=-0.0090  Δs_maxneg=+0.0018  Δs_negstd=-0.0012  Δmargin=-0.0027  Δmargin_fixed_c=+0.0080  Δmean_rank=-0.0102  comp_changed=41.6%
+  T3 an image of {}    Σ Phi_b = +0.00803   vs E[Δs(y)-Δs(c*)] = +0.00803   (identity check)
+     top Phi_b: m12 +0.00292(P+0.00011/N+0.00281), m9 +0.00207(P-0.00058/N+0.00265), m11 +0.00099(P-0.00000/N+0.00100), m10 +0.00082(P-0.00087/N+0.00169), m5 +0.00034(P+0.00068/N-0.00033), m8 +0.00034(P+0.00085/N-0.00051)
+  T1 an image of a {}  bare 66.74 tmpl 68.02 | pos-only 67.80 (+1.06) neg-only 66.20 (-0.54)
+  T2 an image of a {}  Δs_pos=+0.0007  Δs_cstar=-0.0075  Δs_maxneg=+0.0005  Δs_negstd=-0.0030  Δmargin=+0.0001  Δmargin_fixed_c=+0.0082  Δmean_rank=-1.2282  comp_changed=36.1%
+  T3 an image of a {}  Σ Phi_b = +0.00816   vs E[Δs(y)-Δs(c*)] = +0.00816   (identity check)
+     top Phi_b: m12 +0.00318(P+0.00208/N+0.00110), m9 +0.00211(P-0.00016/N+0.00227), m11 +0.00111(P+0.00033/N+0.00078), m10 +0.00083(P-0.00071/N+0.00154), m5 +0.00035(P+0.00093/N-0.00058), m7 +0.00032(P+0.00012/N+0.00020)
+  T1 a photo of a {}   bare 66.74 tmpl 68.64 | pos-only 70.26 (+3.52) neg-only 64.14 (-2.60)
+  T2 a photo of a {}   Δs_pos=+0.0040  Δs_cstar=-0.0054  Δs_maxneg=+0.0025  Δs_negstd=-0.0023  Δmargin=+0.0015  Δmargin_fixed_c=+0.0094  Δmean_rank=-1.8428  comp_changed=35.4%
+  T3 a photo of a {}   Σ Phi_b = +0.00943   vs E[Δs(y)-Δs(c*)] = +0.00943   (identity check)
+     top Phi_b: m12 +0.00341(P-0.00006/N+0.00347), m9 +0.00232(P+0.00094/N+0.00138), m11 +0.00114(P+0.00004/N+0.00110), m10 +0.00084(P+0.00022/N+0.00062), m7 +0.00046(P+0.00015/N+0.00031), m5 +0.00034(P+0.00106/N-0.00072)
+
+########## ViT-L-14   bare 71.52
+  T1 an image of {}    bare 71.52 tmpl 68.98 | pos-only 65.76 (-5.76) neg-only 74.14 (+2.62)
+  T2 an image of {}    Δs_pos=-0.0079  Δs_cstar=-0.0204  Δs_maxneg=-0.0055  Δs_negstd=-0.0061  Δmargin=-0.0024  Δmargin_fixed_c=+0.0125  Δmean_rank=-0.1540  comp_changed=45.5%
+  T3 an image of {}    Σ Phi_b = +0.01251   vs E[Δs(y)-Δs(c*)] = +0.01251   (identity check)
+     top Phi_b: m12 +0.01022(P+0.00228/N+0.00794), m11 +0.00286(P+0.00020/N+0.00265), m10 +0.00263(P+0.00006/N+0.00256), m9 +0.00142(P+0.00052/N+0.00089), m8 +0.00113(P+0.00028/N+0.00085), m6 +0.00076(P-0.00023/N+0.00098)
+  T1 an image of a {}  bare 71.52 tmpl 73.46 | pos-only 68.96 (-2.56) neg-only 74.78 (+3.26)
+  T2 an image of a {}  Δs_pos=-0.0044  Δs_cstar=-0.0173  Δs_maxneg=-0.0058  Δs_negstd=-0.0071  Δmargin=+0.0014  Δmargin_fixed_c=+0.0129  Δmean_rank=-1.9644  comp_changed=37.5%
+  T3 an image of a {}  Σ Phi_b = +0.01289   vs E[Δs(y)-Δs(c*)] = +0.01289   (identity check)
+     top Phi_b: m12 +0.01169(P+0.00430/N+0.00740), m11 +0.00324(P+0.00041/N+0.00283), m10 +0.00180(P-0.00003/N+0.00182), m9 +0.00142(P+0.00005/N+0.00137), m8 +0.00094(P+0.00038/N+0.00056), m3 -0.00078(P-0.00040/N-0.00037)
+  T1 a photo of a {}   bare 71.52 tmpl 74.00 | pos-only 73.62 (+2.10) neg-only 71.14 (-0.38)
+  T2 a photo of a {}   Δs_pos=+0.0025  Δs_cstar=-0.0121  Δs_maxneg=-0.0002  Δs_negstd=-0.0050  Δmargin=+0.0027  Δmargin_fixed_c=+0.0146  Δmean_rank=-2.0536  comp_changed=36.1%
+  T3 a photo of a {}   Σ Phi_b = +0.01463   vs E[Δs(y)-Δs(c*)] = +0.01463   (identity check)
+     top Phi_b: m12 +0.01141(P+0.00202/N+0.00939), m11 +0.00346(P+0.00043/N+0.00303), m10 +0.00175(P+0.00055/N+0.00120), m9 +0.00154(P+0.00016/N+0.00138), m8 +0.00089(P+0.00022/N+0.00067), m3 -0.00078(P-0.00036/N-0.00042)
+
+
+================ T1  which column carries the gain
+                            bare  templated  gain  pos_only  neg_only  gain_pos  gain_neg
+model    prompt                                                                          
+ViT-B-16 an image of {}    66.74      64.74 -2.00     65.20     65.16     -1.54     -1.58
+         an image of a {}  66.74      68.02  1.28     67.80     66.20      1.06     -0.54
+         a photo of a {}   66.74      68.64  1.90     70.26     64.14      3.52     -2.60
+ViT-L-14 an image of {}    71.52      68.98 -2.54     65.76     74.14     -5.76      2.62
+         an image of a {}  71.52      73.46  1.94     68.96     74.78     -2.56      3.26
+         a photo of a {}   71.52      74.00  2.48     73.62     71.14      2.10     -0.38
+
+================ T2  score statistics (centred; margin = s_pos - max over wrong)
+                           competitor_changed_pct  d_s_pos  d_s_cstar  d_s_maxneg  d_s_negstd  d_margin  d_mean_rank  d_margin_fixed_c
+model    prompt                                                                                                                       
+ViT-B-16 an image of {}                     41.64  -0.0009    -0.0090      0.0018     -0.0012   -0.0027      -0.0102            0.0080
+         an image of a {}                   36.06   0.0007    -0.0075      0.0005     -0.0030    0.0001      -1.2282            0.0082
+         a photo of a {}                    35.38   0.0040    -0.0054      0.0025     -0.0023    0.0015      -1.8428            0.0094
+ViT-L-14 an image of {}                     45.46  -0.0079    -0.0204     -0.0055     -0.0061   -0.0024      -0.1540            0.0125
+         an image of a {}                   37.46  -0.0044    -0.0173     -0.0058     -0.0071    0.0014      -1.9644            0.0129
+         a photo of a {}                    36.14   0.0025    -0.0121     -0.0002     -0.0050    0.0027      -2.0536            0.0146
+
+================ T3  margin attribution over text components
+                           sum_Phi  pos_part  neg_part  pos_share  top1_share  top5_share  top10_share  k_for_80pct   Kt
+model    prompt                                                                                                         
+ViT-B-16 an image of {}      0.008    -0.001     0.009    -11.696      25.325      61.969       71.755            4  109
+         an image of a {}    0.008     0.001     0.007      8.329      27.222      64.894       75.013            4  109
+         a photo of a {}     0.009     0.004     0.005     42.436      25.284      60.592       71.431            4  109
+ViT-L-14 an image of {}      0.013    -0.008     0.020    -63.285      33.349      59.554       70.445            1  157
+         an image of a {}    0.013    -0.004     0.017    -34.492      36.504      59.594       68.048            1  157
+         a photo of a {}     0.015     0.003     0.012     17.397      36.166      60.402       69.286            2  157
+
+================ T5  accuracy vs number of components swapped in
+                                     k000   k001   k002   k003   k004   k006   k009   k013   k018   k026   k037   k053   k076   k109   k005   k007   k010   k015   k022   k033   k049   k072   k106   k157
+model    prompt           order                                                                                                                                                                           
+ViT-B-16 an image of {}   by Phi_b  66.74  62.50  62.22  59.90  58.72  59.86  60.44  61.72  62.04  62.20  62.94  63.48  64.00  64.74    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                          by |db|   66.74  65.36  60.22  59.90  60.02  58.90  59.82  60.20  59.94  59.72  61.72  62.92  64.40  64.74    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                          random    66.74  66.72  66.80  66.72  66.74  66.64  66.60  66.76  66.84  65.90  65.86  65.76  64.74  64.74    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+         an image of a {} by Phi_b  66.74  63.64  63.00  62.54  62.24  61.82  62.90  63.98  64.18  63.96  64.68  65.84  67.82  68.02    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                          by |db|   66.74  67.24  63.00  63.14  62.44  62.68  62.68  62.58  62.74  62.46  64.36  66.50  67.82  68.02    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                          random    66.74  67.12  67.08  67.04  67.00  66.86  66.64  66.76  66.78  66.64  66.48  65.42  64.98  68.02    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+         a photo of a {}  by Phi_b  66.74  63.68  63.56  62.70  62.82  62.54  63.02  64.26  65.98  67.18  67.70  68.08  68.74  68.64    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                          by |db|   66.74  67.54  63.56  62.70  62.72  62.72  62.98  63.08  63.00  63.00  65.70  67.62  67.96  68.64    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+                          random    66.74  67.18  67.14  67.06  67.02  66.96  66.90  66.86  67.04  67.46  66.42  65.82  65.34  68.64    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN
+ViT-L-14 an image of {}   by Phi_b  71.52  68.54  67.48  67.18    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  66.78  66.76  67.18  68.16  68.36  68.32  68.48  68.10  68.60  68.98
+                          by |db|   71.52  71.14  67.48  67.18    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  66.50  66.80  66.38  66.00  66.38  67.22  68.30  68.68  68.94  68.98
+                          random    71.52  71.00  70.88  70.90    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  71.08  70.78  70.76  71.08  71.04  70.06  68.40  66.74  65.58  68.98
+         an image of a {} by Phi_b  71.52  69.36  68.26  68.16    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  67.82  67.90  68.80  70.18  70.38  71.04  72.12  72.54  72.78  73.46
+                          by |db|   71.52  71.52  68.26  68.16    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  67.82  67.54  67.46  67.74  67.64  68.68  70.52  72.34  73.06  73.46
+                          random    71.52  71.22  71.02  71.14    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  71.86  71.78  71.72  71.36  71.90  70.78  70.18  68.54  66.48  73.46
+         a photo of a {}  by Phi_b  71.52  69.00  68.38  67.90    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  67.68  67.80  69.10  70.38  71.12  72.12  73.28  73.60  73.94  74.00
+                          by |db|   71.52  69.00  68.38  67.90    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  67.68  67.88  67.72  67.72  68.04  69.44  70.86  73.32  73.86  74.00
+                          random    71.52  71.14  70.90  71.00    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN    NaN  71.82  71.82  72.00  71.92  71.98  70.88  71.08  69.76  67.84  74.00

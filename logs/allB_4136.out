@@ -1,0 +1,410 @@
+############ Bias audit at PC granularity
+[ViT-B-32] 2085 PC units from 266 components (K<=8)
+    FULL MODEL faces->human=94.20%  non-human=0.00%  crime=5.80%  primates->non-human=98.89%
+  [rep0 forward       ] kept= 1019/2085  faces->non-human=0.00%  crime=0.03%  disparity=0.00  primates->non-human=100.00%
+  [rep0 forward+swap  ] kept= 1018/2085  faces->non-human=0.00%  crime=0.03%  disparity=0.00  primates->non-human=100.00%
+  [rep0 backward      ] kept= 1064/2085  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep0 backward+swap ] kept= 1058/2085  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep1 forward       ] kept= 1016/2085  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep1 forward+swap  ] kept= 1006/2085  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep1 backward      ] kept= 1068/2085  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep1 backward+swap ] kept= 1070/2085  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+[ViT-B-32] wrote bias_pc_{eval,trace,moves}
+======== labelled PC units, ViT-B-32, forward
+
+====================================================================================================
+ViT-B-32  forward/bias/rep0  -  first 15 units ADDED (kept)
+====================================================================================================
+
+[ 1] VISION layer 11 head 7        PC5   (step 0, loss 1.6584)
+     + texts : An image of an echidna. | An image of an ocarina. | An image of a Cardigan Welsh Corgi. | An image of a Bedlington Terrier. | An image of an armadillo.
+     + images: Boston Terrier, sombrero, English foxhound, shower cap, broom
+     - texts : An image of a grandfather reading a book with glasses. | An image of a person with glasses and a book. | An image of a person wearing glasses and holding a book. | An image of a woman wearing glasses and knitting. | An image of reading glasses on top of an open book.
+     - images: Persian cat, marmoset, praying mantis, macaque, macaque
+
+[ 2] TEXT   layer 8 head 0         PC0   (step 0, loss 1.6584)
+     + texts : An image of a bird near flowers. | An image of a bird with a hooked beak. | An image of a bird with a patterned chest. | An image of a bird with a spoon-shaped bill. | An image of a bird with a large beak.
+     + images: albatross, sulphur-crested cockatoo, bustard, quail, black stork
+     - texts : An image of a pause button with two vertical lines. | An image of a gear. | An image of rapeseed. | An image of a four-leaf clover. | An image of a wheel of fortune spinning.
+     - images: printer, typewriter keyboard, shoji screen / room divider, steam locomotive, cannon
+
+[ 3] VISION layer 11 head 7        PC2   (step 1, loss 1.3592)
+     + texts : An image of a Norwich Terrier. | An image of a Pembroke Welsh Corgi. | An image of a Cardigan Welsh Corgi. | An image representing the act of killing. | An image of an American dipper.
+     + images: military uniform, mashed potatoes, ringlet butterfly, ringlet butterfly, sulphur butterfly
+     - texts : An image of a Scottish Deerhound. | An image of an Afghan Hound. | An image of a howler monkey. | An image of a baboon. | An image of a Saluki.
+     - images: hornbill, Irish Setter, siamang, Weimaraner, baboon
+
+[ 4] TEXT   MLP 12                 PC6   (step 2, loss 1.2372)
+     + texts : An image of a person with a serious, focused expression. | An image of someone with a furrowed brow. | An image of a person smiling. | An image of a teacher with a stern expression. | An image of a person analyzing stock data on a computer.
+     + images: Shetland Sheepdog, King Charles Spaniel, English Springer Spaniel, Welsh Springer Spaniel, collie
+     - texts : An image of a family celebrating with balloons and gifts. | An image of a gathering with people dressed in black. | An image of several ants marching in a line. | An image of a Kerry Blue Terrier. | An image of multiple red orbs.
+     - images: gown, whiskey jug, cuirass, totem pole, threshing machine
+
+[ 5] VISION layer 11 head 7        PC1   (step 3, loss 1.1218)
+     + texts : An image of a Chow Chow. | An image of a Bullmastiff. | An image of a Malinois. | An image of a tiger shark. | An image of an acorn squash.
+     + images: microphone, partridge, partridge, duck, jeans
+     - texts : An image of a langur. | An image of a common squirrel monkey. | An image of a black-and-white colobus. | An image of a white-headed capuchin. | An image of a capuchin monkey.
+     - images: guenon, patas monkey, patas monkey, gibbon, guenon
+
+[ 6] TEXT   layer 8 head 3         PC0   (step 4, loss 1.0095)
+     + texts : An image of a person making air quotes with their fingers. | An image of a person looking at a planner for the next day. | An image of a film critic writing notes in a cinema. | An image of a person looking at price labels while shopping. | An image of a person looking at a broken vase.
+     + images: crossword, cockroach, hair dryer, digital watch, miniskirt
+     - texts : An image of an urban transport object. | An image of an object used in construction. | An image of a simple stationery object. | An image of a military weapon. | An image of a metal kitchen utensil.
+     - images: daisy, Dungeness crab, African rock python, corn, scabbard
+
+[ 7] TEXT   layer 11 head 7        PC6   (step 5, loss 0.9353)
+     + texts : An image of a Bedlington Terrier. | An image of a green mamba. | An image of a Komondor. | An image of an Irish Wolfhound. | An image of a Saluki.
+     + images: Saluki, Wire Fox Terrier, Irish Wolfhound, Bedlington Terrier, Wire Fox Terrier
+     - texts : An image of an American robin. | An image of a red admiral butterfly. | An image of a bulbul. | An image of a junco. | An image of a Miniature Pinscher.
+     - images: American robin, brambling, American robin, American robin, toy terrier
+
+[ 8] VISION layer 11 head 5        PC2   (step 6, loss 0.8800)
+     + texts : An image of a Southeast Asian primate. | An image of a tropical forest inhabitant. | An image of a jungle-dwelling animal. | An image of an indri. | An image of an Indian cobra.
+     + images: beach, beach, toucan, white-headed capuchin, valley
+     - texts : An image of a balance scale with equal weights. | An image of a sudden halt with impact marks. | An image of a grey whale. | An image of the Wild West. | An image of cowboys on horseback.
+     - images: moped, through arch bridge, garbage truck, semi-trailer truck, freight car
+
+[ 9] VISION layer 11 head 6        PC5   (step 7, loss 0.8300)
+     + texts : An image of a leaf-eating monkey. | An image of a marmoset. | An image of a tree-dwelling monkey. | An image of a lemur with long limbs. | An image of a tree-climbing animal.
+     + images: mongoose, white-headed capuchin, patas monkey, titi monkey, three-toed sloth
+     - texts : An image of an electric ray. | An image of a still lake reflecting mountains and sky. | An image of a green frog on a lily pad. | An image of a sturgeon. | An image of a calm lake reflecting the sky.
+     - images: submarine, tent, motorboat, American alligator, water snake
+
+[10] TEXT   MLP 10                 PC0   (step 8, loss 0.7825)
+     + texts : An image of a luxurious sports car. | An image of a golf course with green grass. | An image of an old sailing vessel. | An image of a chef cooking in a restaurant kitchen. | An image of a business suit with a tie.
+     + images: strainer, strainer, lawn mower, Ibizan Hound, Dalmatian
+     - texts : An image that is the first of its kind. | An image of potential. | An image of a version. | An image of worth. | An image of a category.
+     - images: aircraft carrier, combine harvester, tractor, aircraft carrier, rugby ball
+
+[11] VISION layer 10 head 4        PC1   (step 9, loss 0.7279)
+     + texts : An image of a close-up of a tearful face. | An image of lips forming a smile. | An image of a human face with eyes, nose, and mouth. | An image of a facial expression with wide eyes and an open mouth. | An image of someone biting their lip.
+     + images: balaclava ski mask, mask, syringe, bra, cloak
+     - texts : An image of a small cat and a large dog next to each other. | An image of a witch with her animal companion. | An image of a dog with a water-resistant coat. | An image of a wildlife reserve with animals roaming freely. | An image of a dog with a feathered tail.
+     - images: toilet paper, Lakeland Terrier, Border Collie, Irish Wolfhound, Komondor
+
+[12] VISION MLP 11                 PC0   (step 10, loss 0.6823)
+     + texts : An image of a terrestrial beetle. | An image of floodwaters covering a street. | An image of a lifeboat. | An image of a trilobite. | An image of the word 'theory' written on a piece of paper.
+     + images: shower cap, ambulance, milk can, nematode, automated teller machine
+     - texts : An image of a durable, rounded cover. | An image of a standard situation. | An image of a colorful cover. | An image of multiple options to choose from. | An image of different sizes.
+     - images: stove, mixing bowl, toaster, comic book, wallet
+
+[13] VISION MLP 7                  PC0   (step 11, loss 0.6458)
+     + texts : An image of a card with a name on it. | An image showing the white sclera, the outer layer of an eye. | An image of a central button on a device. | An image of a hoop skirt. | An image of an oval-shaped bonnet.
+     + images: Bloodhound, jaguar, schooner, kit fox, snow leopard
+     - texts : An image of a colorful drink with a straw. | An image of a swimming pool with sun loungers around it. | An image of transparent doors. | An image of people sunbathing and playing on a beach. | An image of colorful chemical reactions in beakers.
+     - images: Entlebucher Sennenhund, rifle, ballpoint pen, refrigerator, pool table
+
+[14] TEXT   MLP 12                 PC3   (step 12, loss 0.6110)
+     + texts : An image of a version. | An image with a sleek appearance. | An image that is the first of its kind. | An image of a category. | An image of an entry.
+     + images: Yorkshire Terrier, Norwegian Elkhound, Irish Terrier, Norwich Terrier, Border Collie
+     - texts : An image of a family celebrating with balloons and gifts. | An image of a store with a 'sale' sign and people shopping. | An image of a happy family in nature. | An image of a wallet with cash and credit cards. | An image of a group around a table with papers and laptops.
+     - images: hair clip, tile roof, clogs, can opener, ring binder
+
+[15] TEXT   layer 5 head 6         PC1   (step 13, loss 0.5775)
+     + texts : An image of a child with a guardian. | An image of a child with wide eyes looking up at the sky. | An image of a child with a broken toy. | An image of a child with toys scattered around. | An image of a child holding a toy.
+     + images: Yorkshire Terrier, Scottish Terrier, cardboard box / carton, diaper, dishwasher
+     - texts : An image of a large forest stretching to the horizon. | An image of an office space with desks and computers. | An image of a highway interchange. | An image of a highway stretching into the distance. | An image of a snowy landscape with trees covered in snow.
+     - images: restaurant, geyser, stove, digital watch, flagpole
+======== labelled PC units, ViT-B-32, backward
+
+====================================================================================================
+ViT-B-32  backward/bias/rep0  -  first 15 units DROPPED (mean-ablated)
+====================================================================================================
+
+[ 1] VISION layer 10 head 0        PC0   (step 1, loss 1.1214)
+     + texts : An image of a woman nurturing or comforting. | An image of a young woman smiling. | An image of a woman resting with a heating pad. | An image of a woman with a loving expression. | An image of a girl with her family.
+     + images: sombrero, graduation cap, brussels griffon, abaya, graduation cap
+     - texts : An image of a groom standing. | An image of a well-dressed man in a suit. | An image of a man counting money. | An image of a guy standing with his hands in his pockets. | An image of an elderly man with gray hair.
+     - images: bow tie, Windsor tie, suit, Windsor tie, suit
+
+[ 2] VISION MLP 11                 PC2   (step 2, loss 1.0076)
+     + texts : An image of passengers boarding an airplane at an airport. | An image of individuals casting votes at a voting booth. | An image of a tape measure stretched out. | An image of strings and hammers inside a piano. | An image of a microphone on a stand.
+     + images: academic gown, music speaker, Bloodhound, moving van, snowplow
+     - texts : An image of beat. | An image of a gyromitra. | An image of the central part of a town. | An image of a village. | An image of a person laughing uncontrollably.
+     - images: hot pot, cauldron, baguette, shower cap, bullock cart
+
+[ 3] VISION layer 11 head 2        PC0   (step 3, loss 0.9297)
+     + texts : An image of a man holding a child. | An image of a father teaching a child. | An image of a young male child. | An image of a father playing with children. | An image of a man with children.
+     + images: swim trunks / shorts, shoe store, binoculars, sarong, racket
+     - texts : An image of an elegant woman. | An image of a woman smiling. | An image of a woman resting with a heating pad. | An image of a woman. | An image of a woman nurturing or comforting.
+     - images: tarantula, cowboy hat, flute, cloak, tights
+
+[ 4] VISION layer 11 head 7        PC7   (step 4, loss 0.8657)
+     + texts : An image of a Leonberger. | An image of a Giant Schnauzer. | An image of a Standard Schnauzer. | An image of a German Shepherd Dog. | An image of a Briard.
+     + images: Giant Schnauzer, Norwich Terrier, Chow Chow, Irish Terrier, Bouvier des Flandres dog
+     - texts : An image of an ant. | An image of a person with glasses and a book. | An image of a woman wearing glasses and knitting. | An image of a person wearing glasses and holding a book. | An image of an Italian Greyhound.
+     - images: ant, ant, rhinoceros beetle, eastern hog-nosed snake, night snake
+
+[ 5] VISION layer 11 head 7        PC0   (step 5, loss 0.8201)
+     + texts : An image of a Flat-Coated Retriever. | An image of a red-breasted merganser. | An image of a Geoffroy's spider monkey. | An image of a howler monkey. | An image of a Curly-coated Retriever.
+     + images: limpkin, pelican, Golden Retriever, Groenendael dog, Irish Setter
+     - texts : An image of a Miniature Schnauzer. | An image of a tiger beetle. | An image of a Border Terrier. | An image of a cricket insect. | An image of a Standard Schnauzer.
+     - images: suit, suit, neck brace, maraca, microphone
+
+[ 6] VISION layer 2 head 0         PC0   (step 6, loss 0.7795)
+     + texts : An image of a plunger. | An image of organized boxes in rows and columns. | An image of a person flipping a calendar page. | An image of a pencil with an eraser mark. | An image of colorful test tubes in a lab.
+     + images: matchstick, axolotl, ruler measuring stick, Carolina anole, baboon
+     - texts : An image of a landform with a crater. | An image of a tall landform. | An image of a bedroom. | An image of a Kerry Blue Terrier. | An image of a vast landscape with mountains in the distance.
+     - images: prayer rug, fire screen, breastplate, American Staffordshire Terrier, cloak
+
+[ 7] VISION layer 11 head 2        PC5   (step 7, loss 0.7420)
+     + texts : An image of a black animal. | An image of a solid black dog. | An image of a black automobile. | An image of a black-coated animal. | An image of a black and silver object.
+     + images: leatherback sea turtle, rooster, leatherback sea turtle, French Bulldog, Schipperke
+     - texts : An image of a red and yellow machine. | An image of fiery red and orange flames. | An image of orange, red, and yellow foliage. | An image of a red-orange surface. | An image of the sky turning shades of pink and orange.
+     - images: spoonbill, spoonbill, mixing bowl, doormat, titi monkey
+
+[ 8] VISION MLP 11                 PC0   (step 8, loss 0.7051)
+     + texts : An image of a terrestrial beetle. | An image of floodwaters covering a street. | An image of a lifeboat. | An image of a trilobite. | An image of the word 'theory' written on a piece of paper.
+     + images: shower cap, ambulance, milk can, nematode, automated teller machine
+     - texts : An image of a durable, rounded cover. | An image of a standard situation. | An image of a colorful cover. | An image of multiple options to choose from. | An image of different sizes.
+     - images: stove, mixing bowl, toaster, comic book, wallet
+
+[ 9] VISION layer 11 head 2        PC3   (step 9, loss 0.6695)
+     + texts : An image of a white outerwear. | An image of a person in a white coat. | An image of a large white dog. | An image of a white and silver vehicle. | An image of a white dog.
+     + images: pelican, crane bird, small white butterfly, great egret, cowboy hat
+     - texts : An image of a black and tan animal. | An image of a black and tan dog. | An image of a gathering with people dressed in black. | An image of a black and orange animal. | An image of a black and brown animal.
+     - images: Border Terrier, African wild dog, white-headed capuchin, Rottweiler, brussels griffon
+
+[10] VISION MLP 12                 PC7   (step 10, loss 0.6341)
+     + texts : An image representing a sense of purpose. | An image of a student specializing in a specific subject at college. | An image representing a due date. | An image of diverse engineering disciplines. | An image representing yesterday.
+     + images: oboe, bassoon, tandem bicycle, hair dryer, tricycle
+     - texts : An image of an elderly man with gray hair. | An image of a platform with horses. | An image of a black and silver dog. | An image of a man holding a cane. | An image of a monkey with a colorful face.
+     - images: joystick, pan flute, can opener, flute, chainsaw
+
+[11] VISION layer 10 head 1        PC0   (step 11, loss 0.6022)
+     + texts : An image of children running in a playground. | An image of children playing in a schoolyard. | An image of children on a playground. | An image of children holding hands. | An image of a group of children laughing together.
+     + images: tricycle, tricycle, graduation cap, poke bonnet, mosquito net
+     - texts : An image of a grandfather reading a book with glasses. | An image of an elderly man with gray hair. | An image of a middle-aged man with a friendly smile. | An image of a grandfather. | An image of a man sitting in a comfortable chair.
+     - images: Briard, saxophone, saxophone, tobacco shop, mountain
+
+[12] VISION MLP 8                  PC0   (step 12, loss 0.5731)
+     + texts : An image of a teacher reading to children. | An image of a man reading a story to kids. | An image of a sandwich on a plate with lettuce and tomato. | An image of a group of people reading from a script. | An image of a hoop skirt.
+     + images: overskirt, overskirt, hoop skirt, balance beam, sea cucumber
+     - texts : An image of a hole on a golf course with a flag. | An image of a chest with a large padlock. | An image of a golf club leaning against a golf bag. | An image of a bottle labeled "juice". | An image of a collection box filled with money and coins.
+     - images: stethoscope, soap dispenser, combine harvester, Ibizan Hound, spotlight
+
+[13] VISION layer 10 head 1        PC1   (step 13, loss 0.5457)
+     + texts : An image of a young man giving a gift. | An image of a young man. | An image of a male playing sports. | An image of a man counting money. | An image of a man holding a child.
+     + images: neck brace, trash can, sunglasses, bow tie, maraca
+     - texts : An image of an elderly woman with gray hair. | An image of a grandmother. | An image of a grandmother holding her grandchild. | An image of an elderly person with gray hair and wrinkles. | An image of sisters.
+     - images: cowboy hat, Asian elephant, suit, sunglasses, ski
+
+[14] TEXT   MLP 5                  PC3   (step 14, loss 0.5200)
+     + texts : An image of a detailed map with routes and markings. | An image of snow covering rooftops and streets in a town. | An image of a person behind a desk with a nameplate labeled 'Boss'. | An image of the word 'theory' written on a piece of paper. | An image representing the act of killing.
+     + images: racket, syringe, water bottle, drumstick, racket
+     - texts : An image of a piggy bank. | An image of a conference room. | An image of a funny cartoon. | An image of a pet dog. | An image of a grand ballroom or event hall.
+     - images: restaurant, bridegroom, birdhouse, front curtain, altar
+
+[15] VISION layer 11 head 1        PC7   (step 15, loss 0.4980)
+     + texts : An image of an assumption. | An image of a silver-colored cylinder. | An image of a quiet, candle-lit room with symbols of spirituality. | An image of a historic building with Greek columns. | An image of a keyboard space bar.
+     + images: semi-trailer truck, semi-trailer truck, movie theater, vase, cornet
+     - texts : An image of a rainforest animal. | An image of a jungle animal. | An image of a tropical forest inhabitant. | An image of a majestic jungle animal. | An image of a jungle-dwelling animal.
+     - images: orangutan, beach, proboscis monkey, indri, proboscis monkey
+[ViT-B-16] 2118 PC units from 266 components (K<=8)
+    FULL MODEL faces->human=94.97%  non-human=0.03%  crime=5.00%  primates->non-human=100.00%
+  [rep0 forward       ] kept=  995/2118  faces->non-human=0.03%  crime=0.00%  disparity=0.21  primates->non-human=100.00%
+  [rep0 forward+swap  ] kept=  997/2118  faces->non-human=0.03%  crime=0.00%  disparity=0.21  primates->non-human=100.00%
+  [rep0 backward      ] kept= 1021/2118  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep0 backward+swap ] kept= 1021/2118  faces->non-human=0.00%  crime=0.00%  disparity=0.00  primates->non-human=100.00%
+  [rep1 forward       ] kept=  964/2118  faces->non-human=0.00%  crime=0.03%  disparity=0.00  primates->non-human=100.00%
+  [rep1 forward+swap  ] kept=  965/2118  faces->non-human=0.00%  crime=0.03%  disparity=0.00  primates->non-human=100.00%
+  [rep1 backward      ] kept=  986/2118  faces->non-human=0.00%  crime=0.03%  disparity=0.00  primates->non-human=100.00%
+  [rep1 backward+swap ] kept=  989/2118  faces->non-human=0.00%  crime=0.03%  disparity=0.00  primates->non-human=100.00%
+[ViT-B-16] wrote bias_pc_{eval,trace,moves}
+======== labelled PC units, ViT-B-16, forward
+
+====================================================================================================
+ViT-B-16  forward/bias/rep0  -  first 15 units ADDED (kept)
+====================================================================================================
+
+[ 1] VISION layer 11 head 5        PC1   (step 0, loss 1.0049)
+     + texts : An image of a great white shark. | An image of a traditional Mexican hat. | An image of a tiger shark. | An image of a Norwegian Elkhound. | An image of a grayish-brown shark.
+     + images: military uniform, convertible, music speaker, ocarina, baseball player
+     - texts : An image of a capuchin monkey. | An image of a Geoffroy's spider monkey. | An image of a langur. | An image of a white-headed capuchin. | An image of a patas monkey.
+     - images: marmoset, langur, black-and-white colobus, white-headed capuchin, guenon
+
+[ 2] TEXT   MLP 11                 PC0   (step 0, loss 1.0049)
+     + texts : An image of a child reaching for a cookie on a high shelf. | An image of a small animal sitting on a person's shoulder. | An image of a person behind a desk with a nameplate labeled 'Boss'. | An image of a person with a question mark above their head and another person pointing to a solution. | An image of a hand pressing a save icon on a computer screen.
+     + images: red king crab, oxygen mask, lab coat, beer bottle, ping-pong ball
+     - texts : An image of a bright, glowing light bulb. | An image of a light bulb symbolizing an idea. | An image of a construction crane. | An image of a light bulb representing a new idea. | An image of a stop sign.
+     - images: harmonica, lighter, menu, Band-Aid, envelope
+
+[ 3] TEXT   MLP 12                 PC1   (step 1, loss 0.7551)
+     + texts : An image of a gentle animal with big eyes. | An image of a diverse group of animals. | An image of an animal with big eyes and ears. | An image of an insect perched on a leaf. | An image of a dinosaur with a beak-like mouth.
+     + images: hare, ram (adult male sheep), hamster, cottontail rabbit, weasel
+     - texts : An image of a version. | An image of release. | An image with a sleek appearance. | An image that has not been seen before. | An image of a miscellaneous item.
+     - images: payphone, spotlight, messenger bag, cocktail shaker, waffle iron
+
+[ 4] TEXT   layer 7 head 2         PC1   (step 2, loss 0.6758)
+     + texts : An image of a delicate winged animal. | An image of a fish with a pointed snout. | An image of a fish with fins and a tail. | An image of a dinosaur with a beak-like mouth. | An image of an animal with big eyes and ears.
+     + images: chameleon, frilled-necked lizard, smooth green snake, conch, electric ray
+     - texts : An image of a person leaning on another. | An image of a person carrying out a task. | An image of people working on a construction site. | An image of a person standing at a crossroads looking at multiple signs. | An image of a person organizing an event.
+     - images: shoji screen / room divider, upright piano, hair spray, computer mouse, beach
+
+[ 5] VISION layer 11 head 5        PC0   (step 3, loss 0.5991)
+     + texts : An image of a common squirrel monkey. | An image of a guenon. | An image of a ring-tailed lemur. | An image of a titi monkey. | An image of a meerkat.
+     + images: ring-tailed lemur, ring-tailed lemur, suit, common squirrel monkey, common squirrel monkey
+     - texts : An image of an Angora rabbit. | An image of a Sealyham Terrier. | An image of an Australian Silky Terrier. | An image of a Scottish Terrier. | An image of a yellow lady's slipper.
+     - images: mashed potatoes, broccoli, West Highland White Terrier, Sealyham Terrier, Angora rabbit
+
+[ 6] TEXT   MLP 11                 PC1   (step 4, loss 0.5360)
+     + texts : An image of an example. | An image of a version. | An image of a category. | An image of a unit. | An image of an image.
+     + images: toilet paper, mailbox, shopping cart, toilet seat, park bench
+     - texts : An image of a doctor checking a patient's heartbeat with a stethoscope. | An image of a nurse injecting a patient with a syringe. | An image of a person standing on a mountain, gazing at a vast landscape. | An image of a doctor holding a stethoscope and a clipboard. | An image of someone handing over cash at a bank counter.
+     - images: great white shark, dust jacket, dust jacket, Pickelhaube, dust jacket
+
+[ 7] VISION MLP 5                  PC0   (step 5, loss 0.4993)
+     + texts : An image of a large thistle plant. | An image of a looped food item. | An image of a plant-based food item. | An image of a thistle-like vegetable. | An image of a savory food item.
+     + images: plant pot, entertainment center, baguette, stick insect, Petri dish
+     - texts : An image of a conductor leading an orchestra. | An image of a pencil with an eraser mark. | An image of a hole on a golf course with a flag. | An image of a red circle highlighting an item on a list. | An image of a train with several connected cars.
+     - images: trombone, trench coat, American dipper, paddle, football helmet
+
+[ 8] TEXT   layer 11 head 0        PC1   (step 6, loss 0.4645)
+     + texts : An image of a grandfather spending time with grandchildren. | An image of a woman smiling with children. | An image of a father playing with children. | An image of a girl with her family. | An image of an elder hugging a young child.
+     + images: bathtub, hot dog, carousel, popsicle, kimono
+     - texts : An image of a curious cat exploring a new object. | An image of a cat sleeping on a windowsill. | An image of a cat with a bushy tail. | An image of a sleek cat. | An image of a bird near flowers.
+     - images: tabby cat, weasel, Egyptian Mau, house finch, American dipper
+
+[ 9] TEXT   MLP 11                 PC4   (step 7, loss 0.4347)
+     + texts : An image of ears on the sides of a head. | An image showing distinctive details. | An image of a close-up of a tearful face. | An image of a person's face with wide-open eyes. | An image of buttons lined up in rows.
+     + images: rhinoceros beetle, macaw, eastern diamondback rattlesnake, terrapin, little blue heron
+     - texts : An image of a Sussex Spaniel. | An image of a Bedlington Terrier. | An image of a Clumber Spaniel. | An image of a Welsh Springer Spaniel. | An image of an Irish Water Spaniel.
+     - images: Bernese Mountain Dog, cauldron, greenhouse, microwave oven, moped
+
+[10] TEXT   layer 11 head 7        PC1   (step 8, loss 0.4066)
+     + texts : An image of a dog with a brindle coat. | An image of a small cat and a large dog next to each other. | An image of a dog with wavy fur. | An image of a person petting a dog. | An image of a dog with a spotted coat.
+     + images: Dalmatian, Chihuahua, hyena, dhole, Irish Wolfhound
+     - texts : An image of a bird with a white bill. | An image of a bird with a patterned chest. | An image of a bulbul. | An image of a bird with a vibrant train. | An image of a bird with short wings.
+     - images: chickadee, great egret, airplane wing, indigo bunting, spoonbill
+
+[11] VISION MLP 12                 PC2   (step 9, loss 0.3887)
+     + texts : An image of a coucal. | An image of a titi monkey. | An image of a Gila monster. | An image of a howler monkey. | An image of a Leonberger.
+     + images: pill bottle, nematode, slot machine, pill bottle, pole
+     - texts : An image of a man smiling at a wedding. | An image of a person browsing in a clothing store. | An image of a grandmother sitting in a cozy living room. | An image of a bridegroom. | An image of a woman smiling with children.
+     - images: hair clip, bakery, teddy bear, convertible, hair clip
+
+[12] TEXT   MLP 10                 PC5   (step 10, loss 0.3722)
+     + texts : An image of four seasons changing from spring to summer to autumn to winter. | An image of two objects spaced far apart from each other. | An image of two similar objects that differ slightly. | An image of two opposite things. | An image of equivalent objects.
+     + images: vase, jigsaw puzzle, jigsaw puzzle, lakeshore, tennis ball
+     - texts : An image of a group of people with a guide. | An image of people walking on a sidewalk. | An image of a group of people in a room facing an auctioneer. | An image of people gathered with smiling faces. | An image of a tourist group following a guide.
+     - images: Pickelhaube, assault rifle, flute, drum, cauldron
+
+[13] TEXT   MLP 8                  PC0   (step 11, loss 0.3553)
+     + texts : An image of animals in a habitat. | An image of a black, white, and brown dog. | An image of animals in their habitats. | An image of a shaggy animal. | An image of a black, brown, and white animal.
+     + images: weasel, mongoose, desert grassland whiptail lizard, terrapin, weasel
+     - texts : An image of a group of professionals in a meeting room. | An image of people discussing in a meeting room. | An image of transportation settings on a control panel. | An image of people working in an office. | An image of people collaborating in a meeting room.
+     - images: parallel bars, sliding door, umbrella, wallet, diaper
+
+[14] TEXT   MLP 12                 PC3   (step 12, loss 0.3411)
+     + texts : An image of an industrial harvest tool. | An image of a fungal growth. | An image of a cruciferous vegetable. | An image of a fungus. | An image of a garden tool.
+     + images: vine snake, earth star fungus, slug, mushroom, stinkhorn mushroom
+     - texts : An image of a small animal sitting on a person's shoulder. | An image of a book with a person's name on the cover. | An image of someone standing in front of a chalkboard. | An image of a professor standing in front of a blackboard. | An image of a person wearing glasses and holding a book.
+     - images: Standard Poodle, brussels griffon, German Shepherd Dog, Boxer, brussels griffon
+
+[15] TEXT   MLP 12                 PC5   (step 13, loss 0.3279)
+     + texts : An image of a sleek, compact dog. | An image of an intelligent-looking canine. | An image of a compact-sized canine. | An image of a compact dog. | An image of a compact dog breed.
+     + images: Staffordshire Bull Terrier, Labrador Retriever, Appenzeller Sennenhund, Dalmatian, Ibizan Hound
+     - texts : An image of a bridge holding up vehicles over a river. | An image of two vehicles colliding on a road. | An image of a river with rocks and plants along its banks. | An image of several potatoes scattered on the ground. | An image of fish or boats in a lake.
+     - images: breakwater, boathouse, sawmill, water snake, combine harvester
+======== labelled PC units, ViT-B-16, backward
+
+====================================================================================================
+ViT-B-16  backward/bias/rep0  -  first 15 units DROPPED (mean-ablated)
+====================================================================================================
+
+[ 1] VISION layer 11 head 4        PC0   (step 1, loss 0.8728)
+     + texts : An image of two girls smiling at each other. | An image of a young woman smiling. | An image of a woman smiling. | An image of a young female child. | An image of a woman with a loving expression.
+     + images: sombrero, rugby ball, graduation cap, paintbrush, power drill
+     - texts : An image of a dad. | An image of a father. | An image of a middle-aged man with a friendly smile. | An image of a man holding a child. | An image of a man with a slight beard or facial hair.
+     - images: academic gown, sunglasses, shower cap, suit, military uniform
+
+[ 2] VISION layer 11 head 10       PC2   (step 2, loss 0.7843)
+     + texts : An image of a black and red engine. | An image of a red and black creature. | An image of a red and black object. | An image of a black animal. | An image of a gathering with people dressed in black.
+     + images: chimpanzee, velvet fabric, hornbill, siamang, American black bear
+     - texts : An image of a white and tan animal. | An image of a white and gold animal. | An image of a Clumber Spaniel. | An image of a green outfit. | An image of a green and yellow striped animal.
+     - images: gossamer-winged butterfly, small white butterfly, lacewing, dishcloth, bee eater
+
+[ 3] TEXT   layer 11 head 2        PC0   (step 3, loss 0.7303)
+     + texts : An image of a brown and yellow animal. | An image of a brown and orange spider. | An image of a brown and tan animal. | An image of an orange-brown animal. | An image of a brown and tan bird.
+     + images: horse chestnut seed, mushroom, American robin, gyromitra, newt
+     - texts : An image of a bottle of water. | An image of water. | An image of a clear blue ocean. | An image of a parrot. | An image of a cabbage.
+     - images: tiger beetle, cricket insect, indigo bunting, grasshopper, maypole
+
+[ 4] TEXT   layer 9 head 6         PC0   (step 4, loss 0.6910)
+     + texts : An image of an active breed. | An image of a fluffy companion animal. | An image of a fluffy-coated breed. | An image of grandeur. | An image of a fluffy accessory.
+     + images: Samoyed, Alaskan Malamute, Chow Chow, Old English Sheepdog, husky
+     - texts : An image of a boa constrictor. | An image of a spotted salamander. | An image of an Indian cobra. | An image of a garter snake. | An image of a speckled salamander.
+     - images: eastern hog-nosed snake, eastern diamondback rattlesnake, snail, desert grassland whiptail lizard, sidewinder rattlesnake
+
+[ 5] TEXT   MLP 8                  PC4   (step 5, loss 0.6515)
+     + texts : An image of a person behind a desk with a nameplate labeled 'Boss'. | An image of a small animal sitting on a person's shoulder. | An image of a doctor holding a stethoscope and a clipboard. | An image of a newt in water. | An image of a smooth newt.
+     + images: flatworm, Ibizan Hound, tick, grasshopper, barn spider
+     - texts : An image of an early 20th-century vehicle. | An image of a town. | An image representing temperature. | An image of a multi-carriage train. | An image of a specific example in a group.
+     - images: fireboat, pirate ship, dock, lighthouse, tram
+
+[ 6] TEXT   layer 9 head 6         PC4   (step 6, loss 0.6198)
+     + texts : An image of a European polecat. | An image of a Carolina anole. | An image of a mongoose. | An image of a black-footed ferret. | An image of a grey fox.
+     + images: hamster, weasel, marmot, red fox, mousetrap
+     - texts : An image of a Newfoundland dog. | An image of a Tibetan Mastiff. | An image of a Great Pyrenees dog. | An image of a Flat-Coated Retriever. | An image of a Leonberger.
+     - images: Newfoundland dog, Alaskan Malamute, Afghan Hound, Tibetan Mastiff, St. Bernard
+
+[ 7] VISION layer 11 head 10       PC0   (step 7, loss 0.5888)
+     + texts : An image of a bird with black and blue feathers. | An image of a bird with blue and green hues. | An image of a black and silver dog. | An image of a black and tan animal. | An image of a gray and black animal.
+     + images: zucchini, killer whale, kite (bird of prey), dung beetle, hamper
+     - texts : An image of a red-colored animal. | An image of a red-colored interior. | An image of red and orange leaves in autumn. | An image of a red vehicle. | An image of a red creature with horns.
+     - images: strawberry, orange, house finch, house finch, tick
+
+[ 8] VISION layer 11 head 4        PC1   (step 8, loss 0.5602)
+     + texts : An image of an elderly person with gray hair and wrinkles. | An image of a person with wrinkles. | An image of a middle-aged man with a friendly smile. | An image of a husband. | An image of an elderly woman with gray hair.
+     + images: sunglasses, hair wig, cowboy hat, tights, swimming cap
+     - texts : An image of children sitting at desks. | An image of a child with a guardian. | An image of two children playing together. | An image of a child peeking from behind a curtain. | An image of a boy playing outside.
+     - images: hamper, tench, electric guitar, violin, racket
+
+[ 9] VISION MLP 12                 PC1   (step 9, loss 0.5365)
+     + texts : An image of a version. | An image with a sleek appearance. | An image that has not been seen before. | An image of an item. | An image of a miscellaneous item.
+     + images: perfume, weighing scale, lipstick, tennis ball, laptop computer
+     - texts : An image of diverse people interacting in a community. | An image of a student overwhelmed by stacks of textbooks and papers. | An image of a student with a report card. | An image of broken objects in a disorganized room. | An image of a person in a suit, pointing at a board during a meeting.
+     - images: swimming cap, scoreboard, steel drum, torch, baseball player
+
+[10] VISION MLP 11                 PC0   (step 10, loss 0.5136)
+     + texts : An image of a writer at a desk surrounded by papers and books. | An image of someone sitting comfortably in a chair with a book. | An image of a portrait framed with candles. | An image of a person wearing a thick coat and scarf. | An image of a person sitting in an office chair.
+     + images: academic gown, sunglasses, bra, graduation cap, shower cap
+     - texts : An image of a band performing on stage. | An image of a group dancing in a cultural festival. | An image of dancers performing on stage. | An image of a crowd watching a band play. | An image of performers on a stage.
+     - images: military uniform, radiator grille, dowitcher, kit fox, crane bird
+
+[11] TEXT   layer 11 head 0        PC4   (step 11, loss 0.4908)
+     + texts : An image of a Newfoundland dog. | An image of a Sussex Spaniel. | An image of a bear with a stocky body. | An image of a bear with sharp claws. | An image of a vehicle with a harnessed horse.
+     + images: American black bear, Irish Water Spaniel, American black bear, siamang, gorilla
+     - texts : An image of a bird with a white bill. | An image of a brambling. | An image of a hornbill. | An image of a long-legged bird. | An image of a bird with a reddish-orange breast.
+     - images: goldfinch, goldfinch, goldfinch, house finch, goldfinch
+
+[12] TEXT   layer 10 head 6        PC3   (step 12, loss 0.4698)
+     + texts : An image of a fox squirrel. | An image of an Egyptian Mau. | An image of a large wild cat. | An image of a big, strong feline. | An image of a large feline animal.
+     + images: syringe, toilet paper, lynx, Siamese cat, fox squirrel
+     - texts : An image of a starfish. | An image of a tarantula. | An image of a tick symbol in a box. | An image of a large red cross mark. | An image of bright dandelions in a field.
+     - images: starfish, stinkhorn mushroom, tree frog, earth star fungus, taxicab
+
+[13] VISION MLP 11                 PC6   (step 13, loss 0.4518)
+     + texts : An image of a copy machine duplicating a paper. | An image of a digital pop-up window with the word 'cancel'. | An image of a surgical operation in a well-lit operating room. | An image of a credit card swipe at a store. | An image of a password input field on a screen.
+     + images: chainsaw, soap dispenser, flagpole, lab coat, space heater
+     - texts : An image of a shiny item. | An image of a small shiny item. | An image of mourners standing by a gravesite. | An image of a rip. | An image of a wrinkled item.
+     - images: reflex camera, Polaroid camera, perfume, Polaroid camera, Polaroid camera
+
+[14] TEXT   layer 11 head 2        PC3   (step 14, loss 0.4343)
+     + texts : An image of a brown-colored animal. | An image of a bronze-colored surface. | An image of a brown-colored creature. | An image of a brown furniture piece. | An image of a predominantly brown animal.
+     + images: scarf, fur coat, jacamar, holster, cardigan
+     - texts : An image of a white animal with black spots. | An image of a white and gray animal. | An image of a white and gray shelter. | An image of a white and black dog. | An image of a white and black bird.
+     - images: sulphur-crested cockatoo, sulphur-crested cockatoo, vulture, great egret, sulphur-crested cockatoo
+
+[15] VISION layer 10 head 7        PC4   (step 15, loss 0.4168)
+     + texts : An image of a plus-sized body silhouette. | An image of a jackfruit. | An image of a skirt with pleats. | An image of a woman smiling. | An image of a welcome desk with "Now Hiring" sign.
+     + images: pajamas, kimono, gown, Brittany dog, poncho
+     - texts : An image of two wrestlers trying to overpower each other. | An image of a person sneezing. | An image of a person yelling at another person. | An image of a person scratching their head in confusion. | An image of a male playing sports.
+     - images: mask, parallel bars, swimming cap, barbell, sweatshirt
+[RN50] 5223 PC units from 654 components (K<=8)
+    FULL MODEL faces->human=53.77%  non-human=2.37%  crime=43.86%  primates->non-human=98.89%
+  [rep0 forward       ] kept= 2398/5223  faces->non-human=0.92%  crime=13.20%  disparity=1.47  primates->non-human=100.00%
+  [rep0 forward+swap  ] kept= 2420/5223  faces->non-human=0.77%  crime=12.23%  disparity=1.62  primates->non-human=100.00%
+  [rep0 backward      ] kept= 2818/5223  faces->non-human=0.55%  crime=12.86%  disparity=1.41  primates->non-human=100.00%
+  [rep0 backward+swap ] kept= 2845/5223  faces->non-human=0.49%  crime=12.69%  disparity=1.41  primates->non-human=100.00%
+  [rep1 forward       ] kept= 2450/5223  faces->non-human=0.32%  crime=12.06%  disparity=0.63  primates->non-human=100.00%

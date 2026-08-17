@@ -1,0 +1,156 @@
+[ViT-B-32] loss-restricted ranking, 256 samples, 1/tau=100.0
+  greedy 50/266
+  greedy 100/266
+  greedy 150/266
+  greedy 200/266
+  greedy 250/266
+[ViT-B-32] greedy vs static joint order: spearman=0.5760, 261/266 positions differ
+  pair scores 50/157
+  pair scores 100/157
+  pair scores 150/157
+[ViT-B-32] top pairs: ('attn', 11, 7)<->('attn', 8, 0) (10.2), ('attn', 11, 8)<->('attn', 10, 2) (10.3), ('mlp', 11, -1)<->('attn', 11, 2) (10.5)
+[ViT-B-32] wrote loss_ablation (1258 rows)
+[ViT-B-16] loss-restricted ranking, 256 samples, 1/tau=100.0
+  greedy 50/266
+  greedy 100/266
+  greedy 150/266
+  greedy 200/266
+  greedy 250/266
+[ViT-B-16] greedy vs static joint order: spearman=0.2852, 265/266 positions differ
+  pair scores 50/157
+  pair scores 100/157
+  pair scores 150/157
+[ViT-B-16] top pairs: ('attn', 11, 5)<->('attn', 11, 7) (9.7), ('attn', 11, 7)<->('attn', 9, 0) (10.0), ('attn', 11, 4)<->('attn', 11, 0) (10.0)
+[ViT-B-16] wrote loss_ablation (1258 rows)
+[ViT-L-14] loss-restricted ranking, 256 samples, 1/tau=100.0
+  greedy 50/566
+  greedy 100/566
+  greedy 150/566
+  greedy 200/566
+  greedy 250/566
+  greedy 300/566
+  greedy 350/566
+  greedy 400/566
+  greedy 450/566
+  greedy 500/566
+  greedy 550/566
+[ViT-L-14] greedy vs static joint order: spearman=0.4600, 560/566 positions differ
+  pair scores 50/409
+  pair scores 100/409
+  pair scores 150/409
+  pair scores 200/409
+  pair scores 250/409
+  pair scores 300/409
+  pair scores 350/409
+  pair scores 400/409
+[ViT-L-14] top pairs: ('attn', 23, 7)<->('attn', 10, 6) (10.2), ('attn', 22, 6)<->('attn', 10, 4) (10.5), ('attn', 23, 14)<->('attn', 10, 0) (10.6)
+[ViT-L-14] wrote loss_ablation (1268 rows)
+[RN50] loss-restricted ranking, 256 samples, 1/tau=100.0
+  greedy 50/654
+  greedy 100/654
+  greedy 150/654
+  greedy 200/654
+  greedy 250/654
+  greedy 300/654
+  greedy 350/654
+  greedy 400/654
+  greedy 450/654
+  greedy 500/654
+  greedy 550/654
+  greedy 600/654
+  greedy 650/654
+[RN50] greedy vs static joint order: spearman=0.1034, 643/654 positions differ
+  pair scores 50/545
+  pair scores 100/545
+  pair scores 150/545
+  pair scores 200/545
+  pair scores 250/545
+  pair scores 300/545
+  pair scores 350/545
+  pair scores 400/545
+  pair scores 450/545
+  pair scores 500/545
+[RN50] top pairs: ('attn', 14, 22)<->('attn', 10, 4) (10.1), ('attn', 14, 25)<->('attn', 10, 7) (10.4), ('attn', 14, 16)<->('attn', 11, 3) (10.5)
+[RN50] wrote loss_ablation (1250 rows)
+[RN101] loss-restricted ranking, 256 samples, 1/tau=100.0
+  greedy 50/1198
+  greedy 100/1198
+  greedy 150/1198
+  greedy 200/1198
+  greedy 250/1198
+  greedy 300/1198
+  greedy 350/1198
+  greedy 400/1198
+  greedy 450/1198
+  greedy 500/1198
+  greedy 550/1198
+  greedy 600/1198
+  greedy 650/1198
+  greedy 700/1198
+  greedy 750/1198
+  greedy 800/1198
+  greedy 850/1198
+  greedy 900/1198
+  greedy 950/1198
+  greedy 1000/1198
+  greedy 1050/1198
+  greedy 1100/1198
+  greedy 1150/1198
+[RN101] greedy vs static joint order: spearman=0.0386, 1171/1198 positions differ
+  pair scores 50/1089
+  pair scores 100/1089
+  pair scores 150/1089
+  pair scores 200/1089
+  pair scores 250/1089
+  pair scores 300/1089
+  pair scores 350/1089
+  pair scores 400/1089
+  pair scores 450/1089
+  pair scores 500/1089
+  pair scores 550/1089
+  pair scores 600/1089
+  pair scores 650/1089
+  pair scores 700/1089
+  pair scores 750/1089
+  pair scores 800/1089
+  pair scores 850/1089
+  pair scores 900/1089
+  pair scores 950/1089
+  pair scores 1000/1089
+  pair scores 1050/1089
+[RN101] top pairs: ('attn', 31, 16)<->('attn', 11, 3) (10.6), ('attn', 31, 22)<->('attn', 11, 0) (10.9), ('attn', 31, 6)<->('attn', 9, 2) (10.9)
+[RN101] wrote loss_ablation (1244 rows)
+[ViT-H-14] loss-restricted ranking, 256 samples, 1/tau=100.0
+  greedy 50/954
+  greedy 100/954
+  greedy 150/954
+  greedy 200/954
+  greedy 250/954
+  greedy 300/954
+  greedy 350/954
+  greedy 400/954
+  greedy 450/954
+  greedy 500/954
+  greedy 550/954
+  greedy 600/954
+  greedy 650/954
+  greedy 700/954
+  greedy 750/954
+  greedy 800/954
+  greedy 850/954
+  greedy 900/954
+  greedy 950/954
+[ViT-H-14] greedy vs static joint order: spearman=0.3198, 948/954 positions differ
+  pair scores 50/545
+  pair scores 100/545
+  pair scores 150/545
+  pair scores 200/545
+  pair scores 250/545
+  pair scores 300/545
+  pair scores 350/545
+  pair scores 400/545
+  pair scores 450/545
+  pair scores 500/545
+[ViT-H-14] top pairs: ('attn', 31, 6)<->('attn', 23, 0) (10.6), ('attn', 31, 12)<->('attn', 20, 14) (10.7), ('attn', 31, 4)<->('attn', 20, 0) (10.8)
+[ViT-H-14] wrote loss_ablation (1290 rows)
+ALL DONE

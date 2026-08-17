@@ -1,0 +1,8 @@
+######## exp_hardneg (negation, ViT-B-32) - the FULL MODEL line is the finding
+[ViT-B-32/negation] 2000 items, 266 components  |  FULL MODEL acc=67.00%  present=66.63%  absent=67.36%  worst-subgroup=48.33%
+  [rep0 forward       ] kept=   6/266 steps=   4 acc=62.19% (present 59.81 / absent 64.54)
+  [rep0 forward+swap  ] kept=   6/266 steps=   4 acc=62.19% (present 59.81 / absent 64.54)
+  [rep0 backward      ] kept= 262/266 steps=   4 acc=72.88% (present 80.37 / absent 65.47)
+  [rep0 backward+swap ] kept= 262/266 steps=   4 acc=72.88% (present 80.37 / absent 65.47)
+[ViT-B-32/negation] wrote hardneg_{eval,trace,pool}
+######## exp_waterbirds_table (ViT-B-32)

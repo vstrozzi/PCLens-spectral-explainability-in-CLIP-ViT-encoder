@@ -1,0 +1,15 @@
+######## component level, ViT-B-32
+Using local files
+[ViT-B-32/comp] 157 units; full model total=59.50 worst-group=28.50
+  top 5 by selectivity (carries the CLASS axis, not the BACKGROUND one):
+    L11H7     PC-1  keep=0.0231 remove=0.0060
+    L11H2     PC-1  keep=0.0094 remove=0.0060
+    MLP 12    PC-1  keep=0.0122 remove=0.0096
+    L11H10    PC-1  keep=0.0040 remove=0.0023
+    L11H3     PC-1  keep=0.0036 remove=0.0021
+  top 5 by BACKGROUND strength (the spurious directions):
+    L11H9     PC-1  remove=0.0156 keep=0.0101
+    MLP 12    PC-1  remove=0.0096 keep=0.0122
+    MLP 11    PC-1  remove=0.0093 keep=0.0074
+    L10H1     PC-1  remove=0.0089 keep=0.0062
+    L11H11    PC-1  remove=0.0084 keep=0.0071

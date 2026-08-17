@@ -1,0 +1,6 @@
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:05<00:15,  5.17s/it] 50%|█████     | 2/4 [00:10<00:10,  5.47s/it] 75%|███████▌  | 3/4 [00:16<00:05,  5.56s/it]100%|██████████| 4/4 [00:21<00:00,  5.39s/it]100%|██████████| 4/4 [00:21<00:00,  5.41s/it]
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:10<00:30, 10.17s/it] 50%|█████     | 2/4 [00:20<00:20, 10.23s/it] 75%|███████▌  | 3/4 [00:30<00:10, 10.26s/it]100%|██████████| 4/4 [00:40<00:00,  9.89s/it]100%|██████████| 4/4 [00:40<00:00, 10.01s/it]

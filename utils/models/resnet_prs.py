@@ -164,17 +164,40 @@ def attnpool_frozen_weights(attnpool, Z):
     return torch.softmax(logits, dim=-1)
 
 
+def output_projection(visual):
+    """The attention-pool output projection W_o, b_o of a CLIP ModifiedResNet.
+
+    This single linear (``visual.attnpool.c_proj``) is the *only* map into the shared
+    CLIP space -- it plays the role the ViT's ``visual.proj`` plays. Because it is applied
+    once, at the end, it factors straight out of the component sum:
+        visual(I) = W_o @ (sum of pre-projection components)  +  b_o.
+
+    Returns (weight, bias): weight [out_dim, C] (e.g. [1024, 2048] for RN50, [512, 2048]
+    for RN101), bias [out_dim]. Reshape weight to [out_dim, H, C//H] for the per-head slabs.
+    """
+    cp = visual.attnpool.c_proj
+    return cp.weight, cp.bias
+
+
 @torch.no_grad()
-def attnpool_split(attnpool, contribs, Z, check: bool = False):
+def attnpool_split(attnpool, contribs, Z, check: bool = False, vision_proj: bool = True):
     """Split AttentionPool2d(Z) into per-block-per-head + positional components.
 
     Given frozen weights a^h(I), pooling is linear in the tokens.  Splitting the value
     projection v_i = W_v z_i + (W_v P_i + b_v) sends the token content z_i to c_{l,h}
     (via the feature-map decomposition of z_i) and the positional/bias part to c_{P,h}.
 
+    vision_proj=True (default): apply the output projection W_o so every component lands in
+    the CLIP space (out_dim) and the identity is  c_lh.sum((1,2)) + c_pos == visual(I).
+    vision_proj=False: return the raw pre-projection per-head value stream (dim dh = C//H,
+    e.g. 64), with the projection factored out; recover the embedding with W_o (see
+    `output_projection`):  visual(I) = einsum('bhd,ohd->bo', c_lh.sum(1)+c_pos, W_o) + b_o.
+
     Returns:
-        c_lh  : [B, L+1, H, out_dim]  the per-block per-head components c_{l,h}(I).
-        c_pos : [B, out_dim]          sum_h c_{P,h}(I) + out_proj bias (content-free term).
+        c_lh  : [B, L+1, H, out_dim]  (projected)  or  [B, L+1, H, dh]  (pre-projection).
+        c_pos : [B, out_dim]          (projected, incl. out_proj bias)
+                or [B, H, dh]          (pre-projection; the b_o bias is NOT included here --
+                                        it is added once when W_o is re-applied).
         attn  : [B, H, K+1]           frozen class-token attention weights a^h(I).
     """
     H = attnpool.num_heads
@@ -187,28 +210,36 @@ def attnpool_split(attnpool, contribs, Z, check: bool = False):
         attn = attnpool_frozen_weights(attnpool, Z)  # [B,H,K+1]
         Wo = attnpool.c_proj.weight.reshape(out_dim, H, dh)  # per-head output slabs
 
-        def head_project(tokens):
-            """tokens [K+1,B,C] with NO positional/bias -> per-head component [B,H,out_dim]."""
+        def head_value(tokens):
+            """tokens [K+1,B,C] with NO positional/bias -> per-head value stream [B,H,dh]."""
             v = F.linear(tokens, attnpool.v_proj.weight)          # value, no bias  [K+1,B,C]
             v = v.reshape(v.shape[0], B, H, dh)                    # [K+1,B,H,dh]
-            head_out = torch.einsum("bhi,ibhd->bhd", attn, v)     # weighted sum over keys
-            return torch.einsum("bhd,ohd->bho", head_out, Wo)     # [B,H,out_dim]
+            return torch.einsum("bhi,ibhd->bhd", attn, v)         # weighted sum over keys [B,H,dh]
 
-        # Content components: one per block contribution.
-        c_lh = torch.stack([head_project(_tokens_from_map(c)) for c in contribs], dim=1)  # [B,L+1,H,out]
+        head_outs = [head_value(_tokens_from_map(c)) for c in contribs]  # list of [B,H,dh]
 
-        # Positional + value-bias part (added to every token), then out-proj bias (once).
+        # Positional + value-bias part (added to every token).
         P = attnpool.positional_embedding.to(Z.dtype)             # [K+1,C]
         v_pos = F.linear(P, attnpool.v_proj.weight, attnpool.v_proj.bias)  # [K+1,C], includes b_v
         v_pos = v_pos.reshape(P.shape[0], H, dh)                  # [K+1,H,dh] (batch-independent)
         head_pos = torch.einsum("bhi,ihd->bhd", attn, v_pos)     # [B,H,dh]
-        c_pos = torch.einsum("bhd,ohd->bo", head_pos, Wo)        # [B,out_dim] (summed over heads)
-        c_pos = c_pos + attnpool.c_proj.bias[None, :]            # single out-proj bias
+
+        if vision_proj:
+            c_lh = torch.stack([torch.einsum("bhd,ohd->bho", ho, Wo) for ho in head_outs], dim=1)
+            c_pos = torch.einsum("bhd,ohd->bo", head_pos, Wo)    # [B,out_dim] (summed over heads)
+            c_pos = c_pos + attnpool.c_proj.bias[None, :]        # single out-proj bias
+        else:
+            c_lh = torch.stack(head_outs, dim=1)                 # [B,L+1,H,dh]
+            c_pos = head_pos                                      # [B,H,dh] (b_o added at reprojection)
 
     if check:
         with _full_fp32():
             real = attnpool(Z)                               # [B,out_dim]
-        recon = c_lh.sum(dim=(1, 2)) + c_pos
+        if vision_proj:
+            recon = c_lh.sum(dim=(1, 2)) + c_pos
+        else:
+            pooled = c_lh.sum(dim=1) + c_pos                 # [B,H,dh]
+            recon = torch.einsum("bhd,ohd->bo", pooled, Wo) + attnpool.c_proj.bias[None, :]
         err = (recon - real).abs().max().item()
         assert err < 1e-3 * (real.abs().max().item() + 1e-6), \
             f"attn-pool decomposition mismatch: max abs err {err}"
@@ -220,30 +251,50 @@ def attnpool_split(attnpool, contribs, Z, check: bool = False):
 # ----------------------------------------------------------------------------- #
 
 @torch.no_grad()
-def decompose_resnet_image(visual, image, check: bool = False) -> Dict[str, torch.Tensor]:
+def decompose_resnet_image(visual, image, check: bool = False,
+                           vision_proj: bool = True) -> Dict[str, torch.Tensor]:
     """Full exact decomposition of a CLIP ModifiedResNet image embedding.
 
     Args:
         visual : a ModifiedResNet (model.visual of a CLIP ResNet).
         image  : [B, 3, H, W] preprocessed batch on the same device as `visual`.
         check  : if True, assert exact recovery of visual(image) at every stage.
+        vision_proj : if True (default) the components live in the CLIP space (out_dim) and
+            sum directly to visual(image); if False they live in the pre-projection per-head
+            value space (dim dh = C//H), with the output projection factored out.
 
     Returns dict with:
-        c_lh  : [B, L+1, H, out_dim]  components c_{l,h}(I)  (l=0 stem .. L).
-        c_pos : [B, out_dim]          content-free positional+bias term sum_h c_{P,h}+b_o.
+        c_lh  : [B, L+1, H, out_dim]  components c_{l,h}(I)  (l=0 stem .. L)   (vision_proj)
+                or [B, L+1, H, dh]     pre-projection per-head value stream    (not vision_proj)
+        c_pos : [B, out_dim]          content-free positional+bias term        (vision_proj)
+                or [B, H, dh]          pre-projection positional term (no b_o)  (not vision_proj)
         attn  : [B, H, K+1]           frozen class-token attention weights.
-    Their identity:  c_lh.sum((1,2)) + c_pos == visual(image).
+        out_proj_weight, out_proj_bias : the attnpool c_proj W_o [out_dim, C], b_o [out_dim].
+
+    Identity (vision_proj):      c_lh.sum((1,2)) + c_pos == visual(image).
+    Identity (not vision_proj):  einsum('bhd,ohd->bo', c_lh.sum(1)+c_pos,
+                                        W_o.reshape(out_dim,H,dh)) + b_o == visual(image).
     """
     contribs, Z = decompose_feature_map(visual, image, check=check)
-    c_lh, c_pos, attn = attnpool_split(visual.attnpool, contribs, Z, check=check)
-    return {"c_lh": c_lh, "c_pos": c_pos, "attn": attn}
+    c_lh, c_pos, attn = attnpool_split(visual.attnpool, contribs, Z, check=check,
+                                       vision_proj=vision_proj)
+    Wo, bo = output_projection(visual)
+    return {"c_lh": c_lh, "c_pos": c_pos, "attn": attn,
+            "out_proj_weight": Wo, "out_proj_bias": bo}
 
 
 @torch.no_grad()
-def verify_decomposition(visual, image, verbose: bool = True) -> float:
-    """Return max abs error between (sum of components) and visual(image)."""
-    out = decompose_resnet_image(visual, image, check=False)
-    recon = out["c_lh"].sum(dim=(1, 2)) + out["c_pos"]
+def verify_decomposition(visual, image, verbose: bool = True, vision_proj: bool = True) -> float:
+    """Return max abs error between (sum of components, re-projected if needed) and visual(image)."""
+    out = decompose_resnet_image(visual, image, check=False, vision_proj=vision_proj)
+    if vision_proj:
+        recon = out["c_lh"].sum(dim=(1, 2)) + out["c_pos"]
+    else:
+        Wo, bo = out["out_proj_weight"], out["out_proj_bias"]
+        H = visual.attnpool.num_heads
+        Wo = Wo.reshape(Wo.shape[0], H, Wo.shape[1] // H)          # [out_dim, H, dh]
+        pooled = out["c_lh"].sum(dim=1) + out["c_pos"]             # [B, H, dh]
+        recon = torch.einsum("bhd,ohd->bo", pooled, Wo) + bo[None, :]
     with _full_fp32():
         real = visual(image)
     err = (recon - real).abs().max().item()

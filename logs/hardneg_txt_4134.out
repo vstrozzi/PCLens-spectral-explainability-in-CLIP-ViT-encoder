@@ -1,0 +1,229 @@
+=== coco_hardneg_negation ViT-B-32
+Using local files
+Model parameters: 151,277,313
+Context length: 77
+Number of text layers: 12
+Decomposing 4000 texts from 'coco_hardneg_negation' (4000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_attn_text_ViT-B-32_seed_69.npy  shape (4000, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_mlp_text_ViT-B-32_seed_69.npy  shape (4000, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_labels_text_ViT-B-32_seed_69.npy  shape (4000,)
+Chunk files removed. Done.
+=== coco_hardneg_negation ViT-B-16
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 4000 texts from 'coco_hardneg_negation' (4000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_attn_text_ViT-B-16_seed_69.npy  shape (4000, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_mlp_text_ViT-B-16_seed_69.npy  shape (4000, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_labels_text_ViT-B-16_seed_69.npy  shape (4000,)
+Chunk files removed. Done.
+=== coco_hardneg_negation ViT-L-14
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 4000 texts from 'coco_hardneg_negation' (4000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_attn_text_ViT-L-14_seed_69.npy  shape (4000, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_mlp_text_ViT-L-14_seed_69.npy  shape (4000, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_labels_text_ViT-L-14_seed_69.npy  shape (4000,)
+Chunk files removed. Done.
+=== coco_hardneg_negation ViT-H-14
+Using local files
+Model parameters: 986,109,441
+Context length: 77
+Number of text layers: 24
+Decomposing 4000 texts from 'coco_hardneg_negation' (4000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_attn_text_ViT-H-14_seed_69.npy  shape (4000, 24, 16, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_mlp_text_ViT-H-14_seed_69.npy  shape (4000, 25, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_labels_text_ViT-H-14_seed_69.npy  shape (4000,)
+Chunk files removed. Done.
+=== coco_hardneg_negation RN50
+Model parameters: 102,007,137
+Context length: 77
+Number of text layers: 12
+Decomposing 4000 texts from 'coco_hardneg_negation' (4000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_attn_text_RN50_seed_69.npy  shape (4000, 12, 8, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_mlp_text_RN50_seed_69.npy  shape (4000, 13, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_labels_text_RN50_seed_69.npy  shape (4000,)
+Chunk files removed. Done.
+=== coco_hardneg_negation RN101
+Model parameters: 119,688,033
+Context length: 77
+Number of text layers: 12
+Decomposing 4000 texts from 'coco_hardneg_negation' (4000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_attn_text_RN101_seed_69.npy  shape (4000, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_mlp_text_RN101_seed_69.npy  shape (4000, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_negation_labels_text_RN101_seed_69.npy  shape (4000,)
+Chunk files removed. Done.
+=== coco_hardneg_count ViT-B-32
+Using local files
+Model parameters: 151,277,313
+Context length: 77
+Number of text layers: 12
+Decomposing 1098 texts from 'coco_hardneg_count' (1098 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_attn_text_ViT-B-32_seed_69.npy  shape (1098, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_mlp_text_ViT-B-32_seed_69.npy  shape (1098, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_labels_text_ViT-B-32_seed_69.npy  shape (1098,)
+Chunk files removed. Done.
+=== coco_hardneg_count ViT-B-16
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 1098 texts from 'coco_hardneg_count' (1098 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_attn_text_ViT-B-16_seed_69.npy  shape (1098, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_mlp_text_ViT-B-16_seed_69.npy  shape (1098, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_labels_text_ViT-B-16_seed_69.npy  shape (1098,)
+Chunk files removed. Done.
+=== coco_hardneg_count ViT-L-14
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 1098 texts from 'coco_hardneg_count' (1098 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_attn_text_ViT-L-14_seed_69.npy  shape (1098, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_mlp_text_ViT-L-14_seed_69.npy  shape (1098, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_labels_text_ViT-L-14_seed_69.npy  shape (1098,)
+Chunk files removed. Done.
+=== coco_hardneg_count ViT-H-14
+Using local files
+Model parameters: 986,109,441
+Context length: 77
+Number of text layers: 24
+Decomposing 1098 texts from 'coco_hardneg_count' (1098 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_attn_text_ViT-H-14_seed_69.npy  shape (1098, 24, 16, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_mlp_text_ViT-H-14_seed_69.npy  shape (1098, 25, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_labels_text_ViT-H-14_seed_69.npy  shape (1098,)
+Chunk files removed. Done.
+=== coco_hardneg_count RN50
+Model parameters: 102,007,137
+Context length: 77
+Number of text layers: 12
+Decomposing 1098 texts from 'coco_hardneg_count' (1098 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_attn_text_RN50_seed_69.npy  shape (1098, 12, 8, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_mlp_text_RN50_seed_69.npy  shape (1098, 13, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_labels_text_RN50_seed_69.npy  shape (1098,)
+Chunk files removed. Done.
+=== coco_hardneg_count RN101
+Model parameters: 119,688,033
+Context length: 77
+Number of text layers: 12
+Decomposing 1098 texts from 'coco_hardneg_count' (1098 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_attn_text_RN101_seed_69.npy  shape (1098, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_mlp_text_RN101_seed_69.npy  shape (1098, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_count_labels_text_RN101_seed_69.npy  shape (1098,)
+Chunk files removed. Done.
+=== coco_hardneg_order ViT-B-32
+Using local files
+Model parameters: 151,277,313
+Context length: 77
+Number of text layers: 12
+Decomposing 1662 texts from 'coco_hardneg_order' (1662 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_attn_text_ViT-B-32_seed_69.npy  shape (1662, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_mlp_text_ViT-B-32_seed_69.npy  shape (1662, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_labels_text_ViT-B-32_seed_69.npy  shape (1662,)
+Chunk files removed. Done.
+=== coco_hardneg_order ViT-B-16
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 1662 texts from 'coco_hardneg_order' (1662 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_attn_text_ViT-B-16_seed_69.npy  shape (1662, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_mlp_text_ViT-B-16_seed_69.npy  shape (1662, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_labels_text_ViT-B-16_seed_69.npy  shape (1662,)
+Chunk files removed. Done.
+=== coco_hardneg_order ViT-L-14
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 1662 texts from 'coco_hardneg_order' (1662 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_attn_text_ViT-L-14_seed_69.npy  shape (1662, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_mlp_text_ViT-L-14_seed_69.npy  shape (1662, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_labels_text_ViT-L-14_seed_69.npy  shape (1662,)
+Chunk files removed. Done.
+=== coco_hardneg_order ViT-H-14
+Using local files
+Model parameters: 986,109,441
+Context length: 77
+Number of text layers: 24
+Decomposing 1662 texts from 'coco_hardneg_order' (1662 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_attn_text_ViT-H-14_seed_69.npy  shape (1662, 24, 16, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_mlp_text_ViT-H-14_seed_69.npy  shape (1662, 25, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_labels_text_ViT-H-14_seed_69.npy  shape (1662,)
+Chunk files removed. Done.
+=== coco_hardneg_order RN50
+Model parameters: 102,007,137
+Context length: 77
+Number of text layers: 12
+Decomposing 1662 texts from 'coco_hardneg_order' (1662 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_attn_text_RN50_seed_69.npy  shape (1662, 12, 8, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_mlp_text_RN50_seed_69.npy  shape (1662, 13, 1024)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_labels_text_RN50_seed_69.npy  shape (1662,)
+Chunk files removed. Done.
+=== coco_hardneg_order RN101
+Model parameters: 119,688,033
+Context length: 77
+Number of text layers: 12
+Decomposing 1662 texts from 'coco_hardneg_order' (1662 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_attn_text_RN101_seed_69.npy  shape (1662, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_mlp_text_RN101_seed_69.npy  shape (1662, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/coco_hardneg_order_labels_text_RN101_seed_69.npy  shape (1662,)
+Chunk files removed. Done.
+ALLDONE
