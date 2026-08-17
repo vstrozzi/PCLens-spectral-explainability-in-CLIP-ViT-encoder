@@ -33,7 +33,8 @@ import tqdm
 from torchvision.datasets import CIFAR10, CIFAR100, ImageFolder, ImageNet
 
 from utils.datasets.binary_waterbirds import BinaryWaterbirds
-from utils.datasets.dataset_helpers import dataset_to_dataloader
+from utils.datasets.fairface import FairFace
+from utils.datasets.dataset_helpers import dataset_to_dataloader, caltech_imagefolder, CocoKarpathyTest
 from utils.models.factory import create_model_and_transforms
 from utils.models.resnet_prs import decompose_resnet_image, verify_decomposition
 
@@ -83,6 +84,8 @@ def get_args_parser():
                              "stream (dim C//H, e.g. 64) with W_o factored out; the projection "
                              "(W_o, b_o) is written to {dataset}_out_proj_{model}_seed_{seed}.npz so "
                              "the embedding is recoverable. --normalize is ignored in this mode.")
+    parser.add_argument("--fairface_label", choices=["gender", "race", "age"], default="gender",
+                        help="which FairFace attribute is the label (only used for --dataset fairface).")
     return parser
 
 
@@ -122,8 +125,21 @@ def main(args):
         ds = CIFAR100(root=args.data_path, download=True, train=False, transform=preprocess)
     elif args.dataset == "CIFAR10":
         ds = CIFAR10(root=args.data_path, download=True, train=False, transform=preprocess)
+    elif args.dataset == "fairface":
+        ds = FairFace(root=args.data_path + "fairface/", split="val",
+                      label=args.fairface_label, transform=preprocess)
+    elif args.dataset in ("typographic", "typographic_clean", "counting", "visogender", "celeba"):
+        # rendered sets built by scripts_paper/build_{typographic,counting}.py; folder names are
+        # zero-padded labels so ImageFolder's sorted order is recoverable from the sidecar meta
+        ds = ImageFolder(root=args.data_path + args.dataset + "/", transform=preprocess,
+                         is_valid_file=lambda q: q.lower().endswith((".jpg", ".jpeg", ".png")))
+    elif args.dataset == "coco":
+        # Karpathy-test retrieval pairs (label = row index); run with --samples_per_class None
+        ds = CocoKarpathyTest(root=args.data_path + "coco/", transform=preprocess)
     else:
-        ds = ImageFolder(root=args.data_path, transform=preprocess)
+        # caltech_imagefolder drops Caltech-101's BACKGROUND_Google pseudo-class (a no-op otherwise)
+        # so labels line up with caltech_101_classes / the classifier.
+        ds = caltech_imagefolder(root=args.data_path, transform=preprocess)
 
     dataloader = dataset_to_dataloader(
         ds, samples_per_class=args.samples_per_class,

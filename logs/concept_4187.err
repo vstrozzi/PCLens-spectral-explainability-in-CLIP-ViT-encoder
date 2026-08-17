@@ -1,0 +1,24 @@
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_concept.py", line 279, in <module>
+    run_model(m, a.level, a.device, a.seed, a.k, a.lam, max_steps=a.max_steps)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_concept.py", line 219, in run_model
+    rk.head(kk).apply(lambda r: _idx(units, r), axis=1).tolist()]
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/pandas/core/frame.py", line 10401, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_concept.py", line 219, in <lambda>
+    rk.head(kk).apply(lambda r: _idx(units, r), axis=1).tolist()]
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_concept.py", line 261, in _idx
+    return units.index((r.tower, (r.kind, int(r.layer), int(r.head)), int(r.pc)))
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'method'

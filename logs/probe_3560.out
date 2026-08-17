@@ -1,0 +1,20 @@
+Using local files
+===== ViT-B-16
+  bare  '{}'               0.08
+  an image of {}           0.08
+  a photo of {}            0.08
+  a photo of a {}          0.08
+  a photo of a {}.         0.08
+  an image of a {}         0.08
+  itap of a {}             0.08
+  80-template ensemble     0.08   (saved classifier)
+Using local files
+===== ViT-L-14
+  bare  '{}'               0.08
+  an image of {}           0.08
+  a photo of {}            0.08
+  a photo of a {}          0.08
+  a photo of a {}.         0.08
+  an image of a {}         0.08
+  itap of a {}             0.08
+  80-template ensemble     0.08   (saved classifier)

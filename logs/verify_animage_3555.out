@@ -1,0 +1,16 @@
+############ ViT-B-16
+[SKIP] vision activations missing. Compute them first:
+  python -m utils.scripts.compute_activation_values --model ViT-B-16 --pretrained laion2b_s34b_b88k --dataset __none__ --seed 69
+Using local files
+[PASS] TEXT  : n=16  max_abs_err=1.74e-06  mean_abs_err=6.80e-08  max_rel_l2=3.55e-06  min_cos=1.000000  mean_cos=1.000000  (tol=1e-03)
+
+All decomposition checks passed.
+exit=0
+############ ViT-L-14
+[SKIP] vision activations missing. Compute them first:
+  python -m utils.scripts.compute_activation_values --model ViT-L-14 --pretrained laion2b_s32b_b82k --dataset __none__ --seed 69
+Using local files
+[PASS] TEXT  : n=16  max_abs_err=1.13e-06  mean_abs_err=5.64e-08  max_rel_l2=2.76e-06  min_cos=1.000000  mean_cos=1.000000  (tol=1e-03)
+
+All decomposition checks passed.
+exit=0

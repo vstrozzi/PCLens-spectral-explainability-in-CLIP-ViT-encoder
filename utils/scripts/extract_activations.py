@@ -99,7 +99,8 @@ def is_present(name: str) -> bool:
 
 def build_dataset(name: str, fairface_label: str = "gender"):
     """The un-transformed dataset object, built the same way the compute scripts build it."""
-    from torchvision.datasets import CIFAR10, CIFAR100, ImageFolder, ImageNet
+    from torchvision.datasets import CIFAR10, CIFAR100, ImageNet
+    from utils.datasets.dataset_helpers import caltech_imagefolder
 
     if name == "CIFAR-10":
         return CIFAR10(root="./datasets/", train=False, download=True)
@@ -107,8 +108,13 @@ def build_dataset(name: str, fairface_label: str = "gender"):
         return CIFAR100(root="./datasets/", train=False, download=True)
     if name == "ImageNet":
         return ImageNet(root="./datasets/imagenet/", split="val")
+    if name == "MNIST":
+        from torchvision.datasets import MNIST
+        return MNIST(root="./datasets/", train=False, download=True)
     if name == "Caltech-101":
-        return ImageFolder(root=str(CALTECH_DIR))
+        # Same BACKGROUND_Google-excluded loader as the compute scripts, so the idx->class map
+        # (and thus class-name ordering) matches the extracted activations exactly.
+        return caltech_imagefolder(root=str(CALTECH_DIR))
     if name == "waterbird":
         from utils.datasets.binary_waterbirds import BinaryWaterbirds
         return BinaryWaterbirds(root="./datasets/waterbird_complete95_forest2water2/", split="test")
@@ -125,6 +131,7 @@ def class_names(name: str, fairface_label: str = "gender"):
     from utils.datasets_constants.caltech_classes import caltech_101_classes
     from utils.datasets_constants.waterbird_classes import waterbird_classes
     from utils.datasets_constants.fairface_classes import FAIRFACE_CLASSES
+    from utils.datasets_constants.mnist_classes import mnist_classes
 
     if name == "fairface":
         return list(FAIRFACE_CLASSES[fairface_label])
@@ -134,6 +141,7 @@ def class_names(name: str, fairface_label: str = "gender"):
         "ImageNet": imagenet_classes,
         "Caltech-101": caltech_101_classes,
         "waterbird": waterbird_classes,
+        "MNIST": mnist_classes,
     }[name]
 
 
@@ -193,26 +201,29 @@ def _pick(prompt, known, default="all"):
 def cmd_image(slug, name, device, seed, spc, tot, out, opt):
     d = DATASETS[name]
     if is_resnet(slug):
-        return [PY, "-m", "utils.scripts.compute_activation_values_resnet",
-                "--model", slug, "--pretrained", pretrained_for(slug),
-                "--dataset", d["dataset_arg"], "--data_path", d["data_path"],
-                "--seed", str(seed), "--device", device, "--output_dir", str(out),
-                "--samples_per_class", str(spc), "--tot_samples_per_class", str(tot),
-                "--batch_size", str(opt.batch_size),
-                "--vision_proj", str(opt.vision_proj), "--normalize", str(opt.vision_proj),
-                "--dtype", "float16" if opt.save_dtype == "fp16" else "float32",
-                "--max_nr_samples_before_writing", str(opt.max_write)]
-    c = [PY, "-m", "utils.scripts.compute_activation_values",
-         "--model", slug, "--pretrained", pretrained_for(slug),
-         "--dataset", d["dataset_arg"], "--data_path", d["data_path"],
-         "--seed", str(seed), "--device", device, "--output_dir", str(out),
-         "--samples_per_class", str(spc), "--tot_samples_per_class", str(tot),
-         "--num_workers", str(opt.num_workers), "--batch_size", str(opt.batch_size),
-         "--quantization", opt.quantization, "--vision_proj", str(opt.vision_proj),
-         "--full_output", str(opt.full_output), "--save_dtype", opt.save_dtype,
-         "--max_nr_samples_before_writing", str(opt.max_write)]
-    if opt.last_layers_only is not None:
-        c += ["--last_layers_only", str(opt.last_layers_only)]
+        c = [PY, "-m", "utils.scripts.compute_activation_values_resnet",
+             "--model", slug, "--pretrained", pretrained_for(slug),
+             "--dataset", d["dataset_arg"], "--data_path", d["data_path"],
+             "--seed", str(seed), "--device", device, "--output_dir", str(out),
+             "--samples_per_class", str(spc), "--tot_samples_per_class", str(tot),
+             "--batch_size", str(opt.batch_size),
+             "--vision_proj", str(opt.vision_proj), "--normalize", str(opt.vision_proj),
+             "--dtype", "float16" if opt.save_dtype == "fp16" else "float32",
+             "--max_nr_samples_before_writing", str(opt.max_write)]
+    else:
+        c = [PY, "-m", "utils.scripts.compute_activation_values",
+             "--model", slug, "--pretrained", pretrained_for(slug),
+             "--dataset", d["dataset_arg"], "--data_path", d["data_path"],
+             "--seed", str(seed), "--device", device, "--output_dir", str(out),
+             "--samples_per_class", str(spc), "--tot_samples_per_class", str(tot),
+             "--num_workers", str(opt.num_workers), "--batch_size", str(opt.batch_size),
+             "--quantization", opt.quantization, "--vision_proj", str(opt.vision_proj),
+             "--full_output", str(opt.full_output), "--save_dtype", opt.save_dtype,
+             "--max_nr_samples_before_writing", str(opt.max_write)]
+        if opt.last_layers_only is not None:            # ViT-only knob
+            c += ["--last_layers_only", str(opt.last_layers_only)]
+    # Both activation scripts take --fairface_label; without it they default to 'gender' and the
+    # labels would silently disagree with the run's chosen attribute (and its classifier).
     if name == "fairface":
         c += ["--fairface_label", opt.fairface_label]
     return c
@@ -262,13 +273,11 @@ def run_model(slug, device, cfg):
     out, seed, opt = cfg.out, cfg.seed, cfg.opt
     # 1) activations
     for name in cfg.datasets:
-        if is_resnet(slug) and name == "fairface":
-            print(f"{tag} skipping fairface (unsupported by the ResNet activation script).")
-            continue
         d = DATASETS[name]
         spc, tot = cfg.subset[name]["spc"], cfg.subset[name]["tot"]
         sh(cmd_image(slug, name, device, seed, spc, tot, out, opt))
-        # text tower over this dataset's class names (one class per line)
+        # text tower over this dataset's class names (one class per line). Independent of the vision
+        # tower -- CLIP-ResNet shares the same Transformer text encoder -- so it runs for every model.
         sh(cmd_text(slug, out, f"{d['dataset_arg']}_classnames", device, seed, out, opt))
     for tset in cfg.text_sets:
         sh(cmd_text(slug, TEXT_DIR, tset, device, seed, out, opt))
@@ -280,8 +289,6 @@ def run_model(slug, device, cfg):
         return
     print(f"\n{tag} verifying decomposition ...")
     for name in cfg.datasets:
-        if is_resnet(slug) and name == "fairface":
-            continue
         d = DATASETS[name]
         spc, tot = cfg.subset[name]["spc"], cfg.subset[name]["tot"]
         sh(cmd_verify(slug, device, seed, out, d["dataset_arg"], out, f"{d['dataset_arg']}_classnames",

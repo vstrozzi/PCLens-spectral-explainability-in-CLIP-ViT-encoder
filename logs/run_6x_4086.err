@@ -1,0 +1,20 @@
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_plots.py", line 378, in <module>
+    run(a.sections, a.models)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_plots.py", line 354, in run
+    fig_component_map(m)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_plots.py", line 127, in fig_component_map
+    L, H = g.layer.max() + 1, g.head.max() + 1
+AttributeError: 'function' object has no attribute 'max'

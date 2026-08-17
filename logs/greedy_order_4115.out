@@ -1,0 +1,109 @@
+[ViT-B-32] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/157 loss=0.9722
+    forward 100/157 loss=0.9366
+    forward 150/157 loss=0.8028
+  [ViT-B-32/vision] forward done (157 components)
+    backward 50/157 loss=17.8258
+    backward 100/157 loss=19.3874
+    backward 150/157 loss=19.3581
+  [ViT-B-32/vision] backward done (157 components)
+    forward 50/109 loss=0.7261
+    forward 100/109 loss=0.7338
+  [ViT-B-32/text] forward done (109 components)
+    backward 50/109 loss=9.2114
+    backward 100/109 loss=10.9997
+  [ViT-B-32/text] backward done (109 components)
+    forward 50/266 loss=5.5568
+    forward 100/266 loss=1.1352
+    forward 150/266 loss=0.8235
+    forward 200/266 loss=0.8173
+    forward 250/266 loss=0.6897
+  [ViT-B-32/joint] forward done (266 components)
+    backward 50/266 loss=18.3027
+    backward 100/266 loss=21.1920
+    backward 150/266 loss=22.3801
+    backward 200/266 loss=22.5602
+    backward 250/266 loss=21.2122
+  [ViT-B-32/joint] backward done (266 components)
+[ViT-B-32] wrote greedy_order_{order,ablation} (1260 rows)
+[ViT-B-16] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/157 loss=0.7434
+    forward 100/157 loss=0.7082
+    forward 150/157 loss=0.7327
+  [ViT-B-16/vision] forward done (157 components)
+    backward 50/157 loss=20.4473
+    backward 100/157 loss=21.6949
+    backward 150/157 loss=21.5072
+  [ViT-B-16/vision] backward done (157 components)
+    forward 50/109 loss=0.6880
+    forward 100/109 loss=0.7114
+  [ViT-B-16/text] forward done (109 components)
+    backward 50/109 loss=9.3000
+    backward 100/109 loss=10.3281
+  [ViT-B-16/text] backward done (109 components)
+    forward 50/266 loss=5.5546
+    forward 100/266 loss=0.9324
+    forward 150/266 loss=0.8163
+    forward 200/266 loss=0.7562
+    forward 250/266 loss=0.8003
+  [ViT-B-16/joint] forward done (266 components)
+    backward 50/266 loss=20.5555
+    backward 100/266 loss=22.0831
+    backward 150/266 loss=22.2431
+    backward 200/266 loss=21.8511
+    backward 250/266 loss=20.3540
+  [ViT-B-16/joint] backward done (266 components)
+[ViT-B-16] wrote greedy_order_{order,ablation} (1260 rows)
+[ViT-L-14] greedy orderings on 256 pairs, 1/tau=100.0
+    forward 50/409 loss=0.5951
+    forward 100/409 loss=0.5249
+    forward 150/409 loss=0.4930
+    forward 200/409 loss=0.4840
+    forward 250/409 loss=0.4856
+    forward 300/409 loss=0.4975
+    forward 350/409 loss=0.4584
+    forward 400/409 loss=0.5337
+  [ViT-L-14/vision] forward done (409 components)
+    backward 50/409 loss=3.8438
+    backward 100/409 loss=7.3005
+    backward 150/409 loss=8.8511
+    backward 200/409 loss=9.5505
+    backward 250/409 loss=9.8699
+    backward 300/409 loss=9.9753
+    backward 350/409 loss=9.9327
+    backward 400/409 loss=9.6922
+  [ViT-L-14/vision] backward done (409 components)
+    forward 50/157 loss=0.6166
+    forward 100/157 loss=0.6081
+    forward 150/157 loss=0.5775
+  [ViT-L-14/text] forward done (157 components)
+    backward 50/157 loss=6.9058
+    backward 100/157 loss=10.3923
+    backward 150/157 loss=9.9722
+  [ViT-L-14/text] backward done (157 components)
+    forward 50/566 loss=5.5439
+    forward 100/566 loss=0.7411
+    forward 150/566 loss=0.5910
+    forward 200/566 loss=0.5371
+    forward 250/566 loss=0.5046
+    forward 300/566 loss=0.4961
+    forward 350/566 loss=0.5017
+    forward 400/566 loss=0.5225
+    forward 450/566 loss=0.5573
+    forward 500/566 loss=0.5919
+    forward 550/566 loss=0.5209
+  [ViT-L-14/joint] forward done (566 components)
+    backward 50/566 loss=5.1415
+    backward 100/566 loss=10.0444
+    backward 150/566 loss=12.9637
+    backward 200/566 loss=14.5750
+    backward 250/566 loss=15.5074
+    backward 300/566 loss=15.9588
+    backward 350/566 loss=16.0679
+    backward 400/566 loss=15.8839
+    backward 450/566 loss=15.3218
+    backward 500/566 loss=13.9269
+    backward 550/566 loss=9.7074
+  [ViT-L-14/joint] backward done (566 components)
+[ViT-L-14] wrote greedy_order_{order,ablation} (1284 rows)
+ALL DONE

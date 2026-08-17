@@ -1,0 +1,20 @@
+=== CONFIG 64 20 96 (K short dproj) ===
+[classname] full-base 0.6660 | shortlist-oracle 0.9990
+          rerank pure-chamfer 0.4175 | hybrid base+chamfer 0.6660 | hybrid base+linsum 0.6660
+[template] full-base 0.7005 | shortlist-oracle 1.0000
+          rerank pure-chamfer 0.4010 | hybrid base+chamfer 0.7005 | hybrid base+linsum 0.7005
+=== CONFIG 109 20 96 (K short dproj) ===
+[classname] full-base 0.6660 | shortlist-oracle 0.9990
+          rerank pure-chamfer 0.3830 | hybrid base+chamfer 0.6660 | hybrid base+linsum 0.6660
+[template] full-base 0.7005 | shortlist-oracle 1.0000
+          rerank pure-chamfer 0.3615 | hybrid base+chamfer 0.7005 | hybrid base+linsum 0.7005
+=== CONFIG 64 10 128 (K short dproj) ===
+[classname] full-base 0.6660 | shortlist-oracle 0.9990
+          rerank pure-chamfer 0.4795 | hybrid base+chamfer 0.6660 | hybrid base+linsum 0.6660
+[template] full-base 0.7005 | shortlist-oracle 1.0000
+          rerank pure-chamfer 0.4640 | hybrid base+chamfer 0.7005 | hybrid base+linsum 0.7005
+=== CONFIG 48 30 96 (K short dproj) ===
+[classname] full-base 0.6660 | shortlist-oracle 0.9990
+          rerank pure-chamfer 0.4330 | hybrid base+chamfer 0.6660 | hybrid base+linsum 0.6660
+[template] full-base 0.7005 | shortlist-oracle 1.0000
+          rerank pure-chamfer 0.4190 | hybrid base+chamfer 0.7005 | hybrid base+linsum 0.7005

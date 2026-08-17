@@ -1,0 +1,39 @@
+N=5000  flat dim=17113  90%-energy PCs=117  99%=1059
+top-8 explained-variance ratios: [0.446 0.09  0.04  0.035 0.029 0.024 0.021 0.014]
+
+Per top-PC: PR(=eff #active entries of 17113), top text|image entries, poles(top classes):
+
+PC0  ev=0.446  PR=4/17113  (sparse)
+   top entries: a9.6xa11.5(-0.68), a11.7xa11.5(-0.42), a10.6xa11.5(-0.27), MLP12xa11.5(+0.23), a11.7xMLP12(+0.16)
+   + pole classes: ['916', '921', '808', '922', '781']
+   - pole classes: ['37', '141', '300', '72', '135']
+
+PC1  ev=0.090  PR=3/17113  (sparse)
+   top entries: MLP12xMLP12(+0.73), MLP12xMLP11(-0.35), MLP12xMLP0(-0.32), a9.6xa11.5(-0.15), MLP11xMLP12(+0.14)
+   + pole classes: ['908', '924', '1', '807', '389']
+   - pole classes: ['916', '921', '808', '781', '818']
+
+PC2  ev=0.040  PR=2/17113  (sparse)
+   top entries: a11.2xa11.10(-0.80), a11.2xMLP12(+0.30), a10.6xa11.10(-0.15), a9.6xa11.5(+0.15), MLP9xMLP12(+0.14)
+   + pole classes: ['243', '160', '158', '189', '283']
+   - pole classes: ['14', '950', '986', '90', '324']
+
+PC3  ev=0.035  PR=19/17113  (sparse)
+   top entries: a11.7xa11.5(-0.36), MLP9xMLP12(+0.35), a11.2xa11.10(+0.30), MLP12xa11.5(+0.22), MLP12xa11.4(-0.21)
+   + pole classes: ['168', '285', '14', '209', '159']
+   - pole classes: ['303', '120', '73', '77', '36']
+
+PC4  ev=0.029  PR=8/17113  (sparse)
+   top entries: MLP11xMLP12(+0.55), MLP11xMLP11(-0.35), MLP11xMLP0(-0.28), MLP12xMLP12(-0.26), MLP11xMLP9(-0.18)
+   + pole classes: ['43', '35', '270', '53', '24']
+   - pole classes: ['976', '17', '975', '950', '951']
+
+PC5  ev=0.024  PR=6/17113  (sparse)
+   top entries: a11.7xa11.5(-0.54), a9.6xa11.5(+0.54), a11.7xMLP12(+0.30), MLP12xa11.5(+0.15), MLP12xMLP12(+0.15)
+   + pole classes: ['54', '30', '53', '330', '362']
+   - pole classes: ['326', '288', '80', '339', '303']
+
+sample reconstruction (relative error) with top-k PCs:
+  img0 class=0                k= 1: relerr 0.397    img0 class=0                k= 4: relerr 0.285    img0 class=0                k=16: relerr 0.226    img0 class=0                k=64: relerr 0.177  
+  img100 class=20               k= 1: relerr 0.319    img100 class=20               k= 4: relerr 0.313    img100 class=20               k=16: relerr 0.203    img100 class=20               k=64: relerr 0.154  
+  img2500 class=500              k= 1: relerr 0.301    img2500 class=500              k= 4: relerr 0.290    img2500 class=500              k=16: relerr 0.254    img2500 class=500              k=64: relerr 0.181  

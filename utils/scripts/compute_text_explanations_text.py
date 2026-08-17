@@ -49,10 +49,16 @@ def get_args_parser():
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--probe_modality", default="text", choices=["text", "image"],
                         help="Approximate/label the text-encoder components with a TEXT dataset "
-                             "(default) or with IMAGE embeddings (same shared-space "
-                             "dimensionality). 'image' loads {probe_name}_embeddings/_labels.")
+                             "(default) or with the evaluation dataset's IMAGE embeddings (same "
+                             "shared-space dimensionality); 'image' uses --eval_dataset's images.")
     parser.add_argument("--probe_name", default="imagenet", type=str,
-                        help="Image dataset name used when --probe_modality image.")
+                        help="Reserved image dataset name (labeling only; the eval set is "
+                             "--eval_dataset). Kept for backward compatibility.")
+    parser.add_argument("--eval_dataset", default=None, type=str,
+                        help="Image dataset providing the target's OWN evaluation images+labels for "
+                             "the zero-shot metric (NOT a fixed external probe). Default: strip a "
+                             "trailing '_classnames' from --dataset (e.g. binary_waterbirds_classnames "
+                             "-> binary_waterbirds); falls back to --dataset itself.")
     parser.add_argument("--components", default="attn", choices=["attn", "mlp", "all"],
                         help="Which text-encoder components to decompose in the last "
                              "num_of_last_layers: attention heads, MLP layers, or both.")
@@ -80,26 +86,41 @@ def main(args):
     )
     print(f"Number of text layers: {attns.shape[1]}, heads: {attns.shape[2]}")
 
-    # Probe images (CLIP embeddings + labels) used to score the reconstructed class prototypes.
-    with open(os.path.join(args.input_dir, f"{args.probe_name}_embeddings_{args.model}_seed_{args.seed}.npy"), "rb") as f:
-        text_features_imagenet = np.load(f)  # [M, d] image embeddings
-        labs = np.load(os.path.join(args.input_dir, f"{args.probe_name}_labels_{args.model}_seed_{args.seed}.npy"))
+    # The TARGET's OWN images (CLIP embeddings + labels) score the reconstructed class prototypes --
+    # NOT a fixed external probe. For an X_classnames text dataset this is X's own image set, so the
+    # class ids line up (prototype c <-> image label c) and the zero-shot number is meaningful.
+    eval_ds = args.eval_dataset or (
+        args.dataset[:-len("_classnames")] if args.dataset.endswith("_classnames") else args.dataset)
+    with open(os.path.join(args.input_dir, f"{eval_ds}_embeddings_{args.model}_seed_{args.seed}.npy"), "rb") as f:
+        eval_img_emb = np.load(f)  # [M, d] image embeddings of the target dataset
+    eval_labels = np.load(os.path.join(args.input_dir, f"{eval_ds}_labels_{args.model}_seed_{args.seed}.npy"))
     num_classes = int(text_labels.max()) + 1
+    print(f"Evaluating against target images: {eval_ds} ({len(eval_img_emb)} images, "
+          f"{len(np.unique(eval_labels))} classes)")
 
     def zero_shot(emb):
-        """Image -> argmax over reconstructed per-class text prototypes (mean over each class's rows)."""
+        """(image->label, label->image) top-1 accuracies (%), both directions, scoring the target
+        dataset's OWN images against the reconstructed per-class text prototypes (mean over each
+        class's rows): image->label: each image's argmax over prototypes == its label;
+        label->image: each prototype's top-scoring image belongs to that class."""
         proto = np.stack([emb[text_labels == c].mean(axis=0) for c in range(num_classes)])  # [C, d]
-        return float(((text_features_imagenet @ proto.T).argmax(axis=1) == labs).mean() * 100.0)
+        sims = eval_img_emb @ proto.T                                    # [M_eval, C]
+        i2l = float((sims.argmax(axis=1) == eval_labels).mean() * 100.0)
+        present = set(np.unique(eval_labels).tolist())                   # eval classes that exist
+        top_img = sims.argmax(axis=0)                                    # [C] best eval image per prototype
+        matched = [eval_labels[top_img[c]] == c for c in range(num_classes) if c in present]
+        l2i = float(np.mean(matched) * 100.0) if matched else float("nan")
+        return i2l, l2i
 
     # Full (un-ablated, un-reconstructed) accuracy: the completeness upper bound / real-model number.
-    full_accuracy = zero_shot(mlps.sum(axis=1) + attns.sum(axis=(1, 2)))
+    full_i2l, full_l2i = zero_shot(mlps.sum(axis=1) + attns.sum(axis=(1, 2)))
 
     # Probe set to LABEL the components (text sentences or image embeddings; same shared space).
     if args.probe_modality == "image":
-        text_features = text_features_imagenet
-        lines = [imagenet_classes[int(l)] if int(l) < len(imagenet_classes) else f"{args.probe_name}_{i}"
-                 for i, l in enumerate(labs)]
-        probe_tag = f"_imgprobe_{args.probe_name}"
+        text_features = eval_img_emb
+        lines = [imagenet_classes[int(l)] if int(l) < len(imagenet_classes) else f"{eval_ds}_{i}"
+                 for i, l in enumerate(eval_labels)]
+        probe_tag = f"_imgprobe_{eval_ds}"
     else:
         with open(os.path.join(args.input_dir, f"{args.text_descriptions}_{args.model}.npy"), "rb") as f:
             text_features = np.load(f)  # [M, d] text embeddings
@@ -168,9 +189,33 @@ def main(args):
                 + [{f"image_min_{j}": int(meta[r]["index"]), f"class_min_{j}": meta[r].get("class_name"),
                     f"corr_min_{j}": float(col[r])} for j, r in enumerate(bot)])
         pm = coords[[int(np.argmax(coords[:, pc])) for pc in range(coords.shape[1])]]
-        coeff = pm.T @ np.linalg.pinv(pm @ pm.T) @ pm
+        # Stable orthogonal projector onto the selected items' span (see compute_text_explanations.py).
+        sv, vt = np.linalg.svd(pm, full_matrices=False)[1:]
+        kk = int((sv > sv.max() * 1e-6).sum()) if sv.size and sv.max() > 0 else 0
+        coeff = vt[:kk].T @ vt[:kk]
         Xd = np.asarray(data_slice, dtype=np.float32) - mean_d
         return ((Xd @ vh.T) @ coeff @ vh + mean_d).astype(np.float32)
+
+    def pool_reconstruct(json_info, data_slice, pool_emb):
+        """Reconstruct a unit from the top-1 pool embedding per PC (no poles). Same math as
+        image_label; used for the 'self' pools of the text tower."""
+        if "vh" not in json_info or "embeddings_sort" not in json_info or pool_emb is None:
+            return None
+        vh = np.asarray(json_info["vh"], dtype=np.float32)
+        mean_d = np.asarray(json_info.get("mean_values_att", 0.0), dtype=np.float32)
+        Cc = pool_emb - pool_emb.mean(axis=0, keepdims=True)
+        coords = (Cc / (np.linalg.norm(Cc, axis=1, keepdims=True) + 1e-8)) @ vh.T
+        pm = coords[[int(np.argmax(coords[:, pc])) for pc in range(coords.shape[1])]]
+        sv, vt = np.linalg.svd(pm, full_matrices=False)[1:]
+        kk = int((sv > sv.max() * 1e-6).sum()) if sv.size and sv.max() > 0 else 0
+        coeff = vt[:kk].T @ vt[:kk]
+        Xd = np.asarray(data_slice, dtype=np.float32) - mean_d
+        return ((Xd @ vh.T) @ coeff @ vh + mean_d).astype(np.float32)
+
+    # 'self' pools = the target's OWN paired subset (X_classnames -> X): its images and its class names.
+    image_self_pool = eval_img_emb.astype(np.float32)                          # paired image subset
+    _clf = os.path.join(args.input_dir, f"{eval_ds}_classifier_{args.model}.npy")
+    text_self_pool = np.ascontiguousarray(np.load(_clf).T).astype(np.float32) if os.path.exists(_clf) else None
 
     def pc_reconstruct(data_slice, json_info):
         if "vh" not in json_info:
@@ -185,8 +230,12 @@ def main(args):
     k = args.num_of_last_layers
     start_attn = max(0, attns.shape[1] - k)   # k >= #layers -> all layers (no ablation)
     start_mlp = max(0, mlps.shape[1] - k)
-    image_delta = np.zeros((attns.shape[0], attns.shape[-1]), dtype=np.float32)
+    image_delta = np.zeros((attns.shape[0], attns.shape[-1]), dtype=np.float32)      # image_ref
+    text_self_delta = np.zeros((attns.shape[0], attns.shape[-1]), dtype=np.float32)  # own class names
+    image_self_delta = np.zeros((attns.shape[0], attns.shape[-1]), dtype=np.float32) # own paired images
     pc_delta = np.zeros((attns.shape[0], attns.shape[-1]), dtype=np.float32)
+    # Kept-PC count (rank at 99% variance) of each decomposed head/MLP unit, for mean/std reporting.
+    comp_ranks = []
 
     out_path = args.out_file or os.path.join(
         args.output_dir,
@@ -204,11 +253,18 @@ def main(args):
                     results, json_info = select_algo(
                         attns[:, i, head], text_features, lines, i, head,
                         args.text_per_princ_comp, args.device, iters=args.max_text)
-                    img_recon = image_label(json_info, attns[:, i, head])
-                    pc_recon = pc_reconstruct(attns[:, i, head], json_info)
+                    comp_ranks.append(len(json_info.get("s", [])))
+                    X = attns[:, i, head]
+                    img_recon = image_label(json_info, X)
+                    pc_recon = pc_reconstruct(X, json_info)
+                    ts = pool_reconstruct(json_info, X, text_self_pool)
+                    isf = pool_reconstruct(json_info, X, image_self_pool)
                     if img_recon is not None:
                         image_delta += img_recon - results
                         pc_delta += pc_recon - results
+                        image_self_delta += isf - results
+                        if ts is not None:
+                            text_self_delta += ts - results
                     attns[:, i, head] = results
                     jsonl_file.write(json.dumps(
                         {"component": "attn", "layer": i, "head": head, **json_info}) + "\n")
@@ -220,11 +276,18 @@ def main(args):
                 results, json_info = select_algo(
                     mlps[:, i], text_features, lines, i, -1,
                     args.text_per_princ_comp, args.device, iters=args.max_text)
-                img_recon = image_label(json_info, mlps[:, i])
-                pc_recon = pc_reconstruct(mlps[:, i], json_info)
+                comp_ranks.append(len(json_info.get("s", [])))
+                X = mlps[:, i]
+                img_recon = image_label(json_info, X)
+                pc_recon = pc_reconstruct(X, json_info)
+                ts = pool_reconstruct(json_info, X, text_self_pool)
+                isf = pool_reconstruct(json_info, X, image_self_pool)
                 if img_recon is not None:
                     image_delta += img_recon - results
                     pc_delta += pc_recon - results
+                    image_self_delta += isf - results
+                    if ts is not None:
+                        text_self_delta += ts - results
                 mlps[:, i] = results
                 jsonl_file.write(json.dumps(
                     {"component": "mlp", "layer": i, "head": None, **json_info}) + "\n")
@@ -234,17 +297,31 @@ def main(args):
         pc_embedding = final_embedding + pc_delta
         _, json_info = select_algo(
             final_embedding, text_features, lines, -1, -1, args.text_per_princ_comp, args.device)
-        text_accuracy = zero_shot(final_embedding)
-        image_accuracy = zero_shot(image_embedding)
-        pc_accuracy = zero_shot(pc_embedding)
-        print(f"Accuracy -- model(full): {full_accuracy:.2f}  PC: {pc_accuracy:.2f}  "
-              f"image: {image_accuracy:.2f}  text: {text_accuracy:.2f}")
+        nan = float("nan")
+        tr_i2l, tr_l2i = zero_shot(final_embedding)          # text_ref (probe text set)
+        ir_i2l, ir_l2i = zero_shot(image_embedding)          # image_ref (image_set pool, e.g. imagenet)
+        ts_i2l, ts_l2i = zero_shot(final_embedding + text_self_delta) if text_self_pool is not None else (nan, nan)
+        is_i2l, is_l2i = zero_shot(final_embedding + image_self_delta)   # target's own paired images
+        pc_i2l, pc_l2i = zero_shot(pc_embedding)
+        print(f"Accuracy (image->label / label->image) -- "
+              f"model(full): {full_i2l:.2f}/{full_l2i:.2f}  PC: {pc_i2l:.2f}/{pc_l2i:.2f}  "
+              f"text_self: {ts_i2l:.2f}/{ts_l2i:.2f}  text_ref: {tr_i2l:.2f}/{tr_l2i:.2f}  "
+              f"image_self: {is_i2l:.2f}/{is_l2i:.2f}  image_ref: {ir_i2l:.2f}/{ir_l2i:.2f}")
 
         final_object = {
             "component": args.components, "layer": -1, "head": -1,
-            "accuracy": text_accuracy, "text_accuracy": text_accuracy,
-            "image_accuracy": image_accuracy, "pc_accuracy": pc_accuracy,
-            "full_accuracy": full_accuracy, "n_pcs": len(json_info.get("s", [])),
+            # Every *_accuracy is image->label; the matching *_l2i is label->image (both %).
+            "accuracy": tr_i2l, "text_accuracy": tr_i2l,
+            "text_ref_accuracy": tr_i2l, "text_ref_accuracy_l2i": tr_l2i,       # probe text set
+            "text_self_accuracy": ts_i2l, "text_self_accuracy_l2i": ts_l2i,     # target's own class names
+            "image_self_accuracy": is_i2l, "image_self_accuracy_l2i": is_l2i,   # target's own paired images
+            "image_ref_accuracy": ir_i2l, "image_ref_accuracy_l2i": ir_l2i,     # image_set pool (imagenet)
+            "image_accuracy": ir_i2l, "pc_accuracy": pc_i2l, "pc_accuracy_l2i": pc_l2i,
+            "full_accuracy": full_i2l, "full_accuracy_l2i": full_l2i,
+            "n_pcs": len(json_info.get("s", [])),
+            "n_pcs_comp_mean": float(np.mean(comp_ranks)) if comp_ranks else float("nan"),
+            "n_pcs_comp_std": float(np.std(comp_ranks)) if comp_ranks else float("nan"),
+            "n_comps": len(comp_ranks),
             **json_info,
         }
         jsonl_file.write(json.dumps(final_object))

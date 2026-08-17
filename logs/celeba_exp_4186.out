@@ -1,0 +1,278 @@
+Using local files
+[ViT-B-32] 1680 images, 266 components
+    FULL MODEL total=83.69 worst-group=68.20 (blond_male=98.33)  gender-readout=96.67
+  [class rep0 forward       ] kept= 116 total=89.27 worst-group=81.80 gender-readout=95.65
+  [class rep0 forward+swap  ] kept= 116 total=89.27 worst-group=81.80 gender-readout=95.65
+  [class rep0 backward      ] kept= 132 total=89.75 worst-group=82.80 gender-readout=96.25
+  [class rep0 backward+swap ] kept= 130 total=89.57 worst-group=82.40 gender-readout=96.36
+  [class rep1 forward       ] kept= 135 total=89.57 worst-group=81.11 gender-readout=96.07
+  [class rep1 forward+swap  ] kept= 135 total=89.57 worst-group=81.11 gender-readout=96.07
+  [class rep1 backward      ] kept= 151 total=88.86 worst-group=73.89 gender-readout=96.19
+  [class rep1 backward+swap ] kept= 142 total=89.27 worst-group=81.67 gender-readout=96.01
+  [class rep2 forward       ] kept= 112 total=89.09 worst-group=82.22 gender-readout=95.35
+  [class rep2 forward+swap  ] kept= 103 total=89.15 worst-group=80.00 gender-readout=95.29
+  [class rep2 backward      ] kept= 148 total=88.62 worst-group=77.22 gender-readout=95.47
+  [class rep2 backward+swap ] kept= 149 total=88.56 worst-group=77.22 gender-readout=95.59
+  [class rep3 forward       ] kept= 107 total=88.97 worst-group=81.40 gender-readout=95.23
+  [class rep3 forward+swap  ] kept= 107 total=88.97 worst-group=81.40 gender-readout=95.23
+  [class rep3 backward      ] kept= 111 total=89.27 worst-group=81.80 gender-readout=95.29
+  [class rep3 backward+swap ] kept= 111 total=89.27 worst-group=81.80 gender-readout=95.29
+  [class rep4 forward       ] kept=  87 total=84.09 worst-group=68.14 gender-readout=94.76
+  [class rep4 forward+swap  ] kept=  83 total=85.52 worst-group=72.34 gender-readout=94.46
+  [class rep4 backward      ] kept= 185 total=82.42 worst-group=64.33 gender-readout=95.05
+  [class rep4 backward+swap ] kept= 185 total=82.42 worst-group=64.33 gender-readout=95.05
+  [group rep0 forward       ] kept= 116 total=87.95 worst-group=80.36 gender-readout=95.88
+  [group rep0 forward+swap  ] kept= 116 total=87.95 worst-group=80.36 gender-readout=95.88
+  [group rep0 backward      ] kept= 140 total=88.37 worst-group=81.36 gender-readout=96.00
+  [group rep0 backward+swap ] kept= 138 total=88.01 worst-group=80.16 gender-readout=95.88
+  [group rep1 forward       ] kept= 114 total=87.53 worst-group=78.96 gender-readout=95.41
+  [group rep1 forward+swap  ] kept= 114 total=87.53 worst-group=78.96 gender-readout=95.41
+  [group rep1 backward      ] kept= 163 total=86.46 worst-group=77.35 gender-readout=96.00
+  [group rep1 backward+swap ] kept= 163 total=86.46 worst-group=77.35 gender-readout=96.00
+  [group rep2 forward       ] kept= 110 total=89.20 worst-group=81.36 gender-readout=96.66
+  [group rep2 forward+swap  ] kept= 110 total=89.20 worst-group=81.36 gender-readout=96.66
+  [group rep2 backward      ] kept= 139 total=88.96 worst-group=79.56 gender-readout=96.66
+  [group rep2 backward+swap ] kept= 142 total=89.32 worst-group=79.96 gender-readout=96.66
+  [group rep3 forward       ] kept= 132 total=88.84 worst-group=81.01 gender-readout=96.00
+  [group rep3 forward+swap  ] kept= 132 total=88.84 worst-group=81.01 gender-readout=96.00
+  [group rep3 backward      ] kept= 139 total=89.62 worst-group=77.09 gender-readout=95.17
+  [group rep3 backward+swap ] kept= 139 total=89.62 worst-group=77.09 gender-readout=95.17
+  [group rep4 forward       ] kept= 133 total=88.25 worst-group=77.15 gender-readout=95.88
+  [group rep4 forward+swap  ] kept= 135 total=88.13 worst-group=76.75 gender-readout=95.76
+  [group rep4 backward      ] kept= 145 total=89.14 worst-group=81.36 gender-readout=95.35
+  [group rep4 backward+swap ] kept= 142 total=88.54 worst-group=77.15 gender-readout=95.29
+[ViT-B-32] wrote celeba_{eval,trace}
+Using local files
+[ViT-B-16] 1680 images, 266 components
+    FULL MODEL total=88.93 worst-group=82.40 (blond_male=93.89)  gender-readout=97.44
+  [class rep0 forward       ] kept=  96 total=88.62 worst-group=81.20 gender-readout=97.26
+  [class rep0 forward+swap  ] kept=  96 total=88.62 worst-group=81.20 gender-readout=97.26
+  [class rep0 backward      ] kept= 171 total=88.56 worst-group=81.20 gender-readout=97.26
+  [class rep0 backward+swap ] kept= 171 total=88.56 worst-group=81.20 gender-readout=97.26
+  [class rep1 forward       ] kept= 122 total=89.15 worst-group=83.40 gender-readout=97.38
+  [class rep1 forward+swap  ] kept= 123 total=89.33 worst-group=83.57 gender-readout=97.38
+  [class rep1 backward      ] kept= 127 total=89.15 worst-group=83.60 gender-readout=97.26
+  [class rep1 backward+swap ] kept= 127 total=89.15 worst-group=83.60 gender-readout=97.26
+  [class rep2 forward       ] kept= 124 total=90.23 worst-group=84.77 gender-readout=97.02
+  [class rep2 forward+swap  ] kept= 124 total=90.23 worst-group=84.77 gender-readout=97.02
+  [class rep2 backward      ] kept= 154 total=87.90 worst-group=79.76 gender-readout=97.32
+  [class rep2 backward+swap ] kept= 154 total=87.90 worst-group=79.76 gender-readout=97.32
+  [class rep3 forward       ] kept= 129 total=91.00 worst-group=85.97 gender-readout=97.14
+  [class rep3 forward+swap  ] kept= 120 total=91.06 worst-group=85.97 gender-readout=97.08
+  [class rep3 backward      ] kept= 136 total=90.88 worst-group=85.77 gender-readout=96.96
+  [class rep3 backward+swap ] kept= 137 total=91.06 worst-group=85.97 gender-readout=97.26
+  [class rep4 forward       ] kept= 104 total=78.61 worst-group=59.72 gender-readout=96.84
+  [class rep4 forward+swap  ] kept= 104 total=78.61 worst-group=59.72 gender-readout=96.84
+  [class rep4 backward      ] kept= 162 total=77.89 worst-group=58.72 gender-readout=96.72
+  [class rep4 backward+swap ] kept= 162 total=77.89 worst-group=58.72 gender-readout=96.72
+  [group rep0 forward       ] kept= 128 total=90.04 worst-group=83.77 gender-readout=97.20
+  [group rep0 forward+swap  ] kept= 128 total=90.04 worst-group=83.77 gender-readout=97.20
+  [group rep0 backward      ] kept= 139 total=90.04 worst-group=83.97 gender-readout=97.20
+  [group rep0 backward+swap ] kept= 139 total=90.04 worst-group=83.97 gender-readout=97.20
+  [group rep1 forward       ] kept= 125 total=89.38 worst-group=81.96 gender-readout=96.90
+  [group rep1 forward+swap  ] kept= 125 total=89.38 worst-group=81.96 gender-readout=96.90
+  [group rep1 backward      ] kept= 140 total=89.32 worst-group=81.76 gender-readout=96.96
+  [group rep1 backward+swap ] kept= 140 total=89.32 worst-group=81.76 gender-readout=96.96
+  [group rep2 forward       ] kept= 135 total=86.99 worst-group=76.75 gender-readout=97.02
+  [group rep2 forward+swap  ] kept= 135 total=86.99 worst-group=76.75 gender-readout=97.02
+  [group rep2 backward      ] kept= 135 total=87.65 worst-group=77.15 gender-readout=97.02
+  [group rep2 backward+swap ] kept= 136 total=87.65 worst-group=76.75 gender-readout=97.02
+  [group rep3 forward       ] kept= 147 total=90.57 worst-group=85.77 gender-readout=97.14
+  [group rep3 forward+swap  ] kept= 146 total=90.57 worst-group=85.77 gender-readout=97.14
+  [group rep3 backward      ] kept= 155 total=90.51 worst-group=85.97 gender-readout=97.26
+  [group rep3 backward+swap ] kept= 155 total=90.51 worst-group=85.97 gender-readout=97.26
+  [group rep4 forward       ] kept= 153 total=79.00 worst-group=74.95 gender-readout=86.75
+  [group rep4 forward+swap  ] kept= 153 total=78.70 worst-group=74.35 gender-readout=86.58
+  [group rep4 backward      ] kept= 151 total=89.38 worst-group=85.37 gender-readout=97.08
+  [group rep4 backward+swap ] kept= 151 total=89.38 worst-group=85.37 gender-readout=97.08
+[ViT-B-16] wrote celeba_{eval,trace}
+[RN50] 1680 images, 654 components
+    FULL MODEL total=83.87 worst-group=73.20 (blond_male=91.11)  gender-readout=97.50
+  [class rep0 forward       ] kept= 101 total=59.12 worst-group=19.20 gender-readout=71.22
+  [class rep0 forward+swap  ] kept= 101 total=59.12 worst-group=19.20 gender-readout=71.22
+  [class rep0 backward      ] kept= 535 total=64.24 worst-group=19.20 gender-readout=92.49
+  [class rep0 backward+swap ] kept= 542 total=63.05 worst-group=28.00 gender-readout=96.72
+  [class rep1 forward       ] kept= 201 total=29.80 worst-group=12.20 gender-readout=97.02
+  [class rep1 forward+swap  ] kept= 201 total=29.80 worst-group=12.20 gender-readout=97.02
+  [class rep1 backward      ] kept= 493 total=60.43 worst-group=41.20 gender-readout=97.91
+  [class rep1 backward+swap ] kept= 493 total=60.43 worst-group=41.20 gender-readout=97.91
+  [class rep2 forward       ] kept= 163 total=80.75 worst-group=77.80 gender-readout=93.86
+  [class rep2 forward+swap  ] kept= 155 total=48.63 worst-group=40.80 gender-readout=93.62
+  [class rep2 backward      ] kept= 522 total=59.83 worst-group=44.44 gender-readout=90.41
+  [class rep2 backward+swap ] kept= 522 total=59.83 worst-group=44.44 gender-readout=90.41
+  [class rep3 forward       ] kept= 208 total=80.45 worst-group=73.95 gender-readout=86.47
+  [class rep3 forward+swap  ] kept= 208 total=80.45 worst-group=73.95 gender-readout=86.47
+  [class rep3 backward      ] kept= 425 total=80.63 worst-group=75.55 gender-readout=91.54
+  [class rep3 backward+swap ] kept= 425 total=80.63 worst-group=75.55 gender-readout=91.54
+  [class rep4 forward       ] kept= 140 total=61.98 worst-group=44.09 gender-readout=72.23
+  [class rep4 forward+swap  ] kept= 136 total=64.84 worst-group=47.49 gender-readout=78.01
+  [class rep4 backward      ] kept= 525 total=81.23 worst-group=63.53 gender-readout=96.36
+  [class rep4 backward+swap ] kept= 525 total=81.23 worst-group=63.53 gender-readout=96.36
+  [group rep0 forward       ] kept= 270 total=85.14 worst-group=71.14 gender-readout=93.79
+  [group rep0 forward+swap  ] kept= 244 total=84.43 worst-group=68.94 gender-readout=94.27
+  [group rep0 backward      ] kept= 418 total=83.59 worst-group=65.73 gender-readout=95.88
+  [group rep0 backward+swap ] kept= 418 total=83.59 worst-group=65.73 gender-readout=95.88
+  [group rep1 forward       ] kept= 235 total=83.89 worst-group=69.74 gender-readout=93.08
+  [group rep1 forward+swap  ] kept= 235 total=83.89 worst-group=69.74 gender-readout=93.08
+  [group rep1 backward      ] kept= 462 total=84.84 worst-group=71.54 gender-readout=94.39
+  [group rep1 backward+swap ] kept= 462 total=84.84 worst-group=71.54 gender-readout=94.39
+  [group rep2 forward       ] kept= 247 total=84.84 worst-group=75.55 gender-readout=64.26
+  [group rep2 forward+swap  ] kept= 247 total=84.84 worst-group=75.55 gender-readout=64.26
+  [group rep2 backward      ] kept= 386 total=82.70 worst-group=70.94 gender-readout=89.38
+  [group rep2 backward+swap ] kept= 386 total=82.70 worst-group=70.94 gender-readout=89.38
+  [group rep3 forward       ] kept= 228 total=80.61 worst-group=55.87 gender-readout=59.90
+  [group rep3 forward+swap  ] kept= 228 total=80.61 worst-group=55.87 gender-readout=59.90
+  [group rep3 backward      ] kept= 419 total=80.61 worst-group=45.25 gender-readout=90.27
+  [group rep3 backward+swap ] kept= 412 total=80.67 worst-group=44.69 gender-readout=90.69
+  [group rep4 forward       ] kept= 297 total=83.95 worst-group=71.34 gender-readout=59.79
+  [group rep4 forward+swap  ] kept= 296 total=83.77 worst-group=71.74 gender-readout=59.49
+  [group rep4 backward      ] kept= 393 total=84.67 worst-group=74.95 gender-readout=66.95
+  [group rep4 backward+swap ] kept= 393 total=84.67 worst-group=74.95 gender-readout=66.95
+[RN50] wrote celeba_{eval,trace}
+[RN101] 1680 images, 1198 components
+    FULL MODEL total=73.99 worst-group=42.60 (blond_male=95.56)  gender-readout=98.33
+  [class rep0 forward       ] kept= 197 total=82.00 worst-group=69.60 gender-readout=97.32
+  [class rep0 forward+swap  ] kept= 163 total=79.80 worst-group=60.40 gender-readout=95.65
+  [class rep0 backward      ] kept=1072 total=70.92 worst-group=30.00 gender-readout=98.21
+  [class rep0 backward+swap ] kept=1072 total=70.92 worst-group=30.00 gender-readout=98.21
+  [class rep1 forward       ] kept= 249 total=78.01 worst-group=55.80 gender-readout=96.19
+  [class rep1 forward+swap  ] kept= 249 total=78.01 worst-group=55.80 gender-readout=96.19
+  [class rep1 backward      ] kept=1029 total=82.12 worst-group=70.00 gender-readout=98.09
+  [class rep1 backward+swap ] kept=1029 total=82.12 worst-group=70.00 gender-readout=98.09
+  [class rep2 forward       ] kept=  90 total=74.85 worst-group=55.31 gender-readout=92.01
+  [class rep2 forward+swap  ] kept=  90 total=74.85 worst-group=55.31 gender-readout=92.01
+  [class rep2 backward      ] kept=1083 total=83.49 worst-group=68.74 gender-readout=98.51
+  [class rep2 backward+swap ] kept=1083 total=83.49 worst-group=68.74 gender-readout=98.51
+  [class rep3 forward       ] kept= 193 total=78.84 worst-group=55.20 gender-readout=94.22
+  [class rep3 forward+swap  ] kept= 193 total=78.84 worst-group=55.20 gender-readout=94.22
+  [class rep3 backward      ] kept=1005 total=71.69 worst-group=41.20 gender-readout=98.45
+  [class rep3 backward+swap ] kept=1029 total=78.19 worst-group=55.80 gender-readout=98.21
+  [class rep4 forward       ] kept= 137 total=57.27 worst-group=19.24 gender-readout=95.89
+  [class rep4 forward+swap  ] kept= 137 total=57.27 worst-group=19.24 gender-readout=95.89
+  [class rep4 backward      ] kept=1036 total=63.89 worst-group=32.87 gender-readout=98.51
+  [class rep4 backward+swap ] kept=1036 total=63.89 worst-group=32.87 gender-readout=98.51
+  [group rep0 forward       ] kept= 419 total=86.22 worst-group=73.15 gender-readout=96.36
+  [group rep0 forward+swap  ] kept= 419 total=86.22 worst-group=73.15 gender-readout=96.36
+  [group rep0 backward      ] kept= 845 total=80.97 worst-group=59.52 gender-readout=98.09
+  [group rep0 backward+swap ] kept= 845 total=80.97 worst-group=59.52 gender-readout=98.09
+  [group rep1 forward       ] kept= 393 total=86.04 worst-group=73.35 gender-readout=97.14
+  [group rep1 forward+swap  ] kept= 368 total=84.55 worst-group=70.14 gender-readout=97.79
+  [group rep1 backward      ] kept= 938 total=83.05 worst-group=68.74 gender-readout=97.67
+  [group rep1 backward+swap ] kept= 938 total=83.05 worst-group=68.74 gender-readout=97.67
+  [group rep2 forward       ] kept= 547 total=80.67 worst-group=67.74 gender-readout=97.61
+  [group rep2 forward+swap  ] kept= 512 total=81.26 worst-group=66.53 gender-readout=97.73
+  [group rep2 backward      ] kept= 684 total=84.43 worst-group=75.55 gender-readout=98.09
+  [group rep2 backward+swap ] kept= 720 total=80.31 worst-group=64.93 gender-readout=96.72
+  [group rep3 forward       ] kept= 537 total=85.98 worst-group=78.56 gender-readout=96.60
+  [group rep3 forward+swap  ] kept= 524 total=85.98 worst-group=78.56 gender-readout=97.26
+  [group rep3 backward      ] kept= 650 total=84.79 worst-group=78.16 gender-readout=98.21
+  [group rep3 backward+swap ] kept= 645 total=84.90 worst-group=78.56 gender-readout=98.15
+  [group rep4 forward       ] kept= 585 total=85.50 worst-group=75.35 gender-readout=97.67
+  [group rep4 forward+swap  ] kept= 533 total=85.08 worst-group=75.15 gender-readout=95.41
+  [group rep4 backward      ] kept= 641 total=86.58 worst-group=81.16 gender-readout=96.96
+  [group rep4 backward+swap ] kept= 638 total=86.93 worst-group=81.16 gender-readout=96.66
+[RN101] wrote celeba_{eval,trace}
+Using local files
+[ViT-L-14] 1680 images, 566 components
+    FULL MODEL total=86.61 worst-group=74.80 (blond_male=96.67)  gender-readout=97.68
+  [class rep0 forward       ] kept=  54 total=89.57 worst-group=82.00 gender-readout=96.90
+  [class rep0 forward+swap  ] kept=  54 total=89.57 worst-group=82.00 gender-readout=96.90
+  [class rep0 backward      ] kept= 517 total=89.51 worst-group=83.20 gender-readout=97.14
+  [class rep0 backward+swap ] kept= 517 total=89.51 worst-group=83.20 gender-readout=97.14
+  [class rep1 forward       ] kept=  49 total=89.81 worst-group=85.00 gender-readout=65.79
+  [class rep1 forward+swap  ] kept=  49 total=89.81 worst-group=85.00 gender-readout=65.79
+  [class rep1 backward      ] kept= 524 total=88.56 worst-group=79.40 gender-readout=96.07
+  [class rep1 backward+swap ] kept= 524 total=88.56 worst-group=79.40 gender-readout=96.07
+  [class rep2 forward       ] kept= 119 total=90.17 worst-group=84.80 gender-readout=93.38
+  [class rep2 forward+swap  ] kept= 119 total=90.17 worst-group=84.80 gender-readout=93.38
+  [class rep2 backward      ] kept= 465 total=89.75 worst-group=84.20 gender-readout=96.07
+  [class rep2 backward+swap ] kept= 465 total=89.75 worst-group=84.20 gender-readout=96.07
+  [class rep3 forward       ] kept= 148 total=90.76 worst-group=86.00 gender-readout=95.17
+  [class rep3 forward+swap  ] kept= 148 total=90.76 worst-group=86.00 gender-readout=95.17
+  [class rep3 backward      ] kept= 420 total=90.64 worst-group=84.80 gender-readout=95.53
+  [class rep3 backward+swap ] kept= 420 total=90.64 worst-group=84.80 gender-readout=95.53
+  [class rep4 forward       ] kept= 115 total=83.91 worst-group=67.74 gender-readout=94.58
+  [class rep4 forward+swap  ] kept= 115 total=83.91 worst-group=67.74 gender-readout=94.58
+  [class rep4 backward      ] kept= 443 total=85.10 worst-group=70.54 gender-readout=97.50
+  [class rep4 backward+swap ] kept= 443 total=85.10 worst-group=70.54 gender-readout=97.50
+  [group rep0 forward       ] kept= 238 total=90.21 worst-group=84.57 gender-readout=95.88
+  [group rep0 forward+swap  ] kept= 238 total=90.21 worst-group=84.57 gender-readout=95.88
+  [group rep0 backward      ] kept= 383 total=90.10 worst-group=84.37 gender-readout=96.00
+  [group rep0 backward+swap ] kept= 383 total=90.10 worst-group=84.37 gender-readout=96.00
+  [group rep1 forward       ] kept= 177 total=90.04 worst-group=83.97 gender-readout=95.53
+  [group rep1 forward+swap  ] kept= 177 total=90.04 worst-group=83.97 gender-readout=95.53
+  [group rep1 backward      ] kept= 404 total=90.16 worst-group=84.17 gender-readout=96.06
+  [group rep1 backward+swap ] kept= 404 total=90.16 worst-group=84.17 gender-readout=96.06
+  [group rep2 forward       ] kept= 249 total=89.92 worst-group=83.57 gender-readout=95.29
+  [group rep2 forward+swap  ] kept= 249 total=89.92 worst-group=83.57 gender-readout=95.29
+  [group rep2 backward      ] kept= 330 total=89.86 worst-group=83.37 gender-readout=95.47
+  [group rep2 backward+swap ] kept= 330 total=89.86 worst-group=83.37 gender-readout=95.47
+  [group rep3 forward       ] kept= 258 total=90.51 worst-group=81.56 gender-readout=95.05
+  [group rep3 forward+swap  ] kept= 258 total=90.51 worst-group=81.56 gender-readout=95.05
+  [group rep3 backward      ] kept= 291 total=90.33 worst-group=80.45 gender-readout=95.47
+  [group rep3 backward+swap ] kept= 294 total=90.45 worst-group=80.45 gender-readout=95.23
+  [group rep4 forward       ] kept= 273 total=74.11 worst-group=51.90 gender-readout=97.43
+  [group rep4 forward+swap  ] kept= 275 total=73.63 worst-group=55.71 gender-readout=95.76
+  [group rep4 backward      ] kept= 306 total=89.68 worst-group=84.92 gender-readout=97.43
+  [group rep4 backward+swap ] kept= 306 total=90.04 worst-group=84.92 gender-readout=97.32
+[ViT-L-14] wrote celeba_{eval,trace}
+Using local files
+[ViT-H-14] 1680 images, 954 components
+    FULL MODEL total=88.10 worst-group=81.80 (blond_male=92.22)  gender-readout=97.80
+  [class rep0 forward       ] kept=  89 total=86.35 worst-group=74.60 gender-readout=97.56
+  [class rep0 forward+swap  ] kept=  89 total=86.35 worst-group=74.60 gender-readout=97.56
+  [class rep0 backward      ] kept= 877 total=88.86 worst-group=83.17 gender-readout=97.68
+  [class rep0 backward+swap ] kept= 877 total=88.86 worst-group=83.17 gender-readout=97.68
+  [class rep1 forward       ] kept=  95 total=87.54 worst-group=80.36 gender-readout=94.82
+  [class rep1 forward+swap  ] kept=  95 total=87.54 worst-group=80.36 gender-readout=94.82
+  [class rep1 backward      ] kept= 875 total=88.50 worst-group=80.76 gender-readout=97.44
+  [class rep1 backward+swap ] kept= 875 total=88.50 worst-group=80.76 gender-readout=97.44
+  [class rep2 forward       ] kept= 119 total=89.87 worst-group=83.57 gender-readout=97.26
+  [class rep2 forward+swap  ] kept= 119 total=89.87 worst-group=83.57 gender-readout=97.26
+  [class rep2 backward      ] kept= 850 total=89.99 worst-group=85.17 gender-readout=97.62
+  [class rep2 backward+swap ] kept= 865 total=89.81 worst-group=84.37 gender-readout=97.56
+  [class rep3 forward       ] kept= 103 total=89.99 worst-group=85.17 gender-readout=96.36
+  [class rep3 forward+swap  ] kept=  93 total=89.45 worst-group=84.17 gender-readout=96.01
+  [class rep3 backward      ] kept= 876 total=90.35 worst-group=85.77 gender-readout=97.32
+  [class rep3 backward+swap ] kept= 876 total=90.35 worst-group=85.77 gender-readout=97.32
+  [class rep4 forward       ] kept= 181 total=78.43 worst-group=57.31 gender-readout=96.54
+  [class rep4 forward+swap  ] kept= 187 total=78.43 worst-group=56.11 gender-readout=96.60
+  [class rep4 backward      ] kept= 785 total=80.99 worst-group=61.12 gender-readout=97.68
+  [class rep4 backward+swap ] kept= 785 total=80.99 worst-group=61.12 gender-readout=97.68
+  [group rep0 forward       ] kept= 151 total=88.19 worst-group=81.36 gender-readout=96.24
+  [group rep0 forward+swap  ] kept= 138 total=88.37 worst-group=80.96 gender-readout=96.18
+  [group rep0 backward      ] kept= 857 total=88.96 worst-group=81.36 gender-readout=97.20
+  [group rep0 backward+swap ] kept= 857 total=88.96 worst-group=81.36 gender-readout=97.20
+  [group rep1 forward       ] kept= 152 total=88.66 worst-group=81.36 gender-readout=96.66
+  [group rep1 forward+swap  ] kept= 152 total=88.66 worst-group=81.36 gender-readout=96.66
+  [group rep1 backward      ] kept= 859 total=88.60 worst-group=81.16 gender-readout=97.79
+  [group rep1 backward+swap ] kept= 859 total=88.60 worst-group=81.16 gender-readout=97.79
+  [group rep2 forward       ] kept= 210 total=84.73 worst-group=73.95 gender-readout=96.96
+  [group rep2 forward+swap  ] kept= 208 total=84.61 worst-group=73.95 gender-readout=96.96
+  [group rep2 backward      ] kept= 774 total=86.46 worst-group=78.76 gender-readout=97.32
+  [group rep2 backward+swap ] kept= 774 total=86.46 worst-group=78.76 gender-readout=97.32
+  [group rep3 forward       ] kept= 350 total=89.98 worst-group=83.24 gender-readout=96.48
+  [group rep3 forward+swap  ] kept= 346 total=89.86 worst-group=81.56 gender-readout=96.78
+  [group rep3 backward      ] kept= 671 total=89.86 worst-group=81.56 gender-readout=97.32
+  [group rep3 backward+swap ] kept= 688 total=90.21 worst-group=84.36 gender-readout=97.49
+  [group rep4 forward       ] kept= 513 total=84.79 worst-group=71.34 gender-readout=97.26
+  [group rep4 forward+swap  ] kept= 493 total=84.84 worst-group=70.94 gender-readout=97.26
+  [group rep4 backward      ] kept= 521 total=84.90 worst-group=72.75 gender-readout=97.26
+  [group rep4 backward+swap ] kept= 521 total=84.90 worst-group=72.75 gender-readout=97.26
+[ViT-H-14] wrote celeba_{eval,trace}
+[ok] waterbirds_trace            144 runs, max step 647, 95 distinct stopping points
+[ok] waterbirds_pc_trace          40 runs, max step 2270, 38 distinct stopping points
+[ok] bias_audit_trace             72 runs, max step 581, 57 distinct stopping points
+[ok] bias_pc_trace                16 runs, max step 1133, 14 distinct stopping points
+[!!] hardneg_trace_negation        4 runs - CAP suspected:
+       ViT-B-32     4/  4 runs stop at EXACTLY step 4
+[--] hardneg_trace_count        missing
+[--] hardneg_trace_order        missing
+[ok] typographic_trace            72 runs, max step 668, 61 distinct stopping points
+[ok] counting_trace               72 runs, max step 707, 59 distinct stopping points
+[!!] insub_trace                   8 runs - CAP suspected:
+       ViT-B-32     8/  8 runs stop at EXACTLY step 6
+[--] greedy_pool_trace          no-step-column
+
+Re-run the flagged families with the step cap removed before using their numbers.
+ALLDONE

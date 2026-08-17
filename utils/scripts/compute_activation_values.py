@@ -13,9 +13,9 @@ import tqdm
 from utils.models.factory import create_model_and_transforms
 from utils.datasets.binary_waterbirds import BinaryWaterbirds
 from utils.datasets.fairface import FairFace
-from utils.datasets.dataset_helpers import dataset_to_dataloader
+from utils.datasets.dataset_helpers import dataset_to_dataloader, caltech_imagefolder, CocoKarpathyTest
 from utils.models.prs_hook import hook_prs_logger
-from torchvision.datasets import CIFAR100, CIFAR10, ImageNet, ImageFolder
+from torchvision.datasets import CIFAR100, CIFAR10, ImageNet, ImageFolder, MNIST
 
 def parse_int_or_none(value):
     try:
@@ -114,8 +114,23 @@ def main(args):
         ds = CIFAR10(
             root=args.data_path, download=True, train=False, transform=preprocess
         )
+    elif args.dataset == "MNIST":
+        # grayscale 28x28; the CLIP preprocess resizes, so only the channel count needs fixing
+        ds = MNIST(root=args.data_path, download=True, train=False,
+                   transform=lambda im: preprocess(im.convert("RGB")))
+    elif args.dataset in ("typographic", "typographic_clean", "counting", "visogender", "celeba"):
+        # Rendered sets built by scripts_paper/build_{typographic,counting}.py. Folder names are
+        # zero-padded labels, so ImageFolder's sorted order is recoverable from the sidecar
+        # meta.json; run with --samples_per_class None to keep that natural order.
+        ds = ImageFolder(root=args.data_path + args.dataset + "/", transform=preprocess,
+                         is_valid_file=lambda p: p.lower().endswith((".jpg", ".jpeg", ".png")))
+    elif args.dataset == "coco":
+        # Karpathy-test retrieval pairs (label = row index); run with --samples_per_class None
+        ds = CocoKarpathyTest(root=args.data_path + "coco/", transform=preprocess)
     else:
-        ds = ImageFolder(root=args.data_path, transform=preprocess)
+        # caltech_imagefolder drops Caltech-101's BACKGROUND_Google pseudo-class (a no-op otherwise)
+        # so labels line up with caltech_101_classes / the classifier.
+        ds = caltech_imagefolder(root=args.data_path, transform=preprocess)
 
     # Depending
     dataloader = dataset_to_dataloader(

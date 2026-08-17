@@ -1,0 +1,16 @@
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_selectivity.py", line 153, in <module>
+    run_model(m, a.device, a.seed, a.n_pairs, a.arm, a.n_runs, a.max_steps, a.seed_topk)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_selectivity.py", line 76, in run_model
+    T_task = _text_embed(model, TASK_PROMPTS, device)
+  File "/home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/scripts_paper/exp_selectivity.py", line 51, in _text_embed
+    import open_clip
+ModuleNotFoundError: No module named 'open_clip'

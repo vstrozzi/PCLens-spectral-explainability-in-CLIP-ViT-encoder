@@ -15,6 +15,7 @@ from utils.datasets_constants.cifar_10_classes import cifar_10_classes
 from utils.datasets_constants.cifar_100_classes import cifar_100_classes
 from utils.datasets_constants.waterbird_classes import cub_classes, waterbird_classes
 from utils.datasets_constants.fairface_classes import FAIRFACE_CLASSES
+from utils.datasets_constants.caltech_classes import caltech_101_classes
 
 
 def get_args_parser():
@@ -103,7 +104,8 @@ def main(args):
             'CIFAR100': cifar_100_classes,
             'waterbirds': cub_classes,
             'binary_waterbirds': waterbird_classes,
-            'cub': cub_classes}[args.dataset]
+            'cub': cub_classes,
+            'caltech': caltech_101_classes}[args.dataset]
     classifier = zero_shot_classifier(model, tokenizer, classes, OPENAI_IMAGENET_TEMPLATES, args.device)
     with open(os.path.join(args.output_dir, f'{args.dataset}_classifier_{args.model}.npy'), 'wb') as f:
         np.save(f, classifier.detach().cpu().numpy())

@@ -1,0 +1,51 @@
+######## Q1 exp_npairs
+[ViT-B-32] 2000 images, 266 components; full model total=59.50 worst-group=28.50
+  [informative n=  1] worst-group for=6.1  for=10.0  bac=37.0  bac=37.0
+  [informative n= 10] worst-group for=47.9  for=45.5  bac=44.5  bac=43.9
+  [random      n=  1] worst-group for=53.7  for=53.7  bac=38.5  bac=38.5
+  [random      n= 10] worst-group for=75.6  for=75.6  bac=72.7  bac=70.6
+[ViT-B-32] wrote npairs_{eval,trace}
+######## Q3b exp_selectivity  (the baseline readouts are the thing to check)
+Using local files
+Using local files
+[ViT-B-32] full model: task(bird)=60.15%  shortcut(background)=79.30%  - both read out zero-shot with fixed prompts
+[ViT-B-32] most selective single components (shortcut falls, task held):
+    L10H1      dtask= +0.15  dshortcut= -2.45
+    L10H3      dtask= +0.40  dshortcut= -1.60
+    L9H1       dtask= +0.55  dshortcut= -1.25
+    MLP 12     dtask= +1.10  dshortcut= -0.65
+    L1H6       dtask= +0.40  dshortcut= -0.75
+    MLP 6      dtask= +0.35  dshortcut= -0.75
+    L11H9      dtask= -0.35  dshortcut= -1.30
+    L11H10     dtask= +0.25  dshortcut= -0.55
+  [rep0 forward       ] kept= 129  task 60.1->61.2  shortcut 79.3->71.1  worst-group=50.0
+  [rep0 forward+swap  ] kept= 130  task 60.1->59.9  shortcut 79.3->67.0  worst-group=50.1
+  [rep0 backward      ] kept= 156  task 60.1->59.9  shortcut 79.3->71.3  worst-group=54.1
+  [rep0 backward+swap ] kept= 156  task 60.1->59.9  shortcut 79.3->71.3  worst-group=54.1
+[ViT-B-32] wrote selectivity_{comp,pool}
+######## Q2 exp_stability
+[ViT-B-32] 266 components; 4 independent informative draws of 1 pair(s)
+  [forward        prefix k=5  ] Jaccard=0.233 chance=0.019  EXCESS=+0.215
+  [forward        prefix k=10 ] Jaccard=0.194 chance=0.057  EXCESS=+0.138
+  [forward        prefix k=15 ] Jaccard=0.186 chance=0.017  EXCESS=+0.169
+  [forward        prefix k=25 ] Jaccard=0.237 chance=0.035  EXCESS=+0.202
+  [forward        prefix k=50 ] Jaccard=0.308 chance=0.085  EXCESS=+0.223
+  [forward        plateau     ] Jaccard=0.097 chance=0.019  EXCESS=+0.078
+  [forward        full        ] Jaccard=0.380 chance=0.350  EXCESS=+0.030
+  [forward+swap   prefix k=5  ] Jaccard=0.233 chance=0.019  EXCESS=+0.215
+  [forward+swap   prefix k=10 ] Jaccard=0.194 chance=0.009  EXCESS=+0.185
+  [forward+swap   prefix k=15 ] Jaccard=0.186 chance=0.006  EXCESS=+0.181
+  [forward+swap   prefix k=25 ] Jaccard=0.237 chance=0.057  EXCESS=+0.181
+  [forward+swap   prefix k=50 ] Jaccard=0.308 chance=0.108  EXCESS=+0.200
+  [forward+swap   plateau     ] Jaccard=0.097 chance=0.017  EXCESS=+0.080
+  [forward+swap   full        ] Jaccard=0.400 chance=0.350  EXCESS=+0.050
+  [backward       full        ] Jaccard=0.418 chance=0.382  EXCESS=+0.036
+  [backward+swap  prefix k=5  ] Jaccard=0.000 chance=0.000  EXCESS=+0.000
+  [backward+swap  prefix k=10 ] Jaccard=0.000 chance=0.000  EXCESS=+0.000
+  [backward+swap  prefix k=15 ] Jaccard=0.000 chance=0.000  EXCESS=+0.000
+  [backward+swap  prefix k=25 ] Jaccard=0.000 chance=0.000  EXCESS=+0.000
+  [backward+swap  prefix k=50 ] Jaccard=0.000 chance=0.000  EXCESS=+0.000
+  [backward+swap  plateau     ] Jaccard=0.000 chance=0.000  EXCESS=+0.000
+  [backward+swap  full        ] Jaccard=0.415 chance=0.400  EXCESS=+0.015
+[ViT-B-32] wrote stability_{pairs,summary}
+SMOKE3_OK

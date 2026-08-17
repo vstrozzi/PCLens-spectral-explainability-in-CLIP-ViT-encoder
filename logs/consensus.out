@@ -1,0 +1,14 @@
+
+[classname] baseline 0.6653
+   consensus (softmax, z, tau=0.5):  0.0653
+   consensus (softmax, z, tau=1.0):  0.2287
+   consensus (softmax, z, tau=2.0):  0.1080
+   consensus (softmax, z, tau=4.0):  0.0467
+   hard top-1 component vote:          0.0027
+
+[template] baseline 0.7013
+   consensus (softmax, z, tau=0.5):  0.0127
+   consensus (softmax, z, tau=1.0):  0.1593
+   consensus (softmax, z, tau=2.0):  0.0753
+   consensus (softmax, z, tau=4.0):  0.0273
+   hard top-1 component vote:          0.0020

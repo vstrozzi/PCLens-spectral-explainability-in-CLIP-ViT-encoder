@@ -1,0 +1,65 @@
+######## exp_hardneg (negation, ViT-B-32) - the FULL MODEL line is the finding
+[ViT-B-32/negation] 2000 items, 266 components  |  FULL MODEL acc=67.00%  present=66.63%  absent=67.36%  worst-subgroup=48.33%
+  [rep0 forward       ] kept=   6/266 steps=   4 acc=62.19% (present 59.81 / absent 64.54)
+  [rep0 forward+swap  ] kept=   6/266 steps=   4 acc=62.19% (present 59.81 / absent 64.54)
+  [rep0 backward      ] kept= 262/266 steps=   4 acc=72.88% (present 80.37 / absent 65.47)
+  [rep0 backward+swap ] kept= 262/266 steps=   4 acc=72.88% (present 80.37 / absent 65.47)
+[ViT-B-32/negation] wrote hardneg_{eval,trace,pool}
+######## exp_waterbirds_table (ViT-B-32)
+  [class backward       rep0] size= 134 total=73.44 worst-group=60.79
+  [class backward       rep1] size= 154 total=79.49 worst-group=50.62
+  [class backward       rep2] size= 163 total=72.78 worst-group=65.27
+  [class backward+swap  rep0] size= 134 total=73.44 worst-group=60.79
+  [class backward+swap  rep1] size= 154 total=79.49 worst-group=50.62
+  [class backward+swap  rep2] size= 163 total=72.78 worst-group=65.27
+  [class forward        rep0] size= 119 total=70.92 worst-group=52.37
+  [class forward        rep1] size= 125 total=78.63 worst-group=49.79
+  [class forward        rep2] size= 131 total=72.43 worst-group=59.37
+  [class forward+swap   rep0] size= 114 total=71.27 worst-group=53.68
+  [class forward+swap   rep1] size= 125 total=78.63 worst-group=49.79
+  [class forward+swap   rep2] size= 129 total=71.57 worst-group=59.11
+  [group backward       rep0] size= 137 total=74.59 worst-group=66.97
+  [group backward       rep1] size= 148 total=79.98 worst-group=66.10
+  [group backward       rep2] size= 144 total=73.88 worst-group=61.02
+  [group backward+swap  rep0] size= 137 total=74.59 worst-group=66.97
+  [group backward+swap  rep1] size= 153 total=79.78 worst-group=61.86
+  [group backward+swap  rep2] size= 149 total=74.39 worst-group=63.14
+  [group forward        rep0] size= 121 total=76.22 worst-group=73.63
+  [group forward        rep1] size= 119 total=79.47 worst-group=59.75
+  [group forward        rep2] size= 127 total=70.22 worst-group=56.41
+  [group forward+swap   rep0] size= 115 total=76.12 worst-group=72.99
+  [group forward+swap   rep1] size= 119 total=79.47 worst-group=59.32
+  [group forward+swap   rep2] size= 127 total=70.22 worst-group=56.41
+[ViT-B-32] wrote waterbirds_table (73 rows)
+######## exp_bias_pc (ViT-B-32)
+[ViT-B-32] 2085 PC units from 266 components (K<=8)
+    FULL MODEL faces->human=94.20%  non-human=0.00%  crime=5.80%  primates->non-human=98.89%
+  [rep0 forward       ] kept=    6/2085  faces->non-human=2.35%  crime=0.11%  disparity=3.60  primates->non-human=91.89%
+  [rep0 forward+swap  ] kept=    6/2085  faces->non-human=2.35%  crime=0.11%  disparity=3.60  primates->non-human=91.89%
+  [rep0 backward      ] kept= 2081/2085  faces->non-human=0.03%  crime=4.94%  disparity=0.21  primates->non-human=98.65%
+  [rep0 backward+swap ] kept= 2081/2085  faces->non-human=0.03%  crime=4.94%  disparity=0.21  primates->non-human=98.65%
+[ViT-B-32] wrote bias_pc_{eval,trace,moves}
+######## explain_pcs on the bias moves
+
+====================================================================================================
+ViT-B-32  backward/bias/rep0  -  first 3 units DROPPED (mean-ablated)
+====================================================================================================
+
+[ 1] VISION layer 10 head 0        PC0   (step 1, loss 1.1214)
+     + texts : An image of a woman nurturing or comforting. | An image of a young woman smiling. | An image of a woman resting with a heating pad. | An image of a woman with a loving expression. | An image of a girl with her family.
+     + images: sombrero, graduation cap, brussels griffon, abaya, graduation cap
+     - texts : An image of a groom standing. | An image of a well-dressed man in a suit. | An image of a man counting money. | An image of a guy standing with his hands in his pockets. | An image of an elderly man with gray hair.
+     - images: bow tie, Windsor tie, suit, Windsor tie, suit
+
+[ 2] VISION MLP 11                 PC2   (step 2, loss 1.0076)
+     + texts : An image of passengers boarding an airplane at an airport. | An image of individuals casting votes at a voting booth. | An image of a tape measure stretched out. | An image of strings and hammers inside a piano. | An image of a microphone on a stand.
+     + images: academic gown, music speaker, Bloodhound, moving van, snowplow
+     - texts : An image of beat. | An image of a gyromitra. | An image of the central part of a town. | An image of a village. | An image of a person laughing uncontrollably.
+     - images: hot pot, cauldron, baguette, shower cap, bullock cart
+
+[ 3] VISION layer 11 head 2        PC0   (step 3, loss 0.9297)
+     + texts : An image of a man holding a child. | An image of a father teaching a child. | An image of a young male child. | An image of a father playing with children. | An image of a man with children.
+     + images: swim trunks / shorts, shoe store, binoculars, sarong, racket
+     - texts : An image of an elegant woman. | An image of a woman smiling. | An image of a woman resting with a heating pad. | An image of a woman. | An image of a woman nurturing or comforting.
+     - images: tarantula, cowboy hat, flute, cloak, tights
+SMOKE_OK

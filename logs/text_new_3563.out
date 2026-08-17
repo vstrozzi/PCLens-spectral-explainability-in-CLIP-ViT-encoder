@@ -1,0 +1,81 @@
+=== imagenet_classnames_aphoto / ViT-B-16
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 1000 texts from 'imagenet_classnames_aphoto' (1000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_aphoto_attn_text_ViT-B-16_seed_69.npy  shape (1000, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_aphoto_mlp_text_ViT-B-16_seed_69.npy  shape (1000, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_aphoto_labels_text_ViT-B-16_seed_69.npy  shape (1000,)
+Chunk files removed. Done.
+--- verify imagenet_classnames_aphoto / ViT-B-16
+[SKIP] vision activations missing. Compute them first:
+  python -m utils.scripts.compute_activation_values --model ViT-B-16 --pretrained laion2b_s34b_b88k --dataset __none__ --seed 69
+Using local files
+[PASS] TEXT  : n=16  max_abs_err=3.58e-07  mean_abs_err=4.63e-08  max_rel_l2=1.88e-06  min_cos=1.000000  mean_cos=1.000000  (tol=1e-03)
+
+All decomposition checks passed.
+=== imagenet_classnames_aphoto / ViT-L-14
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 1000 texts from 'imagenet_classnames_aphoto' (1000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_aphoto_attn_text_ViT-L-14_seed_69.npy  shape (1000, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_aphoto_mlp_text_ViT-L-14_seed_69.npy  shape (1000, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_aphoto_labels_text_ViT-L-14_seed_69.npy  shape (1000,)
+Chunk files removed. Done.
+--- verify imagenet_classnames_aphoto / ViT-L-14
+[SKIP] vision activations missing. Compute them first:
+  python -m utils.scripts.compute_activation_values --model ViT-L-14 --pretrained laion2b_s32b_b82k --dataset __none__ --seed 69
+Using local files
+[PASS] TEXT  : n=16  max_abs_err=3.28e-07  mean_abs_err=3.99e-08  max_rel_l2=1.94e-06  min_cos=1.000000  mean_cos=1.000000  (tol=1e-03)
+
+All decomposition checks passed.
+=== imagenet_classnames_animagea / ViT-B-16
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 1000 texts from 'imagenet_classnames_animagea' (1000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animagea_attn_text_ViT-B-16_seed_69.npy  shape (1000, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animagea_mlp_text_ViT-B-16_seed_69.npy  shape (1000, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animagea_labels_text_ViT-B-16_seed_69.npy  shape (1000,)
+Chunk files removed. Done.
+--- verify imagenet_classnames_animagea / ViT-B-16
+[SKIP] vision activations missing. Compute them first:
+  python -m utils.scripts.compute_activation_values --model ViT-B-16 --pretrained laion2b_s34b_b88k --dataset __none__ --seed 69
+Using local files
+[PASS] TEXT  : n=16  max_abs_err=3.58e-07  mean_abs_err=5.05e-08  max_rel_l2=1.99e-06  min_cos=1.000000  mean_cos=1.000000  (tol=1e-03)
+
+All decomposition checks passed.
+=== imagenet_classnames_animagea / ViT-L-14
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 1000 texts from 'imagenet_classnames_animagea' (1000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animagea_attn_text_ViT-L-14_seed_69.npy  shape (1000, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animagea_mlp_text_ViT-L-14_seed_69.npy  shape (1000, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animagea_labels_text_ViT-L-14_seed_69.npy  shape (1000,)
+Chunk files removed. Done.
+--- verify imagenet_classnames_animagea / ViT-L-14
+[SKIP] vision activations missing. Compute them first:
+  python -m utils.scripts.compute_activation_values --model ViT-L-14 --pretrained laion2b_s32b_b82k --dataset __none__ --seed 69
+Using local files
+[PASS] TEXT  : n=16  max_abs_err=2.74e-07  mean_abs_err=4.14e-08  max_rel_l2=1.86e-06  min_cos=1.000000  mean_cos=1.000000  (tol=1e-03)
+
+All decomposition checks passed.
+ALL_DONE

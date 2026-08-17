@@ -1,0 +1,12 @@
+entries for 90% of positive D-energy: median 2108 / 17113  (=> sparse)
+baselines(test):  zero-shot cosine 0.6795   3-shot NCM 0.5685
+
+ N_keep   zero-abl   mean-abl   mean+Sink   (per-class top-N entries of D(c))
+     8    0.0970     0.1825     0.4715
+    16    0.0730     0.2300     0.5115
+    32    0.0475     0.2615     0.5510
+    64    0.0465     0.2935     0.5800
+   128    0.0440     0.3285     0.6015
+   256    0.0410     0.3675     0.6230
+   512    0.0445     0.4100     0.6295
+  1024    0.0475     0.4315     0.6255

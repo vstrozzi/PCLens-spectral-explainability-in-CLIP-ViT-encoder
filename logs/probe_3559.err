@@ -1,0 +1,6 @@
+/home/virgilio/lib/minconda3/envs/MT/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/tmp/claude-1008/-home-virgilio-contrastive-learning-PCLens-spectral-explainability-in-CLIP-ViT-encoder/e33166e8-5d3e-4d18-b322-51d2d8b6882d/scratchpad/probe.py", line 3, in <module>
+    from utils.models.factory import create_model_and_transforms, get_tokenizer
+ModuleNotFoundError: No module named 'utils'

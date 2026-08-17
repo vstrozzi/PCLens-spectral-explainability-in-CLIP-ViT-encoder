@@ -1,0 +1,11 @@
+[ViT-B-32] 2112 PC units from 266 components (K<=8); full model worst-group=28.50 total=59.50
+  [class rep0 forward ] kept=  302/2112 total=76.16 worst-group=61.83
+  [class rep0 backward] kept= 1812/2112 total=77.27 worst-group=64.73
+  [class rep1 forward ] kept=  302/2112 total=79.74 worst-group=57.68
+  [class rep1 backward] kept= 1812/2112 total=79.39 worst-group=58.92
+  [group rep0 forward ] kept=  302/2112 total=69.31 worst-group=63.54
+  [group rep0 backward] kept= 1812/2112 total=71.54 worst-group=66.05
+  [group rep1 forward ] kept=  302/2112 total=77.79 worst-group=65.25
+  [group rep1 backward] kept= 1812/2112 total=78.61 worst-group=68.22
+[ViT-B-32] wrote waterbirds_pc_{eval,trace}
+ALLDONE

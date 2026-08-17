@@ -1,0 +1,27 @@
+[ViT-L-14] full model: total=72.20 worst-class=69.91 worst-group=49.41 groups=[95.46, 49.41, 52.87, 90.91]
+  [class rep0 forward       ] kept= 263/566 steps= 261 total=76.76 worst-group=58.68
+  [class rep0 forward+swap  ] kept= 263/566 steps= 261 total=76.76 worst-group=58.68
+  [class rep0 backward      ] kept= 329/566 steps= 237 total=82.56 worst-group=65.98
+  [class rep0 backward+swap ] kept= 325/566 steps= 243 total=82.31 worst-group=66.39
+  [class rep1 forward       ] kept= 268/566 steps= 266 total=84.93 worst-group=77.18
+  [class rep1 forward+swap  ] kept= 268/566 steps= 266 total=84.93 worst-group=77.18
+  [class rep1 backward      ] kept= 290/566 steps= 276 total=86.49 worst-group=66.80
+  [class rep1 backward+swap ] kept= 302/566 steps= 292 total=86.49 worst-group=67.63
+  [class rep2 forward       ] kept= 276/566 steps= 274 total=80.04 worst-group=65.66
+  [class rep2 forward+swap  ] kept= 267/566 steps= 269 total=80.44 worst-group=66.06
+  [class rep2 backward      ] kept= 296/566 steps= 270 total=85.38 worst-group=72.50
+  [class rep2 backward+swap ] kept= 308/566 steps= 270 total=85.28 worst-group=73.33
+  [group rep0 forward       ] kept= 277/566 steps= 275 total=79.37 worst-group=75.56
+  [group rep0 forward+swap  ] kept= 267/566 steps= 273 total=78.86 worst-group=73.05
+  [group rep0 backward      ] kept= 295/566 steps= 271 total=80.59 worst-group=76.35
+  [group rep0 backward+swap ] kept= 301/566 steps= 271 total=80.28 worst-group=76.35
+  [group rep1 forward       ] kept= 289/566 steps= 287 total=84.45 worst-group=75.17
+  [group rep1 forward+swap  ] kept= 273/566 steps= 273 total=83.94 worst-group=74.90
+  [group rep1 backward      ] kept= 322/566 steps= 244 total=84.86 worst-group=77.01
+  [group rep1 backward+swap ] kept= 322/566 steps= 244 total=84.86 worst-group=77.01
+  [group rep2 forward       ] kept= 277/566 steps= 275 total=75.97 worst-group=61.16
+  [group rep2 forward+swap  ] kept= 279/566 steps= 287 total=77.39 worst-group=64.20
+  [group rep2 backward      ] kept= 316/566 steps= 250 total=78.51 worst-group=65.92
+  [group rep2 backward+swap ] kept= 324/566 steps= 248 total=78.10 worst-group=63.41
+[ViT-L-14] wrote waterbirds_{eval,trace,pool}
+ALLDONE

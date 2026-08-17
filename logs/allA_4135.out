@@ -1,0 +1,76 @@
+############ Waterbirds, component level, to convergence
+[ViT-B-32] full model: total=59.50 worst-class=54.43 worst-group=28.50 groups=[79.45, 28.5, 63.11, 94.95]
+  [class rep0 forward       ] kept=  66/266 steps=  64 total=70.92 worst-group=54.08
+  [class rep0 forward+swap  ] kept=  66/266 steps=  64 total=70.92 worst-group=54.08
+  [class rep0 backward      ] kept= 202/266 steps=  64 total=71.98 worst-group=57.76
+  [class rep0 backward+swap ] kept= 202/266 steps=  64 total=71.98 worst-group=57.76
+  [class rep1 forward       ] kept=  66/266 steps=  64 total=79.18 worst-group=50.62
+  [class rep1 forward+swap  ] kept=  66/266 steps=  64 total=79.18 worst-group=50.62
+  [class rep1 backward      ] kept= 202/266 steps=  64 total=79.39 worst-group=49.38
+  [class rep1 backward+swap ] kept= 202/266 steps=  64 total=79.39 worst-group=49.38
+  [class rep2 forward       ] kept=  66/266 steps=  64 total=74.19 worst-group=63.43
+  [class rep2 forward+swap  ] kept=  64/266 steps=  64 total=74.14 worst-group=63.96
+  [class rep2 backward      ] kept= 202/266 steps=  64 total=71.22 worst-group=61.73
+  [class rep2 backward+swap ] kept= 202/266 steps=  64 total=71.22 worst-group=61.73
+  [group rep0 forward       ] kept=  66/266 steps=  64 total=75.30 worst-group=73.58
+  [group rep0 forward+swap  ] kept=  64/266 steps=  64 total=75.20 worst-group=73.12
+  [group rep0 backward      ] kept= 202/266 steps=  64 total=73.83 worst-group=66.05
+  [group rep0 backward+swap ] kept= 202/266 steps=  64 total=73.83 worst-group=66.05
+  [group rep1 forward       ] kept=  66/266 steps=  64 total=79.62 worst-group=64.41
+  [group rep1 forward+swap  ] kept=  66/266 steps=  64 total=79.62 worst-group=64.41
+  [group rep1 backward      ] kept= 202/266 steps=  64 total=79.32 worst-group=56.78
+  [group rep1 backward+swap ] kept= 202/266 steps=  64 total=79.32 worst-group=56.78
+  [group rep2 forward       ] kept=  66/266 steps=  64 total=70.78 worst-group=57.07
+  [group rep2 forward+swap  ] kept=  66/266 steps=  64 total=70.78 worst-group=57.07
+  [group rep2 backward      ] kept= 202/266 steps=  64 total=73.98 worst-group=62.29
+  [group rep2 backward+swap ] kept= 202/266 steps=  64 total=73.98 worst-group=62.29
+[ViT-B-32] wrote waterbirds_{eval,trace,pool}
+[ViT-B-16] full model: total=69.35 worst-class=60.86 worst-group=38.52 groups=[93.44, 49.28, 38.52, 88.38]
+  [class rep0 forward       ] kept=  66/266 steps=  64 total=79.03 worst-group=64.32
+  [class rep0 forward+swap  ] kept=  66/266 steps=  64 total=79.03 worst-group=64.32
+  [class rep0 backward      ] kept= 202/266 steps=  64 total=79.54 worst-group=60.17
+  [class rep0 backward+swap ] kept= 202/266 steps=  64 total=79.54 worst-group=60.17
+  [class rep1 forward       ] kept=  66/266 steps=  64 total=81.25 worst-group=63.07
+  [class rep1 forward+swap  ] kept=  66/266 steps=  64 total=81.25 worst-group=63.07
+  [class rep1 backward      ] kept= 202/266 steps=  64 total=80.04 worst-group=55.19
+  [class rep1 backward+swap ] kept= 202/266 steps=  64 total=80.04 worst-group=55.19
+  [class rep2 forward       ] kept=  66/266 steps=  64 total=80.14 worst-group=62.92
+  [class rep2 forward+swap  ] kept=  66/266 steps=  64 total=80.14 worst-group=62.92
+  [class rep2 backward      ] kept= 202/266 steps=  64 total=75.00 worst-group=54.58
+  [class rep2 backward+swap ] kept= 202/266 steps=  64 total=75.00 worst-group=54.58
+  [group rep0 forward       ] kept=  66/266 steps=  64 total=78.35 worst-group=69.49
+  [group rep0 forward+swap  ] kept=  66/266 steps=  64 total=78.35 worst-group=69.49
+  [group rep0 backward      ] kept= 202/266 steps=  64 total=77.59 worst-group=72.88
+  [group rep0 backward+swap ] kept= 202/266 steps=  64 total=77.59 worst-group=72.88
+  [group rep1 forward       ] kept=  66/266 steps=  64 total=81.10 worst-group=70.67
+  [group rep1 forward+swap  ] kept=  66/266 steps=  64 total=81.10 worst-group=70.67
+  [group rep1 backward      ] kept= 202/266 steps=  64 total=82.22 worst-group=69.07
+  [group rep1 backward+swap ] kept= 202/266 steps=  64 total=82.22 worst-group=69.07
+  [group rep2 forward       ] kept=  66/266 steps=  64 total=77.44 worst-group=67.77
+  [group rep2 forward+swap  ] kept=  66/266 steps=  64 total=77.44 worst-group=67.77
+  [group rep2 backward      ] kept= 202/266 steps=  64 total=74.80 worst-group=67.11
+  [group rep2 backward+swap ] kept= 202/266 steps=  64 total=74.80 worst-group=67.11
+[ViT-B-16] wrote waterbirds_{eval,trace,pool}
+[RN50] full model: total=67.85 worst-class=66.05 worst-group=40.65 groups=[90.54, 40.65, 60.66, 90.91]
+  [class rep0 forward       ] kept=  66/654 steps=  64 total=64.21 worst-group=41.45
+  [class rep0 forward+swap  ] kept=  66/654 steps=  64 total=64.21 worst-group=41.45
+  [class rep0 backward      ] kept= 590/654 steps=  64 total=70.06 worst-group=57.11
+  [class rep0 backward+swap ] kept= 590/654 steps=  64 total=70.06 worst-group=57.11
+  [class rep1 forward       ] kept=  66/654 steps=  64 total=62.00 worst-group=41.45
+  [class rep1 forward+swap  ] kept=  66/654 steps=  64 total=62.00 worst-group=41.45
+  [class rep1 backward      ] kept= 590/654 steps=  64 total=72.48 worst-group=54.08
+  [class rep1 backward+swap ] kept= 590/654 steps=  64 total=72.48 worst-group=54.08
+  [class rep2 forward       ] kept=  66/654 steps=  64 total=55.19 worst-group=36.83
+  [class rep2 forward+swap  ] kept=  66/654 steps=  64 total=55.19 worst-group=36.83
+  [class rep2 backward      ] kept= 590/654 steps=  64 total=71.37 worst-group=61.07
+  [class rep2 backward+swap ] kept= 590/654 steps=  64 total=71.37 worst-group=61.07
+  [group rep0 forward       ] kept=  66/654 steps=  64 total=63.72 worst-group=40.95
+  [group rep0 forward+swap  ] kept=  66/654 steps=  64 total=63.72 worst-group=40.95
+  [group rep0 backward      ] kept= 590/654 steps=  64 total=79.12 worst-group=68.56
+  [group rep0 backward+swap ] kept= 590/654 steps=  64 total=79.12 worst-group=68.56
+  [group rep1 forward       ] kept=  66/654 steps=  64 total=67.89 worst-group=56.54
+  [group rep1 forward+swap  ] kept=  66/654 steps=  64 total=67.89 worst-group=56.54
+  [group rep1 backward      ] kept= 590/654 steps=  64 total=81.15 worst-group=61.86
+  [group rep1 backward+swap ] kept= 592/654 steps=  64 total=81.05 worst-group=65.68
+  [group rep2 forward       ] kept=  66/654 steps=  64 total=63.16 worst-group=35.67
+  [group rep2 forward+swap  ] kept=  66/654 steps=  64 total=63.16 worst-group=35.67

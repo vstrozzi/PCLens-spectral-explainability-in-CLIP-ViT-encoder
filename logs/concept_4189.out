@@ -1,0 +1,16 @@
+######## component level, both towers
+Using local files
+[ViT-B-32/comp] 266 units (157 vision, 109 text); full model total=59.50 worst-group=28.50
+  top 5 by KEEP strength (carries the class axis):
+    text   L11H5     PC-1  keep=0.1319 remove=0.0550  share_keep=+0.149
+    text   L11H0     PC-1  keep=0.0836 remove=0.0198  share_keep=+0.094
+    text   MLP 12    PC-1  keep=0.0367 remove=0.0242  share_keep=-0.041
+    text   L11H7     PC-1  keep=0.0355 remove=0.0043  share_keep=+0.040
+    text   L8H0      PC-1  keep=0.0233 remove=0.0037  share_keep=+0.026
+  top 5 by REMOVE strength (the spurious background directions):
+    text   L11H5     PC-1  remove=0.0550 keep=0.1319  share_remove=+0.108
+    text   L6H1      PC-1  remove=0.0281 keep=0.0152  share_remove=+0.055
+    text   L11H2     PC-1  remove=0.0260 keep=0.0198  share_remove=+0.051
+    text   MLP 12    PC-1  remove=0.0242 keep=0.0367  share_remove=-0.048
+    text   L8H1      PC-1  remove=0.0239 keep=0.0123  share_remove=+0.047
+  [greedy all units          forward ] kept=  164/266 total=55.95 worst-group=30.33

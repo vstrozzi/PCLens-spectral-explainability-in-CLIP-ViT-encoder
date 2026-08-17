@@ -1,0 +1,1094 @@
+models  : ['RN101', 'RN50', 'ViT-B-16', 'ViT-B-32', 'ViT-H-14', 'ViT-L-14']
+datasets: ['CIFAR100', 'binary_waterbirds', 'caltech', 'fairface', 'imagenet']
+towers  : ['image', 'text']
+==> CIFAR100 RN101 image
+    RN101     image CIFAR100          layer  1/34
+    RN101     image CIFAR100          layer  2/34
+    RN101     image CIFAR100          layer  3/34
+    RN101     image CIFAR100          layer  4/34
+    RN101     image CIFAR100          layer  5/34
+    RN101     image CIFAR100          layer  6/34
+    RN101     image CIFAR100          layer  7/34
+    RN101     image CIFAR100          layer  8/34
+    RN101     image CIFAR100          layer  9/34
+    RN101     image CIFAR100          layer 10/34
+    RN101     image CIFAR100          layer 11/34
+    RN101     image CIFAR100          layer 12/34
+    RN101     image CIFAR100          layer 13/34
+    RN101     image CIFAR100          layer 14/34
+    RN101     image CIFAR100          layer 15/34
+    RN101     image CIFAR100          layer 16/34
+    RN101     image CIFAR100          layer 17/34
+    RN101     image CIFAR100          layer 18/34
+    RN101     image CIFAR100          layer 19/34
+    RN101     image CIFAR100          layer 20/34
+    RN101     image CIFAR100          layer 21/34
+    RN101     image CIFAR100          layer 22/34
+    RN101     image CIFAR100          layer 23/34
+    RN101     image CIFAR100          layer 24/34
+    RN101     image CIFAR100          layer 25/34
+    RN101     image CIFAR100          layer 26/34
+    RN101     image CIFAR100          layer 27/34
+    RN101     image CIFAR100          layer 28/34
+    RN101     image CIFAR100          layer 29/34
+    RN101     image CIFAR100          layer 30/34
+    RN101     image CIFAR100          layer 31/34
+    RN101     image CIFAR100          layer 32/34
+    RN101     image CIFAR100          layer 33/34
+    RN101     image CIFAR100          layer 34/34
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_RN101_image.csv rows 3264
+==> CIFAR100 RN101 text
+    RN101     text  CIFAR100          layer  1/12
+    RN101     text  CIFAR100          layer  2/12
+    RN101     text  CIFAR100          layer  3/12
+    RN101     text  CIFAR100          layer  4/12
+    RN101     text  CIFAR100          layer  5/12
+    RN101     text  CIFAR100          layer  6/12
+    RN101     text  CIFAR100          layer  7/12
+    RN101     text  CIFAR100          layer  8/12
+    RN101     text  CIFAR100          layer  9/12
+    RN101     text  CIFAR100          layer 10/12
+    RN101     text  CIFAR100          layer 11/12
+    RN101     text  CIFAR100          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_RN101_text.csv rows 324
+==> binary_waterbirds RN101 image
+    RN101     image binary_waterbirds layer  1/34
+    RN101     image binary_waterbirds layer  2/34
+    RN101     image binary_waterbirds layer  3/34
+    RN101     image binary_waterbirds layer  4/34
+    RN101     image binary_waterbirds layer  5/34
+    RN101     image binary_waterbirds layer  6/34
+    RN101     image binary_waterbirds layer  7/34
+    RN101     image binary_waterbirds layer  8/34
+    RN101     image binary_waterbirds layer  9/34
+    RN101     image binary_waterbirds layer 10/34
+    RN101     image binary_waterbirds layer 11/34
+    RN101     image binary_waterbirds layer 12/34
+    RN101     image binary_waterbirds layer 13/34
+    RN101     image binary_waterbirds layer 14/34
+    RN101     image binary_waterbirds layer 15/34
+    RN101     image binary_waterbirds layer 16/34
+    RN101     image binary_waterbirds layer 17/34
+    RN101     image binary_waterbirds layer 18/34
+    RN101     image binary_waterbirds layer 19/34
+    RN101     image binary_waterbirds layer 20/34
+    RN101     image binary_waterbirds layer 21/34
+    RN101     image binary_waterbirds layer 22/34
+    RN101     image binary_waterbirds layer 23/34
+    RN101     image binary_waterbirds layer 24/34
+    RN101     image binary_waterbirds layer 25/34
+    RN101     image binary_waterbirds layer 26/34
+    RN101     image binary_waterbirds layer 27/34
+    RN101     image binary_waterbirds layer 28/34
+    RN101     image binary_waterbirds layer 29/34
+    RN101     image binary_waterbirds layer 30/34
+    RN101     image binary_waterbirds layer 31/34
+    RN101     image binary_waterbirds layer 32/34
+    RN101     image binary_waterbirds layer 33/34
+    RN101     image binary_waterbirds layer 34/34
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_RN101_image.csv rows 3264
+==> binary_waterbirds RN101 text
+    RN101     text  binary_waterbirds layer  1/12
+    RN101     text  binary_waterbirds layer  2/12
+    RN101     text  binary_waterbirds layer  3/12
+    RN101     text  binary_waterbirds layer  4/12
+    RN101     text  binary_waterbirds layer  5/12
+    RN101     text  binary_waterbirds layer  6/12
+    RN101     text  binary_waterbirds layer  7/12
+    RN101     text  binary_waterbirds layer  8/12
+    RN101     text  binary_waterbirds layer  9/12
+    RN101     text  binary_waterbirds layer 10/12
+    RN101     text  binary_waterbirds layer 11/12
+    RN101     text  binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_RN101_text.csv rows 324
+==> caltech RN101 image
+    RN101     image caltech           layer  1/34
+    RN101     image caltech           layer  2/34
+    RN101     image caltech           layer  3/34
+    RN101     image caltech           layer  4/34
+    RN101     image caltech           layer  5/34
+    RN101     image caltech           layer  6/34
+    RN101     image caltech           layer  7/34
+    RN101     image caltech           layer  8/34
+    RN101     image caltech           layer  9/34
+    RN101     image caltech           layer 10/34
+    RN101     image caltech           layer 11/34
+    RN101     image caltech           layer 12/34
+    RN101     image caltech           layer 13/34
+    RN101     image caltech           layer 14/34
+    RN101     image caltech           layer 15/34
+    RN101     image caltech           layer 16/34
+    RN101     image caltech           layer 17/34
+    RN101     image caltech           layer 18/34
+    RN101     image caltech           layer 19/34
+    RN101     image caltech           layer 20/34
+    RN101     image caltech           layer 21/34
+    RN101     image caltech           layer 22/34
+    RN101     image caltech           layer 23/34
+    RN101     image caltech           layer 24/34
+    RN101     image caltech           layer 25/34
+    RN101     image caltech           layer 26/34
+    RN101     image caltech           layer 27/34
+    RN101     image caltech           layer 28/34
+    RN101     image caltech           layer 29/34
+    RN101     image caltech           layer 30/34
+    RN101     image caltech           layer 31/34
+    RN101     image caltech           layer 32/34
+    RN101     image caltech           layer 33/34
+    RN101     image caltech           layer 34/34
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_RN101_image.csv rows 3264
+==> caltech RN101 text
+    RN101     text  caltech           layer  1/12
+    RN101     text  caltech           layer  2/12
+    RN101     text  caltech           layer  3/12
+    RN101     text  caltech           layer  4/12
+    RN101     text  caltech           layer  5/12
+    RN101     text  caltech           layer  6/12
+    RN101     text  caltech           layer  7/12
+    RN101     text  caltech           layer  8/12
+    RN101     text  caltech           layer  9/12
+    RN101     text  caltech           layer 10/12
+    RN101     text  caltech           layer 11/12
+    RN101     text  caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_RN101_text.csv rows 324
+==> fairface RN101 image
+    RN101     image fairface          layer  1/34
+    RN101     image fairface          layer  2/34
+    RN101     image fairface          layer  3/34
+    RN101     image fairface          layer  4/34
+    RN101     image fairface          layer  5/34
+    RN101     image fairface          layer  6/34
+    RN101     image fairface          layer  7/34
+    RN101     image fairface          layer  8/34
+    RN101     image fairface          layer  9/34
+    RN101     image fairface          layer 10/34
+    RN101     image fairface          layer 11/34
+    RN101     image fairface          layer 12/34
+    RN101     image fairface          layer 13/34
+    RN101     image fairface          layer 14/34
+    RN101     image fairface          layer 15/34
+    RN101     image fairface          layer 16/34
+    RN101     image fairface          layer 17/34
+    RN101     image fairface          layer 18/34
+    RN101     image fairface          layer 19/34
+    RN101     image fairface          layer 20/34
+    RN101     image fairface          layer 21/34
+    RN101     image fairface          layer 22/34
+    RN101     image fairface          layer 23/34
+    RN101     image fairface          layer 24/34
+    RN101     image fairface          layer 25/34
+    RN101     image fairface          layer 26/34
+    RN101     image fairface          layer 27/34
+    RN101     image fairface          layer 28/34
+    RN101     image fairface          layer 29/34
+    RN101     image fairface          layer 30/34
+    RN101     image fairface          layer 31/34
+    RN101     image fairface          layer 32/34
+    RN101     image fairface          layer 33/34
+    RN101     image fairface          layer 34/34
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_RN101_image.csv rows 3264
+==> fairface RN101 text
+    RN101     text  fairface          layer  1/12
+    RN101     text  fairface          layer  2/12
+    RN101     text  fairface          layer  3/12
+    RN101     text  fairface          layer  4/12
+    RN101     text  fairface          layer  5/12
+    RN101     text  fairface          layer  6/12
+    RN101     text  fairface          layer  7/12
+    RN101     text  fairface          layer  8/12
+    RN101     text  fairface          layer  9/12
+    RN101     text  fairface          layer 10/12
+    RN101     text  fairface          layer 11/12
+    RN101     text  fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_RN101_text.csv rows 324
+==> imagenet RN101 image
+    RN101     image imagenet          layer  1/34
+    RN101     image imagenet          layer  2/34
+    RN101     image imagenet          layer  3/34
+    RN101     image imagenet          layer  4/34
+    RN101     image imagenet          layer  5/34
+    RN101     image imagenet          layer  6/34
+    RN101     image imagenet          layer  7/34
+    RN101     image imagenet          layer  8/34
+    RN101     image imagenet          layer  9/34
+    RN101     image imagenet          layer 10/34
+    RN101     image imagenet          layer 11/34
+    RN101     image imagenet          layer 12/34
+    RN101     image imagenet          layer 13/34
+    RN101     image imagenet          layer 14/34
+    RN101     image imagenet          layer 15/34
+    RN101     image imagenet          layer 16/34
+    RN101     image imagenet          layer 17/34
+    RN101     image imagenet          layer 18/34
+    RN101     image imagenet          layer 19/34
+    RN101     image imagenet          layer 20/34
+    RN101     image imagenet          layer 21/34
+    RN101     image imagenet          layer 22/34
+    RN101     image imagenet          layer 23/34
+    RN101     image imagenet          layer 24/34
+    RN101     image imagenet          layer 25/34
+    RN101     image imagenet          layer 26/34
+    RN101     image imagenet          layer 27/34
+    RN101     image imagenet          layer 28/34
+    RN101     image imagenet          layer 29/34
+    RN101     image imagenet          layer 30/34
+    RN101     image imagenet          layer 31/34
+    RN101     image imagenet          layer 32/34
+    RN101     image imagenet          layer 33/34
+    RN101     image imagenet          layer 34/34
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_RN101_image.csv rows 3264
+==> imagenet RN101 text
+    RN101     text  imagenet          layer  1/12
+    RN101     text  imagenet          layer  2/12
+    RN101     text  imagenet          layer  3/12
+    RN101     text  imagenet          layer  4/12
+    RN101     text  imagenet          layer  5/12
+    RN101     text  imagenet          layer  6/12
+    RN101     text  imagenet          layer  7/12
+    RN101     text  imagenet          layer  8/12
+    RN101     text  imagenet          layer  9/12
+    RN101     text  imagenet          layer 10/12
+    RN101     text  imagenet          layer 11/12
+    RN101     text  imagenet          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_RN101_text.csv rows 324
+==> CIFAR100 RN50 image
+    RN50      image CIFAR100          layer  1/17
+    RN50      image CIFAR100          layer  2/17
+    RN50      image CIFAR100          layer  3/17
+    RN50      image CIFAR100          layer  4/17
+    RN50      image CIFAR100          layer  5/17
+    RN50      image CIFAR100          layer  6/17
+    RN50      image CIFAR100          layer  7/17
+    RN50      image CIFAR100          layer  8/17
+    RN50      image CIFAR100          layer  9/17
+    RN50      image CIFAR100          layer 10/17
+    RN50      image CIFAR100          layer 11/17
+    RN50      image CIFAR100          layer 12/17
+    RN50      image CIFAR100          layer 13/17
+    RN50      image CIFAR100          layer 14/17
+    RN50      image CIFAR100          layer 15/17
+    RN50      image CIFAR100          layer 16/17
+    RN50      image CIFAR100          layer 17/17
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_RN50_image.csv rows 1632
+==> CIFAR100 RN50 text
+    RN50      text  CIFAR100          layer  1/12
+    RN50      text  CIFAR100          layer  2/12
+    RN50      text  CIFAR100          layer  3/12
+    RN50      text  CIFAR100          layer  4/12
+    RN50      text  CIFAR100          layer  5/12
+    RN50      text  CIFAR100          layer  6/12
+    RN50      text  CIFAR100          layer  7/12
+    RN50      text  CIFAR100          layer  8/12
+    RN50      text  CIFAR100          layer  9/12
+    RN50      text  CIFAR100          layer 10/12
+    RN50      text  CIFAR100          layer 11/12
+    RN50      text  CIFAR100          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_RN50_text.csv rows 324
+==> binary_waterbirds RN50 image
+    RN50      image binary_waterbirds layer  1/17
+    RN50      image binary_waterbirds layer  2/17
+    RN50      image binary_waterbirds layer  3/17
+    RN50      image binary_waterbirds layer  4/17
+    RN50      image binary_waterbirds layer  5/17
+    RN50      image binary_waterbirds layer  6/17
+    RN50      image binary_waterbirds layer  7/17
+    RN50      image binary_waterbirds layer  8/17
+    RN50      image binary_waterbirds layer  9/17
+    RN50      image binary_waterbirds layer 10/17
+    RN50      image binary_waterbirds layer 11/17
+    RN50      image binary_waterbirds layer 12/17
+    RN50      image binary_waterbirds layer 13/17
+    RN50      image binary_waterbirds layer 14/17
+    RN50      image binary_waterbirds layer 15/17
+    RN50      image binary_waterbirds layer 16/17
+    RN50      image binary_waterbirds layer 17/17
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_RN50_image.csv rows 1632
+==> binary_waterbirds RN50 text
+    RN50      text  binary_waterbirds layer  1/12
+    RN50      text  binary_waterbirds layer  2/12
+    RN50      text  binary_waterbirds layer  3/12
+    RN50      text  binary_waterbirds layer  4/12
+    RN50      text  binary_waterbirds layer  5/12
+    RN50      text  binary_waterbirds layer  6/12
+    RN50      text  binary_waterbirds layer  7/12
+    RN50      text  binary_waterbirds layer  8/12
+    RN50      text  binary_waterbirds layer  9/12
+    RN50      text  binary_waterbirds layer 10/12
+    RN50      text  binary_waterbirds layer 11/12
+    RN50      text  binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_RN50_text.csv rows 324
+==> caltech RN50 image
+    RN50      image caltech           layer  1/17
+    RN50      image caltech           layer  2/17
+    RN50      image caltech           layer  3/17
+    RN50      image caltech           layer  4/17
+    RN50      image caltech           layer  5/17
+    RN50      image caltech           layer  6/17
+    RN50      image caltech           layer  7/17
+    RN50      image caltech           layer  8/17
+    RN50      image caltech           layer  9/17
+    RN50      image caltech           layer 10/17
+    RN50      image caltech           layer 11/17
+    RN50      image caltech           layer 12/17
+    RN50      image caltech           layer 13/17
+    RN50      image caltech           layer 14/17
+    RN50      image caltech           layer 15/17
+    RN50      image caltech           layer 16/17
+    RN50      image caltech           layer 17/17
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_RN50_image.csv rows 1632
+==> caltech RN50 text
+    RN50      text  caltech           layer  1/12
+    RN50      text  caltech           layer  2/12
+    RN50      text  caltech           layer  3/12
+    RN50      text  caltech           layer  4/12
+    RN50      text  caltech           layer  5/12
+    RN50      text  caltech           layer  6/12
+    RN50      text  caltech           layer  7/12
+    RN50      text  caltech           layer  8/12
+    RN50      text  caltech           layer  9/12
+    RN50      text  caltech           layer 10/12
+    RN50      text  caltech           layer 11/12
+    RN50      text  caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_RN50_text.csv rows 324
+==> fairface RN50 image
+    RN50      image fairface          layer  1/17
+    RN50      image fairface          layer  2/17
+    RN50      image fairface          layer  3/17
+    RN50      image fairface          layer  4/17
+    RN50      image fairface          layer  5/17
+    RN50      image fairface          layer  6/17
+    RN50      image fairface          layer  7/17
+    RN50      image fairface          layer  8/17
+    RN50      image fairface          layer  9/17
+    RN50      image fairface          layer 10/17
+    RN50      image fairface          layer 11/17
+    RN50      image fairface          layer 12/17
+    RN50      image fairface          layer 13/17
+    RN50      image fairface          layer 14/17
+    RN50      image fairface          layer 15/17
+    RN50      image fairface          layer 16/17
+    RN50      image fairface          layer 17/17
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_RN50_image.csv rows 1632
+==> fairface RN50 text
+    RN50      text  fairface          layer  1/12
+    RN50      text  fairface          layer  2/12
+    RN50      text  fairface          layer  3/12
+    RN50      text  fairface          layer  4/12
+    RN50      text  fairface          layer  5/12
+    RN50      text  fairface          layer  6/12
+    RN50      text  fairface          layer  7/12
+    RN50      text  fairface          layer  8/12
+    RN50      text  fairface          layer  9/12
+    RN50      text  fairface          layer 10/12
+    RN50      text  fairface          layer 11/12
+    RN50      text  fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_RN50_text.csv rows 324
+==> imagenet RN50 image
+    RN50      image imagenet          layer  1/17
+    RN50      image imagenet          layer  2/17
+    RN50      image imagenet          layer  3/17
+    RN50      image imagenet          layer  4/17
+    RN50      image imagenet          layer  5/17
+    RN50      image imagenet          layer  6/17
+    RN50      image imagenet          layer  7/17
+    RN50      image imagenet          layer  8/17
+    RN50      image imagenet          layer  9/17
+    RN50      image imagenet          layer 10/17
+    RN50      image imagenet          layer 11/17
+    RN50      image imagenet          layer 12/17
+    RN50      image imagenet          layer 13/17
+    RN50      image imagenet          layer 14/17
+    RN50      image imagenet          layer 15/17
+    RN50      image imagenet          layer 16/17
+    RN50      image imagenet          layer 17/17
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_RN50_image.csv rows 1632
+==> imagenet RN50 text
+    RN50      text  imagenet          layer  1/12
+    RN50      text  imagenet          layer  2/12
+    RN50      text  imagenet          layer  3/12
+    RN50      text  imagenet          layer  4/12
+    RN50      text  imagenet          layer  5/12
+    RN50      text  imagenet          layer  6/12
+    RN50      text  imagenet          layer  7/12
+    RN50      text  imagenet          layer  8/12
+    RN50      text  imagenet          layer  9/12
+    RN50      text  imagenet          layer 10/12
+    RN50      text  imagenet          layer 11/12
+    RN50      text  imagenet          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_RN50_text.csv rows 324
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-B-16_image.csv
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-B-16_text.csv
+==> binary_waterbirds ViT-B-16 image
+    ViT-B-16  image binary_waterbirds layer  1/12
+    ViT-B-16  image binary_waterbirds layer  2/12
+    ViT-B-16  image binary_waterbirds layer  3/12
+    ViT-B-16  image binary_waterbirds layer  4/12
+    ViT-B-16  image binary_waterbirds layer  5/12
+    ViT-B-16  image binary_waterbirds layer  6/12
+    ViT-B-16  image binary_waterbirds layer  7/12
+    ViT-B-16  image binary_waterbirds layer  8/12
+    ViT-B-16  image binary_waterbirds layer  9/12
+    ViT-B-16  image binary_waterbirds layer 10/12
+    ViT-B-16  image binary_waterbirds layer 11/12
+    ViT-B-16  image binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-B-16_image.csv rows 468
+==> binary_waterbirds ViT-B-16 text
+    ViT-B-16  text  binary_waterbirds layer  1/12
+    ViT-B-16  text  binary_waterbirds layer  2/12
+    ViT-B-16  text  binary_waterbirds layer  3/12
+    ViT-B-16  text  binary_waterbirds layer  4/12
+    ViT-B-16  text  binary_waterbirds layer  5/12
+    ViT-B-16  text  binary_waterbirds layer  6/12
+    ViT-B-16  text  binary_waterbirds layer  7/12
+    ViT-B-16  text  binary_waterbirds layer  8/12
+    ViT-B-16  text  binary_waterbirds layer  9/12
+    ViT-B-16  text  binary_waterbirds layer 10/12
+    ViT-B-16  text  binary_waterbirds layer 11/12
+    ViT-B-16  text  binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-B-16_text.csv rows 324
+==> caltech ViT-B-16 image
+    ViT-B-16  image caltech           layer  1/12
+    ViT-B-16  image caltech           layer  2/12
+    ViT-B-16  image caltech           layer  3/12
+    ViT-B-16  image caltech           layer  4/12
+    ViT-B-16  image caltech           layer  5/12
+    ViT-B-16  image caltech           layer  6/12
+    ViT-B-16  image caltech           layer  7/12
+    ViT-B-16  image caltech           layer  8/12
+    ViT-B-16  image caltech           layer  9/12
+    ViT-B-16  image caltech           layer 10/12
+    ViT-B-16  image caltech           layer 11/12
+    ViT-B-16  image caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-B-16_image.csv rows 468
+==> caltech ViT-B-16 text
+    ViT-B-16  text  caltech           layer  1/12
+    ViT-B-16  text  caltech           layer  2/12
+    ViT-B-16  text  caltech           layer  3/12
+    ViT-B-16  text  caltech           layer  4/12
+    ViT-B-16  text  caltech           layer  5/12
+    ViT-B-16  text  caltech           layer  6/12
+    ViT-B-16  text  caltech           layer  7/12
+    ViT-B-16  text  caltech           layer  8/12
+    ViT-B-16  text  caltech           layer  9/12
+    ViT-B-16  text  caltech           layer 10/12
+    ViT-B-16  text  caltech           layer 11/12
+    ViT-B-16  text  caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-B-16_text.csv rows 324
+==> fairface ViT-B-16 image
+    ViT-B-16  image fairface          layer  1/12
+    ViT-B-16  image fairface          layer  2/12
+    ViT-B-16  image fairface          layer  3/12
+    ViT-B-16  image fairface          layer  4/12
+    ViT-B-16  image fairface          layer  5/12
+    ViT-B-16  image fairface          layer  6/12
+    ViT-B-16  image fairface          layer  7/12
+    ViT-B-16  image fairface          layer  8/12
+    ViT-B-16  image fairface          layer  9/12
+    ViT-B-16  image fairface          layer 10/12
+    ViT-B-16  image fairface          layer 11/12
+    ViT-B-16  image fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-B-16_image.csv rows 468
+==> fairface ViT-B-16 text
+    ViT-B-16  text  fairface          layer  1/12
+    ViT-B-16  text  fairface          layer  2/12
+    ViT-B-16  text  fairface          layer  3/12
+    ViT-B-16  text  fairface          layer  4/12
+    ViT-B-16  text  fairface          layer  5/12
+    ViT-B-16  text  fairface          layer  6/12
+    ViT-B-16  text  fairface          layer  7/12
+    ViT-B-16  text  fairface          layer  8/12
+    ViT-B-16  text  fairface          layer  9/12
+    ViT-B-16  text  fairface          layer 10/12
+    ViT-B-16  text  fairface          layer 11/12
+    ViT-B-16  text  fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-B-16_text.csv rows 324
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-B-16_image.csv
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-B-16_text.csv
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-B-32_image.csv
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-B-32_text.csv
+==> binary_waterbirds ViT-B-32 image
+    ViT-B-32  image binary_waterbirds layer  1/12
+    ViT-B-32  image binary_waterbirds layer  2/12
+    ViT-B-32  image binary_waterbirds layer  3/12
+    ViT-B-32  image binary_waterbirds layer  4/12
+    ViT-B-32  image binary_waterbirds layer  5/12
+    ViT-B-32  image binary_waterbirds layer  6/12
+    ViT-B-32  image binary_waterbirds layer  7/12
+    ViT-B-32  image binary_waterbirds layer  8/12
+    ViT-B-32  image binary_waterbirds layer  9/12
+    ViT-B-32  image binary_waterbirds layer 10/12
+    ViT-B-32  image binary_waterbirds layer 11/12
+    ViT-B-32  image binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-B-32_image.csv rows 468
+==> binary_waterbirds ViT-B-32 text
+    ViT-B-32  text  binary_waterbirds layer  1/12
+    ViT-B-32  text  binary_waterbirds layer  2/12
+    ViT-B-32  text  binary_waterbirds layer  3/12
+    ViT-B-32  text  binary_waterbirds layer  4/12
+    ViT-B-32  text  binary_waterbirds layer  5/12
+    ViT-B-32  text  binary_waterbirds layer  6/12
+    ViT-B-32  text  binary_waterbirds layer  7/12
+    ViT-B-32  text  binary_waterbirds layer  8/12
+    ViT-B-32  text  binary_waterbirds layer  9/12
+    ViT-B-32  text  binary_waterbirds layer 10/12
+    ViT-B-32  text  binary_waterbirds layer 11/12
+    ViT-B-32  text  binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-B-32_text.csv rows 324
+==> caltech ViT-B-32 image
+    ViT-B-32  image caltech           layer  1/12
+    ViT-B-32  image caltech           layer  2/12
+    ViT-B-32  image caltech           layer  3/12
+    ViT-B-32  image caltech           layer  4/12
+    ViT-B-32  image caltech           layer  5/12
+    ViT-B-32  image caltech           layer  6/12
+    ViT-B-32  image caltech           layer  7/12
+    ViT-B-32  image caltech           layer  8/12
+    ViT-B-32  image caltech           layer  9/12
+    ViT-B-32  image caltech           layer 10/12
+    ViT-B-32  image caltech           layer 11/12
+    ViT-B-32  image caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-B-32_image.csv rows 468
+==> caltech ViT-B-32 text
+    ViT-B-32  text  caltech           layer  1/12
+    ViT-B-32  text  caltech           layer  2/12
+    ViT-B-32  text  caltech           layer  3/12
+    ViT-B-32  text  caltech           layer  4/12
+    ViT-B-32  text  caltech           layer  5/12
+    ViT-B-32  text  caltech           layer  6/12
+    ViT-B-32  text  caltech           layer  7/12
+    ViT-B-32  text  caltech           layer  8/12
+    ViT-B-32  text  caltech           layer  9/12
+    ViT-B-32  text  caltech           layer 10/12
+    ViT-B-32  text  caltech           layer 11/12
+    ViT-B-32  text  caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-B-32_text.csv rows 324
+==> fairface ViT-B-32 image
+    ViT-B-32  image fairface          layer  1/12
+    ViT-B-32  image fairface          layer  2/12
+    ViT-B-32  image fairface          layer  3/12
+    ViT-B-32  image fairface          layer  4/12
+    ViT-B-32  image fairface          layer  5/12
+    ViT-B-32  image fairface          layer  6/12
+    ViT-B-32  image fairface          layer  7/12
+    ViT-B-32  image fairface          layer  8/12
+    ViT-B-32  image fairface          layer  9/12
+    ViT-B-32  image fairface          layer 10/12
+    ViT-B-32  image fairface          layer 11/12
+    ViT-B-32  image fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-B-32_image.csv rows 468
+==> fairface ViT-B-32 text
+    ViT-B-32  text  fairface          layer  1/12
+    ViT-B-32  text  fairface          layer  2/12
+    ViT-B-32  text  fairface          layer  3/12
+    ViT-B-32  text  fairface          layer  4/12
+    ViT-B-32  text  fairface          layer  5/12
+    ViT-B-32  text  fairface          layer  6/12
+    ViT-B-32  text  fairface          layer  7/12
+    ViT-B-32  text  fairface          layer  8/12
+    ViT-B-32  text  fairface          layer  9/12
+    ViT-B-32  text  fairface          layer 10/12
+    ViT-B-32  text  fairface          layer 11/12
+    ViT-B-32  text  fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-B-32_text.csv rows 324
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-B-32_image.csv
+skip (cached): output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-B-32_text.csv
+==> CIFAR100 ViT-H-14 image
+    ViT-H-14  image CIFAR100          layer  1/32
+    ViT-H-14  image CIFAR100          layer  2/32
+    ViT-H-14  image CIFAR100          layer  3/32
+    ViT-H-14  image CIFAR100          layer  4/32
+    ViT-H-14  image CIFAR100          layer  5/32
+    ViT-H-14  image CIFAR100          layer  6/32
+    ViT-H-14  image CIFAR100          layer  7/32
+    ViT-H-14  image CIFAR100          layer  8/32
+    ViT-H-14  image CIFAR100          layer  9/32
+    ViT-H-14  image CIFAR100          layer 10/32
+    ViT-H-14  image CIFAR100          layer 11/32
+    ViT-H-14  image CIFAR100          layer 12/32
+    ViT-H-14  image CIFAR100          layer 13/32
+    ViT-H-14  image CIFAR100          layer 14/32
+    ViT-H-14  image CIFAR100          layer 15/32
+    ViT-H-14  image CIFAR100          layer 16/32
+    ViT-H-14  image CIFAR100          layer 17/32
+    ViT-H-14  image CIFAR100          layer 18/32
+    ViT-H-14  image CIFAR100          layer 19/32
+    ViT-H-14  image CIFAR100          layer 20/32
+    ViT-H-14  image CIFAR100          layer 21/32
+    ViT-H-14  image CIFAR100          layer 22/32
+    ViT-H-14  image CIFAR100          layer 23/32
+    ViT-H-14  image CIFAR100          layer 24/32
+    ViT-H-14  image CIFAR100          layer 25/32
+    ViT-H-14  image CIFAR100          layer 26/32
+    ViT-H-14  image CIFAR100          layer 27/32
+    ViT-H-14  image CIFAR100          layer 28/32
+    ViT-H-14  image CIFAR100          layer 29/32
+    ViT-H-14  image CIFAR100          layer 30/32
+    ViT-H-14  image CIFAR100          layer 31/32
+    ViT-H-14  image CIFAR100          layer 32/32
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-H-14_image.csv rows 1632
+==> CIFAR100 ViT-H-14 text
+    ViT-H-14  text  CIFAR100          layer  1/24
+    ViT-H-14  text  CIFAR100          layer  2/24
+    ViT-H-14  text  CIFAR100          layer  3/24
+    ViT-H-14  text  CIFAR100          layer  4/24
+    ViT-H-14  text  CIFAR100          layer  5/24
+    ViT-H-14  text  CIFAR100          layer  6/24
+    ViT-H-14  text  CIFAR100          layer  7/24
+    ViT-H-14  text  CIFAR100          layer  8/24
+    ViT-H-14  text  CIFAR100          layer  9/24
+    ViT-H-14  text  CIFAR100          layer 10/24
+    ViT-H-14  text  CIFAR100          layer 11/24
+    ViT-H-14  text  CIFAR100          layer 12/24
+    ViT-H-14  text  CIFAR100          layer 13/24
+    ViT-H-14  text  CIFAR100          layer 14/24
+    ViT-H-14  text  CIFAR100          layer 15/24
+    ViT-H-14  text  CIFAR100          layer 16/24
+    ViT-H-14  text  CIFAR100          layer 17/24
+    ViT-H-14  text  CIFAR100          layer 18/24
+    ViT-H-14  text  CIFAR100          layer 19/24
+    ViT-H-14  text  CIFAR100          layer 20/24
+    ViT-H-14  text  CIFAR100          layer 21/24
+    ViT-H-14  text  CIFAR100          layer 22/24
+    ViT-H-14  text  CIFAR100          layer 23/24
+    ViT-H-14  text  CIFAR100          layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-H-14_text.csv rows 1224
+==> binary_waterbirds ViT-H-14 image
+    ViT-H-14  image binary_waterbirds layer  1/32
+    ViT-H-14  image binary_waterbirds layer  2/32
+    ViT-H-14  image binary_waterbirds layer  3/32
+    ViT-H-14  image binary_waterbirds layer  4/32
+    ViT-H-14  image binary_waterbirds layer  5/32
+    ViT-H-14  image binary_waterbirds layer  6/32
+    ViT-H-14  image binary_waterbirds layer  7/32
+    ViT-H-14  image binary_waterbirds layer  8/32
+    ViT-H-14  image binary_waterbirds layer  9/32
+    ViT-H-14  image binary_waterbirds layer 10/32
+    ViT-H-14  image binary_waterbirds layer 11/32
+    ViT-H-14  image binary_waterbirds layer 12/32
+    ViT-H-14  image binary_waterbirds layer 13/32
+    ViT-H-14  image binary_waterbirds layer 14/32
+    ViT-H-14  image binary_waterbirds layer 15/32
+    ViT-H-14  image binary_waterbirds layer 16/32
+    ViT-H-14  image binary_waterbirds layer 17/32
+    ViT-H-14  image binary_waterbirds layer 18/32
+    ViT-H-14  image binary_waterbirds layer 19/32
+    ViT-H-14  image binary_waterbirds layer 20/32
+    ViT-H-14  image binary_waterbirds layer 21/32
+    ViT-H-14  image binary_waterbirds layer 22/32
+    ViT-H-14  image binary_waterbirds layer 23/32
+    ViT-H-14  image binary_waterbirds layer 24/32
+    ViT-H-14  image binary_waterbirds layer 25/32
+    ViT-H-14  image binary_waterbirds layer 26/32
+    ViT-H-14  image binary_waterbirds layer 27/32
+    ViT-H-14  image binary_waterbirds layer 28/32
+    ViT-H-14  image binary_waterbirds layer 29/32
+    ViT-H-14  image binary_waterbirds layer 30/32
+    ViT-H-14  image binary_waterbirds layer 31/32
+    ViT-H-14  image binary_waterbirds layer 32/32
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-H-14_image.csv rows 1632
+==> binary_waterbirds ViT-H-14 text
+    ViT-H-14  text  binary_waterbirds layer  1/24
+    ViT-H-14  text  binary_waterbirds layer  2/24
+    ViT-H-14  text  binary_waterbirds layer  3/24
+    ViT-H-14  text  binary_waterbirds layer  4/24
+    ViT-H-14  text  binary_waterbirds layer  5/24
+    ViT-H-14  text  binary_waterbirds layer  6/24
+    ViT-H-14  text  binary_waterbirds layer  7/24
+    ViT-H-14  text  binary_waterbirds layer  8/24
+    ViT-H-14  text  binary_waterbirds layer  9/24
+    ViT-H-14  text  binary_waterbirds layer 10/24
+    ViT-H-14  text  binary_waterbirds layer 11/24
+    ViT-H-14  text  binary_waterbirds layer 12/24
+    ViT-H-14  text  binary_waterbirds layer 13/24
+    ViT-H-14  text  binary_waterbirds layer 14/24
+    ViT-H-14  text  binary_waterbirds layer 15/24
+    ViT-H-14  text  binary_waterbirds layer 16/24
+    ViT-H-14  text  binary_waterbirds layer 17/24
+    ViT-H-14  text  binary_waterbirds layer 18/24
+    ViT-H-14  text  binary_waterbirds layer 19/24
+    ViT-H-14  text  binary_waterbirds layer 20/24
+    ViT-H-14  text  binary_waterbirds layer 21/24
+    ViT-H-14  text  binary_waterbirds layer 22/24
+    ViT-H-14  text  binary_waterbirds layer 23/24
+    ViT-H-14  text  binary_waterbirds layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-H-14_text.csv rows 1224
+==> caltech ViT-H-14 image
+    ViT-H-14  image caltech           layer  1/32
+    ViT-H-14  image caltech           layer  2/32
+    ViT-H-14  image caltech           layer  3/32
+    ViT-H-14  image caltech           layer  4/32
+    ViT-H-14  image caltech           layer  5/32
+    ViT-H-14  image caltech           layer  6/32
+    ViT-H-14  image caltech           layer  7/32
+    ViT-H-14  image caltech           layer  8/32
+    ViT-H-14  image caltech           layer  9/32
+    ViT-H-14  image caltech           layer 10/32
+    ViT-H-14  image caltech           layer 11/32
+    ViT-H-14  image caltech           layer 12/32
+    ViT-H-14  image caltech           layer 13/32
+    ViT-H-14  image caltech           layer 14/32
+    ViT-H-14  image caltech           layer 15/32
+    ViT-H-14  image caltech           layer 16/32
+    ViT-H-14  image caltech           layer 17/32
+    ViT-H-14  image caltech           layer 18/32
+    ViT-H-14  image caltech           layer 19/32
+    ViT-H-14  image caltech           layer 20/32
+    ViT-H-14  image caltech           layer 21/32
+    ViT-H-14  image caltech           layer 22/32
+    ViT-H-14  image caltech           layer 23/32
+    ViT-H-14  image caltech           layer 24/32
+    ViT-H-14  image caltech           layer 25/32
+    ViT-H-14  image caltech           layer 26/32
+    ViT-H-14  image caltech           layer 27/32
+    ViT-H-14  image caltech           layer 28/32
+    ViT-H-14  image caltech           layer 29/32
+    ViT-H-14  image caltech           layer 30/32
+    ViT-H-14  image caltech           layer 31/32
+    ViT-H-14  image caltech           layer 32/32
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-H-14_image.csv rows 1632
+==> caltech ViT-H-14 text
+    ViT-H-14  text  caltech           layer  1/24
+    ViT-H-14  text  caltech           layer  2/24
+    ViT-H-14  text  caltech           layer  3/24
+    ViT-H-14  text  caltech           layer  4/24
+    ViT-H-14  text  caltech           layer  5/24
+    ViT-H-14  text  caltech           layer  6/24
+    ViT-H-14  text  caltech           layer  7/24
+    ViT-H-14  text  caltech           layer  8/24
+    ViT-H-14  text  caltech           layer  9/24
+    ViT-H-14  text  caltech           layer 10/24
+    ViT-H-14  text  caltech           layer 11/24
+    ViT-H-14  text  caltech           layer 12/24
+    ViT-H-14  text  caltech           layer 13/24
+    ViT-H-14  text  caltech           layer 14/24
+    ViT-H-14  text  caltech           layer 15/24
+    ViT-H-14  text  caltech           layer 16/24
+    ViT-H-14  text  caltech           layer 17/24
+    ViT-H-14  text  caltech           layer 18/24
+    ViT-H-14  text  caltech           layer 19/24
+    ViT-H-14  text  caltech           layer 20/24
+    ViT-H-14  text  caltech           layer 21/24
+    ViT-H-14  text  caltech           layer 22/24
+    ViT-H-14  text  caltech           layer 23/24
+    ViT-H-14  text  caltech           layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-H-14_text.csv rows 1224
+==> fairface ViT-H-14 image
+    ViT-H-14  image fairface          layer  1/32
+    ViT-H-14  image fairface          layer  2/32
+    ViT-H-14  image fairface          layer  3/32
+    ViT-H-14  image fairface          layer  4/32
+    ViT-H-14  image fairface          layer  5/32
+    ViT-H-14  image fairface          layer  6/32
+    ViT-H-14  image fairface          layer  7/32
+    ViT-H-14  image fairface          layer  8/32
+    ViT-H-14  image fairface          layer  9/32
+    ViT-H-14  image fairface          layer 10/32
+    ViT-H-14  image fairface          layer 11/32
+    ViT-H-14  image fairface          layer 12/32
+    ViT-H-14  image fairface          layer 13/32
+    ViT-H-14  image fairface          layer 14/32
+    ViT-H-14  image fairface          layer 15/32
+    ViT-H-14  image fairface          layer 16/32
+    ViT-H-14  image fairface          layer 17/32
+    ViT-H-14  image fairface          layer 18/32
+    ViT-H-14  image fairface          layer 19/32
+    ViT-H-14  image fairface          layer 20/32
+    ViT-H-14  image fairface          layer 21/32
+    ViT-H-14  image fairface          layer 22/32
+    ViT-H-14  image fairface          layer 23/32
+    ViT-H-14  image fairface          layer 24/32
+    ViT-H-14  image fairface          layer 25/32
+    ViT-H-14  image fairface          layer 26/32
+    ViT-H-14  image fairface          layer 27/32
+    ViT-H-14  image fairface          layer 28/32
+    ViT-H-14  image fairface          layer 29/32
+    ViT-H-14  image fairface          layer 30/32
+    ViT-H-14  image fairface          layer 31/32
+    ViT-H-14  image fairface          layer 32/32
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-H-14_image.csv rows 1632
+==> fairface ViT-H-14 text
+    ViT-H-14  text  fairface          layer  1/24
+    ViT-H-14  text  fairface          layer  2/24
+    ViT-H-14  text  fairface          layer  3/24
+    ViT-H-14  text  fairface          layer  4/24
+    ViT-H-14  text  fairface          layer  5/24
+    ViT-H-14  text  fairface          layer  6/24
+    ViT-H-14  text  fairface          layer  7/24
+    ViT-H-14  text  fairface          layer  8/24
+    ViT-H-14  text  fairface          layer  9/24
+    ViT-H-14  text  fairface          layer 10/24
+    ViT-H-14  text  fairface          layer 11/24
+    ViT-H-14  text  fairface          layer 12/24
+    ViT-H-14  text  fairface          layer 13/24
+    ViT-H-14  text  fairface          layer 14/24
+    ViT-H-14  text  fairface          layer 15/24
+    ViT-H-14  text  fairface          layer 16/24
+    ViT-H-14  text  fairface          layer 17/24
+    ViT-H-14  text  fairface          layer 18/24
+    ViT-H-14  text  fairface          layer 19/24
+    ViT-H-14  text  fairface          layer 20/24
+    ViT-H-14  text  fairface          layer 21/24
+    ViT-H-14  text  fairface          layer 22/24
+    ViT-H-14  text  fairface          layer 23/24
+    ViT-H-14  text  fairface          layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-H-14_text.csv rows 1224
+==> imagenet ViT-H-14 image
+    ViT-H-14  image imagenet          layer  1/32
+    ViT-H-14  image imagenet          layer  2/32
+    ViT-H-14  image imagenet          layer  3/32
+    ViT-H-14  image imagenet          layer  4/32
+    ViT-H-14  image imagenet          layer  5/32
+    ViT-H-14  image imagenet          layer  6/32
+    ViT-H-14  image imagenet          layer  7/32
+    ViT-H-14  image imagenet          layer  8/32
+    ViT-H-14  image imagenet          layer  9/32
+    ViT-H-14  image imagenet          layer 10/32
+    ViT-H-14  image imagenet          layer 11/32
+    ViT-H-14  image imagenet          layer 12/32
+    ViT-H-14  image imagenet          layer 13/32
+    ViT-H-14  image imagenet          layer 14/32
+    ViT-H-14  image imagenet          layer 15/32
+    ViT-H-14  image imagenet          layer 16/32
+    ViT-H-14  image imagenet          layer 17/32
+    ViT-H-14  image imagenet          layer 18/32
+    ViT-H-14  image imagenet          layer 19/32
+    ViT-H-14  image imagenet          layer 20/32
+    ViT-H-14  image imagenet          layer 21/32
+    ViT-H-14  image imagenet          layer 22/32
+    ViT-H-14  image imagenet          layer 23/32
+    ViT-H-14  image imagenet          layer 24/32
+    ViT-H-14  image imagenet          layer 25/32
+    ViT-H-14  image imagenet          layer 26/32
+    ViT-H-14  image imagenet          layer 27/32
+    ViT-H-14  image imagenet          layer 28/32
+    ViT-H-14  image imagenet          layer 29/32
+    ViT-H-14  image imagenet          layer 30/32
+    ViT-H-14  image imagenet          layer 31/32
+    ViT-H-14  image imagenet          layer 32/32
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-H-14_image.csv rows 1632
+==> imagenet ViT-H-14 text
+    ViT-H-14  text  imagenet          layer  1/24
+    ViT-H-14  text  imagenet          layer  2/24
+    ViT-H-14  text  imagenet          layer  3/24
+    ViT-H-14  text  imagenet          layer  4/24
+    ViT-H-14  text  imagenet          layer  5/24
+    ViT-H-14  text  imagenet          layer  6/24
+    ViT-H-14  text  imagenet          layer  7/24
+    ViT-H-14  text  imagenet          layer  8/24
+    ViT-H-14  text  imagenet          layer  9/24
+    ViT-H-14  text  imagenet          layer 10/24
+    ViT-H-14  text  imagenet          layer 11/24
+    ViT-H-14  text  imagenet          layer 12/24
+    ViT-H-14  text  imagenet          layer 13/24
+    ViT-H-14  text  imagenet          layer 14/24
+    ViT-H-14  text  imagenet          layer 15/24
+    ViT-H-14  text  imagenet          layer 16/24
+    ViT-H-14  text  imagenet          layer 17/24
+    ViT-H-14  text  imagenet          layer 18/24
+    ViT-H-14  text  imagenet          layer 19/24
+    ViT-H-14  text  imagenet          layer 20/24
+    ViT-H-14  text  imagenet          layer 21/24
+    ViT-H-14  text  imagenet          layer 22/24
+    ViT-H-14  text  imagenet          layer 23/24
+    ViT-H-14  text  imagenet          layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-H-14_text.csv rows 1224
+==> CIFAR100 ViT-L-14 image
+    ViT-L-14  image CIFAR100          layer  1/24
+    ViT-L-14  image CIFAR100          layer  2/24
+    ViT-L-14  image CIFAR100          layer  3/24
+    ViT-L-14  image CIFAR100          layer  4/24
+    ViT-L-14  image CIFAR100          layer  5/24
+    ViT-L-14  image CIFAR100          layer  6/24
+    ViT-L-14  image CIFAR100          layer  7/24
+    ViT-L-14  image CIFAR100          layer  8/24
+    ViT-L-14  image CIFAR100          layer  9/24
+    ViT-L-14  image CIFAR100          layer 10/24
+    ViT-L-14  image CIFAR100          layer 11/24
+    ViT-L-14  image CIFAR100          layer 12/24
+    ViT-L-14  image CIFAR100          layer 13/24
+    ViT-L-14  image CIFAR100          layer 14/24
+    ViT-L-14  image CIFAR100          layer 15/24
+    ViT-L-14  image CIFAR100          layer 16/24
+    ViT-L-14  image CIFAR100          layer 17/24
+    ViT-L-14  image CIFAR100          layer 18/24
+    ViT-L-14  image CIFAR100          layer 19/24
+    ViT-L-14  image CIFAR100          layer 20/24
+    ViT-L-14  image CIFAR100          layer 21/24
+    ViT-L-14  image CIFAR100          layer 22/24
+    ViT-L-14  image CIFAR100          layer 23/24
+    ViT-L-14  image CIFAR100          layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-L-14_image.csv rows 1224
+==> CIFAR100 ViT-L-14 text
+    ViT-L-14  text  CIFAR100          layer  1/12
+    ViT-L-14  text  CIFAR100          layer  2/12
+    ViT-L-14  text  CIFAR100          layer  3/12
+    ViT-L-14  text  CIFAR100          layer  4/12
+    ViT-L-14  text  CIFAR100          layer  5/12
+    ViT-L-14  text  CIFAR100          layer  6/12
+    ViT-L-14  text  CIFAR100          layer  7/12
+    ViT-L-14  text  CIFAR100          layer  8/12
+    ViT-L-14  text  CIFAR100          layer  9/12
+    ViT-L-14  text  CIFAR100          layer 10/12
+    ViT-L-14  text  CIFAR100          layer 11/12
+    ViT-L-14  text  CIFAR100          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/CIFAR100_ViT-L-14_text.csv rows 468
+==> binary_waterbirds ViT-L-14 image
+    ViT-L-14  image binary_waterbirds layer  1/24
+    ViT-L-14  image binary_waterbirds layer  2/24
+    ViT-L-14  image binary_waterbirds layer  3/24
+    ViT-L-14  image binary_waterbirds layer  4/24
+    ViT-L-14  image binary_waterbirds layer  5/24
+    ViT-L-14  image binary_waterbirds layer  6/24
+    ViT-L-14  image binary_waterbirds layer  7/24
+    ViT-L-14  image binary_waterbirds layer  8/24
+    ViT-L-14  image binary_waterbirds layer  9/24
+    ViT-L-14  image binary_waterbirds layer 10/24
+    ViT-L-14  image binary_waterbirds layer 11/24
+    ViT-L-14  image binary_waterbirds layer 12/24
+    ViT-L-14  image binary_waterbirds layer 13/24
+    ViT-L-14  image binary_waterbirds layer 14/24
+    ViT-L-14  image binary_waterbirds layer 15/24
+    ViT-L-14  image binary_waterbirds layer 16/24
+    ViT-L-14  image binary_waterbirds layer 17/24
+    ViT-L-14  image binary_waterbirds layer 18/24
+    ViT-L-14  image binary_waterbirds layer 19/24
+    ViT-L-14  image binary_waterbirds layer 20/24
+    ViT-L-14  image binary_waterbirds layer 21/24
+    ViT-L-14  image binary_waterbirds layer 22/24
+    ViT-L-14  image binary_waterbirds layer 23/24
+    ViT-L-14  image binary_waterbirds layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-L-14_image.csv rows 1224
+==> binary_waterbirds ViT-L-14 text
+    ViT-L-14  text  binary_waterbirds layer  1/12
+    ViT-L-14  text  binary_waterbirds layer  2/12
+    ViT-L-14  text  binary_waterbirds layer  3/12
+    ViT-L-14  text  binary_waterbirds layer  4/12
+    ViT-L-14  text  binary_waterbirds layer  5/12
+    ViT-L-14  text  binary_waterbirds layer  6/12
+    ViT-L-14  text  binary_waterbirds layer  7/12
+    ViT-L-14  text  binary_waterbirds layer  8/12
+    ViT-L-14  text  binary_waterbirds layer  9/12
+    ViT-L-14  text  binary_waterbirds layer 10/12
+    ViT-L-14  text  binary_waterbirds layer 11/12
+    ViT-L-14  text  binary_waterbirds layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/binary_waterbirds_ViT-L-14_text.csv rows 468
+==> caltech ViT-L-14 image
+    ViT-L-14  image caltech           layer  1/24
+    ViT-L-14  image caltech           layer  2/24
+    ViT-L-14  image caltech           layer  3/24
+    ViT-L-14  image caltech           layer  4/24
+    ViT-L-14  image caltech           layer  5/24
+    ViT-L-14  image caltech           layer  6/24
+    ViT-L-14  image caltech           layer  7/24
+    ViT-L-14  image caltech           layer  8/24
+    ViT-L-14  image caltech           layer  9/24
+    ViT-L-14  image caltech           layer 10/24
+    ViT-L-14  image caltech           layer 11/24
+    ViT-L-14  image caltech           layer 12/24
+    ViT-L-14  image caltech           layer 13/24
+    ViT-L-14  image caltech           layer 14/24
+    ViT-L-14  image caltech           layer 15/24
+    ViT-L-14  image caltech           layer 16/24
+    ViT-L-14  image caltech           layer 17/24
+    ViT-L-14  image caltech           layer 18/24
+    ViT-L-14  image caltech           layer 19/24
+    ViT-L-14  image caltech           layer 20/24
+    ViT-L-14  image caltech           layer 21/24
+    ViT-L-14  image caltech           layer 22/24
+    ViT-L-14  image caltech           layer 23/24
+    ViT-L-14  image caltech           layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-L-14_image.csv rows 1224
+==> caltech ViT-L-14 text
+    ViT-L-14  text  caltech           layer  1/12
+    ViT-L-14  text  caltech           layer  2/12
+    ViT-L-14  text  caltech           layer  3/12
+    ViT-L-14  text  caltech           layer  4/12
+    ViT-L-14  text  caltech           layer  5/12
+    ViT-L-14  text  caltech           layer  6/12
+    ViT-L-14  text  caltech           layer  7/12
+    ViT-L-14  text  caltech           layer  8/12
+    ViT-L-14  text  caltech           layer  9/12
+    ViT-L-14  text  caltech           layer 10/12
+    ViT-L-14  text  caltech           layer 11/12
+    ViT-L-14  text  caltech           layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/caltech_ViT-L-14_text.csv rows 468
+==> fairface ViT-L-14 image
+    ViT-L-14  image fairface          layer  1/24
+    ViT-L-14  image fairface          layer  2/24
+    ViT-L-14  image fairface          layer  3/24
+    ViT-L-14  image fairface          layer  4/24
+    ViT-L-14  image fairface          layer  5/24
+    ViT-L-14  image fairface          layer  6/24
+    ViT-L-14  image fairface          layer  7/24
+    ViT-L-14  image fairface          layer  8/24
+    ViT-L-14  image fairface          layer  9/24
+    ViT-L-14  image fairface          layer 10/24
+    ViT-L-14  image fairface          layer 11/24
+    ViT-L-14  image fairface          layer 12/24
+    ViT-L-14  image fairface          layer 13/24
+    ViT-L-14  image fairface          layer 14/24
+    ViT-L-14  image fairface          layer 15/24
+    ViT-L-14  image fairface          layer 16/24
+    ViT-L-14  image fairface          layer 17/24
+    ViT-L-14  image fairface          layer 18/24
+    ViT-L-14  image fairface          layer 19/24
+    ViT-L-14  image fairface          layer 20/24
+    ViT-L-14  image fairface          layer 21/24
+    ViT-L-14  image fairface          layer 22/24
+    ViT-L-14  image fairface          layer 23/24
+    ViT-L-14  image fairface          layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-L-14_image.csv rows 1224
+==> fairface ViT-L-14 text
+    ViT-L-14  text  fairface          layer  1/12
+    ViT-L-14  text  fairface          layer  2/12
+    ViT-L-14  text  fairface          layer  3/12
+    ViT-L-14  text  fairface          layer  4/12
+    ViT-L-14  text  fairface          layer  5/12
+    ViT-L-14  text  fairface          layer  6/12
+    ViT-L-14  text  fairface          layer  7/12
+    ViT-L-14  text  fairface          layer  8/12
+    ViT-L-14  text  fairface          layer  9/12
+    ViT-L-14  text  fairface          layer 10/12
+    ViT-L-14  text  fairface          layer 11/12
+    ViT-L-14  text  fairface          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/fairface_ViT-L-14_text.csv rows 468
+==> imagenet ViT-L-14 image
+    ViT-L-14  image imagenet          layer  1/24
+    ViT-L-14  image imagenet          layer  2/24
+    ViT-L-14  image imagenet          layer  3/24
+    ViT-L-14  image imagenet          layer  4/24
+    ViT-L-14  image imagenet          layer  5/24
+    ViT-L-14  image imagenet          layer  6/24
+    ViT-L-14  image imagenet          layer  7/24
+    ViT-L-14  image imagenet          layer  8/24
+    ViT-L-14  image imagenet          layer  9/24
+    ViT-L-14  image imagenet          layer 10/24
+    ViT-L-14  image imagenet          layer 11/24
+    ViT-L-14  image imagenet          layer 12/24
+    ViT-L-14  image imagenet          layer 13/24
+    ViT-L-14  image imagenet          layer 14/24
+    ViT-L-14  image imagenet          layer 15/24
+    ViT-L-14  image imagenet          layer 16/24
+    ViT-L-14  image imagenet          layer 17/24
+    ViT-L-14  image imagenet          layer 18/24
+    ViT-L-14  image imagenet          layer 19/24
+    ViT-L-14  image imagenet          layer 20/24
+    ViT-L-14  image imagenet          layer 21/24
+    ViT-L-14  image imagenet          layer 22/24
+    ViT-L-14  image imagenet          layer 23/24
+    ViT-L-14  image imagenet          layer 24/24
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-L-14_image.csv rows 1224
+==> imagenet ViT-L-14 text
+    ViT-L-14  text  imagenet          layer  1/12
+    ViT-L-14  text  imagenet          layer  2/12
+    ViT-L-14  text  imagenet          layer  3/12
+    ViT-L-14  text  imagenet          layer  4/12
+    ViT-L-14  text  imagenet          layer  5/12
+    ViT-L-14  text  imagenet          layer  6/12
+    ViT-L-14  text  imagenet          layer  7/12
+    ViT-L-14  text  imagenet          layer  8/12
+    ViT-L-14  text  imagenet          layer  9/12
+    ViT-L-14  text  imagenet          layer 10/12
+    ViT-L-14  text  imagenet          layer 11/12
+    ViT-L-14  text  imagenet          layer 12/12
+saved: output_dir/activations_and_datasets_idxs_69/intrinsic_dim/imagenet_ViT-L-14_text.csv rows 468

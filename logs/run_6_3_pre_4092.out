@@ -1,0 +1,88 @@
+[ViT-B-32/vision] done (170 rows so far)
+[ViT-B-32/text] done (292 rows so far)
+[ViT-B-32] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-B-32_pre.csv
+[ViT-B-16/vision] done (170 rows so far)
+[ViT-B-16/text] done (292 rows so far)
+[ViT-B-16] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-B-16_pre.csv
+[ViT-L-14/vision] done (434 rows so far)
+[ViT-L-14/text] done (604 rows so far)
+[ViT-L-14] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-L-14_pre.csv
+[ViT-H-14/vision] done (578 rows so far)
+[ViT-H-14/text] done (1012 rows so far)
+[ViT-H-14] wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/6_3/intrinsic_dim_ViT-H-14_pre.csv
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_baselines.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_concentration_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_ranking_quality_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-B-32_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-B-32_ref.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_ablate_ViT-B-32_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_keep_ViT-B-32_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_map_ViT-B-32.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_loud_vs_informative_ViT-B-32.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-B-16_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-B-16_ref.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_ablate_ViT-B-16_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_keep_ViT-B-16_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_map_ViT-B-16.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_loud_vs_informative_ViT-B-16.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-L-14_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-L-14_ref.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_ablate_ViT-L-14_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_keep_ViT-L-14_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_map_ViT-L-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_loud_vs_informative_ViT-L-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-H-14_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_ViT-H-14_ref.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_ablate_ViT-H-14_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_keep_ViT-H-14_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_map_ViT-H-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_loud_vs_informative_ViT-H-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_RN50_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_RN50_ref.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_ablate_RN50_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_keep_RN50_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_map_RN50.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_loud_vs_informative_RN50.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_RN101_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_layer_ablation_RN101_ref.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_ablate_RN101_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_keep_RN101_self.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_component_map_RN101.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_2_loud_vs_informative_RN101.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_table_vision.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_ratio_depth_vision.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_table_text.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_ratio_depth_text.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-B-32.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-B-32.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-B-16.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-B-16.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-L-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-L-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_ViT-H-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_ViT-H-14.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_RN50.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_RN50.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_id_components_RN101.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_3_modality_geometry_RN101.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_k90_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-B-32_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-B-32_topB32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_approx_heat_ViT-B-32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-B-16_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-B-16_topB32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_approx_heat_ViT-B-16_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-L-14_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-L-14_topB32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_approx_heat_ViT-L-14_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-H-14_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_ViT-H-14_topB32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_approx_heat_ViT-H-14_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_RN50_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_RN50_topB32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_approx_heat_RN50_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_RN101_late4_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_linear_approx_RN101_topB32_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/output_dir/results_paper/figures/6_4_approx_heat_RN101_joint.pdf/.png
+wrote /home/virgilio/contrastive_learning/PCLens-spectral-explainability-in-CLIP-ViT-encoder/paper_experiments_6_2_to_6_4.ipynb (31 cells)
+ALL DONE

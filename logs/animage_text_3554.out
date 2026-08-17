@@ -1,0 +1,27 @@
+=== ViT-B-16 ===
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 1000 texts from 'imagenet_classnames_animage' (1000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animage_attn_text_ViT-B-16_seed_69.npy  shape (1000, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animage_mlp_text_ViT-B-16_seed_69.npy  shape (1000, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animage_labels_text_ViT-B-16_seed_69.npy  shape (1000,)
+Chunk files removed. Done.
+=== ViT-L-14 ===
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 1000 texts from 'imagenet_classnames_animage' (1000 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animage_attn_text_ViT-L-14_seed_69.npy  shape (1000, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animage_mlp_text_ViT-L-14_seed_69.npy  shape (1000, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/imagenet_classnames_animage_labels_text_ViT-L-14_seed_69.npy  shape (1000,)
+Chunk files removed. Done.
+ALL_DONE

@@ -1,0 +1,47 @@
+
+##### ViT-B-16: text tower L=12 H=8, mlp slots=13 -> m12 is index 108 of 109 (MLP of block 11, the last one)
+  an image of {}    bare 66.74 | tmpl 64.74 | revert m12 61.06 | mean-abl m12 (tmpl) 58.60 | mean-abl m12 (bare) 58.74
+  an image of a {}  bare 66.74 | tmpl 68.02 | revert m12 58.94 | mean-abl m12 (tmpl) 60.34 | mean-abl m12 (bare) 58.74
+  a photo of a {}   bare 66.74 | tmpl 68.64 | revert m12 58.52 | mean-abl m12 (tmpl) 62.36 | mean-abl m12 (bare) 58.74
+
+##### ViT-L-14: text tower L=12 H=12, mlp slots=13 -> m12 is index 156 of 157 (MLP of block 11, the last one)
+  an image of {}    bare 71.52 | tmpl 68.98 | revert m12 59.26 | mean-abl m12 (tmpl) 64.18 | mean-abl m12 (bare) 66.34
+  an image of a {}  bare 71.52 | tmpl 73.46 | revert m12 59.52 | mean-abl m12 (tmpl) 69.28 | mean-abl m12 (bare) 66.34
+  a photo of a {}   bare 71.52 | tmpl 74.00 | revert m12 61.32 | mean-abl m12 (tmpl) 70.22 | mean-abl m12 (bare) 66.34
+
+
+===== TEST 2: leave-one-out from the templated embedding (revert ONE component to bare)
+ViT-B-16  an image of {}    m12 -3.68, a11.7 -1.24, m11 +1.06, a7.7 -0.80, a9.6 -0.78
+                            -> ratio |1st|/|2nd| = 3.0x
+ViT-B-16  an image of a {}  m12 -9.08, a11.7 -1.22, m11 -0.74, a9.6 -0.58, a7.7 -0.50
+                            -> ratio |1st|/|2nd| = 7.4x
+ViT-B-16  a photo of a {}   m12 -10.12, a11.7 -1.16, m9 -0.84, m11 -0.68, a7.7 -0.48
+                            -> ratio |1st|/|2nd| = 8.7x
+ViT-L-14  an image of {}    m12 -9.72, m11 +1.12, m10 +1.12, a10.4 -0.52, m9 +0.34
+                            -> ratio |1st|/|2nd| = 8.7x
+ViT-L-14  an image of a {}  m12 -13.94, a10.4 -0.94, a11.4 -0.66, a10.0 -0.60, m10 -0.52
+                            -> ratio |1st|/|2nd| = 14.8x
+ViT-L-14  a photo of a {}   m12 -12.68, m11 -0.84, a11.4 -0.52, a10.0 -0.50, m10 -0.46
+                            -> ratio |1st|/|2nd| = 15.1x
+
+===== effect per unit norm (|d_acc_loo| / mean||db||), top 5
+ViT-B-16  an image of {}    a11.7 51.2, a7.7 50.7, a8.0 36.2, a7.5 36.1, a9.6 30.0
+ViT-B-16  an image of a {}  m12 87.5, a11.7 51.7, a7.7 29.7, a0.3 21.9, a9.6 21.0
+ViT-B-16  a photo of a {}   m12 99.2, a11.7 49.9, a5.4 33.0, a5.0 25.6, a7.7 25.4
+ViT-L-14  an image of {}    m12 61.3, a4.8 29.5, a8.9 29.4, a7.2 26.5, a6.4 24.7
+ViT-L-14  an image of a {}  m12 124.1, a10.4 42.0, a11.4 40.7, a10.0 34.4, a8.1 26.9
+ViT-L-14  a photo of a {}   m12 114.6, a11.4 33.3, a10.0 30.7, a8.8 28.7, a9.8 28.5
+
+===== CONTROL: mean-ablating one component of the BARE decomposition (no prompt)
+ViT-B-16  m12 -8.00, a9.6 -5.68, a11.7 -3.68, a9.0 -2.78, a11.2 -2.18, a11.0 -1.38
+ViT-L-14  m12 -5.18, a10.9 -3.12, a9.11 -2.90, a10.4 -2.58, a10.6 -2.22, a10.0 -1.88
+
+===== INTERVENTIONS
+                            bare  templated  revert_m12  meanabl_m12_tmpl  meanabl_m12_bare
+model    prompt                                                                            
+ViT-B-16 an image of {}    66.74      64.74       61.06             58.60             58.74
+         an image of a {}  66.74      68.02       58.94             60.34             58.74
+         a photo of a {}   66.74      68.64       58.52             62.36             58.74
+ViT-L-14 an image of {}    71.52      68.98       59.26             64.18             66.34
+         an image of a {}  71.52      73.46       59.52             69.28             66.34
+         a photo of a {}   71.52      74.00       61.32             70.22             66.34

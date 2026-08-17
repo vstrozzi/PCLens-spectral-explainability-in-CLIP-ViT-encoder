@@ -1,0 +1,16 @@
+Mpos (5000, 17113) Mneg (5000, 17113)
+
+top singular values  pos: [1.    0.421 0.282 0.264 0.257]  neg: [1.    0.898 0.584 0.502 0.366]
+magnitude ratio s_pos[0]/s_neg[0] = 2.141
+
+top-k PC alignment |cos(PCk_pos, PCk_neg)|:
+   PC0: 0.919
+   PC1: 0.947
+   PC2: 0.127
+   PC3: 0.364
+   PC4: 0.330
+   PC5: 0.074
+principal-angle cosines (top-10 subspaces): [0.998 0.998 0.983 0.945 0.897 0.832 0.821 0.714 0.307 0.082]
+
+||mean_pos - mean_neg|| = 0.0363   vs  within-pos std (PC1) = 0.0447
+mean-gap energy in pos top-10 PCs: 0.992  in neg top-10: 0.998

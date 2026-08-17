@@ -1,0 +1,74 @@
+[ViT-B-32] pair scores over 512 samples, 1/tau=100.0
+  pair scores 50/157
+  pair scores 100/157
+  pair scores 150/157
+[ViT-B-32] top matched pairs: ('attn', 11, 8)<->('attn', 10, 2) (-0.51), ('attn', 10, 4)<->('attn', 11, 2) (-0.39), ('attn', 10, 3)<->('attn', 8, 1) (-0.36)
+[ViT-B-32] wrote pair_scores / pair_matched / pair_ablation (496 rows)
+[ViT-B-16] pair scores over 512 samples, 1/tau=100.0
+  pair scores 50/157
+  pair scores 100/157
+  pair scores 150/157
+[ViT-B-16] top matched pairs: ('attn', 11, 7)<->('attn', 9, 0) (-0.68), ('attn', 11, 4)<->('attn', 11, 0) (-0.57), ('attn', 10, 10)<->('attn', 8, 7) (-0.57)
+[ViT-B-16] wrote pair_scores / pair_matched / pair_ablation (496 rows)
+[ViT-L-14] pair scores over 384 samples, 1/tau=100.0
+  pair scores 50/409
+  pair scores 100/409
+  pair scores 150/409
+  pair scores 200/409
+  pair scores 250/409
+  pair scores 300/409
+  pair scores 350/409
+  pair scores 400/409
+[ViT-L-14] top matched pairs: ('attn', 23, 7)<->('attn', 10, 6) (-0.73), ('attn', 23, 4)<->('attn', 10, 0) (-0.39), ('attn', 23, 1)<->('attn', 11, 4) (-0.33)
+[ViT-L-14] wrote pair_scores / pair_matched / pair_ablation (486 rows)
+[RN101] pair scores over 384 samples, 1/tau=100.0
+  pair scores 50/1089
+  pair scores 100/1089
+  pair scores 150/1089
+  pair scores 200/1089
+  pair scores 250/1089
+  pair scores 300/1089
+  pair scores 350/1089
+  pair scores 400/1089
+  pair scores 450/1089
+  pair scores 500/1089
+  pair scores 550/1089
+  pair scores 600/1089
+  pair scores 650/1089
+  pair scores 700/1089
+  pair scores 750/1089
+  pair scores 800/1089
+  pair scores 850/1089
+  pair scores 900/1089
+  pair scores 950/1089
+  pair scores 1000/1089
+  pair scores 1050/1089
+[RN101] top matched pairs: ('attn', 31, 17)<->('attn', 10, 1) (-0.12), ('attn', 32, 25)<->('attn', 11, 0) (-0.11), ('attn', 32, 6)<->('attn', 9, 2) (-0.11)
+[RN101] wrote pair_scores / pair_matched / pair_ablation (472 rows)
+[RN50] pair scores over 256 samples, 1/tau=100.0
+  pair scores 50/545
+  pair scores 100/545
+  pair scores 150/545
+  pair scores 200/545
+  pair scores 250/545
+  pair scores 300/545
+  pair scores 350/545
+  pair scores 400/545
+  pair scores 450/545
+  pair scores 500/545
+[RN50] top matched pairs: ('attn', 14, 25)<->('attn', 10, 7) (-0.36), ('attn', 14, 16)<->('attn', 11, 3) (-0.34), ('attn', 14, 29)<->('attn', 11, 1) (-0.29)
+[RN50] wrote pair_scores / pair_matched / pair_ablation (478 rows)
+[ViT-H-14] pair scores over 256 samples, 1/tau=100.0
+  pair scores 50/545
+  pair scores 100/545
+  pair scores 150/545
+  pair scores 200/545
+  pair scores 250/545
+  pair scores 300/545
+  pair scores 350/545
+  pair scores 400/545
+  pair scores 450/545
+  pair scores 500/545
+[ViT-H-14] top matched pairs: ('attn', 31, 6)<->('attn', 23, 0) (-0.39), ('attn', 31, 12)<->('attn', 20, 14) (-0.30), ('attn', 31, 4)<->('attn', 20, 0) (-0.27)
+[ViT-H-14] wrote pair_scores / pair_matched / pair_ablation (498 rows)
+ALL DONE

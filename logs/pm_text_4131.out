@@ -1,0 +1,71 @@
+Using local files
+Model parameters: 151,277,313
+Context length: 77
+Number of text layers: 12
+Decomposing 2 texts from 'personmonkey_classnames' (2 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_attn_text_ViT-B-32_seed_69.npy  shape (2, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_mlp_text_ViT-B-32_seed_69.npy  shape (2, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_labels_text_ViT-B-32_seed_69.npy  shape (2,)
+Chunk files removed. Done.
+Using local files
+Model parameters: 149,620,737
+Context length: 77
+Number of text layers: 12
+Decomposing 2 texts from 'personmonkey_classnames' (2 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_attn_text_ViT-B-16_seed_69.npy  shape (2, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_mlp_text_ViT-B-16_seed_69.npy  shape (2, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_labels_text_ViT-B-16_seed_69.npy  shape (2,)
+Chunk files removed. Done.
+Using local files
+Model parameters: 427,616,513
+Context length: 77
+Number of text layers: 12
+Decomposing 2 texts from 'personmonkey_classnames' (2 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_attn_text_ViT-L-14_seed_69.npy  shape (2, 12, 12, 768)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_mlp_text_ViT-L-14_seed_69.npy  shape (2, 13, 768)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_labels_text_ViT-L-14_seed_69.npy  shape (2,)
+Chunk files removed. Done.
+Using local files
+Model parameters: 986,109,441
+Context length: 77
+Number of text layers: 24
+Decomposing 2 texts from 'personmonkey_classnames' (2 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_attn_text_ViT-H-14_seed_69.npy  shape (2, 24, 16, 1024)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_mlp_text_ViT-H-14_seed_69.npy  shape (2, 25, 1024)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_labels_text_ViT-H-14_seed_69.npy  shape (2,)
+Chunk files removed. Done.
+Model parameters: 102,007,137
+Context length: 77
+Number of text layers: 12
+Decomposing 2 texts from 'personmonkey_classnames' (2 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_attn_text_RN50_seed_69.npy  shape (2, 12, 8, 1024)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_mlp_text_RN50_seed_69.npy  shape (2, 13, 1024)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_labels_text_RN50_seed_69.npy  shape (2,)
+Chunk files removed. Done.
+Model parameters: 119,688,033
+Context length: 77
+Number of text layers: 12
+Decomposing 2 texts from 'personmonkey_classnames' (2 classes x 1 of 1 sentences/class).
+
+Concatenating chunk files into final .npy arrays...
+Final single-file arrays created:
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_attn_text_RN101_seed_69.npy  shape (2, 12, 8, 512)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_mlp_text_RN101_seed_69.npy  shape (2, 13, 512)
+  output_dir/activations_and_datasets_idxs_69/personmonkey_classnames_labels_text_RN101_seed_69.npy  shape (2,)
+Chunk files removed. Done.
+ALLDONE

@@ -1,0 +1,322 @@
+[ViT-B-32] full model: total=59.50 worst-class=54.43 worst-group=28.50 groups=[79.45, 28.5, 63.11, 94.95]
+  [class rep0 forward       ] kept= 119/266 steps= 117 total=70.92 worst-group=52.37
+  [class rep0 forward+swap  ] kept= 114/266 steps= 114 total=71.27 worst-group=53.68
+  [class rep0 backward      ] kept= 134/266 steps= 132 total=73.44 worst-group=60.79
+  [class rep0 backward+swap ] kept= 134/266 steps= 132 total=73.44 worst-group=60.79
+  [class rep1 forward       ] kept= 125/266 steps= 123 total=78.63 worst-group=49.79
+  [class rep1 forward+swap  ] kept= 125/266 steps= 123 total=78.63 worst-group=49.79
+  [class rep1 backward      ] kept= 154/266 steps= 112 total=79.49 worst-group=50.62
+  [class rep1 backward+swap ] kept= 154/266 steps= 112 total=79.49 worst-group=50.62
+  [class rep2 forward       ] kept= 131/266 steps= 129 total=72.43 worst-group=59.37
+  [class rep2 forward+swap  ] kept= 129/266 steps= 129 total=71.57 worst-group=59.11
+  [class rep2 backward      ] kept= 163/266 steps= 103 total=72.78 worst-group=65.27
+  [class rep2 backward+swap ] kept= 163/266 steps= 103 total=72.78 worst-group=65.27
+  [group rep0 forward       ] kept= 121/266 steps= 119 total=76.22 worst-group=73.63
+  [group rep0 forward+swap  ] kept= 115/266 steps= 115 total=76.12 worst-group=72.99
+  [group rep0 backward      ] kept= 137/266 steps= 129 total=74.59 worst-group=66.97
+  [group rep0 backward+swap ] kept= 137/266 steps= 129 total=74.59 worst-group=66.97
+  [group rep1 forward       ] kept= 119/266 steps= 117 total=79.47 worst-group=59.75
+  [group rep1 forward+swap  ] kept= 119/266 steps= 121 total=79.47 worst-group=59.32
+  [group rep1 backward      ] kept= 148/266 steps= 118 total=79.98 worst-group=66.10
+  [group rep1 backward+swap ] kept= 153/266 steps= 115 total=79.78 worst-group=61.86
+  [group rep2 forward       ] kept= 127/266 steps= 125 total=70.22 worst-group=56.41
+  [group rep2 forward+swap  ] kept= 127/266 steps= 125 total=70.22 worst-group=56.41
+  [group rep2 backward      ] kept= 144/266 steps= 122 total=73.88 worst-group=61.02
+  [group rep2 backward+swap ] kept= 149/266 steps= 121 total=74.39 worst-group=63.14
+[ViT-B-32] wrote waterbirds_{eval,trace,pool}
+[ViT-B-16] full model: total=69.35 worst-class=60.86 worst-group=38.52 groups=[93.44, 49.28, 38.52, 88.38]
+  [class rep0 forward       ] kept= 129/266 steps= 127 total=78.33 worst-group=63.90
+  [class rep0 forward+swap  ] kept= 129/266 steps= 127 total=78.33 worst-group=63.90
+  [class rep0 backward      ] kept= 153/266 steps= 113 total=79.89 worst-group=62.24
+  [class rep0 backward+swap ] kept= 153/266 steps= 113 total=79.89 worst-group=62.24
+  [class rep1 forward       ] kept= 134/266 steps= 132 total=81.00 worst-group=59.34
+  [class rep1 forward+swap  ] kept= 134/266 steps= 132 total=81.00 worst-group=59.34
+  [class rep1 backward      ] kept= 145/266 steps= 121 total=80.04 worst-group=57.26
+  [class rep1 backward+swap ] kept= 146/266 steps= 122 total=80.49 worst-group=57.68
+  [class rep2 forward       ] kept= 105/266 steps= 103 total=80.24 worst-group=64.17
+  [class rep2 forward+swap  ] kept= 105/266 steps= 103 total=80.24 worst-group=64.17
+  [class rep2 backward      ] kept= 131/266 steps= 135 total=77.67 worst-group=56.67
+  [class rep2 backward+swap ] kept= 131/266 steps= 135 total=77.67 worst-group=56.67
+  [group rep0 forward       ] kept= 104/266 steps= 102 total=77.59 worst-group=69.92
+  [group rep0 forward+swap  ] kept= 106/266 steps= 108 total=78.46 worst-group=68.22
+  [group rep0 backward      ] kept= 136/266 steps= 130 total=78.40 worst-group=74.58
+  [group rep0 backward+swap ] kept= 136/266 steps= 130 total=78.40 worst-group=74.58
+  [group rep1 forward       ] kept= 123/266 steps= 121 total=80.18 worst-group=69.62
+  [group rep1 forward+swap  ] kept= 121/266 steps= 121 total=80.64 worst-group=71.19
+  [group rep1 backward      ] kept= 153/266 steps= 113 total=82.01 worst-group=69.49
+  [group rep1 backward+swap ] kept= 153/266 steps= 113 total=82.01 worst-group=69.49
+  [group rep2 forward       ] kept= 126/266 steps= 124 total=76.42 worst-group=64.20
+  [group rep2 forward+swap  ] kept= 121/266 steps= 121 total=76.58 worst-group=65.52
+  [group rep2 backward      ] kept= 142/266 steps= 124 total=76.22 worst-group=71.60
+  [group rep2 backward+swap ] kept= 133/266 steps= 141 total=75.10 worst-group=65.79
+[ViT-B-16] wrote waterbirds_{eval,trace,pool}
+[RN50] full model: total=67.85 worst-class=66.05 worst-group=40.65 groups=[90.54, 40.65, 60.66, 90.91]
+  [class rep0 forward       ] kept= 300/654 steps= 298 total=62.35 worst-group=39.61
+  [class rep0 forward+swap  ] kept= 303/654 steps= 319 total=61.69 worst-group=36.71
+  [class rep0 backward      ] kept= 397/654 steps= 257 total=70.67 worst-group=57.76
+  [class rep0 backward+swap ] kept= 394/654 steps= 274 total=71.93 worst-group=60.53
+  [class rep1 forward       ] kept= 294/654 steps= 292 total=56.60 worst-group=35.13
+  [class rep1 forward+swap  ] kept= 297/654 steps= 303 total=56.60 worst-group=35.39
+  [class rep1 backward      ] kept= 398/654 steps= 256 total=73.64 worst-group=53.42
+  [class rep1 backward+swap ] kept= 404/654 steps= 266 total=73.94 worst-group=53.95
+  [class rep2 forward       ] kept= 289/654 steps= 287 total=46.42 worst-group=20.45
+  [class rep2 forward+swap  ] kept= 276/654 steps= 278 total=45.92 worst-group=19.13
+  [class rep2 backward      ] kept= 396/654 steps= 258 total=68.60 worst-group=56.75
+  [class rep2 backward+swap ] kept= 397/654 steps= 275 total=65.52 worst-group=49.15
+  [group rep0 forward       ] kept= 295/654 steps= 293 total=63.67 worst-group=44.65
+  [group rep0 forward+swap  ] kept= 299/654 steps= 317 total=63.11 worst-group=43.20
+  [group rep0 backward      ] kept= 403/654 steps= 251 total=77.18 worst-group=69.09
+  [group rep0 backward+swap ] kept= 427/654 steps= 229 total=78.15 worst-group=69.88
+  [group rep1 forward       ] kept= 304/654 steps= 302 total=69.05 worst-group=61.29
+  [group rep1 forward+swap  ] kept= 295/654 steps= 303 total=69.11 worst-group=61.03
+  [group rep1 backward      ] kept= 410/654 steps= 244 total=80.74 worst-group=61.86
+  [group rep1 backward+swap ] kept= 414/654 steps= 244 total=79.27 worst-group=58.05
+  [group rep2 forward       ] kept= 298/654 steps= 296 total=63.87 worst-group=40.29
+  [group rep2 forward+swap  ] kept= 293/654 steps= 295 total=64.28 worst-group=41.08
+  [group rep2 backward      ] kept= 402/654 steps= 252 total=75.36 worst-group=68.69
+  [group rep2 backward+swap ] kept= 400/654 steps= 262 total=76.12 worst-group=69.75
+[RN50] wrote waterbirds_{eval,trace,pool}
+[RN101] full model: total=61.45 worst-class=58.15 worst-group=25.10 groups=[90.04, 25.1, 55.33, 94.95]
+  [class rep0 forward       ] kept= 568/1198 steps= 566 total=71.67 worst-group=53.82
+  [class rep0 forward+swap  ] kept= 569/1198 steps= 575 total=71.57 worst-group=53.16
+  [class rep0 backward      ] kept= 693/1198 steps= 505 total=71.88 worst-group=54.47
+  [class rep0 backward+swap ] kept= 682/1198 steps= 524 total=72.48 worst-group=56.45
+  [class rep1 forward       ] kept= 594/1198 steps= 592 total=78.63 worst-group=66.80
+  [class rep1 forward+swap  ] kept= 579/1198 steps= 587 total=78.38 worst-group=66.97
+  [class rep1 backward      ] kept= 694/1198 steps= 504 total=77.82 worst-group=63.90
+  [class rep1 backward+swap ] kept= 678/1198 steps= 542 total=76.51 worst-group=57.68
+  [class rep2 forward       ] kept= 649/1198 steps= 647 total=76.06 worst-group=55.96
+  [class rep2 forward+swap  ] kept= 599/1198 steps= 631 total=69.61 worst-group=41.15
+  [class rep2 backward      ] kept= 653/1198 steps= 545 total=71.27 worst-group=46.26
+  [class rep2 backward+swap ] kept= 656/1198 steps= 580 total=70.72 worst-group=44.95
+  [group rep0 forward       ] kept= 549/1198 steps= 547 total=79.57 worst-group=72.13
+  [group rep0 forward+swap  ] kept= 544/1198 steps= 544 total=79.62 worst-group=72.52
+  [group rep0 backward      ] kept= 667/1198 steps= 531 total=81.50 worst-group=75.42
+  [group rep0 backward+swap ] kept= 667/1198 steps= 547 total=81.30 worst-group=72.46
+  [group rep1 forward       ] kept= 541/1198 steps= 539 total=82.27 worst-group=73.73
+  [group rep1 forward+swap  ] kept= 549/1198 steps= 553 total=80.69 worst-group=75.69
+  [group rep1 backward      ] kept= 649/1198 steps= 549 total=82.57 worst-group=67.37
+  [group rep1 backward+swap ] kept= 644/1198 steps= 568 total=82.67 worst-group=69.92
+  [group rep2 forward       ] kept= 548/1198 steps= 546 total=78.76 worst-group=69.48
+  [group rep2 forward+swap  ] kept= 516/1198 steps= 530 total=77.34 worst-group=68.30
+  [group rep2 backward      ] kept= 674/1198 steps= 524 total=75.97 worst-group=65.52
+  [group rep2 backward+swap ] kept= 657/1198 steps= 571 total=74.19 worst-group=60.37
+[RN101] wrote waterbirds_{eval,trace,pool}
+[ViT-L-14] full model: total=72.20 worst-class=69.91 worst-group=49.41 groups=[95.46, 49.41, 52.87, 90.91]
+  [class rep0 forward       ] kept= 263/566 steps= 261 total=76.76 worst-group=58.68
+  [class rep0 forward+swap  ] kept= 263/566 steps= 261 total=76.76 worst-group=58.68
+  [class rep0 backward      ] kept= 329/566 steps= 237 total=82.56 worst-group=65.98
+  [class rep0 backward+swap ] kept= 325/566 steps= 243 total=82.31 worst-group=66.39
+  [class rep1 forward       ] kept= 268/566 steps= 266 total=84.93 worst-group=77.18
+  [class rep1 forward+swap  ] kept= 268/566 steps= 266 total=84.93 worst-group=77.18
+  [class rep1 backward      ] kept= 290/566 steps= 276 total=86.49 worst-group=66.80
+  [class rep1 backward+swap ] kept= 302/566 steps= 292 total=86.49 worst-group=67.63
+  [class rep2 forward       ] kept= 276/566 steps= 274 total=80.04 worst-group=65.66
+  [class rep2 forward+swap  ] kept= 267/566 steps= 269 total=80.44 worst-group=66.06
+  [class rep2 backward      ] kept= 296/566 steps= 270 total=85.38 worst-group=72.50
+  [class rep2 backward+swap ] kept= 308/566 steps= 270 total=85.28 worst-group=73.33
+  [group rep0 forward       ] kept= 277/566 steps= 275 total=79.37 worst-group=75.56
+  [group rep0 forward+swap  ] kept= 267/566 steps= 273 total=78.86 worst-group=73.05
+  [group rep0 backward      ] kept= 295/566 steps= 271 total=80.59 worst-group=76.35
+  [group rep0 backward+swap ] kept= 301/566 steps= 271 total=80.28 worst-group=76.35
+  [group rep1 forward       ] kept= 289/566 steps= 287 total=84.45 worst-group=75.17
+  [group rep1 forward+swap  ] kept= 273/566 steps= 273 total=83.94 worst-group=74.90
+  [group rep1 backward      ] kept= 322/566 steps= 244 total=84.86 worst-group=77.01
+  [group rep1 backward+swap ] kept= 322/566 steps= 244 total=84.86 worst-group=77.01
+  [group rep2 forward       ] kept= 277/566 steps= 275 total=75.97 worst-group=61.16
+  [group rep2 forward+swap  ] kept= 279/566 steps= 287 total=77.39 worst-group=64.20
+  [group rep2 backward      ] kept= 316/566 steps= 250 total=78.51 worst-group=65.92
+  [group rep2 backward+swap ] kept= 324/566 steps= 248 total=78.10 worst-group=63.41
+[ViT-L-14] wrote waterbirds_{eval,trace,pool}
+[ViT-H-14] full model: total=66.55 worst-class=65.08 worst-group=40.52 groups=[88.78, 40.52, 56.56, 90.4]
+  [class rep0 forward       ] kept= 473/954 steps= 471 total=77.77 worst-group=64.47
+  [class rep0 forward+swap  ] kept= 473/954 steps= 495 total=78.18 worst-group=65.13
+  [class rep0 backward      ] kept= 533/954 steps= 421 total=83.06 worst-group=73.29
+  [class rep0 backward+swap ] kept= 531/954 steps= 429 total=82.66 worst-group=73.42
+  [class rep1 forward       ] kept= 438/954 steps= 436 total=88.46 worst-group=79.67
+  [class rep1 forward+swap  ] kept= 431/954 steps= 441 total=88.66 worst-group=78.84
+  [class rep1 backward      ] kept= 507/954 steps= 447 total=87.45 worst-group=60.58
+  [class rep1 backward+swap ] kept= 510/954 steps= 450 total=87.35 worst-group=59.75
+  [class rep2 forward       ] kept= 474/954 steps= 472 total=80.24 worst-group=69.20
+  [class rep2 forward+swap  ] kept= 460/954 steps= 470 total=80.90 worst-group=69.59
+  [class rep2 backward      ] kept= 516/954 steps= 438 total=86.54 worst-group=82.08
+  [class rep2 backward+swap ] kept= 516/954 steps= 438 total=86.54 worst-group=82.08
+  [group rep0 forward       ] kept= 439/954 steps= 437 total=81.15 worst-group=78.20
+  [group rep0 forward+swap  ] kept= 433/954 steps= 441 total=81.50 worst-group=78.60
+  [group rep0 backward      ] kept= 477/954 steps= 477 total=84.30 worst-group=80.58
+  [group rep0 backward+swap ] kept= 488/954 steps= 480 total=84.40 worst-group=80.45
+  [group rep1 forward       ] kept= 444/954 steps= 442 total=88.57 worst-group=79.66
+  [group rep1 forward+swap  ] kept= 444/954 steps= 442 total=88.57 worst-group=79.66
+  [group rep1 backward      ] kept= 514/954 steps= 440 total=88.97 worst-group=74.15
+  [group rep1 backward+swap ] kept= 507/954 steps= 459 total=88.77 worst-group=75.00
+  [group rep2 forward       ] kept= 468/954 steps= 466 total=83.69 worst-group=78.86
+  [group rep2 forward+swap  ] kept= 479/954 steps= 525 total=83.43 worst-group=78.20
+  [group rep2 backward      ] kept= 513/954 steps= 441 total=84.96 worst-group=79.79
+  [group rep2 backward+swap ] kept= 521/954 steps= 469 total=84.81 worst-group=79.79
+[ViT-H-14] wrote waterbirds_{eval,trace,pool}
+  [class backward       rep0] size= 134 total=73.44 worst-group=60.79
+  [class backward       rep1] size= 154 total=79.49 worst-group=50.62
+  [class backward       rep2] size= 163 total=72.78 worst-group=65.27
+  [class backward+swap  rep0] size= 134 total=73.44 worst-group=60.79
+  [class backward+swap  rep1] size= 154 total=79.49 worst-group=50.62
+  [class backward+swap  rep2] size= 163 total=72.78 worst-group=65.27
+  [class forward        rep0] size= 119 total=70.92 worst-group=52.37
+  [class forward        rep1] size= 125 total=78.63 worst-group=49.79
+  [class forward        rep2] size= 131 total=72.43 worst-group=59.37
+  [class forward+swap   rep0] size= 114 total=71.27 worst-group=53.68
+  [class forward+swap   rep1] size= 125 total=78.63 worst-group=49.79
+  [class forward+swap   rep2] size= 129 total=71.57 worst-group=59.11
+  [group backward       rep0] size= 137 total=74.59 worst-group=66.97
+  [group backward       rep1] size= 148 total=79.98 worst-group=66.10
+  [group backward       rep2] size= 144 total=73.88 worst-group=61.02
+  [group backward+swap  rep0] size= 137 total=74.59 worst-group=66.97
+  [group backward+swap  rep1] size= 153 total=79.78 worst-group=61.86
+  [group backward+swap  rep2] size= 149 total=74.39 worst-group=63.14
+  [group forward        rep0] size= 121 total=76.22 worst-group=73.63
+  [group forward        rep1] size= 119 total=79.47 worst-group=59.75
+  [group forward        rep2] size= 127 total=70.22 worst-group=56.41
+  [group forward+swap   rep0] size= 115 total=76.12 worst-group=72.99
+  [group forward+swap   rep1] size= 119 total=79.47 worst-group=59.32
+  [group forward+swap   rep2] size= 127 total=70.22 worst-group=56.41
+[ViT-B-32] wrote waterbirds_table (145 rows)
+  [class backward       rep0] size= 153 total=79.89 worst-group=62.24
+  [class backward       rep1] size= 145 total=80.04 worst-group=57.26
+  [class backward       rep2] size= 131 total=77.67 worst-group=56.67
+  [class backward+swap  rep0] size= 153 total=79.89 worst-group=62.24
+  [class backward+swap  rep1] size= 146 total=80.49 worst-group=57.68
+  [class backward+swap  rep2] size= 131 total=77.67 worst-group=56.67
+  [class forward        rep0] size= 129 total=78.33 worst-group=63.90
+  [class forward        rep1] size= 134 total=81.00 worst-group=59.34
+  [class forward        rep2] size= 105 total=80.24 worst-group=64.17
+  [class forward+swap   rep0] size= 129 total=78.33 worst-group=63.90
+  [class forward+swap   rep1] size= 134 total=81.00 worst-group=59.34
+  [class forward+swap   rep2] size= 105 total=80.24 worst-group=64.17
+  [group backward       rep0] size= 136 total=78.40 worst-group=74.58
+  [group backward       rep1] size= 153 total=82.01 worst-group=69.49
+  [group backward       rep2] size= 142 total=76.22 worst-group=71.60
+  [group backward+swap  rep0] size= 136 total=78.40 worst-group=74.58
+  [group backward+swap  rep1] size= 153 total=82.01 worst-group=69.49
+  [group backward+swap  rep2] size= 133 total=75.10 worst-group=65.79
+  [group forward        rep0] size= 104 total=77.59 worst-group=69.92
+  [group forward        rep1] size= 123 total=80.18 worst-group=69.62
+  [group forward        rep2] size= 126 total=76.42 worst-group=64.20
+  [group forward+swap   rep0] size= 106 total=78.46 worst-group=68.22
+  [group forward+swap   rep1] size= 121 total=80.64 worst-group=71.19
+  [group forward+swap   rep2] size= 121 total=76.58 worst-group=65.52
+[ViT-B-16] wrote waterbirds_table (145 rows)
+  [class backward       rep0] size= 329 total=82.56 worst-group=65.98
+  [class backward       rep1] size= 290 total=86.49 worst-group=66.80
+  [class backward       rep2] size= 296 total=85.38 worst-group=72.50
+  [class backward+swap  rep0] size= 325 total=82.31 worst-group=66.39
+  [class backward+swap  rep1] size= 302 total=86.49 worst-group=67.63
+  [class backward+swap  rep2] size= 308 total=85.28 worst-group=73.33
+  [class forward        rep0] size= 263 total=76.76 worst-group=58.68
+  [class forward        rep1] size= 268 total=84.93 worst-group=77.18
+  [class forward        rep2] size= 276 total=80.04 worst-group=65.66
+  [class forward+swap   rep0] size= 263 total=76.76 worst-group=58.68
+  [class forward+swap   rep1] size= 268 total=84.93 worst-group=77.18
+  [class forward+swap   rep2] size= 267 total=80.44 worst-group=66.06
+  [group backward       rep0] size= 295 total=80.59 worst-group=76.35
+  [group backward       rep1] size= 322 total=84.86 worst-group=77.01
+  [group backward       rep2] size= 316 total=78.51 worst-group=65.92
+  [group backward+swap  rep0] size= 301 total=80.28 worst-group=76.35
+  [group backward+swap  rep1] size= 322 total=84.86 worst-group=77.01
+  [group backward+swap  rep2] size= 324 total=78.10 worst-group=63.41
+  [group forward        rep0] size= 277 total=79.37 worst-group=75.56
+  [group forward        rep1] size= 289 total=84.45 worst-group=75.17
+  [group forward        rep2] size= 277 total=75.97 worst-group=61.16
+  [group forward+swap   rep0] size= 267 total=78.86 worst-group=73.05
+  [group forward+swap   rep1] size= 273 total=83.94 worst-group=74.90
+  [group forward+swap   rep2] size= 279 total=77.39 worst-group=64.20
+[ViT-L-14] wrote waterbirds_table (145 rows)
+  [class backward       rep0] size= 533 total=83.06 worst-group=73.29
+  [class backward       rep1] size= 507 total=87.45 worst-group=60.58
+  [class backward       rep2] size= 516 total=86.54 worst-group=82.08
+  [class backward+swap  rep0] size= 531 total=82.66 worst-group=73.42
+  [class backward+swap  rep1] size= 510 total=87.35 worst-group=59.75
+  [class backward+swap  rep2] size= 516 total=86.54 worst-group=82.08
+  [class forward        rep0] size= 473 total=77.77 worst-group=64.47
+  [class forward        rep1] size= 438 total=88.46 worst-group=79.67
+  [class forward        rep2] size= 474 total=80.24 worst-group=69.20
+  [class forward+swap   rep0] size= 473 total=78.18 worst-group=65.13
+  [class forward+swap   rep1] size= 431 total=88.66 worst-group=78.84
+  [class forward+swap   rep2] size= 460 total=80.90 worst-group=69.59
+  [group backward       rep0] size= 477 total=84.30 worst-group=80.58
+  [group backward       rep1] size= 514 total=88.97 worst-group=74.15
+  [group backward       rep2] size= 513 total=84.96 worst-group=79.79
+  [group backward+swap  rep0] size= 488 total=84.40 worst-group=80.45
+  [group backward+swap  rep1] size= 507 total=88.77 worst-group=75.00
+  [group backward+swap  rep2] size= 521 total=84.81 worst-group=79.79
+  [group forward        rep0] size= 439 total=81.15 worst-group=78.20
+  [group forward        rep1] size= 444 total=88.57 worst-group=79.66
+  [group forward        rep2] size= 468 total=83.69 worst-group=78.86
+  [group forward+swap   rep0] size= 433 total=81.50 worst-group=78.60
+  [group forward+swap   rep1] size= 444 total=88.57 worst-group=79.66
+  [group forward+swap   rep2] size= 479 total=83.43 worst-group=78.20
+[ViT-H-14] wrote waterbirds_table (145 rows)
+  [class backward       rep0] size= 397 total=70.67 worst-group=57.76
+  [class backward       rep1] size= 398 total=73.64 worst-group=53.42
+  [class backward       rep2] size= 396 total=68.60 worst-group=56.75
+  [class backward+swap  rep0] size= 394 total=71.93 worst-group=60.53
+  [class backward+swap  rep1] size= 404 total=73.94 worst-group=53.95
+  [class backward+swap  rep2] size= 397 total=65.52 worst-group=49.15
+  [class forward        rep0] size= 300 total=62.35 worst-group=39.61
+  [class forward        rep1] size= 294 total=56.60 worst-group=35.13
+  [class forward        rep2] size= 289 total=46.42 worst-group=20.45
+  [class forward+swap   rep0] size= 303 total=61.69 worst-group=36.71
+  [class forward+swap   rep1] size= 297 total=56.60 worst-group=35.39
+  [class forward+swap   rep2] size= 276 total=45.92 worst-group=19.13
+  [group backward       rep0] size= 403 total=77.18 worst-group=69.09
+  [group backward       rep1] size= 410 total=80.74 worst-group=61.86
+  [group backward       rep2] size= 402 total=75.36 worst-group=68.69
+  [group backward+swap  rep0] size= 427 total=78.15 worst-group=69.88
+  [group backward+swap  rep1] size= 414 total=79.27 worst-group=58.05
+  [group backward+swap  rep2] size= 400 total=76.12 worst-group=69.75
+  [group forward        rep0] size= 295 total=63.67 worst-group=44.65
+  [group forward        rep1] size= 304 total=69.05 worst-group=61.29
+  [group forward        rep2] size= 298 total=63.87 worst-group=40.29
+  [group forward+swap   rep0] size= 299 total=63.11 worst-group=43.20
+  [group forward+swap   rep1] size= 295 total=69.11 worst-group=61.03
+  [group forward+swap   rep2] size= 293 total=64.28 worst-group=41.08
+[RN50] wrote waterbirds_table (145 rows)
+  [class backward       rep0] size= 693 total=71.88 worst-group=54.47
+  [class backward       rep1] size= 694 total=77.82 worst-group=63.90
+  [class backward       rep2] size= 653 total=71.27 worst-group=46.26
+  [class backward+swap  rep0] size= 682 total=72.48 worst-group=56.45
+  [class backward+swap  rep1] size= 678 total=76.51 worst-group=57.68
+  [class backward+swap  rep2] size= 656 total=70.72 worst-group=44.95
+  [class forward        rep0] size= 568 total=71.67 worst-group=53.82
+  [class forward        rep1] size= 594 total=78.63 worst-group=66.80
+  [class forward        rep2] size= 649 total=76.06 worst-group=55.96
+  [class forward+swap   rep0] size= 569 total=71.57 worst-group=53.16
+  [class forward+swap   rep1] size= 579 total=78.38 worst-group=66.97
+  [class forward+swap   rep2] size= 599 total=69.61 worst-group=41.15
+  [group backward       rep0] size= 667 total=81.50 worst-group=75.42
+  [group backward       rep1] size= 649 total=82.57 worst-group=67.37
+  [group backward       rep2] size= 674 total=75.97 worst-group=65.52
+  [group backward+swap  rep0] size= 667 total=81.30 worst-group=72.46
+  [group backward+swap  rep1] size= 644 total=82.67 worst-group=69.92
+  [group backward+swap  rep2] size= 657 total=74.19 worst-group=60.37
+  [group forward        rep0] size= 549 total=79.57 worst-group=72.13
+  [group forward        rep1] size= 541 total=82.27 worst-group=73.73
+  [group forward        rep2] size= 548 total=78.76 worst-group=69.48
+  [group forward+swap   rep0] size= 544 total=79.62 worst-group=72.52
+  [group forward+swap   rep1] size= 549 total=80.69 worst-group=75.69
+  [group forward+swap   rep2] size= 516 total=77.34 worst-group=68.30
+[RN101] wrote waterbirds_table (145 rows)
+[ok] waterbirds_trace            144 runs, max step 647, 95 distinct stopping points
+[ok] waterbirds_pc_trace          40 runs, max step 2270, 38 distinct stopping points
+[ok] bias_audit_trace             72 runs, max step 581, 57 distinct stopping points
+[ok] bias_pc_trace                16 runs, max step 1133, 14 distinct stopping points
+[!!] hardneg_trace_negation        4 runs - CAP suspected:
+       ViT-B-32     4/  4 runs stop at EXACTLY step 4
+[--] hardneg_trace_count        missing
+[--] hardneg_trace_order        missing
+[ok] typographic_trace            72 runs, max step 668, 61 distinct stopping points
+[ok] counting_trace               72 runs, max step 707, 59 distinct stopping points
+[!!] insub_trace                   8 runs - CAP suspected:
+       ViT-B-32     8/  8 runs stop at EXACTLY step 6
+[--] greedy_pool_trace          no-step-column
+
+Re-run the flagged families with the step cap removed before using their numbers.
+ALLDONE
